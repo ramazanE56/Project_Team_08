@@ -15,14 +15,13 @@ public class SmartcardlinkPage {
     @FindBy(name = "email")
     public WebElement emailKutusuElementi;
 
+    @FindBy(name = "password")
+    public WebElement passwordKutusuElementi;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement loginElementi;
 
 
-    /*
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/ramazanE56/Project_Team_08.git
-git push -u origin main
-     */
+
+
 }

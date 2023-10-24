@@ -5,7 +5,7 @@
     <test name="tum testleri calistirma">
         
         <packages>
-            <package name="tests.*"></package>
+          <!--  <package name="tests.*"></package> -->
         </packages>
         
     </test>

@@ -4,7 +4,7 @@
     <test name="Rapor icin hazirlanan classlar">
         
         <packages>
-            <package name="tests.day19_testNGreports_crossBrowserTest"></package>
+           <!-- <package name="tests.day19_testNGreports_crossBrowserTest"></package> -->
         </packages>
     </test>
 </suite>

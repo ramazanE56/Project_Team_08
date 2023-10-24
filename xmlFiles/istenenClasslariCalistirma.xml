@@ -9,14 +9,14 @@
     -->
 
 
+
 <suite name="istenen class'lari calistirma" verbose="5">
 
     <test name="belirli classlari calistirma">
         
         <classes>
-            <class name="tests.day15_testNG_framework.C01_Priority"></class>
-            <class name="tests.day16_testNG_framework.C02_PageClassKullanimi"></class>
-            <class name="tests.day17_testNGFramework_assertions.C02_QualitydemyPozitifLoginTesti"></class>
+           <!-- <class name="tests.day15_testNG_framework.C01_Priority"></class> -->
+
         </classes>
         
         
