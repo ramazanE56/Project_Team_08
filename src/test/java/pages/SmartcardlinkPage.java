@@ -12,14 +12,7 @@ public class SmartcardlinkPage {
 
     @FindBy(xpath = "//a[@class='btn btn-white fs-18 ms-3 d-lg-block d-none']")
     public WebElement signinButtonElementi;
-    @FindBy(name = "email")
-    public WebElement emailKutusuElementi;
 
-    @FindBy(name = "password")
-    public WebElement passwordKutusuElementi;
-
-    @FindBy(xpath = "//button[@type='submit']")
-    public WebElement loginElementi;
 
 
 
