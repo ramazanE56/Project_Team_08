@@ -10,6 +10,7 @@ public class ADashboardPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
     @FindBy(xpath = "//*[@id=\"dropdownMenuButton1\"]")
     public WebElement profildropdownMenuButton1;
     @FindBy(xpath = "(//a[@class=\"dropdown-item text-gray-900\"])[1]")
@@ -24,4 +25,16 @@ public class ADashboardPage {
     @FindBy(xpath = "//*[@class=\"btn btn-primary me-2\"]")
     public  WebElement saveButtonProfile;
 
+
+
+
+    @FindBy (xpath = "//a[@class='nav-link p-0 active']")
+    public WebElement visitorDashboard;
+
+    //Admin Dasboard sayfasında üstteki Dashboard yazısının locate'i
+    @FindBy(xpath = "//a[@class='nav-link p-0 active']")
+    public WebElement dashboardYaziElementi;
+
+
 }
+
