@@ -14,7 +14,17 @@ public class SmartcardlinkPage {
     public WebElement signinButtonElementi;
     @FindBy(name = "email")
     public WebElement emailKutusuElementi;
+    @FindBy(name = "password")
+    public WebElement passwordKutusuElementi;
 
+    @FindBy (xpath = "//*[@class=\"btn btn-primary\"]")
+    public WebElement loginButtonu;
+    @FindBy (xpath = "//*[@id=\"dropdownMenuButton1\"]")
+    public WebElement profildropdownMenuButton1;
+    @FindBy(xpath = "(//a[@class=\"dropdown-item text-gray-900\"])[1]")
+    public WebElement accountSettingsLinki;
+    @FindBy (xpath = "//*[text()=\"Profile Details\"]")
+    public WebElement profileDetailsLinki;
 
 
     /*
