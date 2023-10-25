@@ -11,6 +11,23 @@ public class ADashboardPage {
     }
 
 
+    @FindBy(xpath = "//*[@id=\"dropdownMenuButton1\"]")
+    public WebElement profildropdownMenuButton1;
+    @FindBy(xpath = "(//a[@class=\"dropdown-item text-gray-900\"])[1]")
+    public WebElement accountSettingsLinki;
+    @FindBy (xpath = "//*[text()=\"Profile Details\"]")
+    public WebElement profileDetailsLinki;
+    ////https://qa.smartcardlink.com/profile/edit altındaki firstName kutusu
+    @FindBy(xpath = "//*[@id=\"editProfileFirstName\"]")
+    public WebElement firstNameKutusu;
+
+    //https://qa.smartcardlink.com/profile/edit altınadaki save buttonu
+    @FindBy(xpath = "//*[@class=\"btn btn-primary me-2\"]")
+    public  WebElement saveButtonProfile;
+
+
+
+
     @FindBy (xpath = "//a[@class='nav-link p-0 active']")
     public WebElement visitorDashboard;
 
@@ -20,3 +37,4 @@ public class ADashboardPage {
 
 
 }
+
