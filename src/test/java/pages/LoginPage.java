@@ -19,6 +19,9 @@ LoginPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginElementi;
 
+    @FindBy(className = "mt-1")
+    public WebElement notSignInElementi;
+
     @FindBy (xpath = "//span[@class='mt-1']")
     public  WebElement failedLoginText;
 }
