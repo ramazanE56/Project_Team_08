@@ -11,7 +11,7 @@
 
     <test name="e2e test">
 
-        <classes>
+       <!-- <classes>
             <class name="tests.day16_testNG_framework.C05_QualitydemyNegatifLoginTesti">
                 <methods>
                     <include name="gecersizPasswordTest"></include>
@@ -23,6 +23,6 @@
                     <exclude name="carpmaTesti"></exclude>
                 </methods>
             </class>
-        </classes>
+        </classes> -->
     </test>
 </suite>

@@ -4,7 +4,7 @@
     <test name="day16 testleri">
         
         <packages>
-            <package name="tests.day16_testNG_framework"></package>
+          <!--  <package name="tests.day16_testNG_framework"></package> -->
         </packages>
         
         

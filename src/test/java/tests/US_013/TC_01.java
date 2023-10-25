@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.ADashboardPage;
+import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -15,6 +17,8 @@ public class TC_01 extends TestBaseRapor {
     public void test01() {
         extentTest=extentReports.createTest("Profil Bilgileri Sayfasına Erişim","Kullanıcı Kayıtlı Kulanıcı bilgilerini girerek profil bilgileri sayfasına ulaşabilmeli ");
         SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
+        LoginPage loginPage=new LoginPage();
+        ADashboardPage aDashboardPage=new ADashboardPage();
         //1-Browser açılır
         //2-https://qa.smartcardlink.com/ adresine gidilir
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -23,30 +27,28 @@ public class TC_01 extends TestBaseRapor {
         smartcardlinkPage.signinButtonElementi.click();
         extentTest.info("Signin butonuna click yapılır.");
         //4-Email kutusuna kullanıcı email i yazılır
-        //smartcardlinkPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("semail"));
-        smartcardlinkPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("ozelemail"));
+        loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("semail"));
         extentTest.info("Email kutusuna kullanıcı email i yazılır");
-        ReusableMethods.bekle(1);
+        ReusableMethods.wait(1);
         //5-Password kutusuna şifre yazılır.
-        //smartcardlinkPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("spassword"));
-        smartcardlinkPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("ozelpassword"));
+        loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("spassword"));
         extentTest.info("Password kutusuna şifre yazılır.");
-        ReusableMethods.bekle(1);
+        ReusableMethods.wait(1);
         //6-login butonuna basılır.
-        smartcardlinkPage.loginButtonu.click();
+        loginPage.loginElementi.click();
         extentTest.info("login butonuna basılır.");
-        ReusableMethods.bekle(1);
+        ReusableMethods.wait(1);
 
         //7- kullanıcı isminin yazdığı dropdown menu acılır
-        smartcardlinkPage.profildropdownMenuButton1.click();
+        aDashboardPage.profildropdownMenuButton1.click();
         extentTest.info("kullanıcı isminin yazdığı dropdown menu acılır");
-        ReusableMethods.bekle(1);
+        ReusableMethods.wait(1);
         //8-Account settings linkine click yapılır
-        smartcardlinkPage.accountSettingsLinki.click();
+        aDashboardPage.accountSettingsLinki.click();
         extentTest.info("Account settings linkine click yapılır");
-        ReusableMethods.bekle(1);
+        ReusableMethods.wait(1);
         //9-"Profile Details" bölümüne ulaşıldığı test edilir.
-        WebElement profileDetailsYazi= smartcardlinkPage.profileDetailsLinki;
+        WebElement profileDetailsYazi= aDashboardPage.profileDetailsLinki;
         Assert.assertTrue(profileDetailsYazi.isDisplayed());
         extentTest.pass("profile bilgileri sayfasına erişim sağlandığı test edilir.");
 
