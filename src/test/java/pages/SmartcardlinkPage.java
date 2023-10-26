@@ -27,6 +27,11 @@ public class SmartcardlinkPage {
     public WebElement confirmPasswordElementi;
     @FindBy (id = "passwordChangeBtn")
     public WebElement passwordChangeSaveButonElementi;
+    @FindBy(xpath = "//div[text()='Error']")
+    public WebElement passwordChangeErrorElementi;
+    @FindBy(xpath = "//div[text()='Success']")
+    public WebElement passwordChangeSuccessElementi;
+
 
 
 
