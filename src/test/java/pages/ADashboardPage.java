@@ -35,6 +35,9 @@ public class ADashboardPage {
     @FindBy(xpath = "//a[@class='nav-link p-0 active']")
     public WebElement dashboardYaziElementi;
 
+    //Admin Dasboard sayfasında menudeki "Affiliate Users" yazısının locate'i
+    @FindBy (xpath = "//*[@id=\"sidebar\"]/div[2]/ul/li[9]/a/span[2]")
+    public WebElement affiliateUsersYaziElementi;
 
-}
+ }
 
