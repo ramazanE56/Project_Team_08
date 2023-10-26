@@ -10,11 +10,8 @@ import utilities.Driver;
 public class TC04_US014 {
 
     /*
-        URL= https://qa.smartcardlink.com
-        User01 email = UserEmail01@wq.com
-        User01 password = Password.01
-        New Password = Password.01x
-     */
+    Kullanıcının sisteme giriş yaptıktan sonra, şifresini değiştirebildiği doğrulanır.
+    */
 
     @Test
     public void ChangePassword() {
@@ -27,7 +24,7 @@ public class TC04_US014 {
         smartcardlinkPage.signinButtonElementi.click();
 
         //Email textbox'ına Kayıtlı email bilgisi girilir.
-        LoginPage loginPage = new LoginPage();
+        LoginPage loginPage =new LoginPage();
         loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("user01Email"));
 
         //Password textbox'ına geçerli password bilgisi girilir.
@@ -46,7 +43,7 @@ public class TC04_US014 {
         smartcardlinkPage.currentPasswordElementi.click();
 
         //Mevcut geçerli password  textbox'a yazılır.
-        smartcardlinkPage.currentPasswordElementi.sendKeys(ConfigReader.getProperty("user01Password"));
+        smartcardlinkPage.currentPasswordElementi.sendKeys(ConfigReader.getProperty("user02Password"));
 
         //New Password textbox'ına click yapılır.
         smartcardlinkPage.newPasswordElementi.click();

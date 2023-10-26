@@ -8,21 +8,30 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_05_US014 {
+
+public class TC05_US014 {
+
+    /*
+    Kullanıcının sisteme giriş yaptıktan sonra, hatalı şifre ile şifresini değiştiremediği doğrulanır.
+     */
 
     @Test
     public void notChangePassword(){
 
         //Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
+
         //Sign In butonuna click yapılır.
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
         smartcardlinkPage.signinButtonElementi.click();
+
         //Email textbox'ına Kayıtlı email bilgisi girilir.
-        LoginPage loginPage = new LoginPage();
+        LoginPage loginPage =new LoginPage();
         loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("user01Email"));
+
         //Password textbox'ına geçerli password bilgisi girilir.
         loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("user01Password"));
+
         //Login butonuna click yapılır.
         loginPage.loginElementi.click();
 
@@ -46,7 +55,7 @@ public class TC_05_US014 {
         smartcardlinkPage.confirmPasswordElementi.sendKeys(ConfigReader.getProperty("changeNewPassword"));
         //Save butonuna click yapılır.
         smartcardlinkPage.passwordChangeSaveButonElementi.click();
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
 
         // Password değişmediğine dair Error yazısı doğrulanır.
         Assert.assertTrue(smartcardlinkPage.passwordChangeErrorElementi.isDisplayed());
