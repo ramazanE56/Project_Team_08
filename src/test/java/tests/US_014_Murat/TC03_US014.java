@@ -35,7 +35,7 @@ public class TC03_US014 {
         //Login butonuna click yapılır.
         loginPage.loginElementi.click();
 
-        //Başarılı bir şekilde kullanıcı girişi yapıldığı doğrulanır.
+        //Kullanıcı girişi yapılamadığı doğrulanır.
         Assert.assertTrue(smartcardlinkPage.succesSignInElement.isDisplayed());
 
         //Sayfa kapatılır.

@@ -6,67 +6,52 @@ import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
-public class TC04_US014 {
-
-    /*
-        URL= https://qa.smartcardlink.com
-        User01 email = UserEmail01@wq.com
-        User01 password = Password.01
-        New Password = Password.01x
-     */
+public class TC_05_US014 {
 
     @Test
-    public void ChangePassword() {
+    public void notChangePassword(){
 
         //Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
-
         //Sign In butonuna click yapılır.
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
         smartcardlinkPage.signinButtonElementi.click();
-
         //Email textbox'ına Kayıtlı email bilgisi girilir.
         LoginPage loginPage = new LoginPage();
         loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("user01Email"));
-
         //Password textbox'ına geçerli password bilgisi girilir.
         loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("user01Password"));
-
         //Login butonuna click yapılır.
         loginPage.loginElementi.click();
 
         //Profil dropdown ikonuna click yapılır.
         smartcardlinkPage.succesSignInElement.click();
-
         //Açılan menüde Change Password'e click yapılır.
         smartcardlinkPage.changePasswordElementi.click();
-
         //Current Password textbox'ına click yapılır.
         smartcardlinkPage.currentPasswordElementi.click();
 
-        //Mevcut geçerli password  textbox'a yazılır.
-        smartcardlinkPage.currentPasswordElementi.sendKeys(ConfigReader.getProperty("user01Password"));
+        //Geçersiz password textbox'a yazılır.
+        smartcardlinkPage.currentPasswordElementi.sendKeys(ConfigReader.getProperty("notUserPassword"));
 
         //New Password textbox'ına click yapılır.
         smartcardlinkPage.newPasswordElementi.click();
-
         //New password textbox'a yazılır.
         smartcardlinkPage.newPasswordElementi.sendKeys(ConfigReader.getProperty("changeNewPassword"));
-
         //Confirm Password textbox'ına click yapılır.
         smartcardlinkPage.confirmPasswordElementi.click();
-
         //New password textbox'a yazılır.
         smartcardlinkPage.confirmPasswordElementi.sendKeys(ConfigReader.getProperty("changeNewPassword"));
-
         //Save butonuna click yapılır.
         smartcardlinkPage.passwordChangeSaveButonElementi.click();
+        ReusableMethods.wait(1);
 
-        //Password değiştiğine dair Success yazısı doğrulanır.
-        Assert.assertTrue(smartcardlinkPage.passwordChangeSuccessElementi.isDisplayed());
+        // Password değişmediğine dair Error yazısı doğrulanır.
+        Assert.assertTrue(smartcardlinkPage.passwordChangeErrorElementi.isDisplayed());
 
-        // Sayfa kapatılır
+        // Sayfa kapatılır.
         Driver.closeDriver();
 
     }
