@@ -35,6 +35,33 @@ public class ADashboardPage {
     @FindBy(xpath = "//a[@class='nav-link p-0 active']")
     public WebElement dashboardYaziElementi;
 
+    //Abone olunan kullanıcı planları elementi
+    @FindBy(xpath = "//span[text()='Subscribed User Plans']")
+    public WebElement subscribedUserPlansElementi;
+
+    //Abonelik planlarını görüldü test elementi
+    @FindBy(xpath = "//h5[text()='Subscribed Plan Details']")
+    public WebElement SubscribedUserPlansTestElementi;
+
+    //Abonelik planlarını görüntüleme elementi
+    @FindBy(xpath = "(//a[@data-id='330'])[1]")
+    public WebElement SubscribedUserPlansViewElementi;
+
+    //User menu elementi
+    @FindBy(xpath = "(//*[@data-icon='users'])[1]")
+    public WebElement userMenuElementi;
+
+    //Users menusu Impersonate(kimliğe bürün) elementi
+    @FindBy(xpath = "//div[@class='d-flex justify-content-center']")
+    public WebElement impersonateElementi;
+
+    //Kullanıcıdan admin hesabına geçiş ikonu elementi
+    @FindBy(xpath = "//span[@class='text-primary']")
+    public WebElement adminHesabaGecisElementi;
+
+    //admin kullanıcı profil ismi elementi
+    @FindBy(xpath ="//button[@id='dropdownMenuButton1']")
+    public WebElement kullaniciProfilIsimElementi;
 
 
 
