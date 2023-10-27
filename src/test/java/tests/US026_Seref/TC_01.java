@@ -3,6 +3,7 @@ package tests.US026_Seref;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ADashboardPage;
 import pages.LoginPage;
@@ -10,6 +11,8 @@ import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.io.IOException;
 
 public class TC_01 {
 
@@ -22,7 +25,7 @@ public class TC_01 {
          */
 
     @Test
-    public void AffiliateUsers() {
+    public void AffiliateUsers() throws IOException {
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -43,14 +46,16 @@ public class TC_01 {
 
         // ADashboard menu listesindeki "ortaklık llanıcıları"(Affiliate Users) sekmesinin tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.affiliateUsersYaziElementi.click();
+        aDashboardPage.bagliKullanicilarYaziElementi.click();
 
-        ReusableMethods.wait(2);
         // Ortaklığın kim tarafından yapıldığının görüldüğünü test ediniz
+         Assert.assertTrue(aDashboardPage.sonuclariGormeYaziElementi.isDisplayed());
 
+        ReusableMethods.wait(3);
 
+        ReusableMethods.getScreenshot("ortakYapanListesi");
 
-        Driver.closeDriver();
+       // Driver.closeDriver();
 
     }
 

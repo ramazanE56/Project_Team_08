@@ -1,5 +1,6 @@
 package pages;
 
+import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -36,8 +37,12 @@ public class ADashboardPage {
     public WebElement dashboardYaziElementi;
 
     //Admin Dasboard sayfasında menudeki "Affiliate Users" yazısının locate'i
-    @FindBy (xpath = "//*[@id=\"sidebar\"]/div[2]/ul/li[9]/a/span[2]")
-    public WebElement affiliateUsersYaziElementi;
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[9]")
+    public WebElement bagliKullanicilarYaziElementi;
+
+    //Admin Dasboard sayfasında ortaklığı kimlerin yaptığının görüldüğü show locate'i
+    @FindBy (xpath = "//div[@class='row']")
+    public WebElement sonuclariGormeYaziElementi;
 
  }
 
