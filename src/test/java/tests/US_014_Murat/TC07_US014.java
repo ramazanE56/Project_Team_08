@@ -11,15 +11,15 @@ public class TC07_US014 extends TestBaseRapor {
 
 
     @Test
-    public void SignOut(){
+    public void signOut(){
 
         extentTest = extentReports.createTest
                 ("Kullanıcı Sistemden Çıkış Testi",
                         "Sisteme giriş yaptıktan sonra kullanıcı sistemden çıkış yapabilmelidir.");
 
-        //Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
+        //Browser açılır, ilgili site URL'i girilerek siteye erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
-        extentTest.info("Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.");
+        extentTest.info("Browser açılır, ilgili site URL'i girilerek siteye erişilir.");
 
         //Sign In butonuna click yapılır.
         SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
@@ -29,11 +29,11 @@ public class TC07_US014 extends TestBaseRapor {
         //Email kutusuna kayıtlı email bilgisi girilir.
         LoginPage loginPage =new LoginPage();
         loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("user01Email"));
-        extentTest.info("Email textbox'ına kayıtlı email bilgisi girilir.");
+        extentTest.info("Email kutusuna kayıtlı email bilgisi girilir.");
 
         //Password kutusuna geçerli password bilgisi girilir.
         loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("user01Password"));
-        extentTest.info("Password textbox'ına geçerli password bilgisi girilir.");
+        extentTest.info("Password kutusuna geçerli password bilgisi girilir.");
 
         //Login butonuna click yapılır.
         loginPage.loginElementi.click();
