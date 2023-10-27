@@ -6,15 +6,17 @@ import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
-public class TC04_US014 {
+
+public class TC05_US014 {
 
     /*
-    Kullanıcının sisteme giriş yaptıktan sonra, şifresini değiştirebildiği doğrulanır.
-    */
+    Kullanıcının sisteme giriş yaptıktan sonra, hatalı şifre ile şifresini değiştiremediği doğrulanır.
+     */
 
     @Test
-    public void ChangePassword() {
+    public void notChangePassword(){
 
         //Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -35,35 +37,30 @@ public class TC04_US014 {
 
         //Profil dropdown ikonuna click yapılır.
         smartcardlinkPage.succesSignInElement.click();
-
         //Açılan menüde Change Password'e click yapılır.
         smartcardlinkPage.changePasswordElementi.click();
-
         //Current Password textbox'ına click yapılır.
         smartcardlinkPage.currentPasswordElementi.click();
 
-        //Mevcut geçerli password  textbox'a yazılır.
-        smartcardlinkPage.currentPasswordElementi.sendKeys(ConfigReader.getProperty("user02Password"));
+        //Geçersiz password textbox'a yazılır.
+        smartcardlinkPage.currentPasswordElementi.sendKeys(ConfigReader.getProperty("notUserPassword"));
 
         //New Password textbox'ına click yapılır.
         smartcardlinkPage.newPasswordElementi.click();
-
         //New password textbox'a yazılır.
         smartcardlinkPage.newPasswordElementi.sendKeys(ConfigReader.getProperty("changeNewPassword"));
-
         //Confirm Password textbox'ına click yapılır.
         smartcardlinkPage.confirmPasswordElementi.click();
-
         //New password textbox'a yazılır.
         smartcardlinkPage.confirmPasswordElementi.sendKeys(ConfigReader.getProperty("changeNewPassword"));
-
         //Save butonuna click yapılır.
         smartcardlinkPage.passwordChangeSaveButonElementi.click();
+        ReusableMethods.wait(2);
 
-        //Password değiştiğine dair Success yazısı doğrulanır.
-        Assert.assertTrue(smartcardlinkPage.passwordChangeSuccessElementi.isDisplayed());
+        // Password değişmediğine dair Error yazısı doğrulanır.
+        Assert.assertTrue(smartcardlinkPage.passwordChangeErrorElementi.isDisplayed());
 
-        // Sayfa kapatılır
+        // Sayfa kapatılır.
         Driver.closeDriver();
 
     }

@@ -9,11 +9,9 @@ import utilities.Driver;
 
 public class TC02_US014 {
 
-    /*
-        URL= https://qa.smartcardlink.com
-        NotUser email = NotUserMail@wq.com
-        User01 password = Password.01
-     */
+      /*
+    Sisteme kayıtlı olmayan bir email ile giriş yapılamadığı doğrulanır.
+      */
 
     @Test
     public void notUserEmailSignIn(){
@@ -42,6 +40,4 @@ public class TC02_US014 {
         Driver.closeDriver();
 
     }
-
-
 }
