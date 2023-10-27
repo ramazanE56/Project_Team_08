@@ -11,10 +11,11 @@ import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_01 {
+public class TC_01 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
@@ -52,10 +53,10 @@ public class TC_01 {
          Assert.assertTrue(aDashboardPage.sonuclariGormeYaziElementi.isDisplayed());
 
         ReusableMethods.wait(3);
-
+        TestBaseRapor.extentHtmlReporter.getReporterName();
         ReusableMethods.getScreenshot("ortakYapanListesi");
 
-       // Driver.closeDriver();
+        Driver.closeDriver();
 
     }
 
