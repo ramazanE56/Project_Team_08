@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -36,5 +37,11 @@ public class ADashboardPage {
     public WebElement dashboardYaziElementi;
 
 
+
+
+    @FindBy(xpath = "(//a[@href='https://qa.smartcardlink.com/admin/user-settings'])[1]")
+    public  WebElement userSettingsLinki;
+    @FindBy(xpath = "//*[h1='Credentials']")
+    public WebElement userCredentialSayfasiYazisi;
 }
 
