@@ -82,9 +82,10 @@ public class TC_01 {
       ADashboardPage aDashboardPage=new ADashboardPage();
       aDashboardPage.userSettingsLinki.click();
       //6-Credentials sayfasına gidildiğini test et.
-Assert.assertTrue(aDashboardPage.userCredentialSayfasiYazisi.isDisplayed());
+Assert.assertTrue(aDashboardPage.userCredentialSayfaBasligi.isDisplayed());
 //7- Brovser'ı kapat.
       Driver.closeDriver();
 
     }
+
 }

@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -42,6 +41,40 @@ public class ADashboardPage {
     @FindBy(xpath = "(//a[@href='https://qa.smartcardlink.com/admin/user-settings'])[1]")
     public  WebElement userSettingsLinki;
     @FindBy(xpath = "//*[h1='Credentials']")
-    public WebElement userCredentialSayfasiYazisi;
+    public WebElement userCredentialSayfaBasligi;
+    @FindBy(xpath = "//input[@name='stripe_enable']")
+    public WebElement userCredential_stripeCheckbox;
+    @FindBy(xpath = "//input[@name='paypal_enable']")
+    public WebElement userCredential_paypalCheckbox;
+    @FindBy (xpath = "//input[@id='stripeKey']")
+    public WebElement userCredential_stripeKeyTextbox;
+    @FindBy (xpath = "//input[@id='stripeSecret']")
+    public WebElement userCredential_stripeSecretTextbox;
+    @FindBy (xpath = "//input[@id='paypalSecret']")
+    public WebElement userCredential_paypalSecretTextbox;
+    @FindBy (xpath = "//input[@id='paypalKey']")
+    public WebElement userCredential_paypalClientIdTextbox;
+    @FindBy (xpath = "//input[@id='paypalMode']")
+    public WebElement userCredential_paypalModeTextbox;
+    @FindBy (xpath = "(//span[@role='combobox'])[1]")
+    public WebElement userCredential_currencyList;
+    @FindBy (xpath = "//label[@for='time_format-0']")
+    public WebElement userCredential_12Hours;
+    @FindBy (xpath = "//label[@for='time_format-1']")
+    public WebElement userCredential_24Hours;
+    @FindBy (xpath = "//button[@type='submit']")
+    public WebElement userCredential_saveButton;
+    @FindBy (xpath = "//input[@name='enable_contact']")
+    public WebElement userCredential_enableContactCheckbox;
+    @FindBy (xpath = "//input[@name='hide_stickybar']")
+    public WebElement userCredential_hideStickybarCheckbox;
+    @FindBy (xpath = "//input[@name='whatsapp_share']")
+    public WebElement userCredential_whatsappShareCheckbox;
+
+    // basarili save yapinca gelen success uyarisi
+    @FindBy (xpath = "//div[@role='alert']")
+    public WebElement userCredential_saveSuccesss;
+    @FindBy (xpath = "//*[@class='toast toast-error']")
+    public WebElement userCredential_saveError;
 }
 
