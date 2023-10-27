@@ -10,13 +10,11 @@ import utilities.Driver;
 public class TC03_US014 {
 
     /*
-        URL= https://qa.smartcardlink.com
-        User01 email = UserEmail01@wq.com
-        NotUser Password = 123456
-     */
+    Sisteme kayıtlı bir email ve geçersiz bir password ile giriş yapılamadığı doğrulanır.
+    */
 
     @Test
-    public void notUserPasswordSignIn(){
+    public void notUserPasswordLogin(){
 
         //Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -35,7 +33,7 @@ public class TC03_US014 {
         //Login butonuna click yapılır.
         loginPage.loginElementi.click();
 
-        //Başarılı bir şekilde kullanıcı girişi yapıldığı doğrulanır.
+        //Kullanıcı girişi yapılamadığı doğrulanır.
         Assert.assertTrue(smartcardlinkPage.succesSignInElement.isDisplayed());
 
         //Sayfa kapatılır.

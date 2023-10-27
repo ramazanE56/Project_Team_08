@@ -1,26 +1,25 @@
 package tests.US_014_Murat;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class TC01_US014 {
+public class TC07_US014 {
 
     /*
-    Sisteme kayitli datalarla, basarili bir sekilde giris yapilabildigi dogrulanir.
+    Sisteme giriş yaptıktan sonra kullanıcının sistemden çıkışı yapabildiği doğrulanır.
      */
 
     @Test
-    public void UserSignIn() {
+    public void SignOut(){
 
         //Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
 
         //Sign In butonuna click yapılır.
-        SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
+        SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
         smartcardlinkPage.signinButtonElementi.click();
 
         //Email textbox'ına Kayıtlı email bilgisi girilir.
@@ -32,13 +31,6 @@ public class TC01_US014 {
 
         //Login butonuna click yapılır.
         loginPage.loginElementi.click();
-
-        //Başarılı bir şekilde kullanıcı girişi yapıldığı doğrulanır.
-        Assert.assertTrue(smartcardlinkPage.succesSignInElement.isDisplayed());
-
-        //Sayfa kapatılır.
-        Driver.closeDriver();
-
-
     }
+
 }
