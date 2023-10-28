@@ -11,15 +11,15 @@ import utilities.TestBaseRapor;
 public class TC03_US014 extends TestBaseRapor {
 
     @Test
-    public void notUserPasswordLogin(){
+    public void invalidUserPasswordLogin(){
 
         extentTest = extentReports.createTest
                 ("Kayıtlı Email ve geçersiz password ile Giriş Testi",
-                        " Sisteme kayıtlı bir email ve geçersiz bir password ile giriş yapılamamalıdır.");
+                        " Sisteme kayıtlı bir email ve geçersiz bir password ile sisteme giriş yapılamamalıdır.");
 
-        //Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
+        //Browser açılır ilgili site URL'i girilerek siteye erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
-        extentTest.info("Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.");
+        extentTest.info("Browser açılır ilgili site URL'i girilerek siteye erişilir.");
 
         //Sign In butonuna click yapılır.
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
@@ -32,7 +32,7 @@ public class TC03_US014 extends TestBaseRapor {
         extentTest.info("Email kutusuna kayıtlı email bilgisi girilir.");
 
         //Password kutusuna geçersiz password bilgisi girilir.
-        loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("notUserPassword"));
+        loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("invalidUserPassword"));
         extentTest.info("Password kutusuna geçersiz password bilgisi girilir.");
 
         //Login butonuna click yapılır.
@@ -41,10 +41,8 @@ public class TC03_US014 extends TestBaseRapor {
 
         //Kullanıcı girişi yapılamadığı doğrulanır.
         Assert.assertTrue(smartcardlinkPage.succesSignInElement.isDisplayed());
-        extentTest.pass("Kullanıcı girişi yapılamadığı doğrulanır.");
+        extentTest.pass("Kullanıcı girişi yapılamadığı test edilir.");
 
-        //Sayfa kapatılır.
-        Driver.closeDriver();
         extentTest.info("Sayfa kapatılır.");
 
     }

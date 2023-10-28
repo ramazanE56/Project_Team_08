@@ -12,15 +12,15 @@ public class TC02_US014 extends TestBaseRapor {
 
 
     @Test
-    public void notUserEmailSignIn(){
+    public void invalidUserEmailSignIn(){
 
         extentTest = extentReports.createTest
                 ("Kayıtlı Olmayan Email ile Giriş Testi",
                         " Sisteme kayıtlı olmayan bir email ile sisteme giriş yapılamamalıdır.");
 
-        // Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
+        // Browser açılır ilgili site URL'i girilerek siteye erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
-        extentTest.info("Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.");
+        extentTest.info("Browser açılır ilgili site URL'i girilerek siteye erişilir.");
 
         // Sign In butonuna click yapılır.
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
@@ -29,7 +29,7 @@ public class TC02_US014 extends TestBaseRapor {
 
         // Email kutusuna sisteme kayıtlı olmayan bir email bilgisi girilir.
         LoginPage loginPage = new LoginPage();
-        loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("notUserEmail"));
+        loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("invalidUserEmail"));
         extentTest.info("Email kutusuna sisteme kayıtlı olmayan bir email bilgisi girilir.");
 
         // Password kutusuna geçerli password bilgisi girilir.
@@ -44,9 +44,7 @@ public class TC02_US014 extends TestBaseRapor {
         Assert.assertTrue(loginPage.notSignInElementi.isDisplayed());
         extentTest.pass("Sisteme kullanıcı girişi yapılamadığı test edilir.");
 
-        //Sayfa kapatılır.
-        Driver.closeDriver();
-        extentTest.info("Sayfa kapatılır.");
+      // the end
 
     }
 }

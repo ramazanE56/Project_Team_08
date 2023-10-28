@@ -18,9 +18,9 @@ public class TC04_US014 extends TestBaseRapor {
                 ("Kullanıcı Şifre Değiştirme Testi",
                         "Kullanıcının sisteme giriş yaptıktan sonra, şifresini değiştirebildiği doğrulanır.");
 
-        //Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
+        //Browser açılır ilgili site URL'i girilerek siteye erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
-        extentTest.info("Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.");
+        extentTest.info("Browser açılır ilgili site URL'i girilerek siteye erişilir.");
 
         //Sign In butonuna click yapılır.
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
@@ -60,17 +60,17 @@ public class TC04_US014 extends TestBaseRapor {
         smartcardlinkPage.newPasswordElementi.click();
         extentTest.info("New Password kutusuna click yapılır.");
 
-        //New password,kutusuna yazılır.
+        //New password kutusuna yeni şifre yazılır.
         smartcardlinkPage.newPasswordElementi.sendKeys(ConfigReader.getProperty("changeNewPassword"));
-        extentTest.info("New password, kutusuna yazılır.");
+        extentTest.info("New password kutusuna yeni şifre yazılır.");
 
         //Confirm Password kutusuna click yapılır.
         smartcardlinkPage.confirmPasswordElementi.click();
         extentTest.info("Confirm Password kutusuna click yapılır.");
 
-        //New password, kutusuna yazılır.
+        //Confirm Password kutusuna yeni şifre yazılır.
         smartcardlinkPage.confirmPasswordElementi.sendKeys(ConfigReader.getProperty("changeNewPassword"));
-        extentTest.info("New password, kutusuna yazılır.");
+        extentTest.info("Confirm Password kutusuna yeni şifre yazılır.");
 
         //Save butonuna click yapılır.
         smartcardlinkPage.passwordChangeSaveButonElementi.click();
@@ -80,8 +80,6 @@ public class TC04_US014 extends TestBaseRapor {
         Assert.assertTrue(smartcardlinkPage.passwordChangeSuccessElementi.isDisplayed());
         extentTest.pass("Password değiştiğine dair Success yazısı test edilir.");
 
-        // Sayfa kapatılır.
-        Driver.closeDriver();
         extentTest.info("Sayfa kapatılır.");
 
     }
