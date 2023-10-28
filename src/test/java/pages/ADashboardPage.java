@@ -1,5 +1,6 @@
 package pages;
 
+import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -35,6 +36,29 @@ public class ADashboardPage {
     @FindBy(xpath = "//a[@class='nav-link p-0 active']")
     public WebElement dashboardYaziElementi;
 
+    //Admin Dasboard sayfasında menudeki "Affiliate Users" yazısının locate'i
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[9]")
+    public WebElement bagliKullanicilarYaziElementi;
+
+    //Admin Dasboard sayfasında ortaklığı kimlerin yaptığının görüldüğü show locate'i
+    @FindBy (xpath = "//div[@class='row']")
+    public WebElement sonuclariGormeYaziElementi;
+
+    //Admin Dasboard sayfasında üyelik işlemlerinin görüldüğü locate
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[10]")
+    public WebElement uyelikİslemleriYaziElementi;
+
+    //Admin Dasboard sayfasında üyelik onay durumunun görüldüğü locate
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-eye text-info'])[1]")
+    public WebElement uyelikOnayDurumuYaziElementi;
+
+    //Admin Dasboard sayfasında sitede kullanılan ulklerin sayısının görüldüğü locate
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[13]")
+    public WebElement ulkelerYaziElementi;
+
+    //Admin Dasboard sayfasında sitede kullanılan eyaletlerin sayısının görüldüğü locate
+    @FindBy (xpath = "//a[@class='nav-link p-0 active']")
+    public WebElement eyaletlerYaziElementi;
 
     //Admin Dasboard sayfasında Total Active Users sayısının locate'i
     @FindBy(xpath = "(//h2[@class='fs-1-xxl fw-bolder text-white'])[1]")
