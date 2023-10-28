@@ -1,4 +1,4 @@
-package tests.US_018_Ismail;
+package tests.US_022_Ismail;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -12,10 +12,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class TC_01 {
-
-
     @Test
-    public void adminDashboard(){
+    public void vcardtemplates(){
         //Admin olarak "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         //Sign In buttonuna tıklayınız
@@ -31,12 +29,15 @@ public class TC_01 {
         actions.sendKeys(ConfigReader.getProperty("spassword")).perform();
         loginPage.loginElementi.click();
         ReusableMethods.wait(2);
-        //Admin Dashboard sayfasının görünür olduğunu test edin.
+        //Admin Dashboard sayfasında Vcard Templates sekmesinin tıklanır olduğunu test edin.
         ADashboardPage aDashboardPage = new ADashboardPage();
-        Assert.assertTrue(aDashboardPage.dashboardYaziElementi.isDisplayed());
+        aDashboardPage.vcardTemplatesElementi.click();
+
+        String expectedSekmeBasligiYazisi = "Vcard Templates";
+        String actualSekmeBasligiYazisi = aDashboardPage.sekmeBasligiYaziElementi.getText();
+        Assert.assertEquals(actualSekmeBasligiYazisi,expectedSekmeBasligiYazisi);
         Driver.closeDriver();
 
 
     }
-
 }
