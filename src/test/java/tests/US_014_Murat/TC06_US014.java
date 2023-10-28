@@ -6,33 +6,40 @@ import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
 
-public class TC06_US014 {
-    /*
-    Kullanıcı sisteme giriş yaptıktan sonra,
-    sitenin dil ayarlarını değiştirebildiği doğrulanır.
-     */
+public class TC06_US014 extends TestBaseRapor {
+
 
 @Test
     public void changeLanguage(){
 
+    extentTest = extentReports.createTest
+            ("Dil Ayarları Değişikliği Testi",
+                    " Kullanıcı sisteme giriş yaptıktan sonra sitenin dil ayarlarını değiştirebilmelidir.");
+
     //Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
     Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
+    extentTest.info("Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.");
 
     //Sign In butonuna click yapılır.
-    SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
+    SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
     smartcardlinkPage.signinButtonElementi.click();
+    extentTest.info("Sign In butonuna click yapılır.");
 
-    //Email textbox'ına Kayıtlı email bilgisi girilir.
+    //Email kutusuna kayıtlı email bilgisi girilir.
     LoginPage loginPage =new LoginPage();
     loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("user01Email"));
+    extentTest.info("Email textbox'ına kayıtlı email bilgisi girilir.");
 
-    //Password textbox'ına geçerli password bilgisi girilir.
+    //Password kutusuna geçerli password bilgisi girilir.
     loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("user01Password"));
+    extentTest.info("Password textbox'ına geçerli password bilgisi girilir.");
 
     //Login butonuna click yapılır.
     loginPage.loginElementi.click();
+    extentTest.info("Login butonuna click yapılır.");
 
     //Profil dropdown ikonuna click yapılır.
     smartcardlinkPage.succesSignInElement.click();
@@ -54,5 +61,8 @@ public class TC06_US014 {
 
     // Sağ üstte Succes yazısı görülür.
 
-}
+    //DEVAM EDİLECEK
+
+    }
+
 }
