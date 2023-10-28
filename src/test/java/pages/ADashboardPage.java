@@ -44,5 +44,20 @@ public class ADashboardPage {
     @FindBy (xpath = "//div[@class='row']")
     public WebElement sonuclariGormeYaziElementi;
 
- }
+    //Admin Dasboard sayfasında üyelik işlemlerinin görüldüğü locate
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[10]")
+    public WebElement uyelikİslemleriYaziElementi;
+
+    //Admin Dasboard sayfasında üyelik onay durumunun görüldüğü locate
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-eye text-info'])[1]")
+    public WebElement uyelikOnayDurumuYaziElementi;
+
+    //Admin Dasboard sayfasında sitede kullanılan ulklerin sayısının görüldüğü locate
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[13]")
+    public WebElement ulkelerYaziElementi;
+
+    //Admin Dasboard sayfasında sitede kullanılan eyaletlerin sayısının görüldüğü locate
+    @FindBy (xpath = "//a[@class='nav-link p-0 active']")
+    public WebElement eyaletlerYaziElementi;
+}
 

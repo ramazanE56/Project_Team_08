@@ -1,6 +1,5 @@
 package tests.US026_Seref;
 
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -15,7 +14,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_01 extends TestBaseRapor {
+public class TC_02 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
@@ -28,7 +27,7 @@ public class TC_01 extends TestBaseRapor {
     @Test
     public void BagliKullanicilar() throws IOException {
 
-        extentTest = extentReports.createTest("Ortakligi Yapanlari Gorme Testi", "Admin panelde ortakligin kim tarafindan yapildigini görmeli");
+        extentTest = extentReports.createTest("Kauyıtlı Kullanıcıları Gorme Testi", "Admin panelde kayıtlı kullanıcıları görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -50,20 +49,20 @@ public class TC_01 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Admin email ve Password bilgilerini girip Login butonuna tıklar");
 
-        // ADashboard menu listesindeki ortaklıkKullanıcıları(Affiliate Users) sekmesini tıklayınız
+        // ADashboard menu listesindeki ortaklık kullanıcıları(Affiliate Users) sekmesinin tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
         aDashboardPage.bagliKullanicilarYaziElementi.click();
-        extentTest.info("ADashboard menu listesindeki Ortaklık Kullanıcıları(Affiliate Users) sekmesini tıklar");
+        extentTest.info("ADashboard menu listesindeki ortaklık kullanıcıları (Affiliate Users) sekmesinin tıklar");
 
-        // Ortaklığın kim tarafından yapıldığının görüldüğünü test ediniz
+        // Kaydedilen kullanıcıların görünür olduğunu test ediniz
         Assert.assertTrue(aDashboardPage.sonuclariGormeYaziElementi.isDisplayed());
-        extentTest.pass("Ortaklığın kimler tarafından yapıldığının görüldüğünü test eder");
+        extentTest.pass("Kaydedilen kullanıcıların görünür olduğunu test eder");
 
 
         ReusableMethods.wait(3);
 
-        ReusableMethods.getScreenshot("Ortaklığı Yapanlar Listesi");
-        extentTest.info("Ortak Yapanların Listesinin goruldugu sayfanın fotografini ceker");
+        ReusableMethods.getScreenshot("Kayitli Kullanicilar Listesi");
+        extentTest.info("Kaydedilen kullanıcıların goruldugu sayfanın fotografini ceker");
 
         Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
