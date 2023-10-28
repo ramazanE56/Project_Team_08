@@ -15,13 +15,13 @@ public class TC_01 {
   @Test
     public void userSignIn(){
     //1-Browser açılır
-    //2-https://qa.smartcardlink.com/ adresine gidilir
+    //2-https://qa.smartcardlink.com/ adresine gidilir.
     Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
 
     //3-Sign In butonuna click yapılır.
     SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
     smartcardlinkPage.signinButtonElementi.click();
-    //4-email ve Password değerlerini girip Login butonuna tıklayınız
+    //4-email ve Password değerlerini girip Login butonuna tıklanır.
     LoginPage loginPage=new LoginPage();
     Actions actions=new Actions(Driver.getDriver());
     loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("brEmail")
@@ -39,16 +39,16 @@ public class TC_01 {
 
   }
 
-    @Test
+    @Test(dependsOnMethods = {"userSignIn"},priority = 1)
     public void settingsIsDisplayed(){
-      //1-Browser açılır
-      //2-https://qa.smartcardlink.com/ adresine gidilir
+      //1-Browser açılır.
+      //2-https://qa.smartcardlink.com/ adresine gidilir.
       Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
 
       //3-Sign In butonuna click yapılır.
       SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
       smartcardlinkPage.signinButtonElementi.click();
-      //4-email ve Password değerlerini girip Login butonuna tıklayınız
+      //4-email ve Password değerlerini girip Login butonuna tıklanır.
       LoginPage loginPage=new LoginPage();
       Actions actions=new Actions(Driver.getDriver());
       loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("brEmail")
@@ -62,28 +62,30 @@ public class TC_01 {
       Driver.closeDriver();
 
     }
-    @Test
+    @Test(dependsOnMethods = {"settingsIsDisplayed"},priority = 2)
     public void CredentialsIsDisplayed(){
       //1-Browser açılır
-      //2-https://qa.smartcardlink.com/ adresine gidilir
+      //2-https://qa.smartcardlink.com/ adresine gidilir.
       Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
 
       //3-Sign In butonuna click yapılır.
       SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
       smartcardlinkPage.signinButtonElementi.click();
-      //4-email ve Password değerlerini girip Login butonuna tıklayınız
+      //4-Email textbox'ına Kayıtlı email bilgisi girilir.
+      //5-Password textbox'ına geçerli password bilgisi girilir.
+      //6-Login butonuna click yapılır.
       LoginPage loginPage=new LoginPage();
       Actions actions=new Actions(Driver.getDriver());
       loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("brEmail")
               + Keys.TAB+Keys.TAB
               +ConfigReader.getProperty("brPassword")
               +Keys.ENTER);
-      //5-yan menudeki Settings linkine click yap.
+      //7-yan menudeki Settings linkine click yapılır.
       ADashboardPage aDashboardPage=new ADashboardPage();
       aDashboardPage.userSettingsLinki.click();
-      //6-Credentials sayfasına gidildiğini test et.
-Assert.assertTrue(aDashboardPage.userCredentialSayfaBasligi.isDisplayed());
-//7- Brovser'ı kapat.
+      //8-‘Credentials’  bölümünün görüntülenebildiğini test et.
+      Assert.assertTrue(aDashboardPage.userCredentialSayfaBasligi.isDisplayed());
+      //9- Brovser'ı kapat.
       Driver.closeDriver();
 
     }
