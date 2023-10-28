@@ -6,42 +6,47 @@ import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
-public class TC02_US014 {
+public class TC02_US014 extends TestBaseRapor {
 
-    /*
-        URL= https://qa.smartcardlink.com
-        NotUser email = NotUserMail@wq.com
-        User01 password = Password.01
-     */
 
     @Test
     public void notUserEmailSignIn(){
 
+        extentTest = extentReports.createTest
+                ("Kayıtlı Olmayan Email ile Giriş Testi",
+                        " Sisteme kayıtlı olmayan bir email ile sisteme giriş yapılamamalıdır.");
+
         // Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
+        extentTest.info("Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.");
 
         // Sign In butonuna click yapılır.
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
         smartcardlinkPage.signinButtonElementi.click();
+        extentTest.info("Sign In butonuna click yapılır.");
 
-        // Email textbox'ına sisteme kayıtlı olmayan bir email bilgisi girilir.
+        // Email kutusuna sisteme kayıtlı olmayan bir email bilgisi girilir.
         LoginPage loginPage = new LoginPage();
         loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("notUserEmail"));
+        extentTest.info("Email kutusuna sisteme kayıtlı olmayan bir email bilgisi girilir.");
 
-        // Password textbox'ına geçerli password bilgisi girilir.
+        // Password kutusuna geçerli password bilgisi girilir.
         loginPage.passwordKutusuElementi.sendKeys("user01Password");
+        extentTest.info("Password kutusuna geçerli password bilgisi girilir.");
 
         // Login butonuna click yapılır.
         loginPage.loginElementi.click();
+        extentTest.info("Login butonuna click yapılır.");
 
         // Sisteme kullanıcı girişi yapılamadığı doğrulanır.
         Assert.assertTrue(loginPage.notSignInElementi.isDisplayed());
+        extentTest.pass("Sisteme kullanıcı girişi yapılamadığı test edilir.");
 
         //Sayfa kapatılır.
         Driver.closeDriver();
+        extentTest.info("Sayfa kapatılır.");
 
     }
-
-
 }

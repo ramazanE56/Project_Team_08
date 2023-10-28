@@ -7,24 +7,40 @@ import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class TC_05_US014 {
+
+public class TC05_US014 extends TestBaseRapor {
+
 
     @Test
     public void notChangePassword(){
 
+        extentTest = extentReports.createTest
+                ("Hatalı Şifre ile Şifre Değişikliği Testi",
+                        "Kullanıcı sisteme giriş yaptıktan sonra, hatalı şifre ile şifresini değiştirememelidir.");
+
         //Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
+        extentTest.info("Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.");
+
         //Sign In butonuna click yapılır.
-        SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
+        SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
         smartcardlinkPage.signinButtonElementi.click();
-        //Email textbox'ına Kayıtlı email bilgisi girilir.
-        LoginPage loginPage = new LoginPage();
+        extentTest.info("Sign In butonuna click yapılır.");
+
+        //Email kutusuna kayıtlı email bilgisi girilir.
+        LoginPage loginPage =new LoginPage();
         loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("user01Email"));
-        //Password textbox'ına geçerli password bilgisi girilir.
+        extentTest.info("Email textbox'ına kayıtlı email bilgisi girilir.");
+
+        //Password kutusuna geçerli password bilgisi girilir.
         loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("user01Password"));
+        extentTest.info("Password textbox'ına geçerli password bilgisi girilir.");
+
         //Login butonuna click yapılır.
         loginPage.loginElementi.click();
+        extentTest.info("Login butonuna click yapılır.");
 
         //Profil dropdown ikonuna click yapılır.
         smartcardlinkPage.succesSignInElement.click();
@@ -46,7 +62,7 @@ public class TC_05_US014 {
         smartcardlinkPage.confirmPasswordElementi.sendKeys(ConfigReader.getProperty("changeNewPassword"));
         //Save butonuna click yapılır.
         smartcardlinkPage.passwordChangeSaveButonElementi.click();
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
 
         // Password değişmediğine dair Error yazısı doğrulanır.
         Assert.assertTrue(smartcardlinkPage.passwordChangeErrorElementi.isDisplayed());
