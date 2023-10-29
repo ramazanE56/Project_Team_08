@@ -21,7 +21,7 @@ public class TC_01_02_03_04 {
         //Bir ziyaretci olarak "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
 
-        //Sign In buttonuna tıklayınız
+        //Sign In buttonuna tiklayiniz
         smartcardlinkPage = new SmartcardlinkPage();
         smartcardlinkPage.signinButtonElementi.click();
 
@@ -37,7 +37,7 @@ public class TC_01_02_03_04 {
 
         //Giriş yapildigini doğrulayiniz.
         aDashboardPage = new ADashboardPage();
-        Assert.assertTrue(aDashboardPage.visitorDashboard.isDisplayed());
+        Assert.assertTrue(aDashboardPage.visitorDashboardYaziElementi.isDisplayed());
 
         Driver.closeDriver();
     }
@@ -117,6 +117,8 @@ public class TC_01_02_03_04 {
 
         Assert.assertTrue(loginPage.failedLoginText.isDisplayed());
 
+
+        //Sayfa kapatilir
         Driver.closeDriver();
     }
 
