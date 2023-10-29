@@ -12,14 +12,14 @@ LoginPage {
     }
     @FindBy(name = "email")
     public WebElement emailKutusuElementi;
-//
+
     @FindBy(name = "password")
     public WebElement passwordKutusuElementi;
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginElementi;
 
-    @FindBy(className = "mt-1")
+    //@FindBy(className = "mt-1")
     public WebElement notSignInElementi;
 
     @FindBy (xpath = "//span[@class='mt-1']")

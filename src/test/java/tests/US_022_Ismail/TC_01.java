@@ -1,4 +1,4 @@
-package tests.US_018_Ismail;
+package tests.US_022_Ismail;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -13,10 +13,8 @@ import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class TC_01 extends TestBaseRapor {
-
-
     @Test
-    public void adminDashboard(){
+    public void vcardtemplates(){
         extentTest=extentReports.createTest("Admin Dashboard sayfasına erişim","Kullanıcı Kayıtlı Kulanıcı bilgilerini girerek profil bilgileri sayfasına ulaşabilmeli");
         //Admin olarak "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -37,13 +35,16 @@ public class TC_01 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("login butonuna basılır.");
         ReusableMethods.wait(2);
-        //Admin Dashboard sayfasının görünür olduğunu test edin.
+        //Admin Dashboard sayfasında Vcard Templates sekmesinin tıklanır olduğunu test edin.
         ADashboardPage aDashboardPage = new ADashboardPage();
-        Assert.assertTrue(aDashboardPage.dashboardYaziElementi.isDisplayed());
-        extentTest.pass("Admin Dashboard sayfasına erişim sağlandığı test edilir.");
+        aDashboardPage.vcardTemplatesElementi.click();
+        extentTest.info("Admin Dashboard sayfasında Vcard Templates sekmesinin tıklanır");
+        String expectedSekmeBasligiYazisi = "Vcard Templates";
+        String actualSekmeBasligiYazisi = aDashboardPage.sekmeBasligiYaziElementi.getText();
+        Assert.assertEquals(actualSekmeBasligiYazisi,expectedSekmeBasligiYazisi);
+        extentTest.pass("Admin Dashboard sayfasında Vcard Templates sekmesinin tıklanır olduğunu test edilir");
         Driver.closeDriver();
 
 
     }
-
 }
