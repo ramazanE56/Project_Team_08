@@ -60,4 +60,57 @@ public class SmartcardlinkPage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy (xpath = "//div[@role=\"alert\"]     ")
+    public WebElement userUpdateSuccesfullyYazisi;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
