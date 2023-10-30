@@ -14,7 +14,7 @@ public class TC05_US014 extends TestBaseRapor {
 
 
     @Test
-    public void invalidPasswordChangePassword(){
+    public void invalidPasswordWithChangePassword(){
 
         extentTest = extentReports.createTest
                 ("Hatalı Şifre ile Şifre Değişikliği Testi",

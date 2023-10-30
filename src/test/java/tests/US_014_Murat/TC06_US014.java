@@ -21,7 +21,7 @@ public class TC06_US014 extends TestBaseRapor {
 
     //Browser açılır ilgili site URL'i girilerek siteye erişilir.
     Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
-    extentTest.info("Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.");
+    extentTest.info("Browser açılır ilgili site URL'i girilerek siteye erişilir.");
 
     //Sign In butonuna click yapılır.
     SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
@@ -62,7 +62,10 @@ public class TC06_US014 extends TestBaseRapor {
     extentTest.info("Save butonuna click yapılır.");
 
     // Dilin Türkçe olarak değiştiği test edilir.
-    Assert.assertTrue(smartcardlinkPage.dilDegisimOnayElementi.isDisplayed());
+
+        String expectedYazi = "Panolar";
+        String actualYazi = smartcardlinkPage.dilDegisimOnayElementi.getText();
+    Assert.assertTrue(actualYazi.equals(expectedYazi));
     extentTest.pass("Dilin Türkçe olarak değiştiği test edilir.");
 
     // DÜZELT

@@ -44,6 +44,8 @@ public class TC02_US014 extends TestBaseRapor {
         Assert.assertTrue(loginPage.notSignInElementi.isDisplayed());
         extentTest.pass("Sisteme kullanıcı girişi yapılamadığı test edilir.");
 
+        extentTest.info("Sayfa kapatılır.");
+
       // the end
 
     }

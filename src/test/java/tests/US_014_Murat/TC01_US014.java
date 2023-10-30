@@ -11,7 +11,7 @@ import utilities.TestBaseRapor;
 public class TC01_US014 extends TestBaseRapor {
 
     @Test
-    public void UserSignIn() {
+    public void userSignIn() {
 
         extentTest = extentReports.createTest
                 ("Kullanıcı Hesap Girişi",
@@ -42,6 +42,8 @@ public class TC01_US014 extends TestBaseRapor {
         //Başarılı bir şekilde kullanıcı girişi yapıldığı doğrulanır.
         Assert.assertTrue(smartcardlinkPage.succesSignInElement.isDisplayed());
         extentTest.pass("Başarılı bir şekilde kullanıcı girişi yapılabildiği test edilir.");
+
+        extentTest.info("Sayfa kapatılır.");
 
         // the end
     }

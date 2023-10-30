@@ -39,6 +39,10 @@ public class SmartcardlinkPage {
     public WebElement languageTextBoxElementi;
     @FindBy(xpath = "//*[@id='languageChangeBtn']")
     public WebElement languageSaveButtonElementi;
+    @FindBy(xpath = "//span[@title='Turkish']")
+    public WebElement turkceDilElementi;
+    @FindBy(xpath = "//a[text()='Panolar']")
+    public WebElement dilDegisimOnayElementi;
 
     //sign out elementleri
     @FindBy(xpath = "//form[@id='logout-form']")
