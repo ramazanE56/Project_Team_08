@@ -85,7 +85,7 @@ public class TC_01 {
       aDashboardPage.userSettingsLinki.click();
       //8-‘Credentials’  bölümünün görüntülenebildiğini test et.
       Assert.assertTrue(aDashboardPage.userCredentialSayfaBasligi.isDisplayed());
-      //9- Brovser'ı kapat.
+      //9- Browser kapatılır.
       Driver.closeDriver();
 
     }
