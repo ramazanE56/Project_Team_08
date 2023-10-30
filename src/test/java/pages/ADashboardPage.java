@@ -1,5 +1,9 @@
 package pages;
 
+
+import com.sun.jna.Structure;
+import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -111,6 +115,78 @@ public class ADashboardPage {
     //admin kullanıcı profil ismi elementi
     @FindBy(xpath ="//button[@id='dropdownMenuButton1']")
     public WebElement kullaniciProfilIsimElementi;
+
+
+
+    // Admin Dasboard sayfasında Affiliation Transactions Butonu locate
+    @FindBy (xpath = "//span[text()='Affiliation Transactions']")
+    public  WebElement affiliationTransactionsButton;
+
+    //Affiliation Transactions sayfasinda üst taraftaki Affiliation Transactions yazisi locate
+    @FindBy (xpath = "//a[@class='nav-link p-0 active']")
+    public WebElement affiliationTransactionsYazisi;
+
+    //Affiliation Transactions sayfasinda User yazisi locate
+    @FindBy (xpath = "//span[text()='User']")
+    public  WebElement userYazisi;
+
+    //Affiliation Transactions sayfasinda Amount yazisi locate
+    @FindBy(xpath = "//span[text()='Amount']")
+    public WebElement amountYazisi;
+
+    //Affiliation Transactions sayfasinda Approval Status yazisi locate
+    @FindBy(xpath = "//span[text()='Approval Status']")
+    public WebElement approvalStatusYazisi;
+
+    //Affiliation Transactions sayfasinda Date yazisi locate
+    @FindBy(xpath = "//span[text()='Date']")
+    public WebElement dateYazisi;
+
+    //Affiliation Transactions sayfasinda Action yazisi locate
+    @FindBy(xpath = "//tr/th[5]")
+    public WebElement actionYazisi;
+
+    //Affiliation Transactions sayfasinda Ortaklık kullanıcıları locate
+    @FindBy (xpath = "//tbody/tr/td[1]")
+    public WebElement affiliationTransactionsUsers;
+
+    @FindBy (xpath = "//tbody/tr/td[2]")
+    public WebElement affiliationTransactionsAmount;
+
+    @FindBy (xpath = "//tbody/tr/td[3]")
+    public WebElement affiliationTransactionsApprovalStatus;
+
+
+    @FindBy (xpath = "//tbody/tr/td[4]")
+    public WebElement affiliationTransactionsDate;
+
+
+
+    @FindBy (xpath = "(//span[@id='showAffiliationWithdrawBtn'])[1]")
+    public WebElement affiliationTransactionsActionEyeIkon;
+
+    @FindBy (xpath = "//h5[@id='showAffiliationWithdrawModalBtn']")
+    public  WebElement affiliationTransactionsOrtaklikBilgileri;
+
+    //Osman Admin Dasboard sayfasında Front CMS  sekmesinin locateler'i
+    @FindBy(xpath = "//*[@ class ='nav-item active']")
+    public WebElement frontCmsElementi;
+
+    @FindBy(xpath = "(//input[@class='form-control'])[2]")
+    public WebElement frontCmsTitleElementi;
+
+    @FindBy(xpath = "(//input[@class='form-control'])[3]")
+    public WebElement frontCmsSubTitleElementi;
+
+    @FindBy(xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/features']")
+    public WebElement frontCmsFeaturesElementi;
+
+    @FindBy(xpath = "//*[@*='col-12 text-muted pagination-record ms-sm-3']")
+    public WebElement frontCmsFeaturesYaziElementi;
+
+    @FindBy(xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/about-us']")
+    public WebElement frontCmsAboutUsElementi;
+
 
 
 }
