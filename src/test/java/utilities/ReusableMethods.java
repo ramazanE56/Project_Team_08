@@ -402,11 +402,11 @@ public class ReusableMethods {
         webElement.click();
         webElement.sendKeys(sendKeys);
     }
-public static void addPassiveAndFakeCouponCode(String couponName){
-    ADashboardPage aDashboardPage=new ADashboardPage();
-    ReusableMethods.clickAndSendkeys(aDashboardPage.adminAddCouponCodesCouponNameTextbox,couponName
-            +Keys.TAB +Keys.ARROW_RIGHT
-            +Keys.TAB +52);
+public static void addPassiveAndFakeCouponCode(String couponName) {
+    ADashboardPage aDashboardPage = new ADashboardPage();
+    ReusableMethods.clickAndSendkeys(aDashboardPage.adminAddCouponCodesCouponNameTextbox, couponName
+            + Keys.TAB + Keys.ARROW_RIGHT
+            + Keys.TAB + 52);
     ReusableMethods.wait(1);
     aDashboardPage.adminAddCouponCodesExpireAt.click();
 
@@ -416,6 +416,7 @@ public static void addPassiveAndFakeCouponCode(String couponName){
 
     aDashboardPage.adminAddCouponCodesDay15.click();
 }
+
 
 
 }
