@@ -1,5 +1,6 @@
 package pages;
 
+import com.sun.jna.Structure;
 import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -181,6 +182,25 @@ public class ADashboardPage {
     //admin kullanıcı profil ismi elementi
     @FindBy(xpath ="//button[@id='dropdownMenuButton1']")
     public WebElement kullaniciProfilIsimElementi;
+
+    //Osman Admin Dasboard sayfasında Front CMS  sekmesinin locateler'i
+    @FindBy(xpath = "//*[@ class ='nav-item active']")
+    public WebElement frontCmsElementi;
+
+    @FindBy(xpath = "(//input[@class='form-control'])[2]")
+    public WebElement frontCmsTitleElementi;
+
+    @FindBy(xpath = "(//input[@class='form-control'])[3]")
+    public WebElement frontCmsSubTitleElementi;
+
+    @FindBy(xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/features']")
+    public WebElement frontCmsFeaturesElementi;
+
+    @FindBy(xpath = "//*[@*='col-12 text-muted pagination-record ms-sm-3']")
+    public WebElement frontCmsFeaturesYaziElementi;
+
+    @FindBy(xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/about-us']")
+    public WebElement frontCmsAboutUsElementi;
 
 
 }
