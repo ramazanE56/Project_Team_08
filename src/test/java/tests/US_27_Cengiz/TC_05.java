@@ -1,4 +1,4 @@
-package tests.US_023_Cengiz;
+package tests.US_27_Cengiz;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,18 +10,18 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
-import java.io.IOException;
+public class TC_05 extends TestBaseRapor {
 
-public class TC_03 extends TestBaseRapor {
     SmartcardlinkPage smartcardlinkPage;
     LoginPage loginPage;
     ADashboardPage aDashboardPage;
 
-    @Test
-    public void cashPaymentsList() {
 
-        extentTest=extentReports.createTest("Manuel odeme bilgileri ",
-                "Cash Payments sayfası varsa manuel odeme bilgilerinin goruntulenebilir oldugu dogrulanmali");
+    @Test
+    public void affiliationTransactionsAction() {
+
+        extentTest = extentReports.createTest("Admin bilgileri ile Affiliation Transactions bilgilerine ulasilir ",
+                "Affiliation Transactions sayfası ortaklik bilgilerinin görüntülenebildigi doğrulanmali");
 
         //Admin olarak "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -33,7 +33,7 @@ public class TC_03 extends TestBaseRapor {
         extentTest.info("Sign In buttonuna tiklanir");
 
         //Email kutusuna admin email adresi giriniz
-        loginPage=new LoginPage();
+        loginPage = new LoginPage();
         loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("adminEmail2"));
         extentTest.info("Email kutusuna admin email adresi girilir");
 
@@ -46,37 +46,40 @@ public class TC_03 extends TestBaseRapor {
         extentTest.info("Login butonuna tiklanir");
 
         //Admin Dashboard sayfasına giriş yapıldığı doğrulanır.
-        aDashboardPage=new ADashboardPage();
+        aDashboardPage = new ADashboardPage();
 
         Assert.assertTrue(aDashboardPage.dashboardYaziElementi.isDisplayed());
         extentTest.info("Giriş yapildigini dogrulanir");
 
-        //Cash Payments butonun görünür olduğu doğrulanır
-        Assert.assertTrue(aDashboardPage.cashPaymentsButton.isDisplayed());
-        extentTest.info("Cash Payments butonun gorunur oldugu dogrulanir");
+        //Affiliation Transactions butonun görünür olduğu doğrulanr
+        Assert.assertTrue(aDashboardPage.affiliationTransactionsButton.isDisplayed());
+        extentTest.info("Affiliation Transactions butonun gorunur oldugu dogrulanir");
 
-        //Cash Payments butonu  tıklanır
-        aDashboardPage.cashPaymentsButton.click();
-        extentTest.info("Cash Payments butonu  tiklanir");
+        //Affiliation Transactions butonu  tıklanır
+        aDashboardPage.affiliationTransactionsButton.click();
+        extentTest.info("Affiliation Transactions butonu  tiklanir");
+
+
+        //Action yazisinin görüntülenebildigi dogrulanir.
+        Assert.assertTrue(aDashboardPage.actionYazisi.isDisplayed());
+        extentTest.info("Action yazisinin gorunur oldugu dogrulanir");
+
+        //Tablonun 1. satirindaki action sutunundaki göz (Eye) ikonuna tiklanir.
+        aDashboardPage.affiliationTransactionsActionEyeIkon.click();
+        extentTest.info("Tablonun 1. satirindaki action sutunundaki göz (Eye) ikonuna tiklanir");
+
         ReusableMethods.wait(1);
 
-        //Cash Payments yazisi görünür olduğu doğrulanır
-        Assert.assertTrue(aDashboardPage.cashPaymentsYazisi.isDisplayed());
-        extentTest.info("Cash Payments yazisi gorunur olduğu doğrulanir");
+        //Ortaklık bilgilerinin görüntülenebildiği doğrulanır.
+        Assert.assertTrue(aDashboardPage.affiliationTransactionsOrtaklikBilgileri.isDisplayed());
+        extentTest.info("Ortaklık bilgilerinin görüntülenebildiği dogrulanir");
 
-        //USER NAME basligi görünür olduğu doğrulanır
-        Assert.assertTrue(aDashboardPage.userNameYazisi.isDisplayed());
-        extentTest.info("USER NAME basligi gorunur oldugu dogrulanir");
-
-        //Yapılan manuel ödemelerin görüntülenebildiği test edilir
-
-        Assert.assertTrue(aDashboardPage.cashPaymentsListesi.isDisplayed());
-        extentTest.info("Yapılan manuel ödemelerin görüntülenebildiği test edilir");
-
-
-
-        //Sayfa kapatilir
+        //Sayfa kapatılır
         Driver.closeDriver();
         extentTest.info("Sayfa kapatilir.");
+
+
+
+
     }
 }

@@ -1,9 +1,7 @@
-package tests.US_023_Cengiz;
+package tests.US_27_Cengiz;
 
-import org.checkerframework.checker.units.qual.C;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.ADashboardPage;
 import pages.LoginPage;
 import pages.SmartcardlinkPage;
@@ -11,18 +9,17 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseRapor;
 
-public class TC_01 extends TestBaseRapor {
-
+public class TC_02 extends TestBaseRapor {
     SmartcardlinkPage smartcardlinkPage;
     LoginPage loginPage;
     ADashboardPage aDashboardPage;
 
 
     @Test
-    public void cashPaymentUrl (){
+    public void affiliationTransactionsAmount() {
 
-        extentTest=extentReports.createTest("Admin bilgileri ile Cash Payments sayfasına  Giriş ",
-                "Cash Payments sayfası URL'sinin https://qa.smartcardlink.com/sadmin/cashPayments oldugu doğrulanmali");
+        extentTest = extentReports.createTest("Admin bilgileri ile Affiliation Transactions bilgilerine ulasilir ",
+                "Affiliation Transactions sayfası ortaklik tutari bilgilerinin görüntülenebildigi doğrulanmali");
 
         //Admin olarak "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -34,7 +31,7 @@ public class TC_01 extends TestBaseRapor {
         extentTest.info("Sign In buttonuna tiklanir");
 
         //Email kutusuna admin email adresi giriniz
-        loginPage=new LoginPage();
+        loginPage = new LoginPage();
         loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("adminEmail2"));
         extentTest.info("Email kutusuna admin email adresi girilir");
 
@@ -48,36 +45,35 @@ public class TC_01 extends TestBaseRapor {
 
         //Admin Dashboard sayfasına giriş yapıldığı doğrulanır.
 
-        aDashboardPage=new ADashboardPage();
+        aDashboardPage = new ADashboardPage();
 
         Assert.assertTrue(aDashboardPage.dashboardYaziElementi.isDisplayed());
-        extentTest.info("Giriş yapildigini doğrulanir");
+        extentTest.info("Giriş yapildigini dogrulanir");
 
-        //Cash Payments butonun görünür olduğu doğrulanır
-        Assert.assertTrue(aDashboardPage.cashPaymentsButton.isDisplayed());
-        extentTest.info("Cash Payments butonun görünür olduğu doğrulanır");
+        //Affiliation Transactions butonun görünür olduğu doğrulanr
 
-        //Cash Payments butonu  tıklanır
-        aDashboardPage.cashPaymentsButton.click();
-        extentTest.info("Cash Payments butonu  tıklanır");
 
-        //Cash Payments sayfası URL'si (https://qa.smartcardlink.com/sadmin/cashPayments) doğrulanır
+        Assert.assertTrue(aDashboardPage.affiliationTransactionsButton.isDisplayed());
+        extentTest.info("Affiliation Transactions butonun gorunur oldugu dogrulanir");
 
-        String expectedCashPayUrl="https://qa.smartcardlink.com/sadmin/cashPayments";
-        String actualCashPayUrl= Driver.getDriver().getCurrentUrl();
+        //Affiliation Transactions butonu  tıklanır
+        aDashboardPage.affiliationTransactionsButton.click();
+        extentTest.info("Affiliation Transactions butonu  tiklanir");
 
-        Assert.assertEquals(actualCashPayUrl,expectedCashPayUrl);
-        extentTest.info("Cash Payments sayfası URL'si (https://qa.smartcardlink.com/sadmin/cashPayments) doğrulanır");
 
-        //Sayfa kapatilir
+        //Amount yazisinin görüntülenebildigi dogrulanir.
+        Assert.assertTrue(aDashboardPage.amountYazisi.isDisplayed());
+        extentTest.info("Amount yazisinin gorunur oldugu dogrulanir");
+
+        //Ortaklık tutarlarinin görüntülenebildiği doğrulanır.
+        Assert.assertTrue(aDashboardPage.affiliationTransactionsAmount.isDisplayed());
+        extentTest.info("Ortaklik tutarlarinin görüntülenebildigi dogrulanir");
+
+
+
+        //Sayfa kapatılır
         Driver.closeDriver();
         extentTest.info("Sayfa kapatilir.");
 
-
-
-
-
-
-
     }
-}
+    }
