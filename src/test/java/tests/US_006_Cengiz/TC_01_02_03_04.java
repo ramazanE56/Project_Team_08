@@ -49,6 +49,7 @@ public class TC_01_02_03_04 extends TestBaseRapor {
         extentTest.info("Giriş yapildigini doğrulanir");
 
         Driver.closeDriver();
+        extentTest.info("Sayfa kapatilir.");
     }
 
     @Test
@@ -84,6 +85,7 @@ public class TC_01_02_03_04 extends TestBaseRapor {
         extentTest.info("Giriş yapilamadigi doğrulanir");
 
         Driver.closeDriver();
+        extentTest.info("Sayfa kapatilir.");
     }
 
     @Test
@@ -119,6 +121,7 @@ public class TC_01_02_03_04 extends TestBaseRapor {
         extentTest.info("Giriş yapilamadigi doğrulanir");
 
         Driver.closeDriver();
+        extentTest.info("Sayfa kapatilir.");
     }
     @Test
     public void wrongEmailWrongPassword() {
@@ -156,6 +159,7 @@ public class TC_01_02_03_04 extends TestBaseRapor {
 
         //Sayfa kapatilir
         Driver.closeDriver();
+        extentTest.info("Sayfa kapatilir.");
     }
 
 }

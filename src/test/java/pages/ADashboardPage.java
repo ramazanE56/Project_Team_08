@@ -42,44 +42,55 @@ public class ADashboardPage {
     @FindBy (xpath = "//span[text()='Cash Payments']")
     public  WebElement cashPaymentsButton;
 
+    //Cash Payments  sayfasi ust taraftaki Cash Payments yazisi locate
     @FindBy(xpath = "//a[text()='Cash Payments']")
     public WebElement cashPaymentsYazisi;
 
+    //Cash Payments  sayfasi Payable Amount yazisi locate
     @FindBy (xpath = "//span[text()='Payable Amount']")
     public WebElement payableAmountYazisi;
 
-
+    //Cash Payments  sayfasi ödeme yapanlar tablosu locate
     @FindBy(xpath ="//tbody" )
     public WebElement cashPaymentsListesi;
 
-@FindBy (xpath = "//div[@class='text-muted ms-sm-3 pagination-record']")
+    //Cash Payments  sayfasi ödeme yapanlar sayisi locate
+    @FindBy (xpath = "//div[@class='text-muted ms-sm-3 pagination-record']")
     public WebElement cashPaymentsSayisi;
 
-@FindBy (xpath = "//span[text()='User Name']")
+    //Cash Payments  sayfasi User Name yazisi locate
+    @FindBy (xpath = "//span[text()='User Name']")
     public WebElement userNameYazisi;
 
-@FindBy(xpath = "//span[text()='Plan Name']")
+    //Cash Payments  sayfasi Plan Name  yazisi locate
+    @FindBy(xpath = "//span[text()='Plan Name']")
     public WebElement planNameYazisi;
 
+    //Cash Payments  sayfasi Plan Price  yazisi locate
     @FindBy(xpath = "//span[text()='Plan Price']")
     public WebElement planPriceYazisi;
 
-
-@FindBy (xpath = "//span[text()='Start Date']")
+    //Cash Payments  sayfasi Start Date  yazisi locate
+    @FindBy (xpath = "//span[text()='Start Date']")
     public WebElement startDateYazisi;
 
+    //Cash Payments  sayfasi End Date  yazisi locate
     @FindBy (xpath = "//span[text()='End Date']")
     public WebElement endDateYazisi;
 
+    //Cash Payments  sayfasi Attachment  yazisi locate
     @FindBy (xpath = "//tr/th[7]")
     public WebElement attachmentYazisi;
 
+    //Cash Payments  sayfasi Notes  yazisi locate
     @FindBy (xpath = "//tr/th[8]")
     public WebElement notesYazisi;
 
+    //Cash Payments  sayfasi Status  yazisi locate
     @FindBy (xpath = "//tr/th[9]")
     public WebElement statusYazisi;
 
+    //Cash Payments  sayfasi Siralama Butonu (asagi-yukari isareti) locate
     @FindBy(xpath = "(//span[@class='relative d-flex align-items-center'])[1]")
     public WebElement siralamaButonu;
 
@@ -182,6 +193,55 @@ public class ADashboardPage {
     @FindBy(xpath ="//button[@id='dropdownMenuButton1']")
     public WebElement kullaniciProfilIsimElementi;
 
+    // Admin Dasboard sayfasında Affiliation Transactions Butonu locate
+    @FindBy (xpath = "//span[text()='Affiliation Transactions']")
+    public  WebElement affiliationTransactionsButton;
+
+    //Affiliation Transactions sayfasinda üst taraftaki Affiliation Transactions yazisi locate
+    @FindBy (xpath = "//a[@class='nav-link p-0 active']")
+    public WebElement affiliationTransactionsYazisi;
+
+    //Affiliation Transactions sayfasinda User yazisi locate
+    @FindBy (xpath = "//span[text()='User']")
+    public  WebElement userYazisi;
+
+    //Affiliation Transactions sayfasinda Amount yazisi locate
+    @FindBy(xpath = "//span[text()='Amount']")
+    public WebElement amountYazisi;
+
+    //Affiliation Transactions sayfasinda Approval Status yazisi locate
+    @FindBy(xpath = "//span[text()='Approval Status']")
+    public WebElement approvalStatusYazisi;
+
+    //Affiliation Transactions sayfasinda Date yazisi locate
+    @FindBy(xpath = "//span[text()='Date']")
+    public WebElement dateYazisi;
+
+    //Affiliation Transactions sayfasinda Action yazisi locate
+    @FindBy(xpath = "//tr/th[5]")
+    public WebElement actionYazisi;
+
+    //Affiliation Transactions sayfasinda Ortaklık kullanıcıları locate
+    @FindBy (xpath = "//tbody/tr/td[1]")
+    public WebElement affiliationTransactionsUsers;
+
+    @FindBy (xpath = "//tbody/tr/td[2]")
+    public WebElement affiliationTransactionsAmount;
+
+    @FindBy (xpath = "//tbody/tr/td[3]")
+    public WebElement affiliationTransactionsApprovalStatus;
+
+
+    @FindBy (xpath = "//tbody/tr/td[4]")
+    public WebElement affiliationTransactionsDate;
+
+
+
+    @FindBy (xpath = "(//span[@id='showAffiliationWithdrawBtn'])[1]")
+    public WebElement affiliationTransactionsActionEyeIkon;
+
+    @FindBy (xpath = "//h5[@id='showAffiliationWithdrawModalBtn']")
+    public  WebElement affiliationTransactionsOrtaklikBilgileri;
 
 }
 
