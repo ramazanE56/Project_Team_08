@@ -22,7 +22,7 @@ Görüntülenebildiği doğrulanmalı.
  */
 
     @Test
-    public void AddCouponCode(){
+    public void AddCouponCodeTest(){
        //1-Browser açılır
        //2-https://qa.smartcardlink.com/ adresine gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));

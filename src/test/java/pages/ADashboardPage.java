@@ -365,5 +365,11 @@ public class ADashboardPage {
     //user Credential sayfasi hatali save yapinca gelen error uyarisi
     @FindBy (xpath = "//*[@class='toast toast-error']")
     public WebElement userCredential_saveError;
+
+    //admin Coupon Codes sayfasi ilk siradaki coupon Status buton elementi
+    @FindBy(xpath = "//tbody/tr[1]/td[5]")
+    public WebElement adminFirstCouponStatusButton;
+
+
 }
 

@@ -16,7 +16,7 @@ Coupon code ‘un bilgilerini görüntüleyebildiği
 Doğrulanmalı.
  */
     @Test
-    public void couponCodeContainsVisibility() {
+    public void couponCodeContainsVisibilityTest() {
         //1-Browser açılır
         //2-https://qa.smartcardlink.com/ adresine gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -38,7 +38,7 @@ Doğrulanmalı.
 
         //8-Olusturulan Coupon Name 'ini  Search textbox'ta aratılır.
         ReusableMethods.clickAndSendkeys(aDashboardPage.adminSearchTextbox,ConfigReader.getProperty("brFakeName"));
-        //9-CouponCode bilgilerinin görüntülenebildiği test edilir.
+        //9-ilk sıradaki Coupon 'un oluşturulan Coupon olduğu ve bilgilerinin görüntülenebildiğini test et.
         String expectedCouponName = ConfigReader.getProperty("brFakeName");
         String actualCouponName=aDashboardPage.adminFirstCouponName.getText();
 
