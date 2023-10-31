@@ -225,23 +225,30 @@ public class ADashboardPage {
     @FindBy (xpath = "//tbody/tr/td[1]")
     public WebElement affiliationTransactionsUsers;
 
+    //Affiliation Transactions sayfasinda Ortaklık miktari locate
     @FindBy (xpath = "//tbody/tr/td[2]")
     public WebElement affiliationTransactionsAmount;
 
+    //Affiliation Transactions sayfasinda Ortaklık onay durumu locate
     @FindBy (xpath = "//tbody/tr/td[3]")
     public WebElement affiliationTransactionsApprovalStatus;
 
-
+    //Affiliation Transactions sayfasinda tarihi locate
     @FindBy (xpath = "//tbody/tr/td[4]")
     public WebElement affiliationTransactionsDate;
 
 
-
+    //Affiliation Transactions sayfasinda Eye İkon locate
     @FindBy (xpath = "(//span[@id='showAffiliationWithdrawBtn'])[1]")
     public WebElement affiliationTransactionsActionEyeIkon;
 
+    //Affiliation Transactions sayfasinda Ortaklık bilgileri locate
     @FindBy (xpath = "//h5[@id='showAffiliationWithdrawModalBtn']")
     public  WebElement affiliationTransactionsOrtaklikBilgileri;
+
+    //Affiliation Transactions sayfasinda tum tablo bilgileri locate
+    @FindBy (xpath = "//tbody")
+    public  WebElement affiliationTransactionsTumTablo;
 
 }
 

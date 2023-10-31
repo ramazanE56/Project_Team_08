@@ -51,11 +51,11 @@ public class TC_01 extends TestBaseRapor {
         aDashboardPage=new ADashboardPage();
 
         Assert.assertTrue(aDashboardPage.dashboardYaziElementi.isDisplayed());
-        extentTest.info("Giriş yapildigini doğrulanir");
+        extentTest.pass("Giriş yapildigini doğrulanir");
 
         //Cash Payments butonun görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.cashPaymentsButton.isDisplayed());
-        extentTest.info("Cash Payments butonun görünür olduğu doğrulanır");
+        extentTest.pass("Cash Payments butonun görünür olduğu doğrulanır");
 
         //Cash Payments butonu  tıklanır
         aDashboardPage.cashPaymentsButton.click();
@@ -67,7 +67,7 @@ public class TC_01 extends TestBaseRapor {
         String actualCashPayUrl= Driver.getDriver().getCurrentUrl();
 
         Assert.assertEquals(actualCashPayUrl,expectedCashPayUrl);
-        extentTest.info("Cash Payments sayfası URL'si (https://qa.smartcardlink.com/sadmin/cashPayments) doğrulanır");
+        extentTest.pass("Cash Payments sayfası URL'si (https://qa.smartcardlink.com/sadmin/cashPayments) doğrulanır");
 
         //Sayfa kapatilir
         Driver.closeDriver();

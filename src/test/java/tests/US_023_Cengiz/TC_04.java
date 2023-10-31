@@ -48,11 +48,11 @@ public class TC_04 extends TestBaseRapor {
         aDashboardPage=new ADashboardPage();
 
         Assert.assertTrue(aDashboardPage.dashboardYaziElementi.isDisplayed());
-        extentTest.info("Giriş yapildigini dogrulanir");
+        extentTest.pass("Giriş yapildigini dogrulanir");
 
         //Cash Payments butonun görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.cashPaymentsButton.isDisplayed());
-        extentTest.info("Cash Payments butonun gorunur oldugu dogrulanir");
+        extentTest.pass("Cash Payments butonun gorunur oldugu dogrulanir");
 
         //Cash Payments butonu  tıklanır
         aDashboardPage.cashPaymentsButton.click();
@@ -62,13 +62,13 @@ public class TC_04 extends TestBaseRapor {
 
         //Cash Payments yazisi görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.cashPaymentsYazisi.isDisplayed());
-        extentTest.info("Cash Payments yazisi gorunur olduğu doğrulanir");
+        extentTest.pass("Cash Payments yazisi gorunur olduğu doğrulanir");
 
         //Yapılan manuel ödemelerin sayısının görüntülenebildiği test edilir
 
         Assert.assertTrue(aDashboardPage.cashPaymentsSayisi.isDisplayed());
-        extentTest.info("Yapılan manuel ödemelerin sayısının görüntülenebildiği test edilir");
-        System.out.println("Cash Payments Odeme Sayisi :\n "+ aDashboardPage.cashPaymentsSayisi.getText());
+        extentTest.pass("Yapılan manuel ödemelerin sayısının görüntülenebildiği test edilir");
+
 
         //Sayfa kapatilir
         Driver.closeDriver();

@@ -46,7 +46,7 @@ public class TC_01_02_03_04 extends TestBaseRapor {
         //Giriş yapildigini doğrulayiniz.
         aDashboardPage = new ADashboardPage();
         Assert.assertTrue(aDashboardPage.visitorDashboardYaziElementi.isDisplayed());
-        extentTest.info("Giriş yapildigini doğrulanir");
+        extentTest.pass("Giriş yapildigini doğrulanir");
 
         Driver.closeDriver();
         extentTest.info("Sayfa kapatilir.");
@@ -82,7 +82,7 @@ public class TC_01_02_03_04 extends TestBaseRapor {
         //Giriş yapılamadıgını doğrulayınız.(These credentials do not match our records.)
 
         Assert.assertTrue(loginPage.failedLoginText.isDisplayed());
-        extentTest.info("Giriş yapilamadigi doğrulanir");
+        extentTest.pass("Giriş yapilamadigi doğrulanir");
 
         Driver.closeDriver();
         extentTest.info("Sayfa kapatilir.");
@@ -118,7 +118,7 @@ public class TC_01_02_03_04 extends TestBaseRapor {
         //Giriş yapılamadıgını doğrulayınız.(These credentials do not match our records.)
 
         Assert.assertTrue(loginPage.failedLoginText.isDisplayed());
-        extentTest.info("Giriş yapilamadigi doğrulanir");
+        extentTest.pass("Giriş yapilamadigi doğrulanir");
 
         Driver.closeDriver();
         extentTest.info("Sayfa kapatilir.");
@@ -154,7 +154,7 @@ public class TC_01_02_03_04 extends TestBaseRapor {
         //Giriş yapılamadıgını doğrulayınız.(These credentials do not match our records.)
 
         Assert.assertTrue(loginPage.failedLoginText.isDisplayed());
-        extentTest.info("Giriş yapilamadigi doğrulanir (These credentials do not match our records.)");
+        extentTest.pass("Giriş yapilamadigi doğrulanir (These credentials do not match our records.)");
 
 
         //Sayfa kapatilir

@@ -7,6 +7,7 @@ import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class TC_01 extends TestBaseRapor {
@@ -50,13 +51,13 @@ public class TC_01 extends TestBaseRapor {
         aDashboardPage = new ADashboardPage();
 
         Assert.assertTrue(aDashboardPage.dashboardYaziElementi.isDisplayed());
-        extentTest.info("Giriş yapildigini dogrulanir");
+        extentTest.pass("Giriş yapildigini dogrulanir");
 
         //Affiliation Transactions butonun görünür olduğu doğrulanr
 
 
         Assert.assertTrue(aDashboardPage.affiliationTransactionsButton.isDisplayed());
-        extentTest.info("Affiliation Transactions butonun gorunur oldugu dogrulanir");
+        extentTest.pass("Affiliation Transactions butonun gorunur oldugu dogrulanir");
 
         //Affiliation Transactions butonu  tıklanır
         aDashboardPage.affiliationTransactionsButton.click();
@@ -64,15 +65,21 @@ public class TC_01 extends TestBaseRapor {
 
         //Ortaklık kullanıcıları sayfasi üstteki Affiliation Transactions yazisinin görünür olduğu doğrulanir
         Assert.assertTrue(aDashboardPage.affiliationTransactionsYazisi.isDisplayed());
-        extentTest.info("Affiliation Transactions yazisinin gorunur oldugu dogrulanir");
+        extentTest.pass("Affiliation Transactions yazisinin gorunur oldugu dogrulanir");
+
+        ReusableMethods.wait(1);
+
+        //Ortaklık kullanıcıları sayfasi  Affiliation Transactions tablosunun görünür olduğu doğrulanir
+        Assert.assertTrue(aDashboardPage.affiliationTransactionsTumTablo.isDisplayed());
+        extentTest.pass("Ortaklik tablosundaki tum görüntülenebildigi dogrulanir");
 
         //User yazisinin görüntülenebildigi dogrulanir.
         Assert.assertTrue(aDashboardPage.userYazisi.isDisplayed());
-        extentTest.info("User yazisinin gorunur oldugu dogrulanir");
+        extentTest.pass("User yazisinin gorunur oldugu dogrulanir");
 
         //Ortaklık kullanıcılarının görüntülenebildiği doğrulanır.
         Assert.assertTrue(aDashboardPage.affiliationTransactionsUsers.isDisplayed());
-        extentTest.info("Ortaklik kullanıcilarinin görüntülenebildigi dogrulanir");
+        extentTest.pass("Ortaklik kullanıcilarinin görüntülenebildigi dogrulanir");
 
 
 

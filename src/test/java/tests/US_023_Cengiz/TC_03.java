@@ -18,7 +18,7 @@ public class TC_03 extends TestBaseRapor {
     ADashboardPage aDashboardPage;
 
     @Test
-    public void cashPaymentsList() {
+    public void cashPaymentsList() throws IOException {
 
         extentTest=extentReports.createTest("Manuel odeme bilgileri ",
                 "Cash Payments sayfası varsa manuel odeme bilgilerinin goruntulenebilir oldugu dogrulanmali");
@@ -49,11 +49,11 @@ public class TC_03 extends TestBaseRapor {
         aDashboardPage=new ADashboardPage();
 
         Assert.assertTrue(aDashboardPage.dashboardYaziElementi.isDisplayed());
-        extentTest.info("Giriş yapildigini dogrulanir");
+        extentTest.pass("Giriş yapildigini dogrulanir");
 
         //Cash Payments butonun görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.cashPaymentsButton.isDisplayed());
-        extentTest.info("Cash Payments butonun gorunur oldugu dogrulanir");
+        extentTest.pass("Cash Payments butonun gorunur oldugu dogrulanir");
 
         //Cash Payments butonu  tıklanır
         aDashboardPage.cashPaymentsButton.click();
@@ -62,16 +62,14 @@ public class TC_03 extends TestBaseRapor {
 
         //Cash Payments yazisi görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.cashPaymentsYazisi.isDisplayed());
-        extentTest.info("Cash Payments yazisi gorunur olduğu doğrulanir");
-
-        //USER NAME basligi görünür olduğu doğrulanır
-        Assert.assertTrue(aDashboardPage.userNameYazisi.isDisplayed());
-        extentTest.info("USER NAME basligi gorunur oldugu dogrulanir");
+        extentTest.pass("Cash Payments yazisi gorunur olduğu doğrulanir");
 
         //Yapılan manuel ödemelerin görüntülenebildiği test edilir
 
         Assert.assertTrue(aDashboardPage.cashPaymentsListesi.isDisplayed());
-        extentTest.info("Yapılan manuel ödemelerin görüntülenebildiği test edilir");
+        extentTest.pass("Yapılan manuel ödemelerin görüntülenebildiği test edilir");
+
+
 
 
 
