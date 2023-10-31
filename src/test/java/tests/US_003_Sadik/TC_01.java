@@ -23,6 +23,7 @@ public class TC_01 extends TestBaseRapor {
         extentTest.info("Kullanici https://qa.smartcardlink.com anasayfaya gider");
 
         SmartcardlinkPage smartcardlinkPage= new SmartcardlinkPage();
+
         // 4-Get Started butonunun görünür olduğu doğrulanır.
         Assert.assertTrue(smartcardlinkPage.getStartedButonu.isDisplayed());
         extentTest.pass("get started butonunu görüntülenebilir");
