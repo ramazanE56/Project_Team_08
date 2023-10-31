@@ -243,6 +243,25 @@ public class ADashboardPage {
     @FindBy (xpath = "//h5[@id='showAffiliationWithdrawModalBtn']")
     public  WebElement affiliationTransactionsOrtaklikBilgileri;
 
+    //Osman Admin Dasboard sayfasında Front CMS  sekmesinin locateler'i
+    @FindBy(xpath = "//*[@ class ='nav-item active']")
+    public WebElement frontCmsElementi;
+
+    @FindBy(xpath = "(//input[@class='form-control'])[2]")
+    public WebElement frontCmsTitleElementi;
+
+    @FindBy(xpath = "(//input[@class='form-control'])[3]")
+    public WebElement frontCmsSubTitleElementi;
+
+    @FindBy(xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/features']")
+    public WebElement frontCmsFeaturesElementi;
+
+    @FindBy(xpath = "//*[@*='col-12 text-muted pagination-record ms-sm-3']")
+    public WebElement frontCmsFeaturesYaziElementi;
+
+    @FindBy(xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/about-us']")
+    public WebElement frontCmsAboutUsElementi;
+
     //admin yan menu elementi
     @FindBy(xpath = "//div[@class='aside-menu-container']")
     public WebElement adminMenu;
@@ -369,6 +388,7 @@ public class ADashboardPage {
     //admin Coupon Codes sayfasi ilk siradaki coupon Status buton elementi
     @FindBy(xpath = "//tbody/tr[1]/td[5]")
     public WebElement adminFirstCouponStatusButton;
+
 
 
 }
