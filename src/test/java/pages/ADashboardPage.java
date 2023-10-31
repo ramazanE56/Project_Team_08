@@ -485,5 +485,62 @@ public class ADashboardPage {
     public WebElement vcardsTrashElementi;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //****** sadık
+
+    //Subscribed User Plansda sayfasındaki search butonu
+    @FindBy (xpath = "//input[@type='search']")
+    public WebElement SubscribedPlanssearchButonu;
+
+    //Subscribed User Plansda sayfasındakiSecilen kullanıcı için View butonu
+    @FindBy (xpath = "(//a[@data-id='151'])[1]")
+    public WebElement seciliViewElementi;
+
+    //Subscribed User Plansda sayfasındaki Secilen kullanıcı için Edit butonu
+    @FindBy (xpath = "(//a[@data-id='151'])[2]")
+    public WebElement seciliEditElementi;
+
+    //Subscribed User Plansda sayfasındaki End Date  kutusu
+    @FindBy (xpath = "//input[@id='EndDate']")
+    public WebElement EndDateKutusu;
+
+    //Subscribed User Plansda sayfasındaki End Date'de yıl arttırma butonu
+    @FindBy (xpath = "//span[@class='arrowUp']")
+    public WebElement EndDateYilArttir;
+
+    //Subscribed User Plansda sayfasındaki End Date  ay seçme
+    @FindBy (xpath = "//select[@aria-label='Month']")
+    public WebElement EndDateAySEC  ;
+
+    //Subscribed User Plansda sayfasındaki End Date Gün seçme
+    @FindBy (xpath = "(//span[@class='flatpickr-day'])[15]")
+    public WebElement EndDateGun  ;
+
+    //Kullanıcı yeni End Date kaydetme butonu
+    @FindBy (xpath = "(//button[text()='Save'])[1]")  //button[@type='submit']
+    public WebElement  EndDateSave  ;
+
+    //Kullanıcı yeni End Date başarılı bir şekilde kaydedildi yazısı
+    @FindBy (xpath = "//div[@class='toast-message']")
+    public WebElement  DateDegistiSuccesfullyYazisi  ;
+
+
+
+
+
+
+
 }
 

@@ -41,4 +41,20 @@ LoginPage {
 
     @FindBy (xpath = "/html/body/div/div[2]/div[2]/div")
     public WebElement succesedElementi;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
