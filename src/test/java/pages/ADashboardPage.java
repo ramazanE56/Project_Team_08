@@ -389,6 +389,100 @@ public class ADashboardPage {
     @FindBy(xpath = "//tbody/tr[1]/td[5]")
     public WebElement adminFirstCouponStatusButton;
 
+//KAAN
+    // vcards edit elementleri
+
+
+    // dashboard sayfasindeki vcard elementi
+    @FindBy (xpath = "(//*[@class='aside-menu-title'])[2]")
+    public WebElement vcardsElementi;
+
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-pen-to-square'])[1]")
+    public WebElement editElementi;
+
+    @FindBy (xpath = "h1")
+    public WebElement editVcardsElementi;
+
+    @FindBy(xpath = "//div[@class='d-flex flex-column flex-root vh-100']")
+    public WebElement urlAliasElementi;
+
+    @FindBy (xpath = "//input[@placeholder=\"Enter VCard Name\"]")
+    public WebElement vcardsEditFirstNameElementi;
+
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-pen'])[1]")
+    public WebElement logoDegistirmeKalemElementi;
+
+    @FindBy (xpath = "//div[@class='iti__selected-flag'][1]")
+    public WebElement ulkeTlf1Elementi;
+
+    @FindBy (xpath = "//div[@class='iti__selected-flag'][2]")
+    public WebElement ulkeTlf2Elementi;
+
+    @FindBy (xpath = "//*[@id='location_url']")
+    public WebElement location_UrlElementi;
+
+    @FindBy (xpath = "//*[@id=\"select2-default_language-container\"]")
+    public WebElement defLanEngElementi;
+
+    @FindBy (xpath = "(//span[@class='select2-selection__rendered'])[1]")
+    public WebElement defLanTrElementi;
+
+    @FindBy (xpath = "//*[@id=\"languageEnable\"]")
+    public WebElement languageEnableElementi;
+
+    @FindBy (xpath = "//*[@id=\"enableEnquiryForm\"]")
+    public WebElement enableEnquiryFormElementi;
+
+    @FindBy (xpath = "//input[@id='enableDownloadQrCode']")
+    public WebElement enableDownloadQrCodeElementi;
+
+    @FindBy (xpath = "//*[@class='form-range w-50 mx-2']")
+    public WebElement qrCodeDownloadSizeElementi;
+
+    @FindBy (xpath = "//input[@id='vcardSaveBtn']")
+    public WebElement vcardSaveBtnElementi;
+
+    @FindBy (xpath = "//*[@class='alert alert-success']")
+    public WebElement vcardsEditSuccesfullSaveElementi;
+
+    @FindBy (xpath = "//*[@class='btn btn-outline-primary float-end']")
+    public WebElement vcardsEditBackElementi;
+
+    @FindBy (xpath = "(//*[@class='mb-1 text-decoration-none fs-6'])[1]")
+    public WebElement vcardNameElementi;
+
+    @FindBy (xpath = "//*[@id=\"vcardUrl200\"]")
+    public WebElement vcardPreviewElementi;
+
+    @FindBy(xpath = "//h4[1]")
+    public WebElement previewYenisayfaElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[16]")
+    public WebElement previewUrlLinkiKopyalamaElementi;
+
+    @FindBy (xpath = "//div[@class='toast-message']")
+    public WebElement previewUrlLinkiKopyalamaSuccessElementi;
+
+    @FindBy (xpath = "//*[@class='svg-inline--fa fa-chart-line fs-2']")
+    public WebElement vcardsEditStatsElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[18]")
+    public WebElement vcardsEditQRCodeElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[19]")
+    public WebElement vcardsEditDownloadElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[20]")
+    public WebElement vcardsEnquiresElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[21]")
+    public WebElement vcardsCopyCardElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[22]")
+    public WebElement vcardsEditIconElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[23]")
+    public WebElement vcardsTrashElementi;
 
 
 }

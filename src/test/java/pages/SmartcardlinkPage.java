@@ -46,6 +46,42 @@ public class SmartcardlinkPage {
     @FindBy(xpath = "//div[@*='bg-white rounded-15 shadow-md width-540 px-5 px-sm-7 py-10 mx-auto']")
     public WebElement signInYaziElementi;
 
+    //KAAN
+
+    // Footer Elementleri
+    @FindBy (xpath = "//*[@class= 'features-section bg-light pb-60 pt-80']")
+    public WebElement footerElementi;
+
+
+    @FindBy (xpath = "( //div[@class='col-4'])[1]")
+    public WebElement footerCopyrightElementi;
+
+    @FindBy (xpath = "//*[@title='Facebook']")
+    public WebElement footerFacebookElementi;
+
+    @FindBy (xpath = "//*[@title='Twitter']")
+    public WebElement footerTwitterElementi;
+
+
+    @FindBy (xpath = "//*[@title='Instagram']")
+    public WebElement footerInstagramElementi;
+
+    @FindBy (xpath = "//*[@title='Linkedin']")
+    public WebElement footerLinkedinElementi;
+
+    @FindBy (xpath = "//*[@title='Pinterest']")
+    public WebElement footerPinterestElementi;
+
+    @FindBy (xpath = "(//*[@target='_blank'])[6]")
+    public WebElement footerTermsConditionsElementi;
+
+    @FindBy (xpath = "(//*[@target='_blank'])[7]")
+    public WebElement footerPrivacyPolicyElementi;
+
+    @FindBy (xpath = "(//*[@target='_blank'])[8]")
+    public WebElement footerFAQElementi;
+
+
 
 
 
