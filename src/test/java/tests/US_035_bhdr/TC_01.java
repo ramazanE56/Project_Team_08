@@ -30,12 +30,16 @@ public class TC_01 {
         //6.login butonua basılır
         loginPage.loginElementi.click();
         //7.Search arama butonu click edilir.Front cms click edilir.
-        ADashboardPage aDashboardPage=new ADashboardPage();
-        aDashboardPage.searchFrontButonu.click();
-        actions.click(aDashboardPage.searchFrontButonu).sendKeys(Keys.DOWN).perform();
-        ReusableMethods.wait(5);
+       // ADashboardPage aDashboardPage=new ADashboardPage();
+        //aDashboardPage.searchFrontButonu.click();
+       // actions.click(aDashboardPage.searchFrontButonu).sendKeys(Keys.DOWN).perform();
+       // ReusableMethods.wait(5);
+       // aDashboardPage.frontCmsButonuElementi.click();
+        //ReusableMethods.wait(5);
+        ADashboardPage aDashboardPage = new ADashboardPage();
+        ReusableMethods.clickClearSendkeys(aDashboardPage.adminSearchTextbox, "" + Keys.TAB + Keys.TAB + Keys.PAGE_DOWN);
         aDashboardPage.frontCmsButonuElementi.click();
-        ReusableMethods.wait(5);
+
 
         //8.Testimonials butonu click edilir.
         aDashboardPage.testimonialsButonElementi.click();
