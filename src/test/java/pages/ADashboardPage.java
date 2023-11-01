@@ -182,6 +182,41 @@ public class ADashboardPage {
     @FindBy(xpath ="//button[@id='dropdownMenuButton1']")
     public WebElement kullaniciProfilIsimElementi;
 
+    //dashboard sayfasındaki VCards butonu elementi
+    @FindBy(xpath = "//*[@class=\"svg-inline--fa fa-id-card\"]")
+    public WebElement vCardsElementi;
+        ////a[@class="nav-link d-flex align-items-center py-3"]
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[3]")
+    public WebElement enquiriesElementi;
+
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[4]")
+    public WebElement appointmentsElementi;
+
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[5]")
+    public WebElement virtualBackgroundsElementi;
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[6]")
+    public WebElement settingsElementi;
+    //Vcard butonu altındaki elementkerin locateleri
+    @FindBy(xpath = "(//*[@class=\"svg-inline--fa fa-chart-line fs-2\"])[1]")
+    public WebElement statsAltindakiButonElementi;
+
+    @FindBy(xpath = "//input[@class=\"form-control ps-8\"]")
+    public WebElement vCardSearchButonuElementi;
+    @FindBy(xpath = "(//div[@class=\"d-flex align-items-center\"])[2]")
+    public WebElement userNameButonuElementi;
+    @FindBy(xpath = "(//div[@class=\"bg-overlay\"])[1]")
+    public WebElement searchFrontButonu;
+    @FindBy(xpath = "((//a[@class=\"nav-link d-flex align-items-center py-3\"])[16]")
+    public WebElement frontCmsButonuElementi;
+
+    @FindBy(xpath = "//a[@class=\"nav-link p-0 active\"]")
+    public WebElement testimonialsButonElementi;
+    @FindBy(xpath = "/(//*[@class=\"justify-content-center d-flex\"])[1]")
+    public WebElement actionButonElementi;
+
+
+
+
 
 }
 
