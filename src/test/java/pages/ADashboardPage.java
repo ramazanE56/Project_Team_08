@@ -104,7 +104,7 @@ public class ADashboardPage {
 
     //Admin Dasboard sayfasında üyelik işlemlerinin görüldüğü locate
     @FindBy (xpath = "(//span[@class='aside-menu-title'])[10]")
-    public WebElement uyelikİslemleriYaziElementi;
+    public WebElement uyelikislemleriYaziElementi;
 
     //Admin Dasboard sayfasında üyelik onay durumunun görüldüğü locate
     @FindBy (xpath = "(//*[@class='svg-inline--fa fa-eye text-info'])[1]")
@@ -365,5 +365,109 @@ public class ADashboardPage {
     //user Credential sayfasi hatali save yapinca gelen error uyarisi
     @FindBy (xpath = "//*[@class='toast toast-error']")
     public WebElement userCredential_saveError;
+
+    @FindBy (xpath = "//span[text()='VCards']")
+    public WebElement dashboardVCardsElementi;
+
+    @FindBy (xpath = "//a[text()='New VCard']")
+    public WebElement dashboardNewVcardButonu;
+
+    @FindBy (xpath = "//button[@id='generate-url-alias']")
+    public WebElement newVCardUrlAliasGenerateButonu;
+
+    @FindBy (xpath = "//input[@placeholder='Enter VCard Name']")
+    public WebElement newVCardNameKutusu;
+
+    @FindBy (xpath = "//input[@placeholder='Enter Occupation']")
+    public WebElement newVCardOccupationKutusu;
+
+    @FindBy (xpath = "//div[@class='ql-editor ql-blank']")
+    public WebElement newVCardDescriptionKutusu;
+
+    @FindBy (xpath = "//input[@id='vcardSaveBtn']")
+    public WebElement newVCardSaveButonu;
+
+    @FindBy (xpath = "//div[@role='alert']")
+    public WebElement vcardCreatedSuccesfullyAlerti;
+
+    @FindBy (xpath = "//h2[@class='fs-1-xxl fw-bolder text-white']")
+    public WebElement totalActiveVCardSayisiElementi;
+
+    @FindBy (xpath = "//button[@class='btn px-2 text-primary fs-2 user-edit-btn copy-clipboard'][1]")
+    public WebElement vCardCopyButonu;
+
+    @FindBy (xpath = "//*[@data-icon='chart-line']")
+    public WebElement vcardAnalyticsButonu;
+
+    @FindBy (xpath = "//*[@data-icon='chart-line']")
+    public WebElement vCardStatsButonu;
+
+    @FindBy (xpath = "//div[@class='d-md-flex align-items-center justify-content-between mb-5']")
+    public WebElement vCardAnalyticsSayfasi;
+
+    @FindBy (xpath = "//*[@*='checkbox']")
+    public WebElement vCardCheckboxButonu;
+
+    @FindBy (xpath="//div[@class='toast-progress']")
+    public WebElement vCardStatusUpdatedAlerti;
+
+    @FindBy (xpath = "//a[text()='Back']")
+    public WebElement vCardBackButonu;
+
+    @FindBy (xpath = "//a[@title='QR Code']")
+    public WebElement vCardQRCodeDownloadButonu;
+
+    @FindBy (xpath = "//a[@title='Download VCard']")
+    public WebElement vCardDownloadButonu;
+
+    @FindBy (xpath = "//a[@title='Duplicate VCard']")
+    public WebElement vCardDublicateButonu;
+
+    @FindBy (xpath = "//button[text()='Yes']")
+    public WebElement vCardDuplicateYesButonu;
+
+    @FindBy (xpath = "//a[@class='text-decoration-none fs-6'][1]")
+    public WebElement vCardDublicateTestLinki;
+
+    @FindBy (xpath = "//a[@title='Edit']")
+    public WebElement vCardEditButonu;
+
+    @FindBy (xpath = "//h1[text()='Edit VCard']")
+    public WebElement vCardEditSayfasiElementi;
+
+    @FindBy (xpath = "//a[@title='Delete']")
+    public WebElement vCardDeleteButonu;
+
+    @FindBy (xpath = "//button[text()='Yes, Delete!']")
+    public WebElement vCardYesDeleteButonu;
+
+    @FindBy (xpath = "//div[@class='toast-message']")
+    public WebElement vCardSuccessCopied;
+
+    @FindBy (xpath = "//span[text()='Appointments']")
+    public WebElement dashboardAppointmentsElementi;
+
+    @FindBy (xpath = "//a[@class='nav-link p-0 active']")
+    public WebElement dashboardAppointmentsSayfasi;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 

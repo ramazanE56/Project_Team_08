@@ -30,7 +30,7 @@ public class TC_01 {
             +Keys.ENTER);
     //4-User Dashboard sayfasının görünür olduğunu test edin.
     ADashboardPage aDashboardPage=new ADashboardPage();
-    Assert.assertTrue(aDashboardPage.visitorDashboard.isDisplayed());
+    Assert.assertTrue(aDashboardPage.visitorDashboardYaziElementi.isDisplayed());
     //5-Sayfa kapatılır.
     Driver.closeDriver();
 
