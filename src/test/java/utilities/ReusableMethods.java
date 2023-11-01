@@ -3,6 +3,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import pages.ADashboardPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -386,4 +387,36 @@ public class ReusableMethods {
     public static void waitAndClickLocationText(WebElement element, String value) {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
     }
+
+  public static void makeTheWebElementIsSelected(WebElement webElement){
+  if (!webElement.isSelected()){
+      webElement.click();
+  }
+    }
+    public static void clickClearSendkeys(WebElement webElement,String sendKeys){
+        webElement.click();
+        webElement.clear();
+        webElement.sendKeys(sendKeys);
+    }
+    public static void clickAndSendkeys(WebElement webElement,String sendKeys){
+        webElement.click();
+        webElement.sendKeys(sendKeys);
+    }
+public static void addPassiveAndFakeCouponCode(String couponName) {
+    ADashboardPage aDashboardPage = new ADashboardPage();
+    ReusableMethods.clickAndSendkeys(aDashboardPage.adminAddCouponCodesCouponNameTextbox, couponName
+            + Keys.TAB + Keys.ARROW_RIGHT
+            + Keys.TAB + 52);
+    ReusableMethods.wait(1);
+    aDashboardPage.adminAddCouponCodesExpireAt.click();
+
+    aDashboardPage.adminAddCouponCodesExpireAtRightArrow.click();
+    ReusableMethods.wait(1);
+
+
+    aDashboardPage.adminAddCouponCodesDay15.click();
+}
+
+
+
 }
