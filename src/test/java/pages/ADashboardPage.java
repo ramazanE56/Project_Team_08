@@ -4,6 +4,7 @@ import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 import utilities.Driver;
 
 import java.util.List;
@@ -36,6 +37,30 @@ public class ADashboardPage {
     //Admin Dasboard sayfasında üstteki Dashboard yazısının locate'i
     @FindBy(xpath = "//a[@class='nav-link p-0 active']")
     public WebElement dashboardYaziElementi;
+
+    @FindBy (xpath = "(//*[text()='Languages'])[1]")
+    public WebElement dashboardLanguages;
+    @FindBy(xpath = "//div[@class='col-12 text-muted pagination-record ms-sm-3']")
+    public WebElement languagesYaziElementi;
+
+    @FindBy(xpath = "(//span[text()='Withdraw Transactions'])[1]")
+    public WebElement withdrawElementi;
+
+    @FindBy(xpath = "(//div[@class='d-flex align-items-center'])[2]")
+    public WebElement paidUsers;
+
+    @FindBy(xpath = "(//span[@class='badge bg-success me-2'])[1]")
+    public WebElement amountElementi;
+
+    @FindBy(xpath = "(//td[@class='whitespace-nowrap px-3 py-2 md:px-6 md:py-4 text-sm leading-5 text-gray-900 dark:text-white'])[3]")
+    public WebElement paymentElementi;
+
+    @FindBy(xpath = "(//td[@class='whitespace-nowrap px-3 py-2 md:px-6 md:py-4 text-sm leading-5 text-gray-900 dark:text-white'])[4]")
+    public WebElement dateElementi;
+
+
+    @FindBy(xpath = "(//tbody/tr)[1]")
+    public WebElement webTableIlkSatirElementi;
 
 
     //Admin Dashboard sayfasi sol taraftaki Cash Payments butonunun locate'i
@@ -391,10 +416,208 @@ public class ADashboardPage {
     public WebElement userCredential_saveError;
 
     //admin Coupon Codes sayfasi ilk siradaki coupon Status buton elementi
-    @FindBy(xpath = "//tbody/tr[1]/td[5]")
+    @FindBy(xpath = "(//input[@id='changeCouponStatus'])[1]")
     public WebElement adminFirstCouponStatusButton;
 
 
+    // admin Coupon Codes sayfasi search textbox elementi
+    @FindBy (xpath = "//input[@class='form-control ps-8']")
+    public WebElement adminCouponSearchTextbox;
+
+//KAAN
+    // vcards edit elementleri
+
+
+    // dashboard sayfasindeki vcard elementi
+    @FindBy (xpath = "(//*[@class='aside-menu-title'])[2]")
+    public WebElement vcardsElementi;
+
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-pen-to-square'])[1]")
+    public WebElement editElementi;
+
+    @FindBy (xpath = "h1")
+    public WebElement editVcardsElementi;
+
+    @FindBy(xpath = "//div[@class='d-flex flex-column flex-root vh-100']")
+    public WebElement urlAliasElementi;
+
+    @FindBy (xpath = "//input[@placeholder=\"Enter VCard Name\"]")
+    public WebElement vcardsEditFirstNameElementi;
+
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-pen'])[1]")
+    public WebElement logoDegistirmeKalemElementi;
+
+    @FindBy (xpath = "//div[@class='iti__selected-flag'][1]")
+    public WebElement ulkeTlf1Elementi;
+
+    @FindBy (xpath = "//div[@class='iti__selected-flag'][2]")
+    public WebElement ulkeTlf2Elementi;
+
+    @FindBy (xpath = "//*[@id='location_url']")
+    public WebElement location_UrlElementi;
+
+    @FindBy (xpath = "//*[@id=\"select2-default_language-container\"]")
+    public WebElement defLanEngElementi;
+
+    @FindBy (xpath = "(//span[@class='select2-selection__rendered'])[1]")
+    public WebElement defLanTrElementi;
+
+    @FindBy (xpath = "//*[@id=\"languageEnable\"]")
+    public WebElement languageEnableElementi;
+
+    @FindBy (xpath = "//*[@id=\"enableEnquiryForm\"]")
+    public WebElement enableEnquiryFormElementi;
+
+    @FindBy (xpath = "//input[@id='enableDownloadQrCode']")
+    public WebElement enableDownloadQrCodeElementi;
+
+    @FindBy (xpath = "//*[@class='form-range w-50 mx-2']")
+    public WebElement qrCodeDownloadSizeElementi;
+
+    @FindBy (xpath = "//input[@id='vcardSaveBtn']")
+    public WebElement vcardSaveBtnElementi;
+
+    @FindBy (xpath = "//*[@class='alert alert-success']")
+    public WebElement vcardsEditSuccesfullSaveElementi;
+
+    @FindBy (xpath = "//*[@class='btn btn-outline-primary float-end']")
+    public WebElement vcardsEditBackElementi;
+
+    @FindBy (xpath = "(//*[@class='mb-1 text-decoration-none fs-6'])[1]")
+    public WebElement vcardNameElementi;
+
+    @FindBy (xpath = "//*[@id=\"vcardUrl200\"]")
+    public WebElement vcardPreviewElementi;
+
+    @FindBy(xpath = "//h4[1]")
+    public WebElement previewYenisayfaElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[16]")
+    public WebElement previewUrlLinkiKopyalamaElementi;
+
+    @FindBy (xpath = "//div[@class='toast-message']")
+    public WebElement previewUrlLinkiKopyalamaSuccessElementi;
+
+    @FindBy (xpath = "//*[@class='svg-inline--fa fa-chart-line fs-2']")
+    public WebElement vcardsEditStatsElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[18]")
+    public WebElement vcardsEditQRCodeElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[19]")
+    public WebElement vcardsEditDownloadElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[20]")
+    public WebElement vcardsEnquiresElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[21]")
+    public WebElement vcardsCopyCardElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[22]")
+    public WebElement vcardsEditIconElementi;
+
+    @FindBy (xpath = "(//*[@fill='currentColor'])[23]")
+    public WebElement vcardsTrashElementi;
+
+
+
+
+    //****** sadık
+
+    //Subscribed User Plansda sayfasındaki search butonu
+    @FindBy (xpath = "//input[@type='search']")
+    public WebElement SubscribedPlanssearchButonu;
+
+    //Subscribed User Plansda sayfasındakiSecilen kullanıcı için View butonu
+    @FindBy (xpath = "(//a[@data-id='151'])[1]")
+    public WebElement seciliViewElementi;
+
+    //Subscribed User Plansda sayfasındaki Secilen kullanıcı için Edit butonu
+    @FindBy (xpath = "(//a[@data-id='151'])[2]")
+    public WebElement seciliEditElementi;
+
+    //Subscribed User Plansda sayfasındaki End Date  kutusu
+    @FindBy (xpath = "//input[@id='EndDate']")
+    public WebElement EndDateKutusu;
+
+    //Subscribed User Plansda sayfasındaki End Date'de yıl arttırma butonu
+    @FindBy (xpath = "//span[@class='arrowUp']")
+    public WebElement EndDateYilArttir;
+
+    //Subscribed User Plansda sayfasındaki End Date  ay seçme
+    @FindBy (xpath = "//select[@aria-label='Month']")
+    public WebElement EndDateAySEC  ;
+
+    //Subscribed User Plansda sayfasındaki End Date Gün seçme
+    @FindBy (xpath = "(//span[@class='flatpickr-day'])[15]")
+    public WebElement EndDateGun  ;
+
+    //Kullanıcı yeni End Date kaydetme butonu
+    @FindBy (xpath = "(//button[text()='Save'])[1]")  //button[@type='submit']
+    public WebElement  EndDateSave  ;
+
+    //Kullanıcı yeni End Date başarılı bir şekilde kaydedildi yazısı
+    @FindBy (xpath = "//div[@class='toast-message']")
+    public WebElement  DateDegistiSuccesfullyYazisi  ;
+
+
+
+
+
+
+
+
+    // admin Coupon Codes sayfasi ilk sıradaki coupon edit kalem butonu elementi
+    @FindBy(xpath = "(//a[@class='btn px-1 text-info fs-3 edit-coupon-code'])[1]")
+    public WebElement adminFirstCouponEditButton;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası couponName textbox elementi
+    @FindBy(xpath ="//input[@id='editCouponName']")
+    public WebElement adminEditCouponNameTextbox;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası save button elementi
+    @FindBy(xpath = "//button[@id='editCouponCodeSaveBtn']")
+    public WebElement adminEditCouponSaveButton;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası Status button elementi
+    @FindBy(xpath = "//input[@id='editCouponStatus']")
+    public WebElement adminEditCouponStatusButton;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası Status button elementi
+    @FindBy(xpath = "//input[@id='couponStatus']")
+    public WebElement adminAddCouponStatusButton;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası Expire At elementi (//input[@*='YYYY-MM-DD'])[2]
+    @FindBy(xpath = "//input[@id='editCouponExpireAt']")
+    public WebElement adminEditCouponExpireAt;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası Expire At deki rightArrow elementi
+    @FindBy(xpath = "(//span[@class='flatpickr-next-month'])[2]")
+    public WebElement adminEditCouponExpireAtRightArrow;
+
+    //admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası Expire At deki gün elementi
+    @FindBy(xpath = "(//span[@class='flatpickr-day'])[35]")
+    public WebElement adminEditCouponCodesDay;
+
+    //admin Coupon Codes sayfasi, add coupon codes deki  expireat  takviminde sonraki ayın ilk günü elementi
+    @FindBy(xpath = "(//span[@*='flatpickr-day nextMonthDay'])[2]")
+    public WebElement adminAddCouponCodesNextMountSecondDay;
+
+    // admin Coupon Codes sayfasi ilk sıradaki coupon Delete butonu elementi
+    @FindBy(xpath = "(//a[@class='btn px-1 text-danger fs-3 delete-coupon-code'])[1]")
+    public WebElement adminFirstCouponDeleteButton;
+
+    // admin Coupon Codes sayfasi  coupon Delete deki Confirm butonu elementi
+    @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
+    public WebElement adminCouponDeleteConfirmButton;
+
+    // admin Coupon Codes sayfasi  coupon delet yapilinca Deleted yazisi  elementi
+    @FindBy(xpath = "//div[@class='swal-title']")
+    public WebElement adminCouponDeletedAlert;
+
+    // admin Coupon Codes sayfasi  coupon delet yapilinca Deleted alert OK buton  elementi
+    @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
+    public WebElement adminCouponDeletedAlertOkButton;
 
 
 }
