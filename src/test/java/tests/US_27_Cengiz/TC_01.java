@@ -10,6 +10,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
+import java.io.IOException;
+
 public class TC_01 extends TestBaseRapor {
 
 
@@ -19,7 +21,7 @@ public class TC_01 extends TestBaseRapor {
 
 
     @Test
-    public void affiliationTransactionsUser() {
+    public void affiliationTransactionsUser() throws IOException {
 
         extentTest = extentReports.createTest("Admin bilgileri ile Affiliation Transactions bilgilerine ulasilir ",
                 "Affiliation Transactions sayfası ortaklik kullanici bilgilerinin görüntülenebildigi doğrulanmali");
@@ -81,6 +83,9 @@ public class TC_01 extends TestBaseRapor {
         Assert.assertTrue(aDashboardPage.affiliationTransactionsUsers.isDisplayed());
         extentTest.pass("Ortaklik kullanıcilarinin görüntülenebildigi dogrulanir");
 
+        //Ortaklik kullanıcilarinin fotoğrafi cekilir
+        ReusableMethods.getScreenshot("Ortaklik kullanicilari");
+        extentTest.info("Ortaklik kullanıcilarinin fotoğrafi cekilir");
 
 
         //Sayfa kapatilir

@@ -9,7 +9,10 @@ import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
+
+import java.io.IOException;
 
 public class TC_01 extends TestBaseRapor {
 

@@ -10,6 +10,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
+import java.io.IOException;
+
 public class TC_04 extends TestBaseRapor {
     SmartcardlinkPage smartcardlinkPage;
     LoginPage loginPage;
@@ -17,7 +19,7 @@ public class TC_04 extends TestBaseRapor {
 
 
     @Test
-    public void affiliationTransactionsDate() {
+    public void affiliationTransactionsDate() throws IOException {
 
         extentTest = extentReports.createTest("Admin bilgileri ile Affiliation Transactions bilgilerine ulasilir ",
                 "Affiliation Transactions sayfası ortaklik tarihi bilgilerinin görüntülenebildigi doğrulanmali");
@@ -72,9 +74,13 @@ public class TC_04 extends TestBaseRapor {
         Assert.assertTrue(aDashboardPage.dateYazisi.isDisplayed());
         extentTest.pass("Date yazisinin gorunur oldugu dogrulanir");
 
-        //Ortaklık onay durumunun görüntülenebildiği dogrulanir.
+        //Ortaklık tarihinin görüntülenebildiği dogrulanir.
         Assert.assertTrue(aDashboardPage.affiliationTransactionsDate.isDisplayed());
         extentTest.pass("Ortaklik tarihinin görüntülenebildigi dogrulanir");
+
+        //Ortaklik tarihinin fotoğrafi cekilir
+        ReusableMethods.getScreenshot("Ortaklik tarihi durumu");
+        extentTest.info("Ortaklik tarihinin fotoğrafi cekilir");
 
 
         //Sayfa kapatılır

@@ -10,6 +10,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
+import java.io.IOException;
+
 public class TC_05 extends TestBaseRapor {
 
     SmartcardlinkPage smartcardlinkPage;
@@ -18,7 +20,7 @@ public class TC_05 extends TestBaseRapor {
 
 
     @Test
-    public void affiliationTransactionsAction() {
+    public void affiliationTransactionsAction() throws IOException {
 
         extentTest = extentReports.createTest("Admin bilgileri ile Affiliation Transactions bilgilerine ulasilir ",
                 "Affiliation Transactions sayfası ortaklik bilgilerinin görüntülenebildigi doğrulanmali");
@@ -78,6 +80,10 @@ public class TC_05 extends TestBaseRapor {
         //Ortaklık bilgilerinin görüntülenebildiği doğrulanır.
         Assert.assertTrue(aDashboardPage.affiliationTransactionsOrtaklikBilgileri.isDisplayed());
         extentTest.pass("Ortaklık bilgilerinin görüntülenebildiği dogrulanir");
+
+        //Ortaklik bilgilerinin fotoğrafi cekilir
+        ReusableMethods.getScreenshot("Ortaklik bilgilerin durumu");
+        extentTest.info("Ortaklik bilgilerinin fotoğrafi cekilir");
 
         //Sayfa kapatılır
         Driver.closeDriver();

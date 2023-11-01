@@ -1,6 +1,8 @@
 package tests.US_023_Cengiz;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ADashboardPage;
@@ -11,6 +13,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +22,10 @@ public class TC_02 extends TestBaseRapor {
     LoginPage loginPage;
     ADashboardPage aDashboardPage;
     @Test
-    public void cashPaymentsTableElements(){
+    public void cashPayments() throws IOException {
 
-        extentTest=extentReports.createTest("Cash Payments sayfasi odeme tablo bilgileri ",
-                "Cash Payments sayfası tablo basliklarinin görünür oldugu dogrulanmali");
+        extentTest=extentReports.createTest("Manuel odeme  bilgileri ve manuel odeme sayilari ",
+                "Cash Payments sayfası manuel odeme  bilgileri ve manuel odeme sayilarinin görünür oldugu dogrulanmali");
 
         //Admin olarak "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -105,6 +108,30 @@ public class TC_02 extends TestBaseRapor {
         //Sirala butonu(Asagi-yukari oklari) görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.siralamaButonu.isDisplayed());
         extentTest.pass("Sirala butonu(Asagi-yukari oklari) gorunur oldugu dogrulanir");
+
+        //Yapılan manuel ödemelerin görüntülenebildiği test edilir
+
+        Assert.assertTrue(aDashboardPage.cashPaymentsListesi.isDisplayed());
+        extentTest.pass("Yapılan manuel ödemelerin görüntülenebildiği test edilir");
+
+        //Yapilan manuel odemelerin fotoğrafi cekilir
+        ReusableMethods.getScreenshot("Manuel odeme bilgileri");
+        extentTest.info("Yapilan manuel odemelerin fotoğrafi cekilir");
+
+        //Yapılan manuel ödemelerin sayısının görüntülenebildiği test edilir
+
+        Assert.assertTrue(aDashboardPage.cashPaymentsSayisi.isDisplayed());
+        extentTest.pass("Yapılan manuel ödemelerin sayisinin görüntülenebildiği test edilir");
+
+
+        //Yapilan manuel odemelerin sayisinin fotoğrafi cekilir
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+
+        ReusableMethods.wait(2);
+
+        ReusableMethods.getScreenshot("Manuel odeme  sayisi");
+        extentTest.info("Yapilan manuel odemele sayisinin fotoğrafi cekilir");
 
 
         //Sayfa kapatilir
