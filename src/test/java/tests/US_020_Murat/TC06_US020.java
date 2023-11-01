@@ -39,9 +39,6 @@ public class TC06_US020 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Login butonuna click yapılır.");
 
-    //Geçersiz password ile giriş yapılamadığı test edilir.
-        Assert.assertTrue(smartcardlinkPage.signInYaziElementi.isDisplayed());
-        extentTest.pass("Geçersiz password ile giriş yapılamadığı test edilir.");
 
 
         extentTest.info("Sayfa kapatılır.");

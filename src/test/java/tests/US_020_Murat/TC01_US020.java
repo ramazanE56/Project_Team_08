@@ -12,7 +12,7 @@ public class TC01_US020 extends TestBaseRapor {
 
 
     @Test
-    public void adminLogin(){
+    public void adminGirisiTesti(){
 
         extentTest = extentReports.createTest(
                 "Admin Giriş Testi",
@@ -47,6 +47,7 @@ public class TC01_US020 extends TestBaseRapor {
 
         extentTest.info("Sayfa kapatılır.");
 
+        // the end
 
     }
 }

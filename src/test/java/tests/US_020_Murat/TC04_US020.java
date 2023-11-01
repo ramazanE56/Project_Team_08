@@ -45,5 +45,7 @@ public class TC04_US020 extends TestBaseRapor {
 
         extentTest.info("Sayfa kapatılır.");
 
+        // the end
+
     }
 }
