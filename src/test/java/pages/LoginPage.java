@@ -25,6 +25,8 @@ LoginPage {
     @FindBy (xpath = "//span[@class='mt-1']")
     public  WebElement failedLoginText;
 
+
+
     // kaan ilave locatler
     @FindBy(xpath = "/html/body/div/div[2]/div[3]/form/div[5]/a")
     public WebElement createAnAccountElementi;
@@ -41,6 +43,7 @@ LoginPage {
 
     @FindBy (xpath = "/html/body/div/div[2]/div[2]/div")
     public WebElement succesedElementi;
+
 
 
 
