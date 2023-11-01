@@ -14,20 +14,20 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_01 extends TestBaseRapor {
+public class TC_03 extends TestBaseRapor {
 
-        /*
-        URL= https://qa.smartcardlink.com
-        Admin email1 = admin22@smartcardlink.com
-        Admin email2 = admin23@smartcardlink.com
-        Admin email3 = admin24@smartcardlink.com
-        Admin password = 123123123
-        */
+         /*
+         URL= https://qa.smartcardlink.com
+         Admin email1 = admin22@smartcardlink.com
+         Admin email2 = admin23@smartcardlink.com
+         Admin email3 = admin24@smartcardlink.com
+         Admin password = 123123123
+         */
 
     @Test
-    public void numberOfCountriesTesti() throws IOException {
+    public void NumberOfCities() throws IOException {
 
-        extentTest = extentReports.createTest("Ulke Sayısını Görme Testi", "Admin panelde kullanılan Ulke Sayısını görmeli");
+        extentTest = extentReports.createTest("Şehir Sayısını Görme Testi", "Admin sitede kullanılan Şehir sayısını görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -49,36 +49,33 @@ public class TC_01 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Admin email ve Password bilgilerini girip Login butonuna tıklar");
 
-        // Admin panelinde Ülkeler (Countries) menu ögesini tıklayınız
+        // Admin panelinde Dashboard menu listesindeki "Ülkeler" (Countries) ögesini tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
         aDashboardPage.countriesElementi.click();
-        extentTest.info("Dashboard menu listesindeki Ulkeler ögesini tıklar");
+        extentTest.info("Dashboard menu listesindeki Ülkeler(Countries) ögesini tıklar");
 
         ReusableMethods.wait(3);
 
-        // Admin panelinde Ülkeler (Countries) sayfasında Ulkeler (Countries) sekmesini tıklayınız
-        aDashboardPage.countriesSekmesiElementi.click();
-        extentTest.info("Dashboard menu listesindeki Ulkeler sekmesini tıklar");
+        // Ülkeler sayfasındaki "Şehirler" (Cities) sekmesini tıklayınız
+        aDashboardPage.citiesSekmesiElementi.click();
+        extentTest.info("Admin, Ülkeler sayfasındaki Şehirler (Cities) sekmesini tıklar");
 
-        // Admin panelinde Ülkeler (Countries) sayfasının en altına ininiz
+        // Admin panelinde Şehirler (Cities) sayfasının en altına ininiz
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
-        String UlkeSayisi = aDashboardPage.ulkeSayisiYaziElementi.getText();
-        System.out.println("Ülke Sayısı :" + UlkeSayisi);
+        String SehirSayisi = aDashboardPage.sehirSayisiYaziElementi.getText();
+        System.out.println("Şehir Sayısı :" + SehirSayisi);
+
+        // Şehir (Cities) sayısının görüldüğünü test ediniz
+        Assert.assertTrue(aDashboardPage.eyaletSayisiYaziElementi.isDisplayed());
+        extentTest.pass("Şehirler (Cities) sayısının görüldüğünü test eder");
+
+        ReusableMethods.getScreenshot("Şehir (Cities) sayısının görüldüğü sayfa");
+        extentTest.info("Şehir sayısının goruldugu sayfanın fotografini ceker");
 
         ReusableMethods.wait(3);
 
-        // Admin panelinde ülke sayısının görünür olduğunu test ediniz.
-        Assert.assertTrue(aDashboardPage.ulkeSayisiYaziElementi.isDisplayed());
-        extentTest.pass("Admin panelinde ülke sayısının görüldüğünü test eder");
-
-        ReusableMethods.getScreenshot("Ülke sayısı sayfası");
-        extentTest.info("Ülke sayısının goruldugu sayfanın fotografini ceker");
-
         extentTest.info("sayfayi kapatir");
-
     }
-
 }
-
 
