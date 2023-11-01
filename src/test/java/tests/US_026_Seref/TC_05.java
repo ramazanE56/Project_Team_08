@@ -1,4 +1,4 @@
-package tests.US026_Seref;
+package tests.US_026_Seref;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -14,20 +14,19 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_02 extends TestBaseRapor {
+public class TC_05 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
          Admin email1 = admin22@smartcardlink.com
          Admin email2 = admin23@smartcardlink.com
          Admin email3 = admin24@smartcardlink.com
-         Admin password = 123123123
-         */
+         Admin password = 123123123         */
 
     @Test
-    public void BagliKullanicilar() throws IOException {
+    public void affiliationTransactions() throws IOException {
 
-        extentTest = extentReports.createTest("Kauyıtlı Kullanıcıları Gorme Testi", "Admin panelde kayıtlı kullanıcıları görmeli");
+        extentTest = extentReports.createTest("Ortaklık Onay Durumunu (Approval Status) Görme Testi", "Admin, Affiliation Transactions sayfasında 'Onay Durmununu' (Approval Status) görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -49,24 +48,22 @@ public class TC_02 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Admin email ve Password bilgilerini girip Login butonuna tıklar");
 
-        // ADashboard menu listesindeki ortaklık kullanıcıları(Affiliate Users) sekmesinin tıklayınız
+        // Admin panelinde Dashboard menu listesindeki "Uyelik İslemleri" (Affiliation Transactions) sekmesini tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.bagliKullanicilarYaziElementi.click();
-        extentTest.info("ADashboard menu listesindeki ortaklık kullanıcıları (Affiliate Users) sekmesinin tıklar");
+        aDashboardPage.affiliationTransactionsElementi.click();
+        extentTest.info("Dashboard menu listesindeki Uyelik İslemleri (Affiliation Transactions) sekmesini tıklar");
 
-        // Kaydedilen kullanıcıların görünür olduğunu test ediniz
-        Assert.assertTrue(aDashboardPage.sonuclariGormeYaziElementi.isDisplayed());
-        extentTest.pass("Kaydedilen kullanıcıların görünür olduğunu test eder");
+        // Ortaklık Onay Durumunun (Approval Status) görüldüğünü test ediniz
+        Assert.assertTrue(aDashboardPage.approvalStatusYaziElementi.isDisplayed());
+        extentTest.pass("Ortaklık Onay Durumunun (Approval Status) görüldüğünü test eder");
 
+        ReusableMethods.getScreenshot("Ortaklık Onay Durumunun (Approval Status) Listesi");
+        extentTest.info("Affiliation Transactions sayfasında Ortaklık Onay Durumunun (Approval Status) goruldugu sayfanın fotografini ceker");
 
         ReusableMethods.wait(3);
 
-        ReusableMethods.getScreenshot("Kayitli Kullanicilar Listesi");
-        extentTest.info("Kaydedilen kullanıcıların goruldugu sayfanın fotografini ceker");
-
         Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
-
     }
-
 }
+

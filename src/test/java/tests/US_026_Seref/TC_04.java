@@ -1,4 +1,4 @@
-package tests.US026_Seref;
+package tests.US_026_Seref;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_05 extends TestBaseRapor {
+public class TC_04 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
@@ -25,9 +25,9 @@ public class TC_05 extends TestBaseRapor {
          */
 
     @Test
-    public void Uyelikİslemleri() throws IOException {
+    public void affiliateUsers() throws IOException {
 
-        extentTest = extentReports.createTest("Kullanıcıların Ortaklık Onay Durumunun görünür oldugu Testi", "Admin panelde kayıtlı Kullanıcıların Ortaklık Onay Durumlarını görmeli");
+        extentTest = extentReports.createTest("Ortaklık Tarihlerini (Date) Görme Testi", "Admin, Affiliate Users sayfasında 'Ortaklık Tarihlerini' (Date) görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -49,27 +49,22 @@ public class TC_05 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Admin email ve Password bilgilerini girip Login butonuna tıklar");
 
-        // ADashboard menu listesindeki "uyelik islemleri"(Affiliation Transactions) sekmesinin tıklayınız
+        // Admin panelinde Dashboard menu listesindeki "Ortaklık Kullanıcıları" (Affiliate Users) sekmesini tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.uyelikİslemleriYaziElementi.click();
-        extentTest.info("ADashboard menu listesindeki Uyelik islemleri (Affiliation Transactions) sekmesinin tıklar");
+        aDashboardPage.affiliateUsersElementi.click();
+        extentTest.info("Dashboard menu listesindeki Ortaklık Kullanıcıları(Affiliate Users) sekmesini tıklar");
 
-        // "Uyelik islemleri"(Affiliation Transactions) altında uyelerden birinin onay durumunu tıklayınız
-        aDashboardPage.uyelikOnayDurumuYaziElementi.click();
-        extentTest.info("Uyelik islemleri (Affiliation Transactions) altındaki uyelerden birinin onay durumunu tıklar");
+        // Ortaklık Tarihlerinin (Date) görüldüğünü test ediniz
+        Assert.assertTrue(aDashboardPage.userYaziElementi.isDisplayed());
+        extentTest.pass("Ortaklık Tarihlerinin (Date) görüldüğünü test eder");
 
-        // Kaydedilen kullanıcıların ortaklık onay durmunun görünür olduğunu test ediniz
-        Assert.assertTrue(aDashboardPage.uyelikOnayDurumuYaziElementi.isDisplayed());
-        extentTest.pass("Kaydedilen kullanıcıların ortaklık onay durumunun görünür olduğunu test eder");
+        ReusableMethods.getScreenshot("Ortaklık Tarihlerinin (Date) Listesi");
+        extentTest.info("Affiliate Users sayfasında Ortaklık Tarihlerinin (Affiliationate) goruldugu sayfanın fotografini ceker");
 
         ReusableMethods.wait(3);
 
-        ReusableMethods.getScreenshot("Ortaklık Kullanıcılarının Onay Durumları");
-        extentTest.info("Kaydedilen kullanıcıların Ortaklık Onay Durumlarının goruldugu sayfanın fotografini ceker");
-
         Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
-
     }
-
 }
+

@@ -94,30 +94,6 @@ public class ADashboardPage {
     @FindBy(xpath = "(//span[@class='relative d-flex align-items-center'])[1]")
     public WebElement siralamaButonu;
 
-    //Admin Dasboard sayfasında menudeki "Affiliate Users" yazısının locate'i
-    @FindBy (xpath = "(//span[@class='aside-menu-title'])[9]")
-    public WebElement bagliKullanicilarYaziElementi;
-
-    //Admin Dasboard sayfasında ortaklığı kimlerin yaptığının görüldüğü show locate'i
-    @FindBy (xpath = "//div[@class='row']")
-    public WebElement sonuclariGormeYaziElementi;
-
-    //Admin Dasboard sayfasında üyelik işlemlerinin görüldüğü locate
-    @FindBy (xpath = "(//span[@class='aside-menu-title'])[10]")
-    public WebElement uyelikİslemleriYaziElementi;
-
-    //Admin Dasboard sayfasında üyelik onay durumunun görüldüğü locate
-    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-eye text-info'])[1]")
-    public WebElement uyelikOnayDurumuYaziElementi;
-
-    //Admin Dasboard sayfasında sitede kullanılan ulklerin sayısının görüldüğü locate
-    @FindBy (xpath = "(//span[@class='aside-menu-title'])[13]")
-    public WebElement ulkelerYaziElementi;
-
-    //Admin Dasboard sayfasında sitede kullanılan eyaletlerin sayısının görüldüğü locate
-    @FindBy (xpath = "//a[@class='nav-link p-0 active']")
-    public WebElement eyaletlerYaziElementi;
-
     //Admin Dasboard sayfasında Total Active Users sayısının locate'i
     @FindBy(xpath = "(//h2[@class='fs-1-xxl fw-bolder text-white'])[1]")
     public WebElement totalActiveUsersElementi;
@@ -388,6 +364,40 @@ public class ADashboardPage {
     //admin Coupon Codes sayfasi ilk siradaki coupon Status buton elementi
     @FindBy(xpath = "//tbody/tr[1]/td[5]")
     public WebElement adminFirstCouponStatusButton;
+
+    //Admin Dasboard sayfasında menudeki (Affiliate Users) sekmesinin locate'i
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[9]")
+    public WebElement affiliateUsersElementi;
+
+    //Admin "Affiliate Users" sayfasında ortaklığın kim tarafından yapıldığı yazısının (Affiliated By) locate'i
+    @FindBy (xpath = "(//div[@class='d-flex align-items-center'])[1]")
+    public WebElement affiliatedByYaziElementi;
+
+    //Admin "Affiliate Users" sayfasında "Kaydedilen Kullanıcılar" (User) yazısının locate'i
+    @FindBy (xpath = " (//div[@class='d-flex align-items-center'])[2]")
+    public WebElement userYaziElementi;
+
+    //Admin "Affiliate Users" sayfasındaki "Ortaklık Tutarı" (Affiliation Amount) yazısının locate'i
+    @FindBy (xpath = " (//div[@class='d-flex align-items-center'])[3]")
+    public WebElement affiliationAmountYaziElementi;
+
+    //Admin "Affiliate Users" sayfasındaki "Ortaklık Tarihi" (Date) yazısının locate'i
+    @FindBy (xpath = " (//div[@class='d-flex align-items-center'])[3]")
+    public WebElement dateYaziElementi;
+
+    // Admin Dasboard sayfasında Affiliation Transactions Ogesi locate
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[10]")
+    public  WebElement affiliationTransactionsElementi;
+
+    //Affiliation Transactions sayfasinda Approval Status yazisi locate
+    @FindBy(xpath = "//span[text()='Approval Status']")
+    public WebElement approvalStatusYaziElementi;
+
+
+
+
+
+
 
 
 
