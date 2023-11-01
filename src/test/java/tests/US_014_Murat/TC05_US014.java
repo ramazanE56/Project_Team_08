@@ -14,7 +14,7 @@ public class TC05_US014 extends TestBaseRapor {
 
 
     @Test
-    public void invalidPasswordWithChangePassword(){
+    public void gecersizSifreIleSifreDegisikligiTesti(){
 
         extentTest = extentReports.createTest
                 ("Hatalı Şifre ile Şifre Değişikliği Testi",
@@ -83,7 +83,9 @@ public class TC05_US014 extends TestBaseRapor {
         Assert.assertTrue(smartcardlinkPage.passwordChangeErrorElementi.isDisplayed());
         extentTest.info("Password değişmediğine dair Error yazısı test edilir.");
 
+
         extentTest.info("Sayfa kapatılır.");
 
+        //the end
     }
 }

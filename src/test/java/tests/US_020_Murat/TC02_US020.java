@@ -57,8 +57,7 @@ public class TC02_US020 extends TestBaseRapor {
         Assert.assertTrue(aDashboardPage.SubscribedUserPlansTestElementi.isDisplayed());
         extentTest.pass("Kullanıcıların abonelik planlarının görüntülenebidiği test edilir.");
 
-        //Sayfayı kapatır.
-        Driver.closeDriver();
-        extentTest.info("Sayfayı kapatır.");
+        extentTest.info("Sayfa kapatılır.");
+
     }
 }

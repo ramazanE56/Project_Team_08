@@ -13,7 +13,7 @@ import utilities.TestBaseRapor;
 public class TC06_US014 extends TestBaseRapor {
 
     @Test
-    public void changeLanguage(){
+    public void kullaniciDilDegistirmeTesti(){
 
     extentTest = extentReports.createTest
             ("Dil Ayarları Değişikliği Testi",

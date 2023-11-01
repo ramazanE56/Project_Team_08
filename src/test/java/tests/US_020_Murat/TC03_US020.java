@@ -68,8 +68,7 @@ public class TC03_US020 extends TestBaseRapor {
         Assert.assertEquals(actuelKullaniciIsmiElementi,expectedKullaniciIsmiElementi);
         extentTest.pass("Admin hesabına geri dönüş yapılabildiği test edilir.");
 
-        //Sayfa kapatılır.
-        Driver.closeDriver();
         extentTest.info("Sayfa kapatılır.");
+
     }
 }

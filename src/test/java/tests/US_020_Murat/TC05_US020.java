@@ -42,5 +42,8 @@ public class TC05_US020 extends TestBaseRapor {
         //Hatalı admin ile giriş yapılamadığı test edilir.
         Assert.assertTrue(smartcardlinkPage.signInYaziElementi.isDisplayed());
         extentTest.pass("Hatalı admin ile giriş yapılamadığı test edilir.");
+
+        extentTest.info("Sayfa kapatılır.");
+
     }
 }

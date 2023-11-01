@@ -12,7 +12,7 @@ public class TC02_US014 extends TestBaseRapor {
 
 
     @Test
-    public void invalidUserEmailSignIn(){
+    public void gecersizEmailIleKullaniciGirisTesti(){
 
         extentTest = extentReports.createTest
                 ("Kayıtlı Olmayan Email ile Giriş Testi",

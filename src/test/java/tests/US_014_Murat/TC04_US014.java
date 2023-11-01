@@ -11,7 +11,7 @@ import utilities.TestBaseRapor;
 public class TC04_US014 extends TestBaseRapor {
 
     @Test
-    public void ChangePassword() {
+    public void kullaniciSifreDegistirmeTesti() {
 
         extentTest = extentReports.createTest
                 ("Kullanıcı Şifre Değiştirme Testi",
@@ -79,7 +79,10 @@ public class TC04_US014 extends TestBaseRapor {
         Assert.assertTrue(smartcardlinkPage.passwordChangeSuccessElementi.isDisplayed());
         extentTest.pass("Password değiştiğine dair Success yazısı test edilir.");
 
+
         extentTest.info("Sayfa kapatılır.");
+
+        // the end
 
     }
 }

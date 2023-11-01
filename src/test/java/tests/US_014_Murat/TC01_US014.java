@@ -11,7 +11,7 @@ import utilities.TestBaseRapor;
 public class TC01_US014 extends TestBaseRapor {
 
     @Test
-    public void userSignIn() {
+    public void kullaniciGirisTesti() {
 
         extentTest = extentReports.createTest
                 ("Kullanıcı Hesap Girişi",

@@ -44,9 +44,8 @@ public class TC01_US020 extends TestBaseRapor {
         Assert.assertTrue(smartcardlinkPage.succesSignInElement.isDisplayed());
         extentTest.pass("Başarılı bir şekilde kullanıcı girişi yapıldığı test edilir.");
 
-        //Sayfayı kapatır.
-        Driver.closeDriver();
-        extentTest.info("Sayfayı kapatır.");
+
+        extentTest.info("Sayfa kapatılır.");
 
 
     }

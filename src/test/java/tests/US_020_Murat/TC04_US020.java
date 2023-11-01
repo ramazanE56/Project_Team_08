@@ -43,8 +43,7 @@ public class TC04_US020 extends TestBaseRapor {
         Assert.assertTrue(smartcardlinkPage.signInYaziElementi.isDisplayed());
         extentTest.pass("Geçersiz password ile giriş yapılamadığı test edilir.");
 
-        //Sayfayı kapatılır.
-        Driver.closeDriver();
-        extentTest.info("Sayfayı kapatılır.");
+        extentTest.info("Sayfa kapatılır.");
+
     }
 }

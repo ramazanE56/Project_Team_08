@@ -11,7 +11,7 @@ import utilities.TestBaseRapor;
 public class TC03_US014 extends TestBaseRapor {
 
     @Test
-    public void invalidUserPasswordLogin(){
+    public void gecersizSifreIleKullaniciGirisiTesti(){
 
         extentTest = extentReports.createTest
                 ("Kayıtlı Email ve geçersiz password ile Giriş Testi",
@@ -43,7 +43,10 @@ public class TC03_US014 extends TestBaseRapor {
         Assert.assertTrue(smartcardlinkPage.succesSignInElement.isDisplayed());
         extentTest.pass("Kullanıcı girişi yapılamadığı test edilir.");
 
+
         extentTest.info("Sayfa kapatılır.");
+
+        // the end
 
     }
 }

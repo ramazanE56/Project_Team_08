@@ -11,7 +11,7 @@ public class TC07_US014 extends TestBaseRapor {
 
 
     @Test
-    public void signOut(){
+    public void kullaniciCikisTesti(){
 
         extentTest = extentReports.createTest
                 ("Kullanıcı Sistemden Çıkış Testi",
