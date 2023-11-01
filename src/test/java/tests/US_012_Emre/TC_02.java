@@ -35,7 +35,7 @@ public class TC_02 {
     Faker faker=new Faker();
     ReusableMethods.makeTheWebElementIsSelected(aDashboardPage.userCredential_paypalCheckbox);
     ReusableMethods.makeTheWebElementIsSelected(aDashboardPage.userCredential_stripeCheckbox);
-ReusableMethods.wait(2);
+    ReusableMethods.wait(2);
 
 
     ReusableMethods.clickClearSendkeys(aDashboardPage.userCredential_stripeKeyTextbox,faker.name().firstName());
@@ -43,7 +43,7 @@ ReusableMethods.wait(2);
     ReusableMethods.clickClearSendkeys(aDashboardPage.userCredential_paypalClientIdTextbox,faker.idNumber().valid());
     ReusableMethods.clickClearSendkeys(aDashboardPage.userCredential_paypalModeTextbox,faker.name().firstName());
     ReusableMethods.clickClearSendkeys(aDashboardPage.userCredential_paypalSecretTextbox,faker.name().firstName());
-    System.out.println(aDashboardPage.userCredential_currencyList.getText());
+    //Assert.assertTrue(aDashboardPage.userCredential_currencyList.);
     ReusableMethods.clickAndSendkeys(aDashboardPage.userCredential_currencyList, ""+Keys.ARROW_DOWN+Keys.ENTER);
 
     aDashboardPage.userCredential_paypalCheckbox.sendKeys(Keys.PAGE_DOWN);
