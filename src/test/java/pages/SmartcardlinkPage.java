@@ -92,6 +92,69 @@ public class SmartcardlinkPage {
 
 
 
+    //**** sadık
+    // Get Started Buton elementi
+    @FindBy (xpath = "//a[@class='btn btn-orange ']")
+    public WebElement getStartedButonu;
+
+    // Choose plansdaki geri gitme  Buton elementi
+    @FindBy (xpath = "//*[@aria-label='Previous']")
+    public WebElement ChoosePreviousButonu;
+
+    // Choose plansdaki ileri gitme  Buton elementi
+    @FindBy (xpath = "//*[@aria-label='Next']")
+    public WebElement ChooseNextButonu;
+
+    // Choose plansdaki Standart Choose  Buton elementi
+    @FindBy (xpath = "(//a[@class='btn btn-primary rounded-pill mx-auto  '])[3]")
+    public WebElement StandartChoosePlanButonu;
+
+    // Choose plansdaki Silver Choose  Buton elementi
+    @FindBy (xpath = "(//a[@class='btn btn-primary rounded-pill mx-auto  '])[4]")
+    public WebElement SilverChoosePlanButonu;
+
+    // Choose plansdaki Gold Choose  Buton elementi
+    @FindBy (xpath = "(//a[@class='btn btn-primary rounded-pill mx-auto  '])[5]")
+    public WebElement GoldChoosePlanButonu;
+
+    // Choose plansdakiUnlimited Choose  Buton elementi
+    @FindBy (xpath = "(//a[@class='btn btn-primary rounded-pill mx-auto  '])[6]")
+    public WebElement UnlimitChoosePlanButonu;
+
+    // Choose plans Silvera Geçiş Buton elementi
+    @FindBy (xpath = "//button[@id='slick-slide-control01']")
+    public WebElement SilveragecisButonu ;
+
+    // Choose plans Golda Geçiş Buton elementi
+    @FindBy (xpath = "//button[@id='slick-slide-control02']")
+    public WebElement GoldagecisButonu ;
+
+    // Choose plans Unlimiteda Geçiş Buton elementi
+    @FindBy (xpath = "//button[@id='slick-slide-control03']")
+    public WebElement UnlimiteGecisButonu ;
+
+    //  1. Stories From Buton  elementi
+    @FindBy (xpath = "//button[@aria-controls='slick-slide10']")
+    public WebElement StoriesFromButonu1 ;
+
+    //  2. Stories From Buton  elementi
+    @FindBy (xpath = "//button[@aria-controls='slick-slide11']")
+    public WebElement StoriesFromButonu2 ;
+
+    //  Sende message  elementi
+    @FindBy (xpath = "//input[@id='submit']")
+    public WebElement SendMessageButonu ;
+
+    //  Subscribe  Buton  elementi
+    @FindBy (xpath = "//button[@type='submit']")
+    public WebElement SubscribeButonu ;
+
+
+
+
+
+
+
 
 
 
