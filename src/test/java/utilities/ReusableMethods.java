@@ -403,7 +403,7 @@ public class ReusableMethods {
         webElement.sendKeys(sendKeys);
     }
 public static void couponCodeCreate(String couponName,int couponDiscount,WebElement nameTextbox) {
-    System.out.println(nameTextbox.getText());
+   // System.out.println(nameTextbox.getText());
     ADashboardPage aDashboardPage = new ADashboardPage();
     ReusableMethods.clickClearSendkeys(nameTextbox, couponName
             + Keys.TAB + Keys.ARROW_RIGHT
