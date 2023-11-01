@@ -12,11 +12,12 @@ import utilities.TestBaseRapor;
 
 public class TC02_US034 extends TestBaseRapor {
 
-    @Test
-    public void adminHaberAboneleriniGoruntuleme() {
 
-        extentTest = extentReports.createTest("Admin haber abonelerini görüntüleme Testi",
-                "Admin Haber Abonelerini görüntüleyebilmelidir.");
+    @Test
+    public void adminHaberAbonesiSilme(){
+
+        extentTest = extentReports.createTest("Admin Haber Abonelerini Silme Testi",
+                "Admin haber abonelerini silebilmelidir.");
 
         //Browser ile ilgili URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -51,14 +52,15 @@ public class TC02_US034 extends TestBaseRapor {
         aDashboardPage.subscribersElementi.click();
         extentTest.info("Subscribers menüsüne click yapılır.");
 
-        //Admin  olarak haber abonelerinin görüntülenebildiği doğrulanır.
-        String actualSubscribersGorunurlukSonucElementiYazisi =aDashboardPage.subscribersGorunurlukSonucElementi.getText();
-        String unexpectedYazi = "0";
-        Assert.assertFalse(actualSubscribersGorunurlukSonucElementiYazisi.equals(unexpectedYazi));
+        //Adminin haber aboneleri için sil butonuna click yapabildiği doğrulanır.
+        Assert.assertTrue( !(aDashboardPage.actionSilmeElementi.getText().isEmpty()) );
+        aDashboardPage.actionSilmeElementi.click();
+        extentTest.pass("Admin'in haber abonelerini silme butonuna click yapabildiği test edilir.");
 
         extentTest.info("Sayfa kapatılır.");
 
         // the end
+
 
     }
 }

@@ -2,20 +2,21 @@ package tests.US_034_Murat;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.ADashboardPage;
 import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class TC01_US034 extends TestBaseRapor {
 
-
     @Test
-    public void adminLogin(){
+    public void adminHaberAboneleriniGoruntuleme() {
 
-        extentTest =extentReports.createTest("Admin Login testi",
-                "Admin kullanıcı adı ve şifresi ile başarılı bir şekilde giriş yapabilmelidir.");
+        extentTest = extentReports.createTest("Admin haber abonelerini görüntüleme Testi",
+                "Admin Haber Abonelerini görüntüleyebilmelidir.");
 
         //Browser ile ilgili URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -39,9 +40,21 @@ public class TC01_US034 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Login butonuna click yapılır.");
 
-        //Başarılı bir şekilde kullanıcı girişi yapıldığı doğrulanır.
-        Assert.assertTrue(smartcardlinkPage.succesSignInElement.isDisplayed());
-        extentTest.pass("Başarılı bir şekilde kullanıcı girişi yapıldığı test edilir.");
+        //Açılan sayfada Front CMS menüsüne click yapılır.
+        ADashboardPage aDashboardPage = new ADashboardPage();
+        aDashboardPage.frontCmsElementi2.click();
+        extentTest.info("Açılan sayfada Front CMS menüsüne click yapılır.");
+
+        ReusableMethods.wait(1);
+
+        //Subscribers menüsüne click yapılır.
+        aDashboardPage.subscribersElementi.click();
+        extentTest.info("Subscribers menüsüne click yapılır.");
+
+        //Admin  olarak haber abonelerinin görüntülenebildiği doğrulanır.
+        String actualSubscribersGorunurlukSonucElementiYazisi =aDashboardPage.subscribersGorunurlukSonucElementi.getText();
+        String unexpectedYazi = "0";
+        Assert.assertFalse(actualSubscribersGorunurlukSonucElementiYazisi.equals(unexpectedYazi));
 
         extentTest.info("Sayfa kapatılır.");
 

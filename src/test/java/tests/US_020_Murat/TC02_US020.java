@@ -7,19 +7,16 @@ import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class TC02_US020 extends TestBaseRapor {
 
-
     @Test
-    public void abonelikPlanlariGoruntulemeTesti(){
+    public void adminHesapGecisiTesti() {
 
-        extentTest=extentReports.createTest(
-                "Abonelik Planlarını Görüntüleme Testi",
-                    "Admin olarak kullanıcılar bölümünde kayıtlı kullanıcıların " +
-                              "abonelik planları görüntülenebilmelidir.");
+        extentTest = extentReports.createTest
+                ("Admin-Kullanıcı Hesap Geçiş Testi",
+                        "Admin olarak kullanıcı hesabına geçiş yapılıp, tekrar admin hesabına dönüş yapılabilmelidir.");
 
         //Browser ile ilgili URL'e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -43,19 +40,30 @@ public class TC02_US020 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Login butonuna click yapılır.");
 
-        // Subscribed User Plans menusune click yapılır.
+        // User menusu click yapılır.
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.subscribedUserPlansElementi.click();
-        extentTest.info("Subscribed User Plans menusune click yapılır.");
+        aDashboardPage.userMenuElementi.click();
+        extentTest.info("User menusu click yapılır.");
 
-        // Abonelik planları görüntüleme ikonuna click yapılır.
-        aDashboardPage.SubscribedUserPlansViewElementi.click();
-        ReusableMethods.wait(1);
-        extentTest.info("Abonelik planları görüntüleme ikonuna click yapılır.");
+        //Admin hesabından kullanıcı hesabına geçiş yapılır.
+        aDashboardPage.impersonateElementi.click();
+        extentTest.info("Admin hesabından kullanıcı hesabına geçiş yapılır.");
 
-        //Kullanıcıların abonelik planlarının görüntülenebidiği doğrulanır.
-        Assert.assertTrue(aDashboardPage.SubscribedUserPlansTestElementi.isDisplayed());
-        extentTest.pass("Kullanıcıların abonelik planlarının görüntülenebidiği test edilir.");
+        //Kullanıcı hesabına geçiş yapıldığı doğrulanır.
+        String actuelKullaniciIsmiElementi = aDashboardPage.kullaniciProfilIsimElementi.getText();
+        String unExpectedKullaniciIsmiElementi = "admin23 admin";
+        Assert.assertNotEquals(actuelKullaniciIsmiElementi,unExpectedKullaniciIsmiElementi);
+        extentTest.pass("Kullanıcı hesabına geçiş yapılabildiği test edilir.");
+
+        //Kullanıcı hesabından admin hesaba geri dönüş yapılır.
+        aDashboardPage.adminHesabaGecisElementi.click();
+        extentTest.info("Kullanıcı hesabından admin hesaba geri dönüş yapılır.");
+
+        //Admin hesabına geri dönüş yapıldığı doğrulanır.
+        actuelKullaniciIsmiElementi = aDashboardPage.kullaniciProfilIsimElementi.getText();
+        String expectedKullaniciIsmiElementi = "admin23 admin";
+        Assert.assertEquals(actuelKullaniciIsmiElementi,expectedKullaniciIsmiElementi);
+        extentTest.pass("Admin hesabına geri dönüş yapılabildiği test edilir.");
 
         extentTest.info("Sayfa kapatılır.");
 

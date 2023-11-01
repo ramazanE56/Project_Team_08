@@ -14,7 +14,7 @@ public class TC01_US014 extends TestBaseRapor {
     public void kullaniciGirisTesti() {
 
         extentTest = extentReports.createTest
-                ("Kullanıcı Hesap Girişi",
+                ("Kullanıcı Hesabına Giriş",
                         "Sisteme kayıtlı datalarla, başarılı bir sekilde  sisteme giriş yapılabilmelidir.");
 
         //Browser açılır ilgili site URL'i girilerek siteye erişilir.
