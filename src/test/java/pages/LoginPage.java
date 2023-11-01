@@ -24,4 +24,6 @@ LoginPage {
 
     @FindBy (xpath = "//span[@class='mt-1']")
     public  WebElement failedLoginText;
+
+
 }

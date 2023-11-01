@@ -35,6 +35,30 @@ public class ADashboardPage {
     @FindBy(xpath = "//a[@class='nav-link p-0 active']")
     public WebElement dashboardYaziElementi;
 
+    @FindBy (xpath = "(//*[text()='Languages'])[1]")
+    public WebElement dashboardLanguages;
+    @FindBy(xpath = "//div[@class='col-12 text-muted pagination-record ms-sm-3']")
+    public WebElement languagesYaziElementi;
+
+    @FindBy(xpath = "(//span[text()='Withdraw Transactions'])[1]")
+    public WebElement withdrawElementi;
+
+    @FindBy(xpath = "(//div[@class='d-flex align-items-center'])[2]")
+    public WebElement paidUsers;
+
+    @FindBy(xpath = "(//span[@class='badge bg-success me-2'])[1]")
+    public WebElement amountElementi;
+
+    @FindBy(xpath = "(//td[@class='whitespace-nowrap px-3 py-2 md:px-6 md:py-4 text-sm leading-5 text-gray-900 dark:text-white'])[3]")
+    public WebElement paymentElementi;
+
+    @FindBy(xpath = "(//td[@class='whitespace-nowrap px-3 py-2 md:px-6 md:py-4 text-sm leading-5 text-gray-900 dark:text-white'])[4]")
+    public WebElement dateElementi;
+
+
+    @FindBy(xpath = "(//tbody/tr)[1]")
+    public WebElement webTableIlkSatirElementi;
+
 
 }
 
