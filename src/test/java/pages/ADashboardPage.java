@@ -4,6 +4,7 @@ import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 import utilities.Driver;
 
 import java.util.List;
@@ -386,8 +387,13 @@ public class ADashboardPage {
     public WebElement userCredential_saveError;
 
     //admin Coupon Codes sayfasi ilk siradaki coupon Status buton elementi
-    @FindBy(xpath = "//tbody/tr[1]/td[5]")
+    @FindBy(xpath = "(//input[@id='changeCouponStatus'])[1]")
     public WebElement adminFirstCouponStatusButton;
+
+
+    // admin Coupon Codes sayfasi search textbox elementi
+    @FindBy (xpath = "//input[@class='form-control ps-8']")
+    public WebElement adminCouponSearchTextbox;
 
 //KAAN
     // vcards edit elementleri
@@ -485,5 +491,56 @@ public class ADashboardPage {
     public WebElement vcardsTrashElementi;
 
 
+    // admin Coupon Codes sayfasi ilk sıradaki coupon edit kalem butonu elementi
+    @FindBy(xpath = "(//a[@class='btn px-1 text-info fs-3 edit-coupon-code'])[1]")
+    public WebElement adminFirstCouponEditButton;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası couponName textbox elementi
+    @FindBy(xpath ="//input[@id='editCouponName']")
+    public WebElement adminEditCouponNameTextbox;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası save button elementi
+    @FindBy(xpath = "//button[@id='editCouponCodeSaveBtn']")
+    public WebElement adminEditCouponSaveButton;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası Status button elementi
+    @FindBy(xpath = "//input[@id='editCouponStatus']")
+    public WebElement adminEditCouponStatusButton;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası Status button elementi
+    @FindBy(xpath = "//input[@id='couponStatus']")
+    public WebElement adminAddCouponStatusButton;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası Expire At elementi (//input[@*='YYYY-MM-DD'])[2]
+    @FindBy(xpath = "//input[@id='editCouponExpireAt']")
+    public WebElement adminEditCouponExpireAt;
+
+    // admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası Expire At deki rightArrow elementi
+    @FindBy(xpath = "(//span[@class='flatpickr-next-month'])[2]")
+    public WebElement adminEditCouponExpireAtRightArrow;
+
+    //admin Coupon Codes sayfasi, edit kalem butonuna click yapılınca açılan edit sayfası Expire At deki gün elementi
+    @FindBy(xpath = "(//span[@class='flatpickr-day'])[35]")
+    public WebElement adminEditCouponCodesDay;
+
+    //admin Coupon Codes sayfasi, add coupon codes deki  expireat  takviminde sonraki ayın ilk günü elementi
+    @FindBy(xpath = "(//span[@*='flatpickr-day nextMonthDay'])[2]")
+    public WebElement adminAddCouponCodesNextMountSecondDay;
+
+    // admin Coupon Codes sayfasi ilk sıradaki coupon Delete butonu elementi
+    @FindBy(xpath = "(//a[@class='btn px-1 text-danger fs-3 delete-coupon-code'])[1]")
+    public WebElement adminFirstCouponDeleteButton;
+
+    // admin Coupon Codes sayfasi  coupon Delete deki Confirm butonu elementi
+    @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
+    public WebElement adminCouponDeleteConfirmButton;
+
+    // admin Coupon Codes sayfasi  coupon delet yapilinca Deleted yazisi  elementi
+    @FindBy(xpath = "//div[@class='swal-title']")
+    public WebElement adminCouponDeletedAlert;
+
+    // admin Coupon Codes sayfasi  coupon delet yapilinca Deleted alert OK buton  elementi
+    @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
+    public WebElement adminCouponDeletedAlertOkButton;
 }
 
