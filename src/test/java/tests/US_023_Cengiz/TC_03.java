@@ -10,6 +10,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
+import java.io.IOException;
+
 public class TC_03 extends TestBaseRapor {
     SmartcardlinkPage smartcardlinkPage;
     LoginPage loginPage;
@@ -71,10 +73,10 @@ public class TC_03 extends TestBaseRapor {
         Assert.assertTrue(aDashboardPage.cashPaymentsListesi.isDisplayed());
         extentTest.info("Yapılan manuel ödemelerin görüntülenebildiği test edilir");
 
-        System.out.println("Cash Payments 1. Sayfa Odeme Listesi\n"+ aDashboardPage.cashPaymentsListesi.getText());
 
 
         //Sayfa kapatilir
         Driver.closeDriver();
+        extentTest.info("Sayfa kapatilir.");
     }
 }

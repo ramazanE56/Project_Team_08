@@ -3,6 +3,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import pages.ADashboardPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -386,4 +387,77 @@ public class ReusableMethods {
     public static void waitAndClickLocationText(WebElement element, String value) {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
     }
+
+  public static void makeTheWebElementIsSelected(WebElement webElement){
+  if (!webElement.isSelected()){
+      webElement.click();
+  }
+    }
+    public static void clickClearSendkeys(WebElement webElement,String sendKeys){
+        webElement.click();
+        webElement.clear();
+        webElement.sendKeys(sendKeys);
+    }
+    public static void clickAndSendkeys(WebElement webElement,String sendKeys){
+        webElement.click();
+        webElement.sendKeys(sendKeys);
+    }
+public static void couponCodeCreate(String couponName,int couponDiscount,WebElement nameTextbox) {
+   // System.out.println(nameTextbox.getText());
+    ADashboardPage aDashboardPage = new ADashboardPage();
+    ReusableMethods.clickClearSendkeys(nameTextbox, couponName
+            + Keys.TAB + Keys.ARROW_RIGHT
+            + Keys.TAB + couponDiscount);
+    if(couponName.contains("EDIT")){
+        ReusableMethods.wait(1);
+        aDashboardPage.adminEditCouponExpireAt.click();
+        ReusableMethods.wait(1);
+        aDashboardPage.adminEditCouponExpireAtRightArrow.click();
+        aDashboardPage.adminEditCouponCodesDay.click();
+    }else {
+        ReusableMethods.wait(1);
+        aDashboardPage.adminAddCouponCodesExpireAt.click();
+        ReusableMethods.wait(1);
+        aDashboardPage.adminAddCouponCodesNextMountSecondDay.click();
+    }
+}
+
+public static void buttonOnOff(WebElement button,Boolean make){
+        if(make){
+            if (!button.isSelected()){
+                button.click();
+            }
+        }else {
+            if (button.isSelected()){
+                button.click();
+            }
+        }
+}
+
+public static void couponDelete(String couponName,boolean deletedAlertExit){
+        ADashboardPage aDashboardPage=new ADashboardPage();
+    ReusableMethods.clickClearSendkeys(aDashboardPage.adminCouponSearchTextbox,couponName);
+    ReusableMethods.wait(1);
+    String firstResultName=aDashboardPage.adminFirstCouponName.getText();
+    if (deletedAlertExit) {
+        if (firstResultName.equalsIgnoreCase(couponName)) {
+            aDashboardPage.adminFirstCouponDeleteButton.click();
+            ReusableMethods.wait(1);
+            aDashboardPage.adminCouponDeleteConfirmButton.click();
+            ReusableMethods.wait(1);
+            aDashboardPage.adminCouponDeletedAlertOkButton.click();
+        }
+    }else{
+        if (firstResultName.equalsIgnoreCase(couponName)) {
+            aDashboardPage.adminFirstCouponDeleteButton.click();
+            ReusableMethods.wait(1);
+            aDashboardPage.adminCouponDeleteConfirmButton.click();
+        }
+    }
+
+}
+
+
+
+
 }
