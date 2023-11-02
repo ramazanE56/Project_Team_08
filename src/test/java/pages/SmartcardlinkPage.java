@@ -35,13 +35,13 @@ public class SmartcardlinkPage {
     //language change elementleri
     @FindBy(xpath = "//a[@id='changeLanguage']")
     public WebElement changeLanguageElementi;
-    @FindBy(xpath = "//*[@id='select2-selectLanguage-container']")
+    @FindBy(xpath = "//*[@id=\"selectLanguage\"]")
     public WebElement languageTextBoxElementi;
     @FindBy(xpath = "//*[@id='languageChangeBtn']")
     public WebElement languageSaveButtonElementi;
     @FindBy(xpath = "//li[@class='select2-results__option select2-results__option--selectable select2-results__option--selected']")
     public WebElement turkceDilElementi;
-    @FindBy(xpath = "////a[text()='Aboneliği Yönet']")
+    @FindBy(xpath = "//a[text()='Aboneliği Yönet']")
     public WebElement dilDegisimOnayElementi;
 
     //sign out elementleri

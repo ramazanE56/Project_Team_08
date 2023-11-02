@@ -3,6 +3,7 @@ package tests.US_014_Murat;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -55,45 +56,23 @@ public class TC03_US014 extends TestBaseRapor {
     smartcardlinkPage.changeLanguageElementi.click();
     extentTest.info("Açılan menüde Change Language'e click yapılır.");
 
-/*
-
     // Language textbox'ına click yapılır.
-    // smartcardlinkPage.languageTextBoxElementi.click();
+        Select select = new Select(smartcardlinkPage.languageTextBoxElementi);
+
+        select.selectByIndex(8);
     // extentTest.info("Language textbox'ına click yapılır.");
-
-        //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(30));
-        //wait.until(ExpectedConditions.visibilityOf(smartcardlinkPage.turkceDilElementi));
-
-    // İstenen dile (Turkish) tıklanır.
-        Actions actions = new Actions(Driver.getDriver());
-        actions.click(smartcardlinkPage.languageTextBoxElementi)
-                .sendKeys(Keys.ARROW_DOWN)
-                .sendKeys(Keys.ARROW_DOWN)
-                .sendKeys(Keys.ARROW_DOWN)
-                .sendKeys(Keys.ARROW_DOWN)
-                .sendKeys(Keys.ARROW_DOWN)
-                .sendKeys(Keys.ARROW_DOWN)
-                .sendKeys(Keys.ENTER).perform();
-
-   // smartcardlinkPage.turkceDilElementi.click();
-    extentTest.info("İstenen language (Turkish) tıklanır.");
-
-    ReusableMethods.wait(1);
 
     // Save butonuna click yapılır.
     smartcardlinkPage.languageSaveButtonElementi.click();
     extentTest.info("Save butonuna click yapılır.");
 
-*/
 
     // Dilin Türkçe olarak değiştiği test edilir.
-
         String expectedYazi = "Aboneliği Yönet";
         String actualYazi = smartcardlinkPage.dilDegisimOnayElementi.getText();
     Assert.assertTrue(actualYazi.equals(expectedYazi));
     extentTest.pass("Dilin Türkçe olarak değiştiği test edilir.");
 
-    // DÜZELT
 
     }
 
