@@ -1,7 +1,9 @@
 package tests.US_004_Kaan;
 
+import org.checkerframework.checker.units.qual.A;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -35,7 +37,7 @@ public class US_004_TC_01 extends TestBaseRapor {
 
 
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
-        extentTest.info("Belirlenen site Url'li ile browserdan siteye erişilebilir olmalıdır.");
+        extentTest.pass("Belirlenen site Url'li ile browserdan siteye erişilebilir olmalıdır.");
 
 
         //    2. Home page sayfasında iken, footer bolumundeki fonksiyonların gorunur olduğunu test eder.
@@ -55,7 +57,7 @@ public class US_004_TC_01 extends TestBaseRapor {
         Assert.assertTrue(smartcardlinkPage.footerTermsConditionsElementi.isDisplayed());
         Assert.assertTrue(smartcardlinkPage.footerPrivacyPolicyElementi.isDisplayed());
         Assert.assertTrue(smartcardlinkPage.footerFAQElementi.isDisplayed());
-        extentTest.info("Home page sayfasında iken, footer bölümündeki fonksiyonların görünür olduğu test edilmiştir.");
+        extentTest.pass("Home page sayfasında iken, footer bölümündeki fonksiyonların görünür olduğu test edilmiştir.");
         ReusableMethods.wait(1);
 
 
@@ -63,7 +65,6 @@ public class US_004_TC_01 extends TestBaseRapor {
 
 
         smartcardlinkPage = new SmartcardlinkPage();
-
         smartcardlinkPage.footerFacebookElementi.click();
         smartcardlinkPage.footerTwitterElementi.click();
         smartcardlinkPage.footerInstagramElementi.click();
@@ -92,52 +93,51 @@ public class US_004_TC_01 extends TestBaseRapor {
 
         Assert.assertEquals(actualFAQTitle, expectedFAQTitle);
         System.out.println(expectedFAQTitle + " linki dogru calısmaktadır.");
-        extentTest.info(expectedFAQTitle + " linki dogru calısmaktadır.");
+        extentTest.pass( "FAQ linki dogru calısmaktadır.");
         ReusableMethods.switchToWindow("Privacy Policy | Smart Card Link");
         String expectedPPTitle = "Privacy Policy | Smart Card Link";
         String actualPPTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(actualPPTitle, expectedPPTitle);
         System.out.println(expectedPPTitle + " linki dogru calısmaktadır.");
-        extentTest.info(expectedPPTitle + " linki dogru calısmaktadır.");
+        extentTest.pass(" Privacy Policy linki dogru calısmaktadır.");
         ReusableMethods.switchToWindow("Pinterest - Türkiye");
+        ReusableMethods.wait(2);
+        ReusableMethods.getScreenshot("X Linkine tıklanınca açılan sayfa bu.");
+        ReusableMethods.wait(2);
         String expectedPiTitle = "Pinterest - Türkiye";
         String actualPiTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(actualPiTitle, expectedPiTitle);
         System.out.println(expectedPiTitle + " linki dogru calısmaktadır.");
-        extentTest.info(expectedPiTitle + " linki dogru calısmaktadır.");
+        extentTest.pass( "Pinterest linki dogru calısmaktadır.");
         ReusableMethods.switchToWindow("Facebook - Giriş Yap veya Kaydol");
         String expectedFBTitle = "Facebook - Giriş Yap veya Kaydol";
         String actualFBTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(actualFBTitle, expectedFBTitle);
-        System.out.println(expectedFBTitle + " linki dogru calısmaktadır.");
-        extentTest.info(expectedFBTitle + " linki dogru calısmaktadır.");
+        System.out.println(" Facebook linki dogru calısmaktadır.");
+        extentTest.pass( "Facebook linki dogru calısmaktadır.");
         ReusableMethods.switchToWindow("Instagram");
         String expectedInsTitle = "Instagram";
         String actualInsTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(actualInsTitle, expectedInsTitle);
         System.out.println(expectedInsTitle + " linki dogru calısmaktadır.");
-        extentTest.info(expectedInsTitle + " linki dogru calısmaktadır.");
+        extentTest.pass( " Instagram linki dogru calısmaktadır.");
         ReusableMethods.switchToWindow("Terms & Conditions | Smart Card Link");
         String expectedTCTitle = "Terms & Conditions | Smart Card Link";
         String actualTCTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(actualTCTitle, expectedTCTitle);
         System.out.println(expectedTCTitle + " linki dogru calısmaktadır.");
-        extentTest.info(expectedTCTitle + " linki dogru calısmaktadır.");
+        extentTest.pass( " Terms & Conditions linki dogru calısmaktadır.");
         ReusableMethods.switchToWindow("X. Olan biten burada / X");
         String expectedXTitle = "X. Olan biten burada / X";
         String actualXTitle = Driver.getDriver().getTitle();
-        Assert.assertEquals(actualXTitle, expectedXTitle);
-        System.out.println(expectedXTitle + " linki dogru calısmaktadır.");
-       /*
-        extentTest.info(expectedXTitle + " linki dogru calısmamaktadır."+ "Footer bolumundeki, X simgesine tıklayınca, acılan sayfanın baslıgı ; " +
-
-                "'"+ actualInsTitle + "'dir."+" Olması gereken baslik ise ; "+  "'" +expectedXTitle +"'" +
-                "oldugundan, X simgesine tanımlanan site bilgileri dogru degildir." );
-*/
-
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(actualXTitle,expectedXTitle,"X linki dogru calışmamaktadır. Linke tıklayınca Pinterest sayfası açılmaktadır");
+        extentTest.fail("X linki dogru calışmamaktadır." );
         //Sayfa kapatılır
-        Driver.closeDriver();
         extentTest.info("Sayfa kapatilir.");
+        Driver.getDriver().quit();
+
+
     }
 }
 

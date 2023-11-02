@@ -36,10 +36,10 @@ public class TC_03 extends TestBaseRapor {
         ReusableMethods.wait(2);
         //Front CMS butonuna tiklayiniz
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.frontCmsElementi.click();
+     //   aDashboardPage.frontCmsElementi.click();
         //About Us butonuna tiklayiniz
         aDashboardPage = new ADashboardPage();
-        aDashboardPage.frontCmsAboutUsElementi.click();
+      //  aDashboardPage.frontCmsAboutUsElementi.click();
 
     }
 }

@@ -23,9 +23,9 @@ public class TC_02 {
     smartcardlinkPage.signinButtonElementi.click();
     //4-Email textbox'ına Kayıtlı email bilgisi girilir.
     LoginPage loginPage=new LoginPage();
-    loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("brEmail"));
+    loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("visitorEmail"));
     //5-Password textbox'ına geçerli password bilgisi girilir.
-    loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("brPassword"));
+    loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("visitorPassword"));
     //6-Login butonuna click yapılır.
     loginPage.loginElementi.click();
     //7-Yan menudeki Settings linkine click yaplır.
