@@ -1,7 +1,6 @@
-package tests.US_013;
+package tests.US_013_Omer;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ADashboardPage;
