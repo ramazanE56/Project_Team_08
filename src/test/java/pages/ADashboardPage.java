@@ -393,6 +393,23 @@ public class ADashboardPage {
     @FindBy(xpath = "//span[text()='Approval Status']")
     public WebElement approvalStatusYaziElementi;
 
+    // "Affiliation Transactions" sayfasinda onay bekleyen başvurucnun (Approval Status) Button locate'i
+    @FindBy (xpath = "//button[@class='btn btn-success dropdown-toggle']")
+    public WebElement approvalStatusButtonElementi;
+
+
+    // "Affiliation Transactions" sayfasinda başvurucnun onaylama (Approve) yazı locate'i
+    @FindBy (xpath = "(//a[@class=\"dropdown-item\"])[1]")
+    public WebElement approveOnayYaziElementi;
+
+    // "Affiliation Transactions" sayfasinda başvurucnun reddetme (Approve) yazı locate'i
+    @FindBy (xpath = "(//a[@class=\"dropdown-item\"])[2]")
+    public WebElement rejectRedYaziElementi;
+
+    // "Affiliation Transactions" sayfasinda başvurucnun onaylama/Reddetme (Approve/Reject) yazı locate'i
+    @FindBy (xpath = "(//*[@class='modal-title'])[3]")
+    public WebElement approveRecectonayRedYaziElementi;
+
     //Admin panelinde menu listesindeki Ülkeler (Countries) menu ögesinin locate'i
     @FindBy (xpath = "(//span[@class='aside-menu-title'])[13]")
     public WebElement countriesElementi;
