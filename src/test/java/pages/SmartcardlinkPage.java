@@ -43,8 +43,11 @@ public class SmartcardlinkPage {
     //sign out elementleri
     @FindBy(xpath = "//form[@id='logout-form']")
     public WebElement signOutElementi;
+
     @FindBy(xpath = "//div[@*='bg-white rounded-15 shadow-md width-540 px-5 px-sm-7 py-10 mx-auto']")
     public WebElement signInYaziElementi;
+
+
 
 
 
