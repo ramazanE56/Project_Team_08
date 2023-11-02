@@ -25,9 +25,10 @@ public class TC_01 extends TestBaseRapor {
          */
 
     @Test
-    public void affiliateUsers() throws IOException {
+    public void affiliatedByUsersGormeTesti() throws IOException {
 
-        extentTest = extentReports.createTest("Ortakligi Yapanlari Gorme Testi", "Admin panelde ortakligin kim tarafindan yapildigini görmeli");
+        extentTest = extentReports.createTest("Ortakligi Yapanlari (affiliatedBy) Görme Testi",
+                "Admin panelde ortakligin kim (affiliatedBy) tarafindan yapildigini görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -58,8 +59,8 @@ public class TC_01 extends TestBaseRapor {
         Assert.assertTrue(aDashboardPage.affiliatedByYaziElementi.isDisplayed());
         extentTest.pass("Ortaklığın kim (Affiliated By) tarafından yapıldığının görüldüğünü test eder");
 
-        ReusableMethods.getScreenshot("Ortaklığın kimler tarafından yapıldıgının (Affiliated By) Listesi");
-        extentTest.info("Ortak Yapanların (Affiliated By) Listesinin goruldugu sayfanın fotografini ceker");
+        ReusableMethods.getScreenshot("Ortaklığı yapanların (Affiliated By) Görüldüğü");
+        extentTest.info("Ortaklığı Yapanların (Affiliated By) görüldüğü sayfanın fotografini ceker");
 
         ReusableMethods.wait(3);
 

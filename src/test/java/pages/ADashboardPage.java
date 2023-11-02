@@ -414,11 +414,11 @@ public class ADashboardPage {
     public WebElement sehirSayisiYaziElementi;
 
     // Admin panelinde menudeki Ülkeler (Countries) sayfasındaki Eyaletler (States) sekmesi locate'i
-    @FindBy (xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/states']")
+    @FindBy (xpath = "//*[text()=\"States\"]")
     public WebElement statesSekmesiElementi;
 
     // Admin panelinde menudeki Ülkeler (Countries) sayfasındaki Şehirler (Cities) sekmesi locate'i
-    @FindBy (xpath = "//a[@ href='https://qa.smartcardlink.com/sadmin/cities']")
+    @FindBy (xpath = "//*[text()=\"Cities\"]")
     public WebElement citiesSekmesiElementi;
 
     // Admin panelinde menudeki Ülkeler (Countries) sayfasındaki Yeni Ülke (New Country) Button locate'i
@@ -431,11 +431,59 @@ public class ADashboardPage {
 
     // Ülkeler (Countries) sayfasındaki Yeni Ülke (New Country) kayıt (Save) elementi locate'i
     @FindBy (xpath = "(//button[@class='btn btn-primary m-0'])[1]")
-    public WebElement saveCountryElementi;
+    public WebElement saveCountryButtonElementi;
 
     // Eyaletler (States) sayfasındaki Yeni Eyalet (New State) Eklemek için Ülke seçme elementi locate'i
-    @FindBy(xpath = "select2 select2-container select2-container--bootstrap-5 select2-container--below select2-container--open")
+    @FindBy(xpath = "(//*[@class=\"form-select select2-hidden-accessible\"])[1]")
     public WebElement stateCountrySecmeElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Eyalet (New Satate) Eklemek için Eyalet adı kutusu locate'i
+    @FindBy (xpath = "(//input[@class='form-control'])[2]")
+    public WebElement stateNameBoxElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Eyalet (New State) Button locate'i
+    @FindBy (xpath = "//a[@class=\"btn btn-primary ms-auto\"]")
+    public WebElement newStateButtonElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Ülke (New Country) kayıt (Save) elementi locate'i
+    @FindBy (xpath = "(//button[@class='btn btn-primary m-0'])[1]")
+    public WebElement saveStateButtonElementi;
+
+    // Yeni Eyalet (New State) Eklemdikten sonraki ilk State elementi locate'i
+    @FindBy (xpath = "(//tbody/tr/td)[1]")
+    public WebElement sonEklenenStateElementi;
+
+    // Yeni Eyalet (New State) Eklemdikten sonraki ilk Country elementi locate'i
+    @FindBy (xpath = "(//tbody/tr/td)[2]")
+    public WebElement sonEklenenCountryElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Şehir (New City) Button locate'i
+    @FindBy (xpath = "//*[@class=\"btn btn-primary ms-auto\"]")
+    public WebElement newCityButtonElementi;
+
+    // Ülkeler (Countries) sayfasında Yeni Şehir (New City) Eklemek için Şehir adı kutusu locate'i
+    @FindBy (xpath = "(//input[@class='form-control'])[2]")
+    public WebElement cityNameBoxElementi;
+
+    // Yeni Eyalet (New State) Eklemdikten sonraki ilk State elementi locate'i
+    @FindBy (xpath = "(//tbody/tr/td)[1]")
+    public WebElement sonEklenenCityElementi;
+
+    // Eyaletler (States) sayfasındaki Yeni Eyalet (New State) Eklemek için Ülke seçme elementi locate'i
+    @FindBy(xpath = "(//*[@class=\"form-select select2-hidden-accessible\"])[1]")
+    public WebElement cityStateSecmeElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Ülke (New Country) kayıt (Save) elementi locate'i
+    @FindBy (xpath = "(//button[@class='btn btn-primary m-0'])[1]")
+    public WebElement saveCityButtonElementi;
+
+    // Eyaletler (States) sayfasının altında sayfa numaraları locate'i
+    @FindBy (xpath = "//*[@class='page-item active']")
+    public WebElement eyaletSayfaSayisi;
+
+    // Eyaletler (States) sayfasının altında sayfa numaraları locate'i
+    @FindBy (xpath = "(//*[@class='page-link'])[8]")
+    public WebElement sehirSayfaSayisi;
 
 }
 

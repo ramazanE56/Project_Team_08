@@ -25,7 +25,7 @@ public class TC_01 extends TestBaseRapor {
         */
 
     @Test
-    public void numberOfCountriesTesti() throws IOException {
+    public void ulkeSayisiniGormeTesti() throws IOException {
 
         extentTest = extentReports.createTest("Ulke Sayısını Görme Testi", "Admin panelde kullanılan Ulke Sayısını görmeli");
 
@@ -54,7 +54,7 @@ public class TC_01 extends TestBaseRapor {
         aDashboardPage.countriesElementi.click();
         extentTest.info("Dashboard menu listesindeki Ulkeler ögesini tıklar");
 
-        ReusableMethods.wait(3);
+        ReusableMethods.wait(1);
 
         // Admin panelinde Ülkeler (Countries) sayfasında Ulkeler (Countries) sekmesini tıklayınız
         aDashboardPage.countriesSekmesiElementi.click();
@@ -66,14 +66,16 @@ public class TC_01 extends TestBaseRapor {
         String UlkeSayisi = aDashboardPage.ulkeSayisiYaziElementi.getText();
         System.out.println("Ülke Sayısı :" + UlkeSayisi);
 
-        ReusableMethods.wait(3);
-
         // Admin panelinde ülke sayısının görünür olduğunu test ediniz.
         Assert.assertTrue(aDashboardPage.ulkeSayisiYaziElementi.isDisplayed());
         extentTest.pass("Admin panelinde ülke sayısının görüldüğünü test eder");
 
         ReusableMethods.getScreenshot("Ülke sayısı sayfası");
         extentTest.info("Ülke sayısının goruldugu sayfanın fotografini ceker");
+
+        ReusableMethods.wait(2);
+
+        // Browser'ı kapatımız.
 
         extentTest.info("sayfayi kapatir");
 

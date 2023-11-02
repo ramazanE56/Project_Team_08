@@ -25,7 +25,7 @@ public class TC_02 extends TestBaseRapor {
          */
 
     @Test
-    public void NumberOfStates() throws IOException {
+    public void eyaletSayisiniGormeTesti() throws IOException {
 
         extentTest = extentReports.createTest("Eyalet Sayısını Görme Testi", "Admin sitede kullanılan Eyalet sayısını görmeli");
 
@@ -54,7 +54,7 @@ public class TC_02 extends TestBaseRapor {
         aDashboardPage.countriesElementi.click();
         extentTest.info("Dashboard menu listesindeki Ülkeler(Countries) ögesini tıklar");
 
-        ReusableMethods.wait(3);
+        ReusableMethods.wait(1);
 
         // Ülkeler sayfasındaki "Eyaletler" (States) sekmesini tıklayınız
         aDashboardPage.statesSekmesiElementi.click();
@@ -63,6 +63,10 @@ public class TC_02 extends TestBaseRapor {
         // Admin panelinde Eyaletler (States) sayfasının en altına ininiz
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
+        aDashboardPage.eyaletSayfaSayisi.click();
+
+        ReusableMethods.wait(1);
+
         String EyaletSayisi = aDashboardPage.eyaletSayisiYaziElementi.getText();
         System.out.println("Eyalet Sayısı :" + EyaletSayisi);
 
@@ -70,11 +74,14 @@ public class TC_02 extends TestBaseRapor {
         Assert.assertTrue(aDashboardPage.eyaletSayisiYaziElementi.isDisplayed());
         extentTest.pass("Eyalet (States) sayısının görüldüğünü test eder");
 
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
         ReusableMethods.getScreenshot("Eyalet (States) sayısının görüldüğü sayfa");
         extentTest.info("Eyalet sayısının goruldugu sayfanın fotografini ceker");
 
-        ReusableMethods.wait(3);
+        ReusableMethods.wait(2);
 
+        // Browser'ı kapatımız.
         extentTest.info("sayfayi kapatir");
     }
 }

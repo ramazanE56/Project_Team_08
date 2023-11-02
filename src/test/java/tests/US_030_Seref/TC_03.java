@@ -25,7 +25,7 @@ public class TC_03 extends TestBaseRapor {
          */
 
     @Test
-    public void NumberOfCities() throws IOException {
+    public void sehirSayisiniGormeTesti() throws IOException {
 
         extentTest = extentReports.createTest("Şehir Sayısını Görme Testi", "Admin sitede kullanılan Şehir sayısını görmeli");
 
@@ -63,18 +63,29 @@ public class TC_03 extends TestBaseRapor {
         // Admin panelinde Şehirler (Cities) sayfasının en altına ininiz
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
+        ReusableMethods.wait(1);
+
+        aDashboardPage.sehirSayfaSayisi.click();
+
+        ReusableMethods.wait(1);
+
         String SehirSayisi = aDashboardPage.sehirSayisiYaziElementi.getText();
         System.out.println("Şehir Sayısı :" + SehirSayisi);
 
         // Şehir (Cities) sayısının görüldüğünü test ediniz
-        Assert.assertTrue(aDashboardPage.eyaletSayisiYaziElementi.isDisplayed());
+        Assert.assertTrue(aDashboardPage.sehirSayisiYaziElementi.isDisplayed());
         extentTest.pass("Şehirler (Cities) sayısının görüldüğünü test eder");
+
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+        ReusableMethods.wait(1);
 
         ReusableMethods.getScreenshot("Şehir (Cities) sayısının görüldüğü sayfa");
         extentTest.info("Şehir sayısının goruldugu sayfanın fotografini ceker");
 
-        ReusableMethods.wait(3);
+        ReusableMethods.wait(2);
 
+        // Browser'ı kapatımız.
         extentTest.info("sayfayi kapatir");
     }
 }
