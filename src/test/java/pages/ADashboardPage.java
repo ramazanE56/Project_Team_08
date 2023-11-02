@@ -257,23 +257,31 @@ public class ADashboardPage {
     @FindBy (xpath = "//tbody/tr/td[1]")
     public WebElement affiliationTransactionsUsers;
 
+    //Affiliation Transactions sayfasinda Ortaklık miktari locate
     @FindBy (xpath = "//tbody/tr/td[2]")
     public WebElement affiliationTransactionsAmount;
 
+    //Affiliation Transactions sayfasinda Ortaklık onay durumu locate
     @FindBy (xpath = "//tbody/tr/td[3]")
     public WebElement affiliationTransactionsApprovalStatus;
 
-
+    //Affiliation Transactions sayfasinda tarihi locate
     @FindBy (xpath = "//tbody/tr/td[4]")
     public WebElement affiliationTransactionsDate;
 
 
-
+    //Affiliation Transactions sayfasinda Eye İkon locate
     @FindBy (xpath = "(//span[@id='showAffiliationWithdrawBtn'])[1]")
     public WebElement affiliationTransactionsActionEyeIkon;
 
+    //Affiliation Transactions sayfasinda Ortaklık bilgileri locate
     @FindBy (xpath = "//h5[@id='showAffiliationWithdrawModalBtn']")
     public  WebElement affiliationTransactionsOrtaklikBilgileri;
+
+
+    //Affiliation Transactions sayfasinda tum tablo bilgileri locate
+    @FindBy (xpath = "//tbody")
+    public  WebElement affiliationTransactionsTumTablo;
 
     //Osman Admin Dasboard sayfasında Front CMS  sekmesinin locateler'i
     @FindBy(xpath = "//*[@ class ='nav-item active']")
@@ -349,9 +357,6 @@ public class ADashboardPage {
     //admin Coupon Codes sayfasinda ki Coupon EXPIRE AT column elementi
     @FindBy(xpath = "//tbody/tr[1]/td[4]")
     public WebElement adminFirstCouponExpireAt;
-
-
-
 
     // user yan menu Settings linki elementi
     @FindBy(xpath = "(//a[@href='https://qa.smartcardlink.com/admin/user-settings'])[1]")
@@ -743,6 +748,8 @@ public class ADashboardPage {
 
 
 
+
+
     // KAHRAMAN
     @FindBy(xpath = "//a[@class='btn btn-white fs-18 ms-3 d-lg-block d-none']")
     public WebElement signinButtonElementi;
@@ -905,6 +912,8 @@ public class ADashboardPage {
 
 
 
+
+
     //https://qa.smartcardlink.com/sadmin/users/366/edit  save butonu
     @FindBy(xpath = "//*[@class=\"btn btn-primary me-3\"]")
     public WebElement usersSaveButtonu;
@@ -966,5 +975,6 @@ public class ADashboardPage {
     public WebElement profileImageIcon;
     @FindBy (xpath = "//*[@placeholder=\"Phone Number\"]")
     public WebElement phoneNumberProfile;
+
 }
 
