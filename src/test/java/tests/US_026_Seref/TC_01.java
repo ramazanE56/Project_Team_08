@@ -52,8 +52,13 @@ public class TC_01 extends TestBaseRapor {
 
         // Admin panelinde Dashboard menu listesindeki "Ortaklık Kullanıcıları" (Affiliate Users) sekmesini tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
+<<<<<<< HEAD:src/test/java/tests/US_026_Seref/TC_01.java
         aDashboardPage.affiliateUsersElementi.click();
         extentTest.info("Dashboard menu listesindeki Ortaklık Kullanıcıları(Affiliate Users) sekmesini tıklar");
+=======
+        aDashboardPage.uyelikislemleriYaziElementi.click();
+        extentTest.info("ADashboard menu listesindeki Uyelik islemleri (Affiliation Transactions) sekmesinin tıklar");
+>>>>>>> main:src/test/java/tests/US026_Seref/TC_05.java
 
         // Ortaklığın kim (Affiliated By) tarafından yapıldığının görüldüğünü test ediniz
         Assert.assertTrue(aDashboardPage.affiliatedByYaziElementi.isDisplayed());

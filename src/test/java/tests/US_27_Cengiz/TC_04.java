@@ -7,7 +7,10 @@ import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
+
+import java.io.IOException;
 
 public class TC_04 extends TestBaseRapor {
     SmartcardlinkPage smartcardlinkPage;
@@ -16,7 +19,7 @@ public class TC_04 extends TestBaseRapor {
 
 
     @Test
-    public void affiliationTransactionsDate() {
+    public void affiliationTransactionsDate() throws IOException {
 
         extentTest = extentReports.createTest("Admin bilgileri ile Affiliation Transactions bilgilerine ulasilir ",
                 "Affiliation Transactions sayfası ortaklik tarihi bilgilerinin görüntülenebildigi doğrulanmali");
@@ -48,26 +51,36 @@ public class TC_04 extends TestBaseRapor {
         aDashboardPage = new ADashboardPage();
 
         Assert.assertTrue(aDashboardPage.dashboardYaziElementi.isDisplayed());
-        extentTest.info("Giriş yapildigini dogrulanir");
+        extentTest.pass("Giriş yapildigini dogrulanir");
 
         //Affiliation Transactions butonun görünür olduğu doğrulanr
 
 
         Assert.assertTrue(aDashboardPage.affiliationTransactionsButton.isDisplayed());
-        extentTest.info("Affiliation Transactions butonun gorunur oldugu dogrulanir");
+        extentTest.pass("Affiliation Transactions butonun gorunur oldugu dogrulanir");
 
         //Affiliation Transactions butonu  tıklanır
         aDashboardPage.affiliationTransactionsButton.click();
         extentTest.info("Affiliation Transactions butonu  tiklanir");
 
+        ReusableMethods.wait(1);
+
+        //Ortaklık kullanıcıları sayfasi  Affiliation Transactions tablosunun görünür olduğu doğrulanir
+        Assert.assertTrue(aDashboardPage.affiliationTransactionsTumTablo.isDisplayed());
+        extentTest.pass("Ortaklik tablosundaki tum bilgilerin görüntülenebildigi dogrulanir");
+
 
         //Date yazisinin görüntülenebildigi dogrulanir.
         Assert.assertTrue(aDashboardPage.dateYazisi.isDisplayed());
-        extentTest.info("Date yazisinin gorunur oldugu dogrulanir");
+        extentTest.pass("Date yazisinin gorunur oldugu dogrulanir");
 
-        //Ortaklık onay durumunun görüntülenebildiği dogrulanir.
+        //Ortaklık tarihinin görüntülenebildiği dogrulanir.
         Assert.assertTrue(aDashboardPage.affiliationTransactionsDate.isDisplayed());
-        extentTest.info("Ortaklik tarihinin görüntülenebildigi dogrulanir");
+        extentTest.pass("Ortaklik tarihinin görüntülenebildigi dogrulanir");
+
+        //Ortaklik tarihinin fotoğrafi cekilir
+        ReusableMethods.getScreenshot("Ortaklik tarihi durumu");
+        extentTest.info("Ortaklik tarihinin fotoğrafi cekilir");
 
 
         //Sayfa kapatılır
