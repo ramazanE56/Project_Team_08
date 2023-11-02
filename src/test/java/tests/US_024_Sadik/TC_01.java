@@ -1,5 +1,6 @@
 package tests.US_024_Sadik;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -23,7 +24,10 @@ public class TC_01 extends TestBaseRapor {
 
         //4- Anasayfada Sing in butonu tıklanır
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
-       // ReusableMethods.wait(2);
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);",smartcardlinkPage.signinButtonElementi );
+        ReusableMethods.wait(1);
         smartcardlinkPage.signinButtonElementi.click();
         extentTest.info("Sign in butonuna tıklanır");
 
@@ -80,6 +84,7 @@ public class TC_01 extends TestBaseRapor {
 
         //14-Browser kapatılır
         Driver.closeDriver();
+        extentTest.info("Sayfa kapatilir.");
     }
 }
 
