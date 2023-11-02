@@ -70,7 +70,7 @@ public class TC_01 extends TestBaseRapor {
         String actualCashPayUrl= Driver.getDriver().getCurrentUrl();
 
         Assert.assertEquals(actualCashPayUrl,expectedCashPayUrl);
-        extentTest.pass("Cash Payments sayfası URL'si (https://qa.smartcardlink.com/sadmin/cashPayments) doğrulanır");
+        extentTest.fail("Cash Payments sayfası URL'si (https://qa.smartcardlink.com/sadmin/cashPayments) doğrulanır");
 
         //Sayfa kapatilir
         Driver.closeDriver();

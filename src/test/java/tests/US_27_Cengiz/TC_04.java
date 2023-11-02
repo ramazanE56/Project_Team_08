@@ -67,7 +67,7 @@ public class TC_04 extends TestBaseRapor {
 
         //Ortaklık kullanıcıları sayfasi  Affiliation Transactions tablosunun görünür olduğu doğrulanir
         Assert.assertTrue(aDashboardPage.affiliationTransactionsTumTablo.isDisplayed());
-        extentTest.pass("Ortaklik tablosundaki tum görüntülenebildigi dogrulanir");
+        extentTest.pass("Ortaklik tablosundaki tum bilgilerin görüntülenebildigi dogrulanir");
 
 
         //Date yazisinin görüntülenebildigi dogrulanir.
