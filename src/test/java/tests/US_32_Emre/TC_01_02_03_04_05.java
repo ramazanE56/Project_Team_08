@@ -10,8 +10,9 @@ import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class TC_01_02_03_04_05 {
+public class TC_01_02_03_04_05 extends TestBaseRapor {
     @BeforeClass
     public static void setup(){
         //1-Browser açılır
@@ -41,18 +42,23 @@ public class TC_01_02_03_04_05 {
 
     //Kayıtlı kullanıcı siteye ulaşıp bilgileri ile login olduğunda’Settings’ kısmı Tıklandığında‘Credentials’ bölümünün Görüntülenebildiği doğrulanmalı.
     @Test
-    public void addCouponCodeTest() {
+    public void tc01_addCouponCodeTest() {
+        extentTest=extentReports.createTest("Kullanıcı Credentials sayfasına erişim","Kullanıcı Kayıtlı Kulanıcı bilgilerini girerek Credentials sayfasına ulaşabilmeli");
         //1-Browser açılır
         //2-https://qa.smartcardlink.com/ adresine gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
+        extentTest.info("Kullanıcı verilen url adresine gider.");
         //3-Sign In butonuna click yapılır.
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
         smartcardlinkPage.signinButtonElementi.click();
+        extentTest.info("Signin butonuna click yapılır.");
         //4-Email textbox'ına Kayıtlı Admin email bilgisi girilir.
         LoginPage loginPage = new LoginPage();
         ReusableMethods.clickAndSendkeys(loginPage.emailKutusuElementi, ConfigReader.getProperty("semail"));
+        extentTest.info("Email kutusuna kullanıcı emaili yazılır");
         //5-Password textbox'ına geçerli adminpassword bilgisi girilir
         ReusableMethods.clickAndSendkeys(loginPage.passwordKutusuElementi, ConfigReader.getProperty("spassword"));
+        extentTest.info("Password kutusuna kullanıcı şifresi yazılır");
         //6-Login butonuna click yapılır.
         loginPage.loginElementi.click();
         //7- Yan menüden ‘Coupon Codes’  kısmına click yapılır.
@@ -75,8 +81,8 @@ public class TC_01_02_03_04_05 {
     }
 
     //Admin  ‘Coupon Codes’ sayfasında oluşturduğu Coupon code ‘un bilgilerini görüntüleyebildiği Doğrulanmalı.
-    @Test(priority = 1,dependsOnMethods = "addCouponCodeTest")
-    public void couponCodeContainsVisibilityTest() {
+    @Test(priority = 1,dependsOnMethods = "tc01_addCouponCodeTest")
+    public void tc02_couponCodeContainsVisibilityTest() {
         //1-Browser açılır
         //2-https://qa.smartcardlink.com/ adresine gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -114,8 +120,8 @@ public class TC_01_02_03_04_05 {
     }
 
     //Admin  ‘Coupon Codes’ sayfasında oluşturduğu Coupon code ‘u aktif edebildiği doğrulanmalı.
-    @Test(priority = 2,dependsOnMethods = "addCouponCodeTest")
-    public void couponCodeActivationTest(){
+    @Test(priority = 2,dependsOnMethods = "tc01_addCouponCodeTest")
+    public void tc03_couponCodeActivationTest(){
         //1-Browser açılır
         //2-https://qa.smartcardlink.com/ adresine gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -152,8 +158,8 @@ public class TC_01_02_03_04_05 {
     }
 
     //Admin  ‘Coupon Codes’ sayfasında oluşturduğu Coupon code ‘un bilgilerini düzenleyebildiği doğrulanmalı.
-    @Test(priority = 3 , dependsOnMethods = "addCouponCodeTest")
-    public void couponCodeEditionTest(){
+    @Test(priority = 3 , dependsOnMethods = "tc01_addCouponCodeTest")
+    public void tc04_couponCodeEditionTest(){
         //1-Browser açılır
         //2-https://qa.smartcardlink.com/ adresine gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -197,8 +203,8 @@ public class TC_01_02_03_04_05 {
     }
 
     //Admin  ‘Coupon Codes’ sayfasında oluşturduğu Coupon code‘u silebildiği doğrulanmalı.
-    @Test(priority = 4,dependsOnMethods = "couponCodeEditionTest")
-    public void couponCodeDeleteTest(){
+    @Test(priority = 4,dependsOnMethods = "tc04_couponCodeEditionTest")
+    public void tc05_couponCodeDeleteTest(){
         //1-Browser açılır
         //2-https://qa.smartcardlink.com/ adresine gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));

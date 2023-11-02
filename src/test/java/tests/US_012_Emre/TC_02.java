@@ -11,26 +11,37 @@ import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class TC_02 {
+public class TC_02 extends TestBaseRapor {
+    /*Kayıtlı kullanıcı ‘Credentials’ bölümündeki
+Ayarları  güncelleyebildiği doğrulanmalı.
+     */
 @Test
     public void credentialsUpdateTesti() {
+    extentTest=extentReports.createTest("Kayıtlı kullanıcı ‘Credentials’ bölümündeki ayarları  güncelleme","Kayıtlı Kulanıcı bilgilerini girerek Credentials sayfasına ulaşıp kimlik bilgilerini güncelleyebilmeli");
     //1-Browser açılır
     //2-https://qa.smartcardlink.com/ adresine gidilir.
     Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
+    extentTest.info("https://qa.smartcardlink.com/ adresine gidilir");
     //3-Sign In butonuna click yapılır.
     SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
     smartcardlinkPage.signinButtonElementi.click();
+    extentTest.info("Signin butonuna click yapılır.");
     //4-Email textbox'ına Kayıtlı email bilgisi girilir.
     LoginPage loginPage=new LoginPage();
     loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("brEmail"));
+    extentTest.info("Email textbox'ına Kayıtlı email bilgisi girilir.");
     //5-Password textbox'ına geçerli password bilgisi girilir.
     loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("brPassword"));
+    extentTest.info("Password textbox'ına geçerli password bilgisi girilir.");
     //6-Login butonuna click yapılır.
     loginPage.loginElementi.click();
-    //7-Yan menudeki Settings linkine click yaplır.
+    extentTest.info("Login butonuna click yapılır.");
+    //7-Yan menudeki Settings linkine click yapılır.
     ADashboardPage aDashboardPage=new ADashboardPage();
     aDashboardPage.userSettingsLinki.click();
+    extentTest.info("Yan menüdeki Settings linkine click yapılır.");
     //8-‘Credentials’  bölümündeki ayarlar değiştirilir.
     Faker faker=new Faker();
     ReusableMethods.makeTheWebElementIsSelected(aDashboardPage.userCredential_paypalCheckbox);

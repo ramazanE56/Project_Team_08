@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 public class TC_01 extends TestBaseRapor {
 
 
-    @Test(dependsOnMethods = {"settingsIsDisplayed"},priority = 2)
+    @Test
     public void CredentialsIsDisplayed(){
       extentTest=extentReports.createTest("Kullanıcı Credentials sayfasına erişim","Kullanıcı Kayıtlı Kulanıcı bilgilerini girerek Credentials sayfasına ulaşabilmeli");
       //1-Browser açılır
@@ -24,6 +24,7 @@ public class TC_01 extends TestBaseRapor {
       //3-Sign In butonuna click yapılır.
       SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
       smartcardlinkPage.signinButtonElementi.click();
+      extentTest.info("Signin butonuna click yapılır.");
       //4-Email textbox'ına Kayıtlı email bilgisi girilir.
       //5-Password textbox'ına geçerli password bilgisi girilir.
       //6-Login butonuna click yapılır.
@@ -31,11 +32,14 @@ public class TC_01 extends TestBaseRapor {
       Actions actions=new Actions(Driver.getDriver());
       loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("brEmail")
               + Keys.TAB+Keys.TAB
-              +ConfigReader.getProperty("brPassword")
-              +Keys.ENTER);
+              +ConfigReader.getProperty("brPassword"));
+      extentTest.info("Email kutusuna kullanıcı emaili ve password kutusuna kullanıcı şifresi yazılır");
+      loginPage.loginElementi.click();
+      extentTest.info("login butonuna basılır.");
       //7-yan menudeki Settings linkine click yapılır.
       ADashboardPage aDashboardPage=new ADashboardPage();
       aDashboardPage.userSettingsLinki.click();
+      extentTest.info("yan menudeki Settings linkine click yapılır.");
       //8-‘Credentials’  bölümünün görüntülenebildiğini test et.
       Assert.assertTrue(aDashboardPage.userCredentialSayfaBasligi.isDisplayed());
       extentTest.pass("Kullanıcı Kayıtlı Kulanıcı bilgilerini girerek Credentials sayfasına ulaşabilmeli");
