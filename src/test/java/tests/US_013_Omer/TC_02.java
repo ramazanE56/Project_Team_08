@@ -1,10 +1,9 @@
-package tests.US_019;
+package tests.US_013_Omer;
 
-import com.beust.ah.A;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ADashboardPage;
 import pages.LoginPage;
@@ -20,50 +19,43 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
-public class TC_03 extends TestBaseRapor {
+public class TC_02 extends TestBaseRapor {
     @Test
     public void test01() throws AWTException {
-
-        ADashboardPage aDashboardPage = new ADashboardPage();
-        LoginPage loginPage = new LoginPage();
+        extentTest = extentReports.createTest("Profil Bilgilerini Güncelleme Testi", "Kullanıcı ilgili siteye \n" +
+                "kayıtlı bir kullanıcı \n" +
+                "bilgileri ile giriş yaparak \n" +
+                "profil bilgilerini \n" +
+                "güncelleyebilmelidir.");
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
-        extentTest = extentReports.createTest("Kullanıcı ekleme Password değiştirme ve silme Testi",
-                "Bilgileri girilerek kullanıcı eklenir, Şifre değiştirilir ve eklenen kullanıcı geri silinir.");
-        extentTest.info("https://qa.smartcardlink.com/ adresine gidilir");
+        LoginPage loginPage = new LoginPage();
+        ADashboardPage aDashboardPage = new ADashboardPage();
+        extentTest.info("1-https://qa.smartcardlink.com/ adresine gidilir");
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
-
-        extentTest.info("Signin butonuna click yapılır.");
+        extentTest.info("2-Signin butonuna click yapılır.");
         smartcardlinkPage.signinButtonElementi.click();
-
-        extentTest.info("Email kutusuna kullanıcı email i yazılır");
+        extentTest.info("3-Email kutusuna kullanıcı email i yazılır");
         loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("semail"));
-
-        extentTest.info("Password kutusuna şifre yazılır.");
+        extentTest.info("4-Password kutusuna şifre yazılır.");
         loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("spassword"));
-
-        extentTest.info("login butonuna basılır.");
+        extentTest.info("5-Login butonuna basılır.");
         loginPage.loginElementi.click();
-
-        extentTest.info("Users linkine click yapılır");
-        aDashboardPage.userMenuElementi.click();
-        //8-Add User butonuna click yapar
-        aDashboardPage.addUserButonu.click();
-        //9-User bilgileri doldurulur
+        extentTest.info("6- Kullanıcı isminin yazdığı dropdown menu acılır");
+        aDashboardPage.profildropdownMenuButton1.click();
+        extentTest.info("7-Account settings linkine click yapılır.");
+        aDashboardPage.accountSettingsLinki.click();
+        extentTest.info("8-Kullanıcı bilgileri doldurulur");
         Actions actions = new Actions(Driver.getDriver());
-        actions.click(aDashboardPage.firstNameKutusuAddUser)
-                .sendKeys("omer")
+        WebElement firstNameKutusu = aDashboardPage.firstNameKutusu;
+
+        actions.sendKeys(firstNameKutusu, "omer")
                 .sendKeys(Keys.TAB)
                 .sendKeys("orak")
                 .sendKeys(Keys.TAB)
-                .sendKeys("omerorak25@gmail.com")
+                .sendKeys("orakomer@gmail.com")
                 .sendKeys(Keys.TAB)
-                .sendKeys(Keys.TAB)
-                .sendKeys("5436628595")
-                .sendKeys(Keys.TAB)
-                .sendKeys("Password25.")
-                .sendKeys(Keys.TAB)
-                .sendKeys("Password25.").perform();
-        //profile image icon(kalem) elementine tıklanır.
+                .sendKeys(Keys.TAB).perform();
+        aDashboardPage.phoneNumberProfile.sendKeys(Keys.CLEAR + "5");
         //profile resmi iconuna tıklar
         aDashboardPage.profileImageIcon.click();
         // C: arama çubuğu koordinatı
@@ -105,6 +97,8 @@ public class TC_03 extends TestBaseRapor {
         Point point3 = new Point(407, 342);
         // Farenin konumunu ayarla
         robot.mouseMove(point3.x, point3.y);
+
+
         ReusableMethods.wait(1);
         // Sol tıklama yap
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
@@ -123,36 +117,14 @@ public class TC_03 extends TestBaseRapor {
         ReusableMethods.wait(1);
         // Sol tıklama bırak
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        ReusableMethods.wait(3);
-        //10-save butonuna click yapılır.
-        aDashboardPage.saveButtonAddUser.click();
-        //11-User created succesfully yazı elementinin göründüğü test edilir
-        Assert.assertTrue(aDashboardPage.userCreatedSuccesfullyAddUser.isDisplayed());
-        String sonEklenenUser = aDashboardPage.sonEklenenUser.getText();
-        System.out.println(sonEklenenUser);
 
-        String expectedUserIcerik = "omer";
-        Assert.assertTrue(sonEklenenUser.contains(expectedUserIcerik));
-        extentTest.info("Password değitirmek için anahtar simgesine tıklanır.");
-        aDashboardPage.passwordAnahtarElementi.click();
-        extentTest.info("New password ve Confirm password kutuları doldurulur");
-        aDashboardPage.newPasswordkutusu.sendKeys("Password25.");
-        aDashboardPage.confirmPasswordKutusu.sendKeys("Password25.");
-        extentTest.info("Save butonuna tıklanır");
-        aDashboardPage.saveButonuPassword.click();
-        extentTest.pass("Password'un değişltirildiği test edilir.");
-        Assert.assertTrue(aDashboardPage.passwordUpdatedSuccesfully.isDisplayed());
+
         ReusableMethods.wait(2);
-        extentTest.info("Hesabı silmek için delete butonuna tıklanır");
-        aDashboardPage.deleteUserButton.click();
-        ReusableMethods.wait(2);
-        extentTest.info("Yes delete butonu tıklanır");
-        aDashboardPage.yesDeleteButton.click();
-        ReusableMethods.wait(2);
-        extentTest.pass("Hesabın silindiği test edilir.");
-        sonEklenenUser = aDashboardPage.sonEklenenUser.getText();
-        System.out.println(sonEklenenUser);
-        Assert.assertTrue(!sonEklenenUser.contains(expectedUserIcerik));
+
+        extentTest.info("8- save butonuna click yapılır.");
+        aDashboardPage.saveButtonProfile.click();
+        //14- profil bilgilerinin güncellendiği test edilir.
+        //Save butonu tıklanabilir olmadığı için diğer aşamalara geçilemedi.
 
 
     }

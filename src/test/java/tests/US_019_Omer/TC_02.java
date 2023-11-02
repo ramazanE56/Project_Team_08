@@ -1,7 +1,6 @@
-package tests.US_019;
+package tests.US_019_Omer;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
