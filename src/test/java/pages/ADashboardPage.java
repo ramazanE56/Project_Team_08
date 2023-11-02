@@ -775,8 +775,34 @@ public class ADashboardPage {
     public WebElement yeniPlanElementi;
     @FindBy(xpath = "//*[@class='form-control select2-hidden-accessible']")
     public WebElement planSure;
-    @FindBy(xpath = "//*[@class='form-group col-md-12 mb-10']")
+    @FindBy(xpath = "(//div[@class='row'])[2]")
     public WebElement templeteElementi;
+
+    @FindBy(xpath = "(//div[@class='col-lg-3 img-box mb-2'])[1]")
+    public WebElement templete1;
+    @FindBy(xpath = "(//div[@class='col-lg-3 img-box mb-2'])[2]")
+    public WebElement templete2;
+    @FindBy(xpath = "(//div[@class='col-lg-3 img-box mb-2'])[3]")
+    public WebElement templete3;
+    @FindBy(xpath = "(//div[@class='col-lg-3 img-box mb-2'])[4]")
+    public WebElement templete4;
+    @FindBy(xpath = "(//div[@class='col-lg-3 img-box mb-2'])[5]")
+    public WebElement templete5;
+    @FindBy(xpath = "(//div[@class='col-lg-3 img-box mb-2'])[6]")
+    public WebElement templete6;
+    @FindBy(xpath = "(//div[@class='col-lg-3 img-box mb-2'])[7]")
+    public WebElement templete7;
+    @FindBy(xpath = "(//div[@class='col-lg-3 img-box mb-2'])[8]")
+    public WebElement templete8;
+    @FindBy(xpath = "(//div[@class='col-lg-3 img-box mb-2'])[9]")
+    public WebElement templete9;
+    @FindBy(xpath = "(//div[@class='col-lg-3 img-box mb-2'])[10]")
+    public WebElement templete10;
+    @FindBy(xpath = "(//div[@class='col-lg-3 img-box mb-2'])[11]")
+    public WebElement templete11;
+
+
+
     @FindBy(xpath = "//input[@type='checkbox']")
     public WebElement checkBoxListesi;
 
