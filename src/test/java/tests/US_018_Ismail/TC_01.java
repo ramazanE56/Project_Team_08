@@ -17,7 +17,7 @@ public class TC_01 extends TestBaseRapor {
 
     @Test
     public void adminDashboard(){
-        extentTest=extentReports.createTest("Admin Dashboard sayfasına erişim","Kullanıcı Kayıtlı Kulanıcı bilgilerini girerek profil bilgileri sayfasına ulaşabilmeli");
+        extentTest=extentReports.createTest("Admin Dashboard sayfasına erişim","Admin,Admin bilgilerini girerek dasboard sayfasına ulaşabilmeli");
         //Admin olarak "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("https://qa.smartcardlink.com/ adresine gidilir");
