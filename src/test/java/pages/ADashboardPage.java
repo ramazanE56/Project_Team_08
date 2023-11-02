@@ -199,7 +199,7 @@ public class ADashboardPage {
     public WebElement SubscribedUserPlansTestElementi;
 
     //Abonelik planlarını görüntüleme elementi
-    @FindBy(xpath = "(//a[@data-id='330'])[1]")
+    @FindBy(xpath = "(//a[@class='btn px-1 text-info fs-3 subscribed-user-plan-view-btn'])[1]")
     public WebElement SubscribedUserPlansViewElementi;
 
     //User menu elementi
@@ -220,7 +220,6 @@ public class ADashboardPage {
     //https://qa.smartcardlink.com/sadmin/users edit(kalem) elementi
     @FindBy (xpath = "(//*[@class=\"svg-inline--fa fa-pen-to-square\"])[1]")
     public WebElement edit_kalem_elementi;
-
 
     //https://qa.smartcardlink.com/sadmin/users/366/edit first name kutusu
     @FindBy(xpath = "//*[@name=\"first_name\"]")
@@ -521,9 +520,9 @@ public class ADashboardPage {
     public WebElement vcardsElementi;
 
     @FindBy (xpath = "(//*[@class='svg-inline--fa fa-pen-to-square'])[1]")
-    public WebElement editElementi;
+    public WebElement editIconElementi;
 
-    @FindBy (xpath = "h1")
+    @FindBy (xpath = "//*[text()='Edit VCard']")
     public WebElement editVcardsElementi;
 
     @FindBy(xpath = "//div[@class='d-flex flex-column flex-root vh-100']")
@@ -580,7 +579,7 @@ public class ADashboardPage {
     @FindBy(xpath = "//h4[1]")
     public WebElement previewYenisayfaElementi;
 
-    @FindBy (xpath = "(//*[@fill='currentColor'])[16]")
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-copy fs-2'])[1]")
     public WebElement previewUrlLinkiKopyalamaElementi;
 
     @FindBy (xpath = "//div[@class='toast-message']")
@@ -592,10 +591,10 @@ public class ADashboardPage {
     @FindBy (xpath = "(//*[@fill='currentColor'])[18]")
     public WebElement vcardsEditQRCodeElementi;
 
-    @FindBy (xpath = "(//*[@fill='currentColor'])[19]")
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-download'])[1]")
     public WebElement vcardsEditDownloadElementi;
 
-    @FindBy (xpath = "(//*[@fill='currentColor'])[20]")
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-clipboard-question'])[1]")
     public WebElement vcardsEnquiresElementi;
 
     @FindBy (xpath = "(//*[@fill='currentColor'])[21]")
@@ -606,6 +605,26 @@ public class ADashboardPage {
 
     @FindBy (xpath = "(//*[@fill='currentColor'])[23]")
     public WebElement vcardsTrashElementi;
+
+//murat
+    //Front CMS elementleri
+
+    //Admib Dashboard Front CMS Elementi
+    @FindBy(xpath = "//span[text()='Front CMS']")
+    public WebElement frontCmsElementi2;
+
+    //Front CMS menüsü Subscribers elementi
+    @FindBy (xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/email-subscriptions']")
+    public WebElement subscribersElementi;
+
+    // Subscribers Görünürlük Sonuç Elementi
+    @FindBy (xpath = "//strong[3]")
+    public WebElement subscribersGorunurlukSonucElementi;
+
+    //Action 1.satır 2.sutun elementi
+    @FindBy (xpath = "//tbody/tr[1]/td[2]")
+    public WebElement actionSilmeElementi;
+
 
 
 
@@ -833,6 +852,54 @@ public class ADashboardPage {
     public WebElement planSil;
     @FindBy(xpath = "//*[@class='swal-button swal-button--confirm']")
     public WebElement silmeOnay;
+
+
+    //Kaan
+    @FindBy(xpath = "//a[@class='vcard1-sticky-btn bars-btn d-flex justify-content-center text-white me-5 align-items-center rounded-0 px-5 mb-3 text-decoration-none py-1 rounded-pill justify-content-center']")
+    public WebElement ikinciSayfaKartElementi;
+
+    @FindBy (xpath = "//h1[text()='Vcard Analytic']")
+    public WebElement vcardAnalyticYaziElementi;
+
+    @FindBy (xpath = "//a[@class='btn btn-outline-primary']")
+    public WebElement vcardAnalyticBackTusuElementi;
+
+    @FindBy (xpath = "//input[@class='form-check-input vcardStatus']")
+    public WebElement statusButonElementi;
+
+
+    @FindBy (xpath = "//*[@class='mb-0']")
+    public WebElement enquiriesYaziElementi;
+
+    @FindBy (xpath = "//*[@class='btn btn-outline-primary']")
+    public WebElement enquiriesYazibackElementi;
+
+
+    @FindBy (xpath = "//button[@class='swal-button swal-button--confirm']")
+    public WebElement vcardEditDublicateYesButonuElementi;
+
+
+    @FindBy (xpath = "/html[1]/body[1]/div[4]/div[1]/div[4]")
+    public WebElement vcardEditYesdenSonraCikanOKElementi;
+
+
+    @FindBy (xpath = "//button[@class='swal-button swal-button--confirm']")
+    public WebElement vcardEditTrashYesDeleteButonElementi;
+
+    @FindBy (xpath = "/html[1]/body[1]/div[4]/div[1]/div[4]")
+    public WebElement vcardEditTrashDeleteOKButonElementi;
+
+
+
+    @FindBy (xpath = "(//span[@class='picker-edit rounded-circle text-gray-500 fs-small'])[2]")
+    public WebElement coverLogoKalemElementi;
+
+    @FindBy (xpath = "//*[@class='text-decoration-none fs-6']")
+    public WebElement vcardPreviewUrlElementi;
+
+    @FindBy(xpath = "//input[@class='form-control ms-1 vcard-url-alias']")
+    public WebElement urlAliaselementi;
+
 
 
 
