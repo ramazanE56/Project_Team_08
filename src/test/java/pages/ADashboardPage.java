@@ -199,7 +199,7 @@ public class ADashboardPage {
     public WebElement SubscribedUserPlansTestElementi;
 
     //Abonelik planlarını görüntüleme elementi
-    @FindBy(xpath = "(//a[@data-id='330'])[1]")
+    @FindBy(xpath = "(//a[@class='btn px-1 text-info fs-3 subscribed-user-plan-view-btn'])[1]")
     public WebElement SubscribedUserPlansViewElementi;
 
     //User menu elementi
@@ -217,6 +217,13 @@ public class ADashboardPage {
     //admin kullanıcı profil ismi elementi
     @FindBy(xpath ="//button[@id='dropdownMenuButton1']")
     public WebElement kullaniciProfilIsimElementi;
+    //https://qa.smartcardlink.com/sadmin/users edit(kalem) elementi
+    @FindBy (xpath = "(//*[@class=\"svg-inline--fa fa-pen-to-square\"])[1]")
+    public WebElement edit_kalem_elementi;
+
+    //https://qa.smartcardlink.com/sadmin/users/366/edit first name kutusu
+    @FindBy(xpath = "//*[@name=\"first_name\"]")
+    public WebElement firstNameKutusuUsers;
 
     // Admin Dasboard sayfasında Affiliation Transactions Butonu locate
     @FindBy (xpath = "//span[text()='Affiliation Transactions']")
@@ -250,23 +257,31 @@ public class ADashboardPage {
     @FindBy (xpath = "//tbody/tr/td[1]")
     public WebElement affiliationTransactionsUsers;
 
+    //Affiliation Transactions sayfasinda Ortaklık miktari locate
     @FindBy (xpath = "//tbody/tr/td[2]")
     public WebElement affiliationTransactionsAmount;
 
+    //Affiliation Transactions sayfasinda Ortaklık onay durumu locate
     @FindBy (xpath = "//tbody/tr/td[3]")
     public WebElement affiliationTransactionsApprovalStatus;
 
-
+    //Affiliation Transactions sayfasinda tarihi locate
     @FindBy (xpath = "//tbody/tr/td[4]")
     public WebElement affiliationTransactionsDate;
 
 
-
+    //Affiliation Transactions sayfasinda Eye İkon locate
     @FindBy (xpath = "(//span[@id='showAffiliationWithdrawBtn'])[1]")
     public WebElement affiliationTransactionsActionEyeIkon;
 
+    //Affiliation Transactions sayfasinda Ortaklık bilgileri locate
     @FindBy (xpath = "//h5[@id='showAffiliationWithdrawModalBtn']")
     public  WebElement affiliationTransactionsOrtaklikBilgileri;
+
+
+    //Affiliation Transactions sayfasinda tum tablo bilgileri locate
+    @FindBy (xpath = "//tbody")
+    public  WebElement affiliationTransactionsTumTablo;
 
     //Osman Admin Dasboard sayfasında Front CMS  sekmesinin locateler'i
     @FindBy(xpath = "//*[@ class ='nav-item active']")
@@ -342,9 +357,6 @@ public class ADashboardPage {
     //admin Coupon Codes sayfasinda ki Coupon EXPIRE AT column elementi
     @FindBy(xpath = "//tbody/tr[1]/td[4]")
     public WebElement adminFirstCouponExpireAt;
-
-
-
 
     // user yan menu Settings linki elementi
     @FindBy(xpath = "(//a[@href='https://qa.smartcardlink.com/admin/user-settings'])[1]")
@@ -513,9 +525,9 @@ public class ADashboardPage {
     public WebElement vcardsElementi;
 
     @FindBy (xpath = "(//*[@class='svg-inline--fa fa-pen-to-square'])[1]")
-    public WebElement editElementi;
+    public WebElement editIconElementi;
 
-    @FindBy (xpath = "h1")
+    @FindBy (xpath = "//*[text()='Edit VCard']")
     public WebElement editVcardsElementi;
 
     @FindBy(xpath = "//div[@class='d-flex flex-column flex-root vh-100']")
@@ -572,7 +584,7 @@ public class ADashboardPage {
     @FindBy(xpath = "//h4[1]")
     public WebElement previewYenisayfaElementi;
 
-    @FindBy (xpath = "(//*[@fill='currentColor'])[16]")
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-copy fs-2'])[1]")
     public WebElement previewUrlLinkiKopyalamaElementi;
 
     @FindBy (xpath = "//div[@class='toast-message']")
@@ -584,10 +596,10 @@ public class ADashboardPage {
     @FindBy (xpath = "(//*[@fill='currentColor'])[18]")
     public WebElement vcardsEditQRCodeElementi;
 
-    @FindBy (xpath = "(//*[@fill='currentColor'])[19]")
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-download'])[1]")
     public WebElement vcardsEditDownloadElementi;
 
-    @FindBy (xpath = "(//*[@fill='currentColor'])[20]")
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-clipboard-question'])[1]")
     public WebElement vcardsEnquiresElementi;
 
     @FindBy (xpath = "(//*[@fill='currentColor'])[21]")
@@ -598,6 +610,26 @@ public class ADashboardPage {
 
     @FindBy (xpath = "(//*[@fill='currentColor'])[23]")
     public WebElement vcardsTrashElementi;
+
+//murat
+    //Front CMS elementleri
+
+    //Admib Dashboard Front CMS Elementi
+    @FindBy(xpath = "//span[text()='Front CMS']")
+    public WebElement frontCmsElementi2;
+
+    //Front CMS menüsü Subscribers elementi
+    @FindBy (xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/email-subscriptions']")
+    public WebElement subscribersElementi;
+
+    // Subscribers Görünürlük Sonuç Elementi
+    @FindBy (xpath = "//strong[3]")
+    public WebElement subscribersGorunurlukSonucElementi;
+
+    //Action 1.satır 2.sutun elementi
+    @FindBy (xpath = "//tbody/tr[1]/td[2]")
+    public WebElement actionSilmeElementi;
+
 
 
 
@@ -712,6 +744,8 @@ public class ADashboardPage {
     // admin Coupon Codes sayfasi  coupon delet yapilinca Deleted alert OK buton  elementi
     @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
     public WebElement adminCouponDeletedAlertOkButton;
+
+
 
 
 
@@ -853,7 +887,120 @@ public class ADashboardPage {
     public WebElement silmeOnay;
 
 
+    //Kaan
+    @FindBy(xpath = "//a[@class='vcard1-sticky-btn bars-btn d-flex justify-content-center text-white me-5 align-items-center rounded-0 px-5 mb-3 text-decoration-none py-1 rounded-pill justify-content-center']")
+    public WebElement ikinciSayfaKartElementi;
 
+    @FindBy (xpath = "//h1[text()='Vcard Analytic']")
+    public WebElement vcardAnalyticYaziElementi;
+
+    @FindBy (xpath = "//a[@class='btn btn-outline-primary']")
+    public WebElement vcardAnalyticBackTusuElementi;
+
+    @FindBy (xpath = "//input[@class='form-check-input vcardStatus']")
+    public WebElement statusButonElementi;
+
+
+    @FindBy (xpath = "//*[@class='mb-0']")
+    public WebElement enquiriesYaziElementi;
+
+    @FindBy (xpath = "//*[@class='btn btn-outline-primary']")
+    public WebElement enquiriesYazibackElementi;
+
+
+    @FindBy (xpath = "//button[@class='swal-button swal-button--confirm']")
+    public WebElement vcardEditDublicateYesButonuElementi;
+
+
+    @FindBy (xpath = "/html[1]/body[1]/div[4]/div[1]/div[4]")
+    public WebElement vcardEditYesdenSonraCikanOKElementi;
+
+
+    @FindBy (xpath = "//button[@class='swal-button swal-button--confirm']")
+    public WebElement vcardEditTrashYesDeleteButonElementi;
+
+    @FindBy (xpath = "/html[1]/body[1]/div[4]/div[1]/div[4]")
+    public WebElement vcardEditTrashDeleteOKButonElementi;
+
+
+
+    @FindBy (xpath = "(//span[@class='picker-edit rounded-circle text-gray-500 fs-small'])[2]")
+    public WebElement coverLogoKalemElementi;
+
+    @FindBy (xpath = "//*[@class='text-decoration-none fs-6']")
+    public WebElement vcardPreviewUrlElementi;
+
+    @FindBy(xpath = "//input[@class='form-control ms-1 vcard-url-alias']")
+    public WebElement urlAliaselementi;
+
+
+
+
+
+
+
+
+    //https://qa.smartcardlink.com/sadmin/users/366/edit  save butonu
+    @FindBy(xpath = "//*[@class=\"btn btn-primary me-3\"]")
+    public WebElement usersSaveButtonu;
+    //https://qa.smartcardlink.com/sadmin/users user uptated succesfully. yazısı
+    @FindBy (xpath = "//div[@role=\"alert\"]")
+    public WebElement userUpdatedSuccesfullyYaziElementi;
+   // https://qa.smartcardlink.com/sadmin/users  ilk kullanıcı isim elementi
+    @FindBy(xpath = "(//*[@class=\"mb-1 text-decoration-none fs-6\"])[1]")
+    public WebElement firstUserNameElementi;
+    //https://qa.smartcardlink.com/sadmin/users   Showing to of results Elementi;
+    @FindBy(xpath = "//*[@class=\"text-muted ms-sm-3 pagination-record\"]")
+    public WebElement showing_to_of_resultsElementi;
+
+    //https://qa.smartcardlink.com/sadmin/users  add user butonu
+    @FindBy(xpath = "//*[@class=\"btn btn-primary ms-auto\"]")
+    public WebElement addUserButonu;
+
+    //https://qa.smartcardlink.com/sadmin/users isactive elementi
+    @FindBy (xpath = "(//*[@name=\"is_active\"])[1]")
+    public WebElement ilkIsActiveElementi;
+    @FindBy (xpath = "//tbody")
+    public WebElement kullaniciBilgileriWebTables;
+
+   //https://qa.smartcardlink.com/sadmin/users/create  first name kutusu
+    @FindBy (xpath = "//*[@placeholder=\"First Name\"]")
+    public WebElement firstNameKutusuAddUser;
+
+    //https://qa.smartcardlink.com/sadmin/users/create  save butonu
+    @FindBy (xpath = "//*[@class=\"btn btn-primary me-3\"]")
+    public WebElement saveButtonAddUser;
+
+    //https://qa.smartcardlink.com/sadmin/users/
+    @FindBy(xpath = "//*[@role=\"alert\"]")
+    public WebElement userCreatedSuccesfullyAddUser;
+
+    //https://qa.smartcardlink.com/sadmin/users/
+    @FindBy (xpath = "(//*[@class=\"btn px-1 text-danger fs-3 user-delete-btn\"])[1]")
+    public WebElement deleteUserButton;
+
+    @FindBy (xpath = "//*[text()=\"Yes, Delete!\"]")
+    public WebElement yesDeleteButton;
+
+    @FindBy (xpath = "//tbody/tr[1]/td[1]")
+    public WebElement sonEklenenUser;
+
+    @FindBy (xpath = "//div[@class='toast-message']")
+    public WebElement passwordUpdatedSuccesfully;
+    @FindBy(xpath = "(//*[@title=\"Change Password\"])[1]")
+    public WebElement passwordAnahtarElementi;
+    @FindBy (xpath = "(//*[@class=\"form-control\"])[5]")
+    public WebElement newPasswordkutusu;
+
+    @FindBy(xpath = "(//*[@class=\"form-control\"])[6]")
+    public WebElement confirmPasswordKutusu;
+
+    @FindBy(xpath = "(//*[@class=\"btn btn-primary m-0\"])[3]")
+    public WebElement saveButonuPassword;
+    @FindBy (xpath = "//*[@id=\"profileImageIcon\"]")
+    public WebElement profileImageIcon;
+    @FindBy (xpath = "//*[@placeholder=\"Phone Number\"]")
+    public WebElement phoneNumberProfile;
 
 }
 

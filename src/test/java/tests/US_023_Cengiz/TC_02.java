@@ -1,6 +1,8 @@
 package tests.US_023_Cengiz;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ADashboardPage;
@@ -11,6 +13,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +22,10 @@ public class TC_02 extends TestBaseRapor {
     LoginPage loginPage;
     ADashboardPage aDashboardPage;
     @Test
-    public void cashPaymentsTableElements(){
+    public void cashPayments() throws IOException {
 
-        extentTest=extentReports.createTest("Cash Payments sayfasi odeme tablo bilgileri ",
-                "Cash Payments sayfası tablo basliklarinin görünür oldugu dogrulanmali");
+        extentTest=extentReports.createTest("Manuel odeme  bilgileri ve manuel odeme sayilari ",
+                "Cash Payments sayfası manuel odeme  bilgileri ve manuel odeme sayilarinin görünür oldugu dogrulanmali");
 
         //Admin olarak "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -51,60 +54,84 @@ public class TC_02 extends TestBaseRapor {
         aDashboardPage=new ADashboardPage();
 
         Assert.assertTrue(aDashboardPage.dashboardYaziElementi.isDisplayed());
-        extentTest.info("Giriş yapildigini dogrulanir");
+        extentTest.pass("Giriş yapildigini dogrulanir");
 
         //Cash Payments butonun görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.cashPaymentsButton.isDisplayed());
-        extentTest.info("Cash Payments butonun gorunur oldugu dogrulanir");
+        extentTest.pass("Cash Payments butonun gorunur oldugu dogrulanir");
 
         //Cash Payments butonu  tıklanır
         aDashboardPage.cashPaymentsButton.click();
-        extentTest.info("Cash Payments butonu  tiklanir");
+        extentTest.pass("Cash Payments butonu  tiklanir");
         ReusableMethods.wait(1);
 
         //Cash Payments yazisi görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.cashPaymentsYazisi.isDisplayed());
-        extentTest.info("Cash Payments yazisi gorunur olduğu doğrulanir");
+        extentTest.pass("Cash Payments yazisi gorunur olduğu doğrulanir");
 
         //USER NAME basligi görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.userNameYazisi.isDisplayed());
-        extentTest.info("USER NAME basligi gorunur oldugu dogrulanir");
+        extentTest.pass("USER NAME basligi gorunur oldugu dogrulanir");
 
         //PLAN NAME basligi görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.planNameYazisi.isDisplayed());
-        extentTest.info("PLAN NAME basligi gorunur oldugu dogrulanir");
+        extentTest.pass("PLAN NAME basligi gorunur oldugu dogrulanir");
 
         //PLAN PRICE basligi görünür olduğu doğrulanır
        Assert.assertTrue(aDashboardPage.planPriceYazisi.isDisplayed());
-        extentTest.info("PLAN PRICE basligi gorunur oldugu dogrulanir");
+        extentTest.pass("PLAN PRICE basligi gorunur oldugu dogrulanir");
 
         //PAYABLE AMOUNT basligi görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.payableAmountYazisi.isDisplayed());
-        extentTest.info("PAYABLE AMOUNT basligi gorunur oldugu dogrulanir");
+        extentTest.pass("PAYABLE AMOUNT basligi gorunur oldugu dogrulanir");
 
         //START DATE basligi görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.startDateYazisi.isDisplayed());
-        extentTest.info("START DATE basligi gorunur oldugu dogrulanir");
+        extentTest.pass("START DATE basligi gorunur oldugu dogrulanir");
 
         //END DATE basligi görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.endDateYazisi.isDisplayed());
-        extentTest.info("END DATE basligi gorunur oldugu dogrulanir");
+        extentTest.pass("END DATE basligi gorunur oldugu dogrulanir");
 
         //ATTACHMENT basligi görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.attachmentYazisi.isDisplayed());
-        extentTest.info("ATTACHMENT basligi gorunur oldugu dogrulanir");
+        extentTest.pass("ATTACHMENT basligi gorunur oldugu dogrulanir");
 
         //NOTES basligi görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.notesYazisi.isDisplayed());
-        extentTest.info("NOTES basligi gorunur oldugu dogrulanir");
+        extentTest.pass("NOTES basligi gorunur oldugu dogrulanir");
 
         //STATUS basligi görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.statusYazisi.isDisplayed());
-        extentTest.info("STATUS basligi gorunur oldugu dogrulanir");
+        extentTest.pass("STATUS basligi gorunur oldugu dogrulanir");
 
         //Sirala butonu(Asagi-yukari oklari) görünür olduğu doğrulanır
         Assert.assertTrue(aDashboardPage.siralamaButonu.isDisplayed());
-        extentTest.info("Sirala butonu(Asagi-yukari oklari) gorunur oldugu dogrulanir");
+        extentTest.pass("Sirala butonu(Asagi-yukari oklari) gorunur oldugu dogrulanir");
+
+        //Yapılan manuel ödemelerin görüntülenebildiği test edilir
+
+        Assert.assertTrue(aDashboardPage.cashPaymentsListesi.isDisplayed());
+        extentTest.pass("Yapılan manuel ödemelerin görüntülenebildiği test edilir");
+
+        //Yapilan manuel odemelerin fotoğrafi cekilir
+        ReusableMethods.getScreenshot("Manuel odeme bilgileri");
+        extentTest.info("Yapilan manuel odemelerin fotoğrafi cekilir");
+
+        //Yapılan manuel ödemelerin sayısının görüntülenebildiği test edilir
+
+        Assert.assertTrue(aDashboardPage.cashPaymentsSayisi.isDisplayed());
+        extentTest.pass("Yapılan manuel ödemelerin sayisinin görüntülenebildiği test edilir");
+
+
+        //Yapilan manuel odemelerin sayisinin fotoğrafi cekilir
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+
+        ReusableMethods.wait(2);
+
+        ReusableMethods.getScreenshot("Manuel odeme  sayisi");
+        extentTest.info("Yapilan manuel odemele sayisinin fotoğrafi cekilir");
 
 
         //Sayfa kapatilir

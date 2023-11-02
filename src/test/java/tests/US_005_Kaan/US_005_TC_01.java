@@ -68,7 +68,7 @@ ReusableMethods.wait(2);
 
         //7. "You have succesfully registered." onay yazısının çıktığı test edilir.
         Assert.assertTrue(loginPage.succesedElementi.isDisplayed());
-        extentTest.info(" \"You have succesfully registered.\" onay yazısının çıktığı test edilir.");
+        extentTest.pass(" \"You have succesfully registered.\" onay yazısının çıktığı test edilir.");
         ReusableMethods.getScreenshot("createAnAccountTesti");
 ReusableMethods.wait(2);
 
