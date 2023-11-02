@@ -23,7 +23,7 @@ public class TC02_US014 extends TestBaseRapor {
         smartcardlinkPage.signinButtonElementi.click();
 
         loginPage = new LoginPage();
-        loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("user04Email"));
+        loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("userEmail"));
         loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("changeNewPassword"));
         loginPage.loginElementi.click();
 
@@ -32,16 +32,16 @@ public class TC02_US014 extends TestBaseRapor {
         smartcardlinkPage.currentPasswordElementi.click();
         smartcardlinkPage.currentPasswordElementi.sendKeys(ConfigReader.getProperty("changeNewPassword"));
         smartcardlinkPage.newPasswordElementi.click();
-        smartcardlinkPage.newPasswordElementi.sendKeys(ConfigReader.getProperty("user04Password"));
+        smartcardlinkPage.newPasswordElementi.sendKeys(ConfigReader.getProperty("userPassword"));
         smartcardlinkPage.confirmPasswordElementi.click();
-        smartcardlinkPage.confirmPasswordElementi.sendKeys(ConfigReader.getProperty("user04Password"));
+        smartcardlinkPage.confirmPasswordElementi.sendKeys(ConfigReader.getProperty("userPassword"));
         smartcardlinkPage.passwordChangeSaveButonElementi.click();
         Driver.closeDriver();
 
     }
 
-
-        @Test(dependsOnMethods = "sifreSifirlama")
+//(dependsOnMethods = "sifreSifirlama")
+        @Test
         public void kullaniciSifreDegistirmeTesti () {
 
             extentTest = extentReports.createTest
@@ -59,11 +59,11 @@ public class TC02_US014 extends TestBaseRapor {
 
             //Email kutusuna kayıtlı email bilgisi girilir.
             loginPage = new LoginPage();
-            loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("user04Email"));
+            loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("userEmail"));
             extentTest.info("Email kutusuna kayıtlı email bilgisi girilir.");
 
             //Password kutusuna geçerli password bilgisi girilir.
-            loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("user04Password"));
+            loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("userPassword"));
             extentTest.info("Password kutusuna geçerli password bilgisi girilir.");
 
             //Login butonuna click yapılır.
@@ -83,7 +83,7 @@ public class TC02_US014 extends TestBaseRapor {
             extentTest.info("Current Password kutusuna click yapılır.");
 
             //Mevcut geçerli şifre password  kutusuna yazılır.
-            smartcardlinkPage.currentPasswordElementi.sendKeys(ConfigReader.getProperty("user04Password"));
+            smartcardlinkPage.currentPasswordElementi.sendKeys(ConfigReader.getProperty("userPassword"));
             extentTest.info("Mevcut geçerli şifre password kutusuna yazılır.");
 
             //New Password kutusuna click yapılır.
