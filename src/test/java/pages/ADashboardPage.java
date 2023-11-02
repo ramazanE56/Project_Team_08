@@ -199,7 +199,7 @@ public class ADashboardPage {
     public WebElement SubscribedUserPlansTestElementi;
 
     //Abonelik planlarını görüntüleme elementi
-    @FindBy(xpath = "(//a[@data-id='330'])[1]")
+    @FindBy(xpath = "(//a[@class='btn px-1 text-info fs-3 subscribed-user-plan-view-btn'])[1]")
     public WebElement SubscribedUserPlansViewElementi;
 
     //User menu elementi
@@ -598,6 +598,26 @@ public class ADashboardPage {
 
     @FindBy (xpath = "(//*[@fill='currentColor'])[23]")
     public WebElement vcardsTrashElementi;
+
+//murat
+    //Front CMS elementleri
+
+    //Admib Dashboard Front CMS Elementi
+    @FindBy(xpath = "//span[text()='Front CMS']")
+    public WebElement frontCmsElementi2;
+
+    //Front CMS menüsü Subscribers elementi
+    @FindBy (xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/email-subscriptions']")
+    public WebElement subscribersElementi;
+
+    // Subscribers Görünürlük Sonuç Elementi
+    @FindBy (xpath = "//strong[3]")
+    public WebElement subscribersGorunurlukSonucElementi;
+
+    //Action 1.satır 2.sutun elementi
+    @FindBy (xpath = "//tbody/tr[1]/td[2]")
+    public WebElement actionSilmeElementi;
+
 
 
 
