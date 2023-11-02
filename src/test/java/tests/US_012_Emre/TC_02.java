@@ -47,36 +47,36 @@ Ayarları  güncelleyebildiği doğrulanmalı.
     ReusableMethods.makeTheWebElementIsSelected(aDashboardPage.userCredential_paypalCheckbox);
     ReusableMethods.makeTheWebElementIsSelected(aDashboardPage.userCredential_stripeCheckbox);
     ReusableMethods.wait(2);
-
+    extentTest.info("'stripe' ve 'paypal' butonları seçili konuma getirilir.");
 
     ReusableMethods.clickClearSendkeys(aDashboardPage.userCredential_stripeKeyTextbox,faker.name().firstName());
     ReusableMethods.clickClearSendkeys(aDashboardPage.userCredential_stripeSecretTextbox,faker.name().firstName());
     ReusableMethods.clickClearSendkeys(aDashboardPage.userCredential_paypalClientIdTextbox,faker.idNumber().valid());
     ReusableMethods.clickClearSendkeys(aDashboardPage.userCredential_paypalModeTextbox,faker.name().firstName());
     ReusableMethods.clickClearSendkeys(aDashboardPage.userCredential_paypalSecretTextbox,faker.name().firstName());
-    //Assert.assertTrue(aDashboardPage.userCredential_currencyList.);
-    ReusableMethods.clickAndSendkeys(aDashboardPage.userCredential_currencyList, ""+Keys.ARROW_DOWN+Keys.ENTER);
+    extentTest.info("Tüm textbox'lardaki bilgiler değiştirilir.");
 
+    String oldCurrencyText=aDashboardPage.userCredential_currencyList.getText();
+    ReusableMethods.changeDropdownOption(aDashboardPage.userCredential_currencyList);
+    String newCurrencyText=aDashboardPage.userCredential_currencyList.getText();
+    Assert.assertFalse(newCurrencyText.equals(oldCurrencyText));
+    extentTest.pass("Currency seçimi değiştirlebilmelidir");
     aDashboardPage.userCredential_paypalCheckbox.sendKeys(Keys.PAGE_DOWN);
+
     ReusableMethods.wait(1);
 
-
-
     ReusableMethods.clickAndSendkeys(aDashboardPage.userCredential_currencyList,""+Keys.TAB+Keys.TAB+Keys.ARROW_RIGHT);
-
+    extentTest.info("'Time Format' seçimi değiştirilir.");
     aDashboardPage.userCredential_enableContactCheckbox.click();
     aDashboardPage.userCredential_hideStickybarCheckbox.click();
     aDashboardPage.userCredential_whatsappShareCheckbox.click();
-
-
-    System.out.println(aDashboardPage.userCredential_currencyList.getText());
-
-
+    extentTest.info("'Enable Contact' , 'Hide Stickybar' , 'Whatsapp Share' checkbox seçimleri değiştirilir.");
     //9-Save butonu click yapılır
     aDashboardPage.userCredential_saveButton.click();
+    extentTest.info("Save butonu click yapılır.");
     //10-"Settings updated successfully." yazısının çıktığını test et.
     Assert.assertTrue(aDashboardPage.userCredential_saveSuccesss.isDisplayed());
-
+    extentTest.pass("Credentials güncellenerek kaydedilebildiği, 'Settings updated successfully.' yazısının çıktığı test edilir.");
     //11-Browser kapatılır.
     Driver.closeDriver();
 }
