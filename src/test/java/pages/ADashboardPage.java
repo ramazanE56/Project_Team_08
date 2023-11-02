@@ -38,6 +38,30 @@ public class ADashboardPage {
     @FindBy(xpath = "//a[@class='nav-link p-0 active']")
     public WebElement dashboardYaziElementi;
 
+    @FindBy (xpath = "(//*[text()='Languages'])[1]")
+    public WebElement dashboardLanguages;
+    @FindBy(xpath = "//div[@class='col-12 text-muted pagination-record ms-sm-3']")
+    public WebElement languagesYaziElementi;
+
+    @FindBy(xpath = "(//span[text()='Withdraw Transactions'])[1]")
+    public WebElement withdrawElementi;
+
+    @FindBy(xpath = "(//div[@class='d-flex align-items-center'])[2]")
+    public WebElement paidUsers;
+
+    @FindBy(xpath = "(//span[@class='badge bg-success me-2'])[1]")
+    public WebElement amountElementi;
+
+    @FindBy(xpath = "(//td[@class='whitespace-nowrap px-3 py-2 md:px-6 md:py-4 text-sm leading-5 text-gray-900 dark:text-white'])[3]")
+    public WebElement paymentElementi;
+
+    @FindBy(xpath = "(//td[@class='whitespace-nowrap px-3 py-2 md:px-6 md:py-4 text-sm leading-5 text-gray-900 dark:text-white'])[4]")
+    public WebElement dateElementi;
+
+
+    @FindBy(xpath = "(//tbody/tr)[1]")
+    public WebElement webTableIlkSatirElementi;
+
 
     //Admin Dashboard sayfasi sol taraftaki Cash Payments butonunun locate'i
     @FindBy (xpath = "//span[text()='Cash Payments']")
@@ -105,7 +129,7 @@ public class ADashboardPage {
 
     //Admin Dasboard sayfasında üyelik işlemlerinin görüldüğü locate
     @FindBy (xpath = "(//span[@class='aside-menu-title'])[10]")
-    public WebElement uyelikİslemleriYaziElementi;
+    public WebElement uyelikislemleriYaziElementi;
 
     //Admin Dasboard sayfasında üyelik onay durumunun görüldüğü locate
     @FindBy (xpath = "(//*[@class='svg-inline--fa fa-eye text-info'])[1]")
@@ -386,6 +410,91 @@ public class ADashboardPage {
     @FindBy (xpath = "//*[@class='toast toast-error']")
     public WebElement userCredential_saveError;
 
+
+    @FindBy (xpath = "//span[text()='VCards']")
+    public WebElement dashboardVCardsElementi;
+
+    @FindBy (xpath = "//a[text()='New VCard']")
+    public WebElement dashboardNewVcardButonu;
+
+    @FindBy (xpath = "//button[@id='generate-url-alias']")
+    public WebElement newVCardUrlAliasGenerateButonu;
+
+    @FindBy (xpath = "//input[@placeholder='Enter VCard Name']")
+    public WebElement newVCardNameKutusu;
+
+    @FindBy (xpath = "//input[@placeholder='Enter Occupation']")
+    public WebElement newVCardOccupationKutusu;
+
+    @FindBy (xpath = "//div[@class='ql-editor ql-blank']")
+    public WebElement newVCardDescriptionKutusu;
+
+    @FindBy (xpath = "//input[@id='vcardSaveBtn']")
+    public WebElement newVCardSaveButonu;
+
+    @FindBy (xpath = "//div[@role='alert']")
+    public WebElement vcardCreatedSuccesfullyAlerti;
+
+    @FindBy (xpath = "//h2[@class='fs-1-xxl fw-bolder text-white']")
+    public WebElement totalActiveVCardSayisiElementi;
+
+    @FindBy (xpath = "//button[@class='btn px-2 text-primary fs-2 user-edit-btn copy-clipboard'][1]")
+    public WebElement vCardCopyButonu;
+
+    @FindBy (xpath = "//*[@data-icon='chart-line']")
+    public WebElement vcardAnalyticsButonu;
+
+    @FindBy (xpath = "//*[@data-icon='chart-line']")
+    public WebElement vCardStatsButonu;
+
+    @FindBy (xpath = "//div[@class='d-md-flex align-items-center justify-content-between mb-5']")
+    public WebElement vCardAnalyticsSayfasi;
+
+    @FindBy (xpath = "//*[@*='checkbox']")
+    public WebElement vCardCheckboxButonu;
+
+    @FindBy (xpath="//div[@class='toast-progress']")
+    public WebElement vCardStatusUpdatedAlerti;
+
+    @FindBy (xpath = "//a[text()='Back']")
+    public WebElement vCardBackButonu;
+
+    @FindBy (xpath = "//a[@title='QR Code']")
+    public WebElement vCardQRCodeDownloadButonu;
+
+    @FindBy (xpath = "//a[@title='Download VCard']")
+    public WebElement vCardDownloadButonu;
+
+    @FindBy (xpath = "//a[@title='Duplicate VCard']")
+    public WebElement vCardDublicateButonu;
+
+    @FindBy (xpath = "//button[text()='Yes']")
+    public WebElement vCardDuplicateYesButonu;
+
+    @FindBy (xpath = "//a[@class='text-decoration-none fs-6'][1]")
+    public WebElement vCardDublicateTestLinki;
+
+    @FindBy (xpath = "//a[@title='Edit']")
+    public WebElement vCardEditButonu;
+
+    @FindBy (xpath = "//h1[text()='Edit VCard']")
+    public WebElement vCardEditSayfasiElementi;
+
+    @FindBy (xpath = "//a[@title='Delete']")
+    public WebElement vCardDeleteButonu;
+
+    @FindBy (xpath = "//button[text()='Yes, Delete!']")
+    public WebElement vCardYesDeleteButonu;
+
+    @FindBy (xpath = "//div[@class='toast-message']")
+    public WebElement vCardSuccessCopied;
+
+    @FindBy (xpath = "//span[text()='Appointments']")
+    public WebElement dashboardAppointmentsElementi;
+
+    @FindBy (xpath = "//a[@class='nav-link p-0 active']")
+    public WebElement dashboardAppointmentsSayfasi;
+
     //admin Coupon Codes sayfasi ilk siradaki coupon Status buton elementi
     @FindBy(xpath = "(//input[@id='changeCouponStatus'])[1]")
     public WebElement adminFirstCouponStatusButton;
@@ -491,6 +600,67 @@ public class ADashboardPage {
     public WebElement vcardsTrashElementi;
 
 
+
+
+    //****** sadık
+
+    //Subscribed User Plansda sayfasındaki search butonu
+    @FindBy (xpath = "//input[@type='search']")
+    public WebElement SubscribedPlanssearchButonu;
+
+    //Subscribed User Plansda sayfasındakiSecilen kullanıcı için View butonu
+    @FindBy (xpath = "(//a[@data-id='151'])[1]")
+    public WebElement seciliViewElementi;
+
+    //Subscribed User Plansda sayfasındaki Secilen kullanıcı için Edit butonu
+    @FindBy (xpath = "(//a[@data-id='151'])[2]")
+    public WebElement seciliEditElementi;
+
+    //Subscribed User Plansda sayfasındaki End Date  kutusu
+    @FindBy (xpath = "//input[@id='EndDate']")
+    public WebElement EndDateKutusu;
+
+    //Subscribed User Plansda sayfasındaki End Date'de yıl arttırma butonu
+    @FindBy (xpath = "//span[@class='arrowUp']")
+    public WebElement EndDateYilArttir;
+
+    //Subscribed User Plansda sayfasındaki End Date  ay seçme
+    @FindBy (xpath = "//select[@aria-label='Month']")
+    public WebElement EndDateAySEC  ;
+
+    //Subscribed User Plansda sayfasındaki End Date Gün seçme
+    @FindBy (xpath = "(//span[@class='flatpickr-day'])[15]")
+    public WebElement EndDateGun  ;
+
+    //Kullanıcı yeni End Date kaydetme butonu
+    @FindBy (xpath = "(//button[text()='Save'])[1]")  //button[@type='submit']
+    public WebElement  EndDateSave  ;
+
+    //Kullanıcı yeni End Date başarılı bir şekilde kaydedildi yazısı
+    @FindBy (xpath = "//div[@class='toast-message']")
+    public WebElement  DateDegistiSuccesfullyYazisi  ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // admin Coupon Codes sayfasi ilk sıradaki coupon edit kalem butonu elementi
     @FindBy(xpath = "(//a[@class='btn px-1 text-info fs-3 edit-coupon-code'])[1]")
     public WebElement adminFirstCouponEditButton;
@@ -542,5 +712,7 @@ public class ADashboardPage {
     // admin Coupon Codes sayfasi  coupon delet yapilinca Deleted alert OK buton  elementi
     @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
     public WebElement adminCouponDeletedAlertOkButton;
+
+
 }
 

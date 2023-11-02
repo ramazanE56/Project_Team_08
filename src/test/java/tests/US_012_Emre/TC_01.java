@@ -11,7 +11,33 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseRapor;
 
+<<<<<<< HEAD
+public class TC_01 {
+
+  @Test
+    public void userSignIn(){
+    //1-Browser açılır
+    //2-https://qa.smartcardlink.com/ adresine gidilir.
+    Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
+
+    //3-Sign In butonuna click yapılır.
+    SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
+    smartcardlinkPage.signinButtonElementi.click();
+    //4-email ve Password değerlerini girip Login butonuna tıklanır.
+    LoginPage loginPage=new LoginPage();
+    Actions actions=new Actions(Driver.getDriver());
+    loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("brEmail")
+            + Keys.TAB+Keys.TAB
+            +ConfigReader.getProperty("brPassword")
+            +Keys.ENTER);
+    //4-User Dashboard sayfasının görünür olduğunu test edin.
+    ADashboardPage aDashboardPage=new ADashboardPage();
+    Assert.assertTrue(aDashboardPage.visitorDashboardYaziElementi.isDisplayed());
+    //5-Sayfa kapatılır.
+    Driver.closeDriver();
+=======
 public class TC_01 extends TestBaseRapor {
+>>>>>>> main
 
 
     @Test
