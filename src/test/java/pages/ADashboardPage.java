@@ -181,7 +181,74 @@ public class ADashboardPage {
     //admin kullanıcı profil ismi elementi
     @FindBy(xpath ="//button[@id='dropdownMenuButton1']")
     public WebElement kullaniciProfilIsimElementi;
+    //https://qa.smartcardlink.com/sadmin/users edit(kalem) elementi
+    @FindBy (xpath = "(//*[@class=\"svg-inline--fa fa-pen-to-square\"])[1]")
+    public WebElement edit_kalem_elementi;
 
+    //https://qa.smartcardlink.com/sadmin/users/366/edit first name kutusu
+    @FindBy(xpath = "//*[@name=\"first_name\"]")
+    public WebElement firstNameKutusuUsers;
 
+    //https://qa.smartcardlink.com/sadmin/users/366/edit  save butonu
+    @FindBy(xpath = "//*[@class=\"btn btn-primary me-3\"]")
+    public WebElement usersSaveButtonu;
+    //https://qa.smartcardlink.com/sadmin/users user uptated succesfully. yazısı
+    @FindBy (xpath = "//div[@role=\"alert\"]")
+    public WebElement userUpdatedSuccesfullyYaziElementi;
+   // https://qa.smartcardlink.com/sadmin/users  ilk kullanıcı isim elementi
+    @FindBy(xpath = "(//*[@class=\"mb-1 text-decoration-none fs-6\"])[1]")
+    public WebElement firstUserNameElementi;
+    //https://qa.smartcardlink.com/sadmin/users   Showing to of results Elementi;
+    @FindBy(xpath = "//*[@class=\"text-muted ms-sm-3 pagination-record\"]")
+    public WebElement showing_to_of_resultsElementi;
+
+    //https://qa.smartcardlink.com/sadmin/users  add user butonu
+    @FindBy(xpath = "//*[@class=\"btn btn-primary ms-auto\"]")
+    public WebElement addUserButonu;
+
+    //https://qa.smartcardlink.com/sadmin/users isactive elementi
+    @FindBy (xpath = "(//*[@name=\"is_active\"])[1]")
+    public WebElement ilkIsActiveElementi;
+    @FindBy (xpath = "//tbody")
+    public WebElement kullaniciBilgileriWebTables;
+
+   //https://qa.smartcardlink.com/sadmin/users/create  first name kutusu
+    @FindBy (xpath = "//*[@placeholder=\"First Name\"]")
+    public WebElement firstNameKutusuAddUser;
+
+    //https://qa.smartcardlink.com/sadmin/users/create  save butonu
+    @FindBy (xpath = "//*[@class=\"btn btn-primary me-3\"]")
+    public WebElement saveButtonAddUser;
+
+    //https://qa.smartcardlink.com/sadmin/users/
+    @FindBy(xpath = "//*[@role=\"alert\"]")
+    public WebElement userCreatedSuccesfullyAddUser;
+
+    //https://qa.smartcardlink.com/sadmin/users/
+    @FindBy (xpath = "(//*[@class=\"btn px-1 text-danger fs-3 user-delete-btn\"])[1]")
+    public WebElement deleteUserButton;
+
+    @FindBy (xpath = "//*[text()=\"Yes, Delete!\"]")
+    public WebElement yesDeleteButton;
+
+    @FindBy (xpath = "//tbody/tr[1]/td[1]")
+    public WebElement sonEklenenUser;
+
+    @FindBy (xpath = "//div[@class='toast-message']")
+    public WebElement passwordUpdatedSuccesfully;
+    @FindBy(xpath = "(//*[@title=\"Change Password\"])[1]")
+    public WebElement passwordAnahtarElementi;
+    @FindBy (xpath = "(//*[@class=\"form-control\"])[5]")
+    public WebElement newPasswordkutusu;
+
+    @FindBy(xpath = "(//*[@class=\"form-control\"])[6]")
+    public WebElement confirmPasswordKutusu;
+
+    @FindBy(xpath = "(//*[@class=\"btn btn-primary m-0\"])[3]")
+    public WebElement saveButonuPassword;
+    @FindBy (xpath = "//*[@id=\"profileImageIcon\"]")
+    public WebElement profileImageIcon;
+    @FindBy (xpath = "//*[@placeholder=\"Phone Number\"]")
+    public WebElement phoneNumberProfile;
 }
 
