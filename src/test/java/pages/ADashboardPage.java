@@ -714,5 +714,120 @@ public class ADashboardPage {
     public WebElement adminCouponDeletedAlertOkButton;
 
 
+
+
+    // KAHRAMAN
+    @FindBy(xpath = "//a[@class='btn btn-white fs-18 ms-3 d-lg-block d-none']")
+    public WebElement signinButtonElementi;
+    @FindBy(name = "email")
+    public WebElement emailKutusuElementi;
+    //
+    @FindBy(name = "password")
+    public WebElement passwordKutusuElementi;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement loginElementi;
+
+    @FindBy(xpath = "//*[@id='sidebar']/div[2]/ul/li[8]")
+    public WebElement planlarElementi;
+
+    @FindBy(xpath = "//*[@class='text-muted ms-sm-3 pagination-record']")
+    public WebElement planlarinSayisiElementi;
+
+    @FindBy(xpath = "//*[@class='text-muted ms-sm-3 pagination-record']")
+    public WebElement paraBirimleriSayisi;
+
+    @FindBy(xpath = "//*[@class='btn btn-primary ms-auto']")
+    public WebElement yeniPlanElementi;
+    @FindBy(xpath = "//*[@class='form-control select2-hidden-accessible']")
+    public WebElement planSure;
+    @FindBy(xpath = "//*[@class='form-group col-md-12 mb-10']")
+    public WebElement templeteElementi;
+    @FindBy(xpath = "//input[@type='checkbox']")
+    public WebElement checkBoxListesi;
+
+    @FindBy(xpath = "//*[@id='name']")
+    public WebElement yeniPlanIsim;
+    @FindBy(xpath = "//*[@class='form-control select2Selector select2-hidden-accessible']")
+    public WebElement paraSecimi;
+    @FindBy(xpath = "//*[@class='form-control price-format-input']")
+    public WebElement fiyatGiris;
+    @FindBy(xpath = "(//*[@class='form-control'])[3]")
+    public WebElement vCardSayisi;
+    @FindBy(xpath = "(//*[@class='form-control'])[4]")
+    public WebElement denemeSuresi;
+    @FindBy(xpath = "//*[@class='btn btn-primary me-3']")
+    public WebElement kaydetbutonu;
+
+    @FindBy(xpath="//*[@id='sidebar']/div[2]/ul/li[5]/a")
+    public  WebElement sanalArkaPlan;
+
+    @FindBy(xpath="//*[@id='sidebar']/div[2]/ul/li[12]")
+    public  WebElement paraBirimleri;
+
+
+
+
+    @FindBy(xpath = "(//*[@class='flip-box-h col-lg-3 m-4'])[1]")
+    public WebElement sanalKart1;
+    @FindBy(xpath = "(//*[@class='flip-box-h col-lg-3 m-4'])[2]")
+    public WebElement sanalKart2;
+    @FindBy(xpath = "(//*[@class='flip-box-h col-lg-3 m-4'])[3]")
+    public WebElement sanalKart3;
+    @FindBy(xpath = "(//*[@class='flip-box-h col-lg-3 m-4'])[4]")
+    public WebElement sanalKart4;
+    @FindBy(xpath = "(//*[@class='flip-box-h col-lg-3 m-4'])[5]")
+    public WebElement sanalKart5;
+    @FindBy(xpath = "(//*[@class='flip-box-h col-lg-3 m-4'])[6]")
+    public WebElement sanalKart6;
+    @FindBy(xpath = "(//*[@class='flip-box-h col-lg-3 m-4'])[7]")
+    public WebElement sanalKart7;
+    @FindBy(xpath = "(//*[@class='flip-box-vertical col-lg-4 col-md-6 my-5'])[1]")
+    public WebElement sanalKart8;
+    @FindBy(xpath = "(//*[@class='flip-box-vertical col-lg-4 col-md-6 my-5'])[2]")
+    public WebElement sanalKart9;
+    @FindBy(xpath = "(//*[@class='flip-box-vertical col-lg-4 col-md-6 my-5'])[3]")
+    public WebElement sanalKart10;
+    @FindBy(xpath = "(//*[@class='flip-box-vertical col-lg-4 col-md-6 my-5'])[4]")
+    public WebElement sanalKart11;
+    @FindBy(xpath = "(//*[@class='flip-box-vertical col-lg-4 col-md-6 my-5'])[5]")
+    public WebElement sanalKart12;
+    @FindBy(xpath = "(//*[@class='flip-box-vertical col-lg-4 col-md-6 my-5'])[6]")
+    public WebElement sanalKart13;
+
+
+    @FindBy(xpath = "//*[@id='e-vcard-id']")
+    public WebElement kayitliKartIsmi;
+    @FindBy(xpath = "//*[@id='e-card-first-name']")
+    public WebElement VkartIsim;
+    @FindBy(xpath = "//*[@id='e-card-last-name']")
+    public WebElement VkartSoyisim;
+    @FindBy(xpath = "//*[@id='e-card-email']")
+    public WebElement VkartEmail;
+    @FindBy(xpath = "//*[@id='e-card-occupation']")
+    public WebElement VkartMeslek;
+    @FindBy(xpath = "//*[@id='e-card-location']")
+    public WebElement VkartSehir;
+    @FindBy(xpath = "//*[@id='e-card-website']")
+    public WebElement VkartUrl;
+    @FindBy(xpath = "//div[@role='combobox']")
+    public  WebElement UlkeKombosuElementi;
+    @FindBy(xpath = "//div[@class='iti__flag iti__tr']")
+    public WebElement TurkiyeElementi;
+    @FindBy(xpath = "//*[@id='phoneNumber']")
+    public WebElement Telefon;
+    @FindBy(xpath = "//*[@id='profileImageIcon']")
+    public WebElement ProfilLogo;
+
+    @FindBy(xpath = "//*[@class='btn btn-primary me-3']")
+    public WebElement kaydet;
+    @FindBy(xpath = "(//*[@class ='btn px-1 text-danger fs-3 plan-delete-btn'])[1]")
+    public WebElement planSil;
+    @FindBy(xpath = "//*[@class='swal-button swal-button--confirm']")
+    public WebElement silmeOnay;
+
+
+
+
 }
 
