@@ -1,4 +1,4 @@
-package tests.US026_Seref;
+package tests.US_026_Seref;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -25,9 +25,9 @@ public class TC_03 extends TestBaseRapor {
          */
 
     @Test
-    public void BagliKullanicilar() throws IOException {
+    public void affiliateUsers() throws IOException {
 
-        extentTest = extentReports.createTest("Kullanıcıların ortaklık tutarlarının görünür oldugu Testi", "Admin panelde kayıtlı kullanıcıların ortaklık tutarlarını görmeli");
+        extentTest = extentReports.createTest("Ortaklık Tutarlarını (Affiliation Amount) Görme Testi", "Admin, Affiliate Users sayfasında 'Ortaklık Tutarlarını' (Affiliation Amount) görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -49,24 +49,22 @@ public class TC_03 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Admin email ve Password bilgilerini girip Login butonuna tıklar");
 
-        // ADashboard menu listesindeki "ortaklık llanıcıları"(Affiliate Users) sekmesinin tıklayınız
+        // Admin panelinde Dashboard menu listesindeki "Ortaklık Kullanıcıları" (Affiliate Users) sekmesini tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.bagliKullanicilarYaziElementi.click();
-        extentTest.info("ADashboard menu listesindeki Ortaklık Kullanıcıları (Affiliate Users) sekmesinin tıklar");
+        aDashboardPage.affiliateUsersElementi.click();
+        extentTest.info("Dashboard menu listesindeki Ortaklık Kullanıcıları(Affiliate Users) sekmesini tıklar");
 
-        // Kaydedilen kullanıcıların ortaklık tutarının görünür olduğunu test ediniz
-        Assert.assertTrue(aDashboardPage.sonuclariGormeYaziElementi.isDisplayed());
-        extentTest.pass("Kaydedilen kullanıcıların ortaklık tutarının görünür olduğunu test eder");
+        // Ortaklık Tutarlarının (Affiliation Amount) görüldüğünü test ediniz
+        Assert.assertTrue(aDashboardPage.userYaziElementi.isDisplayed());
+        extentTest.pass("Ortaklık Tutarlarının (Affiliation Amount) görüldüğünü test eder");
 
+        ReusableMethods.getScreenshot("Ortaklık Tutarları (Affiliation Amount) Listesi");
+        extentTest.info("Affiliate Users sayfasında Ortaklık Tutarlarının (Affiliation Amount) goruldugu sayfanın fotografini ceker");
 
         ReusableMethods.wait(3);
 
-        ReusableMethods.getScreenshot("Kullanıcı Ortaklık Tutarları Listesi");
-        extentTest.info("Kaydedilen kullanıcıların Ortaklık Tutarlarının goruldugu sayfanın fotografini ceker");
-
         Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
-
     }
-
 }
+

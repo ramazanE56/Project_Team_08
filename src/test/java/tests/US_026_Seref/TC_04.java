@@ -1,4 +1,4 @@
-package tests.US026_Seref;
+package tests.US_026_Seref;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_02 extends TestBaseRapor {
+public class TC_04 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
@@ -25,9 +25,9 @@ public class TC_02 extends TestBaseRapor {
          */
 
     @Test
-    public void BagliKullanicilar() throws IOException {
+    public void affiliateUsers() throws IOException {
 
-        extentTest = extentReports.createTest("Kauyıtlı Kullanıcıları Gorme Testi", "Admin panelde kayıtlı kullanıcıları görmeli");
+        extentTest = extentReports.createTest("Ortaklık Tarihlerini (Date) Görme Testi", "Admin, Affiliate Users sayfasında 'Ortaklık Tarihlerini' (Date) görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -49,24 +49,22 @@ public class TC_02 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Admin email ve Password bilgilerini girip Login butonuna tıklar");
 
-        // ADashboard menu listesindeki ortaklık kullanıcıları(Affiliate Users) sekmesinin tıklayınız
+        // Admin panelinde Dashboard menu listesindeki "Ortaklık Kullanıcıları" (Affiliate Users) sekmesini tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.bagliKullanicilarYaziElementi.click();
-        extentTest.info("ADashboard menu listesindeki ortaklık kullanıcıları (Affiliate Users) sekmesinin tıklar");
+        aDashboardPage.affiliateUsersElementi.click();
+        extentTest.info("Dashboard menu listesindeki Ortaklık Kullanıcıları(Affiliate Users) sekmesini tıklar");
 
-        // Kaydedilen kullanıcıların görünür olduğunu test ediniz
-        Assert.assertTrue(aDashboardPage.sonuclariGormeYaziElementi.isDisplayed());
-        extentTest.pass("Kaydedilen kullanıcıların görünür olduğunu test eder");
+        // Ortaklık Tarihlerinin (Date) görüldüğünü test ediniz
+        Assert.assertTrue(aDashboardPage.userYaziElementi.isDisplayed());
+        extentTest.pass("Ortaklık Tarihlerinin (Date) görüldüğünü test eder");
 
+        ReusableMethods.getScreenshot("Ortaklık Tarihlerinin (Date) Listesi");
+        extentTest.info("Affiliate Users sayfasında Ortaklık Tarihlerinin (Affiliationate) goruldugu sayfanın fotografini ceker");
 
         ReusableMethods.wait(3);
 
-        ReusableMethods.getScreenshot("Kayitli Kullanicilar Listesi");
-        extentTest.info("Kaydedilen kullanıcıların goruldugu sayfanın fotografini ceker");
-
         Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
-
     }
-
 }
+

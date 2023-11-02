@@ -1,4 +1,4 @@
-package tests.US30_Seref;
+package tests.US_026_Seref;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_01 extends TestBaseRapor {
+public class TC_02 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
@@ -25,9 +25,9 @@ public class TC_01 extends TestBaseRapor {
          */
 
     @Test
-    public void UlklerListesi() throws IOException {
+    public void affiliateUsers() throws IOException {
 
-        extentTest = extentReports.createTest("Ulkeleri Gorme Testi", "Admin panelde Ulkeleri görmeli");
+        extentTest = extentReports.createTest("Kaydedilen Kullanıcıları (User) Görme Testi", "Admin, Affiliate Users sayfasında 'Kaydedilen Kullanıcıları' (User) görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -49,23 +49,22 @@ public class TC_01 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Admin email ve Password bilgilerini girip Login butonuna tıklar");
 
-        // ADashboard menu listesindeki ulkeler sekmesini tıklayınız
+        // Admin panelinde Dashboard menu listesindeki "Ortaklık Kullanıcıları" (Affiliate Users) sekmesini tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.ulkelerYaziElementi.click();
-        extentTest.info("ADashboard menu listesindeki Ulkeler sekmesini tıklar");
+        aDashboardPage.affiliateUsersElementi.click();
+        extentTest.info("Dashboard menu listesindeki Ortaklık Kullanıcıları(Affiliate Users) sekmesini tıklar");
 
-        // Sitede kullanılan ulkeler listesinin görüldüğünü test ediniz
-        Assert.assertTrue(aDashboardPage.ulkelerYaziElementi.isDisplayed());
-        extentTest.pass("Ulkeler Listesinin görüldüğünü test eder");
+        // Kaydedilen Kullanıcıların (User) görüldüğünü test ediniz
+        Assert.assertTrue(aDashboardPage.userYaziElementi.isDisplayed());
+        extentTest.pass("Kaydedilen Kullanıcıların (User) görüldüğünü test eder");
+
+        ReusableMethods.getScreenshot("Kaydedilen Kullanıcılar (User) Listesi");
+        extentTest.info("Affiliate Users sayfasında Kaydedilen Kullanıcıların (User) goruldugu sayfanın fotografini ceker");
 
         ReusableMethods.wait(3);
 
-        ReusableMethods.getScreenshot("Ulkeler Listesi");
-        extentTest.info("Ulkeler Listesinin goruldugu sayfanın fotografini ceker");
-
         Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
-
     }
-
 }
+

@@ -1,4 +1,4 @@
-package tests.US30_Seref;
+package tests.US_030_Seref;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -25,9 +25,9 @@ public class TC_03 extends TestBaseRapor {
          */
 
     @Test
-    public void UlklerListesi() throws IOException {
+    public void sehirSayisiniGormeTesti() throws IOException {
 
-        extentTest = extentReports.createTest("Ortakligi Yapanlari Gorme Testi", "Admin panelde ortakligin kim tarafindan yapildigini görmeli");
+        extentTest = extentReports.createTest("Şehir Sayısını Görme Testi", "Admin sitede kullanılan Şehir sayısını görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
@@ -49,23 +49,44 @@ public class TC_03 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Admin email ve Password bilgilerini girip Login butonuna tıklar");
 
-        // ADashboard menu listesindeki ulkeler sekmesini tıklayınız
+        // Admin panelinde Dashboard menu listesindeki "Ülkeler" (Countries) ögesini tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.ulkelerYaziElementi.click();
-        extentTest.info("ADashboard menu listesindeki Ulkeler sekmesini tıklar");
-
-        // Sitede kullanılan ulkeler listesinin görüldüğünü test ediniz
-        Assert.assertTrue(aDashboardPage.ulkelerYaziElementi.isDisplayed());
-        extentTest.pass("Ulkeler Listesinin görüldüğünü test eder");
+        aDashboardPage.countriesElementi.click();
+        extentTest.info("Dashboard menu listesindeki Ülkeler(Countries) ögesini tıklar");
 
         ReusableMethods.wait(3);
 
-        ReusableMethods.getScreenshot("Ulkeler Listesi");
-        extentTest.info("Ulkeler Listesinin goruldugu sayfanın fotografini ceker");
+        // Ülkeler sayfasındaki "Şehirler" (Cities) sekmesini tıklayınız
+        aDashboardPage.citiesSekmesiElementi.click();
+        extentTest.info("Admin, Ülkeler sayfasındaki Şehirler (Cities) sekmesini tıklar");
 
-        Driver.closeDriver();
+        // Admin panelinde Şehirler (Cities) sayfasının en altına ininiz
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+        ReusableMethods.wait(1);
+
+        aDashboardPage.sehirSayfaSayisi.click();
+
+        ReusableMethods.wait(1);
+
+        String SehirSayisi = aDashboardPage.sehirSayisiYaziElementi.getText();
+        System.out.println("Şehir Sayısı :" + SehirSayisi);
+
+        // Şehir (Cities) sayısının görüldüğünü test ediniz
+        Assert.assertTrue(aDashboardPage.sehirSayisiYaziElementi.isDisplayed());
+        extentTest.pass("Şehirler (Cities) sayısının görüldüğünü test eder");
+
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+        ReusableMethods.wait(1);
+
+        ReusableMethods.getScreenshot("Şehir (Cities) sayısının görüldüğü sayfa");
+        extentTest.info("Şehir sayısının goruldugu sayfanın fotografini ceker");
+
+        ReusableMethods.wait(2);
+
+        // Browser'ı kapatımız.
         extentTest.info("sayfayi kapatir");
-
     }
-
 }
+

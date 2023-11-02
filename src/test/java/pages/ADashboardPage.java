@@ -511,6 +511,142 @@ public class ADashboardPage {
     @FindBy(xpath = "(//input[@id='changeCouponStatus'])[1]")
     public WebElement adminFirstCouponStatusButton;
 
+    //Admin Dasboard sayfasında menudeki (Affiliate Users) sekmesinin locate'i
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[9]")
+    public WebElement affiliateUsersElementi;
+
+    //Admin "Affiliate Users" sayfasında ortaklığın kim tarafından yapıldığı yazısının (Affiliated By) locate'i
+    @FindBy (xpath = "(//div[@class='d-flex align-items-center'])[1]")
+    public WebElement affiliatedByYaziElementi;
+
+    //Admin "Affiliate Users" sayfasında "Kaydedilen Kullanıcılar" (User) yazısının locate'i
+    @FindBy (xpath = " (//div[@class='d-flex align-items-center'])[2]")
+    public WebElement userYaziElementi;
+
+    //Admin "Affiliate Users" sayfasındaki "Ortaklık Tutarı" (Affiliation Amount) yazısının locate'i
+    @FindBy (xpath = " (//div[@class='d-flex align-items-center'])[3]")
+    public WebElement affiliationAmountYaziElementi;
+
+    //Admin "Affiliate Users" sayfasındaki "Ortaklık Tarihi" (Date) yazısının locate'i
+    @FindBy (xpath = " (//div[@class='d-flex align-items-center'])[3]")
+    public WebElement dateYaziElementi;
+
+    // Admin panelinde menu listesindeki "Üyelik İşlemleri" (Affiliation Transactions) menu ögesi locate'i
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[10]")
+    public  WebElement affiliationTransactionsElementi;
+
+    // "Affiliation Transactions" sayfasinda "Onay Durumu" (Approval Status) yazisi locate'i
+    @FindBy(xpath = "//span[text()='Approval Status']")
+    public WebElement approvalStatusYaziElementi;
+
+    // "Affiliation Transactions" sayfasinda onay bekleyen başvurucnun (Approval Status) Button locate'i
+    @FindBy (xpath = "//button[@class='btn btn-success dropdown-toggle']")
+    public WebElement approvalStatusButtonElementi;
+
+
+    // "Affiliation Transactions" sayfasinda başvurucnun onaylama (Approve) yazı locate'i
+    @FindBy (xpath = "(//a[@class=\"dropdown-item\"])[1]")
+    public WebElement approveOnayYaziElementi;
+
+    // "Affiliation Transactions" sayfasinda başvurucnun reddetme (Approve) yazı locate'i
+    @FindBy (xpath = "(//a[@class=\"dropdown-item\"])[2]")
+    public WebElement rejectRedYaziElementi;
+
+    // "Affiliation Transactions" sayfasinda başvurucnun onaylama/Reddetme (Approve/Reject) yazı locate'i
+    @FindBy (xpath = "(//*[@class='modal-title'])[3]")
+    public WebElement approveRecectonayRedYaziElementi;
+
+    //Admin panelinde menu listesindeki Ülkeler (Countries) menu ögesinin locate'i
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[13]")
+    public WebElement countriesElementi;
+
+    // Admin panelinde menudeki Ülkeler (Countries) sayfasındaki Ulkeler(Countries) sekmesi locate'i
+    @FindBy (xpath = "(//a[@href='https://qa.smartcardlink.com/sadmin/countries'])[2]")
+    public WebElement countriesSekmesiElementi;
+
+    // Ülkeler sayısı elementi locate'i
+    @FindBy(xpath = "//strong[3]")
+    public WebElement ulkeSayisiYaziElementi;
+
+    // Admin panelinde Eyaletler (States) sayısının görülüdüğü yazı locate'i
+    @FindBy (xpath = "//strong[3]")
+    public WebElement eyaletSayisiYaziElementi;
+
+    // Admin panelinde Şehirler (Cities) sayısının görülüdüğü yazı locate'i
+    @FindBy (xpath = "//strong[3]")
+    public WebElement sehirSayisiYaziElementi;
+
+    // Admin panelinde menudeki Ülkeler (Countries) sayfasındaki Eyaletler (States) sekmesi locate'i
+    @FindBy (xpath = "//*[text()=\"States\"]")
+    public WebElement statesSekmesiElementi;
+
+    // Admin panelinde menudeki Ülkeler (Countries) sayfasındaki Şehirler (Cities) sekmesi locate'i
+    @FindBy (xpath = "//*[text()=\"Cities\"]")
+    public WebElement citiesSekmesiElementi;
+
+    // Admin panelinde menudeki Ülkeler (Countries) sayfasındaki Yeni Ülke (New Country) Button locate'i
+    @FindBy (xpath = "//a[@class='btn btn-primary ms-auto']")
+    public WebElement newCountryButtonElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Ülke (New Country) Eklemek için ülke adı kutusu locate'i
+    @FindBy (xpath = "(//input[@class='form-control'])[2]")
+    public WebElement countryNameBoxElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Ülke (New Country) kayıt (Save) elementi locate'i
+    @FindBy (xpath = "(//button[@class='btn btn-primary m-0'])[1]")
+    public WebElement saveCountryButtonElementi;
+
+    // Eyaletler (States) sayfasındaki Yeni Eyalet (New State) Eklemek için Ülke seçme elementi locate'i
+    @FindBy(xpath = "(//*[@class=\"form-select select2-hidden-accessible\"])[1]")
+    public WebElement stateCountrySecmeElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Eyalet (New Satate) Eklemek için Eyalet adı kutusu locate'i
+    @FindBy (xpath = "(//input[@class='form-control'])[2]")
+    public WebElement stateNameBoxElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Eyalet (New State) Button locate'i
+    @FindBy (xpath = "//a[@class=\"btn btn-primary ms-auto\"]")
+    public WebElement newStateButtonElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Ülke (New Country) kayıt (Save) elementi locate'i
+    @FindBy (xpath = "(//button[@class='btn btn-primary m-0'])[1]")
+    public WebElement saveStateButtonElementi;
+
+    // Yeni Eyalet (New State) Eklemdikten sonraki ilk State elementi locate'i
+    @FindBy (xpath = "(//tbody/tr/td)[1]")
+    public WebElement sonEklenenStateElementi;
+
+    // Yeni Eyalet (New State) Eklemdikten sonraki ilk Country elementi locate'i
+    @FindBy (xpath = "(//tbody/tr/td)[2]")
+    public WebElement sonEklenenCountryElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Şehir (New City) Button locate'i
+    @FindBy (xpath = "//*[@class=\"btn btn-primary ms-auto\"]")
+    public WebElement newCityButtonElementi;
+
+    // Ülkeler (Countries) sayfasında Yeni Şehir (New City) Eklemek için Şehir adı kutusu locate'i
+    @FindBy (xpath = "(//input[@class='form-control'])[2]")
+    public WebElement cityNameBoxElementi;
+
+    // Yeni Eyalet (New State) Eklemdikten sonraki ilk State elementi locate'i
+    @FindBy (xpath = "(//tbody/tr/td)[1]")
+    public WebElement sonEklenenCityElementi;
+
+    // Eyaletler (States) sayfasındaki Yeni Eyalet (New State) Eklemek için Ülke seçme elementi locate'i
+    @FindBy(xpath = "(//*[@class=\"form-select select2-hidden-accessible\"])[1]")
+    public WebElement cityStateSecmeElementi;
+
+    // Ülkeler (Countries) sayfasındaki Yeni Ülke (New Country) kayıt (Save) elementi locate'i
+    @FindBy (xpath = "(//button[@class='btn btn-primary m-0'])[1]")
+    public WebElement saveCityButtonElementi;
+
+    // Eyaletler (States) sayfasının altında sayfa numaraları locate'i
+    @FindBy (xpath = "//*[@class='page-item active']")
+    public WebElement eyaletSayfaSayisi;
+
+    // Eyaletler (States) sayfasının altında sayfa numaraları locate'i
+    @FindBy (xpath = "(//*[@class='page-link'])[8]")
+    public WebElement sehirSayfaSayisi;
 
     // admin Coupon Codes sayfasi search textbox elementi
     @FindBy (xpath = "//input[@class='form-control ps-8']")
@@ -1001,6 +1137,5 @@ public class ADashboardPage {
     public WebElement profileImageIcon;
     @FindBy (xpath = "//*[@placeholder=\"Phone Number\"]")
     public WebElement phoneNumberProfile;
-
 }
 
