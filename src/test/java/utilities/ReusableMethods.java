@@ -422,6 +422,7 @@ public static void couponCodeCreate(String couponName,int couponDiscount,WebElem
     }
 }
 
+
 public static void buttonOnOff(WebElement button,Boolean make){
         if(make){
             if (!button.isSelected()){
@@ -455,6 +456,16 @@ public static void couponDelete(String couponName,boolean deletedAlertExit){
         }
     }
 
+}
+// US_12  TC_02 deki currency list seçim değiştirme methodu
+public static void changeDropdownOption(WebElement webElement){
+        ADashboardPage aDashboardPage=new ADashboardPage();
+        String before=aDashboardPage.userCredential_currencyList.getText();
+        ReusableMethods.clickAndSendkeys(aDashboardPage.userCredential_currencyList, ""+Keys.ARROW_DOWN+Keys.ENTER);
+    String after=aDashboardPage.userCredential_currencyList.getText();
+    if (after.equals(before)){
+        ReusableMethods.clickAndSendkeys(aDashboardPage.userCredential_currencyList, ""+Keys.ARROW_UP+Keys.ARROW_UP+Keys.ENTER);
+    }
 }
 
 
