@@ -620,5 +620,9 @@ public class ADashboardPage {
     public WebElement adminCouponDeletedAlertOkButton;
 
 
+
+
+
+
 }
 
