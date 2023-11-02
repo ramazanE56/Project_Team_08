@@ -51,7 +51,7 @@ public class TC_05 extends TestBaseRapor {
 
         // ADashboard menu listesindeki "uyelik islemleri"(Affiliation Transactions) sekmesinin tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.uyelikİslemleriYaziElementi.click();
+        aDashboardPage.uyelikislemleriYaziElementi.click();
         extentTest.info("ADashboard menu listesindeki Uyelik islemleri (Affiliation Transactions) sekmesinin tıklar");
 
         // "Uyelik islemleri"(Affiliation Transactions) altında uyelerden birinin onay durumunu tıklayınız
