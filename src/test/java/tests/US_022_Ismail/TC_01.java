@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.ADashboardPage;
 import pages.LoginPage;
 import pages.SmartcardlinkPage;
@@ -13,9 +14,12 @@ import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class TC_01 extends TestBaseRapor {
+
+
     @Test
     public void vcardtemplates(){
-        extentTest=extentReports.createTest("Admin Dashboard sayfasına erişim","Kullanıcı Kayıtlı Kulanıcı bilgilerini girerek profil bilgileri sayfasına ulaşabilmeli");
+
+        extentTest=extentReports.createTest("Admin vcardtemplates sayfasına erişim","Admin Dashboard sayfasında Vcard Templates sayfasına ulaşılmalı ve template bilgilerinin görüntülenebilir olduğu doğrulanmalıdır");
         //Admin olarak "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("https://qa.smartcardlink.com/ adresine gidilir");
@@ -39,12 +43,16 @@ public class TC_01 extends TestBaseRapor {
         ADashboardPage aDashboardPage = new ADashboardPage();
         aDashboardPage.vcardTemplatesElementi.click();
         extentTest.info("Admin Dashboard sayfasında Vcard Templates sekmesinin tıklanır");
+        SoftAssert softAssert = new SoftAssert();
         String expectedSekmeBasligiYazisi = "Vcard Templates";
         String actualSekmeBasligiYazisi = aDashboardPage.sekmeBasligiYaziElementi.getText();
-        Assert.assertEquals(actualSekmeBasligiYazisi,expectedSekmeBasligiYazisi);
-        extentTest.pass("Admin Dashboard sayfasında Vcard Templates sekmesinin tıklanır olduğunu test edilir");
+
+        softAssert.assertEquals(actualSekmeBasligiYazisi,expectedSekmeBasligiYazisi,"Admin Dashboard sayfasında Vcard Templates sekmesi tıklanamamaktadır");
+        extentTest.fail("Admin Dashboard sayfasında Vcard Templates sekmesi tıklanamamaktadır");
+
         Driver.closeDriver();
 
 
     }
+
 }
