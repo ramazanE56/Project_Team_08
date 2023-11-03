@@ -47,7 +47,7 @@ public class SmartcardlinkPage {
     public WebElement signInYaziElementi;
 
 
-    // Ziyaretçi giriş sayfasındaki Home ,Features,About,Pricing,Contact buton elementi locateleri
+    // BHDR Ziyaretçi giriş sayfasındaki Home ,Features,About,Pricing,Contact buton elementi locateleri
     @FindBy(xpath = "//a[@class=\"nav-link active px-3 mt-1\"]")
     public  WebElement homeButonElementi;
 

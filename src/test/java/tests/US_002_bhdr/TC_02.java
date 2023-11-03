@@ -19,6 +19,7 @@ public class TC_02 {
 
     @Test
     public void menuGorunumTesti() throws InterruptedException {
+
         Actions actions=new Actions(Driver.getDriver());
         //2.https://qa.smartcardlink.com/adresine gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
