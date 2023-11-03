@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class US_005_TC_01 extends TestBaseRapor {
 
-    @Test
+    @Test(groups = "smoke")
     public void createAnAccountTesti() throws IOException {
         extentTest = extentReports.createTest("Yeni kullanici hesabı olusturma.",
                 "Yeni kullanici hesabı olusturulabilindigini test eder");
@@ -68,7 +68,7 @@ ReusableMethods.wait(2);
 
         //7. "You have succesfully registered." onay yazısının çıktığı test edilir.
         Assert.assertTrue(loginPage.succesedElementi.isDisplayed());
-        extentTest.info(" \"You have succesfully registered.\" onay yazısının çıktığı test edilir.");
+        extentTest.pass(" \"You have succesfully registered.\" onay yazısının çıktığı test edilir.");
         ReusableMethods.getScreenshot("createAnAccountTesti");
 ReusableMethods.wait(2);
 

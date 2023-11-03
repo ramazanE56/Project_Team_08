@@ -35,16 +35,22 @@ public class SmartcardlinkPage {
     //language change elementleri
     @FindBy(xpath = "//a[@id='changeLanguage']")
     public WebElement changeLanguageElementi;
-    @FindBy(xpath = "//*[@id='select2-selectLanguage-container']")
+    @FindBy(xpath = "//*[@id=\"selectLanguage\"]")
     public WebElement languageTextBoxElementi;
     @FindBy(xpath = "//*[@id='languageChangeBtn']")
     public WebElement languageSaveButtonElementi;
+    @FindBy(xpath = "//li[@class='select2-results__option select2-results__option--selectable select2-results__option--selected']")
+    public WebElement turkceDilElementi;
+    @FindBy(xpath = "//a[text()='Aboneliği Yönet']")
+    public WebElement dilDegisimOnayElementi;
 
     //sign out elementleri
-    @FindBy(xpath = "//form[@id='logout-form']")
+    @FindBy(xpath = "(//a/span[2])[7]")
     public WebElement signOutElementi;
+
     @FindBy(xpath = "//div[@*='bg-white rounded-15 shadow-md width-540 px-5 px-sm-7 py-10 mx-auto']")
     public WebElement signInYaziElementi;
+
 
 
     // BHDR Ziyaretçi giriş sayfasındaki Home ,Features,About,Pricing,Contact buton elementi locateleri
@@ -91,6 +97,15 @@ public class SmartcardlinkPage {
 
 
 
+
+
+    // Choose A Plan elementleri
+
+    @FindBy (xpath = "//button[@class='slick-next slick-arrow']")
+    public WebElement choosePlanNextButonu;
+
+    @FindBy (xpath = "//a[@href='https://qa.smartcardlink.com/admin/choose-payment-type/4']")
+    public WebElement unlimitedPlanSwitchButonu;
 
 
 
@@ -197,6 +212,61 @@ public class SmartcardlinkPage {
     //  Subscribe  Buton  elementi
     @FindBy (xpath = "//button[@type='submit']")
     public WebElement SubscribeButonu ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy (xpath = "//div[@role=\"alert\"]     ")
+    public WebElement userUpdateSuccesfullyYazisi;
+
+
+
+
+
 
 
 
