@@ -1137,5 +1137,153 @@ public class ADashboardPage {
     public WebElement profileImageIcon;
     @FindBy (xpath = "//*[@placeholder=\"Phone Number\"]")
     public WebElement phoneNumberProfile;
+
+
+
+    ///BURHAN
+    //Kayıtlı kullanici Dashboard sayfasi üstteki dashboard yazisi
+    @FindBy (xpath = "//a[@class='nav-link p-0 active']")
+    public WebElement dashboardYazisi;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki dashboard butonu
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[1]")
+    public WebElement dashboardButon;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki dashboard butonu ikonu
+    @FindBy (xpath = "(//span[@class='aside-menu-icon pe-3'])[1]")
+    public WebElement dashboardButonIkon;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki Vcards butonu
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[2]")
+    public WebElement vcardsButon;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki Vcards butonu ikonu
+    @FindBy (xpath = "(//span[@class='aside-menu-icon pe-3'])[2]")
+    public WebElement vcardsButonIkon;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki Enquiries butonu
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[3]")
+    public WebElement enquiriesButon;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki Enquiries butonu ikonu
+    @FindBy (xpath = "(//span[@class='aside-menu-icon pe-3'])[3]")
+    public WebElement enquiriesButonIkon;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki Appointments butonu
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[4]")
+    public WebElement appointmentsButon;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki Appointments butonu ikonu
+    @FindBy (xpath = "(//span[@class='aside-menu-icon pe-3'])[4]")
+    public WebElement appointmentsButonIkon;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki Virtual Backgrounds butonu
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[5]")
+    public WebElement virtualBackgroundsButon;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki Virtual Backgrounds butonu ikonu
+    @FindBy (xpath = "(//span[@class='aside-menu-icon pe-3'])[5]")
+    public WebElement virtualBackgroundsButonIkon;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki Settings butonu
+    @FindBy (xpath = "(//span[@class='aside-menu-title'])[6]")
+    public WebElement settingsButon;
+    //Kayıtlı kullanici Dashboard sayfasi soldaki Settings butonu ikonu
+    @FindBy (xpath = "(//span[@class='aside-menu-icon pe-3'])[6]")
+    public WebElement settingsButonIkon;
+    //Kayıtlı kullanici Dashboard sayfasi  Total Active VCards
+    @FindBy (xpath = "(//div[@class='col-xxl-3 col-xl-4 col-sm-6 widget'])[1]")
+    public WebElement totalActiveVCards;
+    //Kayıtlı kullanici Dashboard sayfasi  Total DeActive VCards
+    @FindBy (xpath = "(//div[@class='col-xxl-3 col-xl-4 col-sm-6 widget'])[2]")
+    public WebElement totalDeActiveVCards;
+    //Kayıtlı kullanici Dashboard sayfasi  Today Enquiries
+    @FindBy (xpath = "(//div[@class='col-xxl-3 col-xl-4 col-sm-6 widget'])[3]")
+    public WebElement todayEnquiries;
+    //Kayıtlı kullanici Dashboard sayfasi  Today Appointments
+    @FindBy (xpath = "(//div[@class='col-xxl-3 col-xl-4 col-sm-6 widget'])[4]")
+    public WebElement todayAppointments;
+    //Kayıtlı kullanici Dashboard sayfasi  Vcard Analytic yazisi
+    @FindBy(xpath = "//h3[@class='mb-0']")
+    public WebElement vcardAnalyticYazisi;
+    //Kayıtlı kullanici Dashboard sayfasi  Grafik Degistirme Butonu
+    @FindBy(xpath = "//button[@title='Switch Chart']")
+    public WebElement grafikButon;
+    //Kayıtlı kullanici Dashboard sayfasi Cizgi ve Sutun  Grafik Locate
+    @FindBy (xpath = "//div[@id='dashboardWeeklyUserBarChartContainer']")
+    public WebElement tabloGrafik;
+    //Kayıtlı kullanici Dashboard sayfasi Takvim Butonu (tarih araligi seçme) Locate
+    @FindBy (xpath = "//div[@id='dashboardTimeRange']")
+    public WebElement dateButon;
+    //Takvim butonu tıklandıktan sonra acilan This Week Butonu
+    @FindBy(xpath = "//*[text()='This Week']")
+    public WebElement dateThisWeekButon;
+    //Takvim butonu tıklandıktan sonra acilan Last Week Butonu
+    @FindBy(xpath = "//*[text()='Last Week']")
+    public WebElement dateLastWeekButon;
+    //Takvim butonu tıklandıktan sonra acilan Custom Butonu
+    @FindBy(xpath = "//*[text()='Custom']")
+    public WebElement dateCustomButon;
+    //Takvim butonu tıklandıktan sonra acilan Cncel Butonu
+    @FindBy(xpath = "//button[@class='cancelBtn btn btn-sm btn-default']")
+    public WebElement dateCancelButon;
+    //Takvim butonu tıklandıktan sonra acilan Apply Butonu
+    @FindBy(xpath = "//button[@class='applyBtn btn btn-sm btn-primary']")
+    public WebElement dateApplyButon;
+    //Takvim butonu tıklandıktan sonra acilan seçili tarih araligi
+    @FindBy(xpath = "//span[@class='drp-selected']")
+    public WebElement dateSelected;
+    //Takvim butonu tıklandıktan sonra acilan sol takvim tablosu
+    @FindBy (xpath = "//div[@class='drp-calendar left']")
+    public WebElement dateTableLeft;
+    //Takvim butonu tıklandıktan sonra acilan sag takvim tablosu
+    @FindBy (xpath = "//div[@class='drp-calendar right']")
+    public WebElement dateTableRight;
+    //Kayıtlı kullanici Dashboard sayfasi alt taraftaki Today Appointments yazisi
+    @FindBy(xpath = "//div[@class='mt-3 mb-5']")
+    public WebElement todayAppointmentsYazisi;
+    //Kayıtlı kullanici Dashboard sayfasi alt taraftaki Today Appointments tablosundaki VCARD NAME yazisi
+    @FindBy (xpath = "(//tr/th[1])[1]")
+    public WebElement vcardNameYazisi;
+    //Kayıtlı kullanici Dashboard sayfasi alt taraftaki Today Appointments tablosundaki NAME yazisi
+    @FindBy (xpath = "(//tr/th[2])[1]")
+    public WebElement nameYazisi;
+    //Kayıtlı kullanici Dashboard sayfasi alt taraftaki Today Appointments tablosundaki PHONE yazisi
+    @FindBy (xpath = "(//tr/th[3])[1]")
+    public WebElement phoneYazisi;
+    //Kayıtlı kullanici Dashboard sayfasi alt taraftaki Today Appointments tablosundaki EMAİL yazisi
+    @FindBy (xpath = "(//tr/th[4])[1]")
+    public WebElement emailYazisi;
+    //Kayıtlı kullanici Dashboard sayfasi alt taraftaki Today Appointments tablosu TUM BİLGİLER LOCATE
+    @FindBy (xpath = "//tbody[1]")
+    public WebElement appointmentReport;
+    // Enquiries sayfasi üstteki Enquiries yazisi
+    @FindBy (xpath = "//div[@class='navbar-collapse']")
+    public WebElement enquiriesYazisi;
+    // Enquiries sayfasi tablodaki VCARD NAME butonu
+    @FindBy (xpath = "//span[text()='VCard Name']")
+    public  WebElement enquiriesVcardNameButon;
+    // Enquiries sayfasi tablodaki  NAME butonu
+    @FindBy (xpath = "//span[text()='Name']")
+    public  WebElement enquiriesNameButon;
+    // Enquiries sayfasi tablodaki EMAIL butonu
+    @FindBy (xpath = "//span[text()='Email']")
+    public  WebElement enquiriesEmailButon;
+    // Enquiries sayfasi tablodaki PHONE yazisi
+    @FindBy (xpath = "//tr/th[4]")
+    public  WebElement enquiriesPhoneButon;
+    // Enquiries sayfasi tablodaki CREATED ON butonu
+    @FindBy (xpath = "//span[text()='Created on']")
+    public  WebElement enquiriesCreatedOnButon;
+    // Enquiries sayfasi tablodaki ACTION yazisi
+    @FindBy (xpath = "//tr/th[6]")
+    public  WebElement enquiriesActionYazisi;
+    // Enquiries sayfasi tablodaki 1.satirdaki EYE (göz) İkonu
+    @FindBy (xpath = "(//a[@class='btn px-1 text-info fs-3 enquiries-view-btn'])[1]")
+    public WebElement enquiriesEyeIkon;
+    // Enquiries sayfasi tablodaki 1.satirdaki Mesaj Bilgileri (Enquiry Details)
+    @FindBy (xpath = "//h2[@class='modal-title']")
+    public WebElement enquiriesDetails;
+    // Enquiries sayfasi tablodaki 1.satirdaki Mesaj Bilgileri (Enquiry Details) close (X) ikonu
+    @FindBy (xpath = "(//button[@class='btn-close'])[1]")
+    public WebElement enquiriesDetailsClose;
+    // Enquiries sayfasi tablodaki 1.satirdaki Delete (Çöp Kutusu) İkonu
+    @FindBy(xpath = "(//a[@class='btn px-1 text-danger fs-3 enquiries-delete-btn'])[1]")
+    public WebElement enquiriesDeleteIkon;
+    // Enquiries sayfasi tablodaki 1.satirdaki Delete (Çöp Kutusu) İkonuna tikladiktan sonra çıkan Yes Delete Butonu
+    @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
+    public WebElement enquiriesYesDeleteButton;
+    //Yes Delete Butonuna bastiktan sonraki Deleted Yazisi
+    @FindBy (xpath = "//div[@class='swal-title']")
+    public WebElement enquiriesDeleted;
 }
 
