@@ -1,4 +1,4 @@
-package tests.US_031_Mustafa;
+package tests.US_28_Mustafa;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,7 +15,7 @@ public class TC01_US028 extends TestBaseRapor {
     @Test
     public void TC01(){
 
-        extentTest = extentReports.createTest("Para çekme bölümünde yapılan işlemleri görüntüleyebilrme",
+        extentTest = extentReports.createTest("Para çekme bölümünde yapılan işlemleri görüntüleyebilme",
                 "Admin bilgileriyle giriş yapıp withdraw transactions bölümüne giriş yapma");
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
         LoginPage loginpage= new LoginPage();
