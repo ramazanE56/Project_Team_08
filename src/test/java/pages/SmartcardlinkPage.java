@@ -47,6 +47,7 @@ public class SmartcardlinkPage {
     //sign out elementleri
     @FindBy(xpath = "(//a/span[2])[7]")
     public WebElement signOutElementi;
+
     @FindBy(xpath = "//div[@*='bg-white rounded-15 shadow-md width-540 px-5 px-sm-7 py-10 mx-auto']")
     public WebElement signInYaziElementi;
 
@@ -213,6 +214,8 @@ public class SmartcardlinkPage {
 
     @FindBy (xpath = "//div[@role=\"alert\"]     ")
     public WebElement userUpdateSuccesfullyYazisi;
+
+
 
 
 

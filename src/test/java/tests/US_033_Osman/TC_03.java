@@ -2,6 +2,7 @@ package tests.US_033_Osman;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ADashboardPage;
 import pages.LoginPage;
@@ -36,10 +37,52 @@ public class TC_03 extends TestBaseRapor {
         ReusableMethods.wait(2);
         //Front CMS butonuna tiklayiniz
         ADashboardPage aDashboardPage = new ADashboardPage();
+
+        actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.DOWN).perform();
+        aDashboardPage.frontCmsElementi.click();
+
+        ReusableMethods.wait(2);
+
+        //About Us butonuna tiklayiniz
+        aDashboardPage = new ADashboardPage();
+
+        aDashboardPage.frontCmsAboutUsElementi.click();
+
      //   aDashboardPage.frontCmsElementi.click();
         //About Us butonuna tiklayiniz
         aDashboardPage = new ADashboardPage();
       //  aDashboardPage.frontCmsAboutUsElementi.click();
+
+
+        // About Us metinlerinin görüntülenebilgini doğrulayın
+        aDashboardPage = new ADashboardPage();
+        Assert.assertTrue(aDashboardPage.aboutUsTitle1Elementi.isDisplayed());
+        extentTest.pass("About Us title1 nin gorunur oldugu test edilir.");
+
+        aDashboardPage = new ADashboardPage();
+        Assert.assertTrue(aDashboardPage.aboutUsTitle2Elementi.isDisplayed());
+        extentTest.pass("About Us title2 nin gorunur oldugu test edilir.");
+
+        aDashboardPage = new ADashboardPage();
+        Assert.assertTrue(aDashboardPage.aboutUsTitle3Elementi.isDisplayed());
+        extentTest.pass("About Us title3 nin gorunur oldugu test edilir.");
+
+        aDashboardPage = new ADashboardPage();
+        Assert.assertTrue(aDashboardPage.aboutUsDescription1Elementi.isDisplayed());
+        extentTest.pass("About Us Description1 in gorunur oldugu test edilir.");
+
+        aDashboardPage = new ADashboardPage();
+        Assert.assertTrue(aDashboardPage.aboutUsDescription2Elementi.isDisplayed());
+        extentTest.pass("About Us Description2 in gorunur oldugu test edilir.");
+
+        aDashboardPage = new ADashboardPage();
+        Assert.assertTrue(aDashboardPage.aboutUsDescription3Elementi.isDisplayed());
+        extentTest.pass("About Us Description3 in gorunur oldugu test edilir.");
+
+
+
+
 
     }
 }

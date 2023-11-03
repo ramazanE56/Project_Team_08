@@ -12,6 +12,8 @@ import pages.ADashboardPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
+
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
@@ -19,30 +21,41 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-public class TC_01 {
+
+
+
+public class TC_01 extends TestBaseRapor {
 
     //normal kullanıcı olarak girilerek sanal kart oluşturma testi
     @Test
     public void sanalKart() throws AWTException {
 
+        extentTest=extentReports.createTest("Kayıtlı Kullanıcı olarak Dashboard sayfasında sanal Kart oluşturma","Kayıtlı kullanıcı olarak sanal arka plan sayfasından kart arka planını belirleyip kart üzerindeki gerekli bilgileri girip kaydedebildiğimi doğrulayabilmeliyim");
+
         //Verilen URL sayfasını (https://qa.smartcardlink.com/login) aç
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
+        extentTest.info("https://qa.smartcardlink.com/ adresine gidilir");
         ADashboardPage aDashboardPage = new ADashboardPage();
 
         //Sign In butonuna tıkla
         aDashboardPage.signinButtonElementi.click();
+        extentTest.info("Signin butonuna click yapılır.");
 
         //Email textbox'ına Kayıtlı email bilgisi gir
         aDashboardPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("MEmail2"));
+        extentTest.info("Email textbox'ına Kayıtlı email bilgisi gir");
 
         //Password textbox'ına geçerli password bilgisi gir
         aDashboardPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("MPassword2"));
+        extentTest.info("Password textbox'ına geçerli password bilgisi gir");
 
         //Login butonuna click yap
         aDashboardPage.loginElementi.click();
+        extentTest.info("login butonuna basılır.");
 
         //VirtualBackgraund tıklanır
         aDashboardPage.sanalArkaPlan.click();
+        extentTest.info("VirtualBackgraund tıklanır");
         ReusableMethods.wait(2); //Sayfada alttaki 7 kartın yüklenmesi zaman aldığı için biraz bekle
 
         // sanal kartlardan 1-13 arasından birini seç
@@ -51,25 +64,30 @@ public class TC_01 {
 
         ReusableMethods.wait(2); ////Sayfada alttaki 6 kartın yüklenmesi zaman aldığı için biraz bekle
         aDashboardPage.sanalKart13.click();
+        extentTest.info("sanal kartlardan 1-13 arasından birini seç");
 
         //Vcard Name alanından (Select VCard) mevcut kartlardan birini seç
         WebElement selectElement= aDashboardPage.kayitliKartIsmi;
         Select dropdown=new Select(selectElement);
         dropdown.selectByIndex(4);
         ReusableMethods.wait(2); // ındexdeki bilgileri hemen getirmediği için bekle
+        extentTest.info("Vcard Name alanından (Select VCard) mevcut kartlardan birini seç");
 
         //First Name alanına bir isim gir
         Faker faker = new Faker();
         String fakeName = faker.name().name();
         aDashboardPage.VkartIsim.sendKeys(fakeName);
+        extentTest.info("First Name alanına bir isim gir");
 
         //Last Name alanına soyad gir
         String soyad=faker.name().lastName();
         aDashboardPage.VkartSoyisim.sendKeys(soyad);
+        extentTest.info("Last Name alanına soyad gir");
 
         //Email alnına geçerli bir email gir
         String email =faker.internet().emailAddress();
         aDashboardPage.VkartEmail.sendKeys(email);
+        extentTest.info("Email alnına geçerli bir email gir");
 
         //meslek alanı dolu geldiği önce sil
         aDashboardPage.VkartMeslek.clear();
@@ -77,39 +95,32 @@ public class TC_01 {
         //Enter Occupation alanına meslek gir
         String meslek =faker.job().field();
         aDashboardPage.VkartMeslek.sendKeys(meslek);
+        extentTest.info("Enter Occupation alanına meslek gir");
 
         //Location alanına bir şehir gir
         aDashboardPage.VkartSehir.sendKeys("colarada");
+        extentTest.info("Location alanına bir şehir gir");
 
         ReusableMethods.wait(2);
 
         //Phone alanında, listedeki ülkelerden (Türkiyeyi ) birini seç
         aDashboardPage.UlkeKombosuElementi.click();
         aDashboardPage.TurkiyeElementi.click();
-        //ReusableMethods.wait(3);
-
-        //Ülkeler combosundan seçim yaparken indexten alma işi olmuyor
-
-        // WebElement selectElementUlkeKod= getDriver().findElement(By.xpath("//*[@id='iti-0__country-listbox']"));
-        // Select dropdown3=new Select(selectElementUlkeKod);
-        // dropdown3.selectByIndex(5);
-
-        //  List<WebElement> UlkelerListesi1 = getDriver().findElements(By.className("iti__flag-container"));
-        //  int indexToPrint = 1; // 98. eleman (0'dan başlayarak indekslendiği için)
-        //  String selectedElement = String.valueOf(UlkelerListesi1.get(indexToPrint));
-        //  System.out.println("Seçilen Eleman: " + selectedElement);
+        extentTest.info("hone alanında, listedeki ülkelerden (Türkiyeyi ) birini seç");
 
         // Phone alanına telefon numarası gir
         aDashboardPage.Telefon.sendKeys("2122525");
+        extentTest.info("Phone alanına telefon numarası gir");
 
         // Website alanına websitesi gir
         aDashboardPage.VkartUrl.sendKeys("www.aaaaaa.com");
+        extentTest.info("Website alanına websitesi gir");
 
         //Profil fotoyu değiştire tıkla
         aDashboardPage.ProfilLogo.click();
+        extentTest.info("Profil fotoyu değiştire tıkla");
 
-        // Add E-card alanına 150x150 piksel boyutunda logo dosyası yükle
-
+        // Add E-card alanına 150x150 piksel boyutunda logo dosyası yüklemek için
         //bilgisayarda lokalde logonun seçileceği alana tıkla
         Point point1 = new Point(493,58);// C: araba çubuğu koordinatı
         Robot robot = new Robot();
@@ -119,6 +130,8 @@ public class TC_01 {
         ReusableMethods.wait(1);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama bırak
         ReusableMethods.wait(1);
+
+        extentTest.info("bilgisayarda lokalde logonun seçileceği alana tıkla");
 
         // Ctrl+V tuş kombinasyonunu kullanarak dosya yolunu yapıştır
         StringSelection stringSelection = new StringSelection("C:/Users/KAHRAMAN/IdeaProjects/Project_Team_08/src/test/java/tests/US_011_Kahraman");
@@ -159,15 +172,16 @@ public class TC_01 {
 
         //Save butonuna bas.
         aDashboardPage.kaydet.click();
+        extentTest.info("bilgisayarda lokalde logonun seçileceği alana tıkla");
         ReusableMethods.wait(2);
 
          //bilgisyara "virtual-backgrounds.zip" dosyasının indirildiğini doğrula
         String dosyaYolu = "/Users/KAHRAMAN/Downloads/virtual-backgrounds.zip";
 
         Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
+        extentTest.pass("bilgisyara virtual-backgrounds.zip dosyasının indirildiği doğrulandı");
 
         ReusableMethods.wait(2);
-
 
         //Sayfa kapat
         Driver.closeDriver();
