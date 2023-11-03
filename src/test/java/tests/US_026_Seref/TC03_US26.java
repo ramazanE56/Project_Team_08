@@ -1,4 +1,4 @@
-package tests.US_030_Seref;
+package tests.US_026_Seref;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_02 extends TestBaseRapor {
+public class TC03_US26 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
@@ -25,17 +25,19 @@ public class TC_02 extends TestBaseRapor {
          */
 
     @Test
-    public void eyaletSayisiniGormeTesti() throws IOException {
+    public void OrtaklikTutarlariTesti() throws IOException {
 
-        extentTest = extentReports.createTest("Eyalet Sayısını Görme Testi", "Admin sitede kullanılan Eyalet sayısını görmeli");
+        extentTest = extentReports.createTest("Ortaklık Tutarlarını (Affiliation Amount) Görme Testi", "Admin, Affiliate Users sayfasında 'Ortaklık Tutarlarını' (Affiliation Amount) görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("Kullanici https://qa.smartcardlink.com anasayfaya gider");
 
+        ReusableMethods.wait(1);
+
         //Sign In buttonuna tıklayınız
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
-        smartcardlinkPage.signinButtonElementi.click();
+        smartcardlinkPage.signInButtonElementi.click();
         extentTest.info("Sign In buttonuna tıklar");
 
         //Admin email ve Password bilgilerini girip Login butonuna tıklayınız
@@ -49,39 +51,20 @@ public class TC_02 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Admin email ve Password bilgilerini girip Login butonuna tıklar");
 
-        // Admin panelinde Dashboard menu listesindeki "Ülkeler" (Countries) ögesini tıklayınız
+        // Admin panelinde Dashboard menu listesindeki "Ortaklık Kullanıcıları" (Affiliate Users) sekmesini tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.countriesElementi.click();
-        extentTest.info("Dashboard menu listesindeki Ülkeler(Countries) ögesini tıklar");
+        aDashboardPage.affiliateUsersElementi.click();
+        extentTest.info("Dashboard menu listesindeki Ortaklık Kullanıcıları(Affiliate Users) sekmesini tıklar");
 
-        ReusableMethods.wait(1);
+        // Ortaklık Tutarlarının (Affiliation Amount) görüldüğünü test ediniz
+        Assert.assertTrue(aDashboardPage.affiliationAmountYaziElementi.isDisplayed());
+        extentTest.pass("Ortaklık Tutarlarının (Affiliation Amount) görüldüğünü test eder");
 
-        // Ülkeler sayfasındaki "Eyaletler" (States) sekmesini tıklayınız
-        aDashboardPage.statesSekmesiElementi.click();
-        extentTest.info("Admin, Ülkeler sayfasındaki Eyaletler (States) sekmesini tıklar");
+        ReusableMethods.getScreenshot("Ortaklık Tutarları (Affiliation Amount) Listesi");
+        extentTest.info("Affiliate Users sayfasında Ortaklık Tutarlarının (Affiliation Amount) goruldugu sayfanın fotografini ceker");
 
-        // Admin panelinde Eyaletler (States) sayfasının en altına ininiz
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.wait(3);
 
-        aDashboardPage.eyaletSayfaSayisi.click();
-
-        ReusableMethods.wait(1);
-
-        String EyaletSayisi = aDashboardPage.eyaletSayisiYaziElementi.getText();
-        System.out.println("Eyalet Sayısı :" + EyaletSayisi);
-
-        // Eyalet (States) sayısının görüldüğünü test ediniz
-        Assert.assertTrue(aDashboardPage.eyaletSayisiYaziElementi.isDisplayed());
-        extentTest.pass("Eyalet (States) sayısının görüldüğünü test eder");
-
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-
-        ReusableMethods.getScreenshot("Eyalet (States) sayısının görüldüğü sayfa");
-        extentTest.info("Eyalet sayısının goruldugu sayfanın fotografini ceker");
-
-        ReusableMethods.wait(2);
-
-        // Browser'ı kapatımız.
         extentTest.info("sayfayi kapatir");
     }
 }

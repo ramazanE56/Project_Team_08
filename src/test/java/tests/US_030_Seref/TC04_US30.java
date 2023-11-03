@@ -15,7 +15,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_04 extends TestBaseRapor {
+public class TC04_US30 extends TestBaseRapor {
 
         /*
         URL= https://qa.smartcardlink.com
@@ -34,9 +34,11 @@ public class TC_04 extends TestBaseRapor {
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("Admin https://qa.smartcardlink.com anasayfaya gider.");
 
+        ReusableMethods.wait(2);
+
         //Sign In buttonuna tıklayınız
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
-        smartcardlinkPage.signinButtonElementi.click();
+        smartcardlinkPage.signInButtonElementi.click();
         extentTest.info("Sign In buttonuna tıklar.");
 
         //Admin email ve Password bilgilerini girip Login butonuna tıklayınız
@@ -95,7 +97,8 @@ public class TC_04 extends TestBaseRapor {
         ReusableMethods.wait(2);
 
         String actualUlkeSayisi = aDashboardPage.ulkeSayisiYaziElementi.getText();
-        ReusableMethods.wait(3);
+
+        ReusableMethods.wait(2);
 
         // Siteye yeni ülke eklendiğini test ediniz.
         System.out.println("Yeni Ülke eklendikten sonra ülke sayısı : "+ actualUlkeSayisi);

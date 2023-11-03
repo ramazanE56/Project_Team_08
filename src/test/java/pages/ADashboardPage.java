@@ -1,7 +1,6 @@
 package pages;
 
 import com.sun.jna.Structure;
-import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -29,7 +28,6 @@ public class ADashboardPage {
     //https://qa.smartcardlink.com/profile/edit altınadaki save buttonu
     @FindBy(xpath = "//*[@class=\"btn btn-primary me-2\"]")
     public  WebElement saveButtonProfile;
-
 
     //Ziyaretci Dashboard sayfasında üstteki Dashboard yazısının locate'i
     @FindBy (xpath = "//a[@class='nav-link p-0 active']")
@@ -59,10 +57,8 @@ public class ADashboardPage {
     @FindBy(xpath = "(//td[@class='whitespace-nowrap px-3 py-2 md:px-6 md:py-4 text-sm leading-5 text-gray-900 dark:text-white'])[4]")
     public WebElement dateElementi;
 
-
     @FindBy(xpath = "(//tbody/tr)[1]")
     public WebElement webTableIlkSatirElementi;
-
 
     //Admin Dashboard sayfasi sol taraftaki Cash Payments butonunun locate'i
     @FindBy (xpath = "//span[text()='Cash Payments']")
@@ -184,12 +180,9 @@ public class ADashboardPage {
     @FindBy(xpath = "(//span[@class='aside-menu-title'])[5]")
     public WebElement vcardTemplatesElementi;
 
-
     //Admin Dasboard sayfasında 3 çizginin yanındaki yazının locate'i
     @FindBy(xpath = "//a[@class='nav-link p-0 active']")
     public WebElement sekmeBasligiYaziElementi;
-
-
 
     //Abone olunan kullanıcı planları elementi
     @FindBy(xpath = "//span[text()='Subscribed User Plans']")
@@ -270,7 +263,6 @@ public class ADashboardPage {
     @FindBy (xpath = "//tbody/tr/td[4]")
     public WebElement affiliationTransactionsDate;
 
-
     //Affiliation Transactions sayfasinda Eye İkon locate
     @FindBy (xpath = "(//span[@id='showAffiliationWithdrawBtn'])[1]")
     public WebElement affiliationTransactionsActionEyeIkon;
@@ -278,7 +270,6 @@ public class ADashboardPage {
     //Affiliation Transactions sayfasinda Ortaklık bilgileri locate
     @FindBy (xpath = "//h5[@id='showAffiliationWithdrawModalBtn']")
     public  WebElement affiliationTransactionsOrtaklikBilgileri;
-
 
     //Affiliation Transactions sayfasinda tum tablo bilgileri locate
     @FindBy (xpath = "//tbody")
@@ -423,7 +414,6 @@ public class ADashboardPage {
     @FindBy (xpath = "//*[@class='toast toast-error']")
     public WebElement userCredential_saveError;
 
-
     @FindBy (xpath = "//span[text()='VCards']")
     public WebElement dashboardVCardsElementi;
 
@@ -544,7 +534,6 @@ public class ADashboardPage {
     @FindBy (xpath = "//button[@class='btn btn-success dropdown-toggle']")
     public WebElement approvalStatusButtonElementi;
 
-
     // "Affiliation Transactions" sayfasinda başvurucnun onaylama (Approve) yazı locate'i
     @FindBy (xpath = "(//a[@class=\"dropdown-item\"])[1]")
     public WebElement approveOnayYaziElementi;
@@ -552,6 +541,10 @@ public class ADashboardPage {
     // "Affiliation Transactions" sayfasinda başvurucnun reddetme (Approve) yazı locate'i
     @FindBy (xpath = "(//a[@class=\"dropdown-item\"])[2]")
     public WebElement rejectRedYaziElementi;
+
+    // "Affiliation Transactions" sayfasinda başvurucnun onaylama/Reddetme (Approve/Reject) yazı locate'i
+    @FindBy (xpath = "(//*[@class='modal-title'])[3]")
+    public WebElement approveRejectOnayRedYaziElementi;
 
     // "Affiliation Transactions" sayfasinda başvurucnun onaylama/Reddetme (Approve/Reject) yazı locate'i
     @FindBy (xpath = "(//*[@class='modal-title'])[3]")
@@ -771,8 +764,6 @@ public class ADashboardPage {
     @FindBy (xpath = "(//div[@class='mb-5'])[6]")
     public WebElement aboutUsDescription3Elementi;
 
-
-
     //Admib Dashboard Front CMS Elementi
     @FindBy(xpath = "//span[text()='Front CMS']")
     public WebElement frontCmsElementi2;
@@ -788,9 +779,6 @@ public class ADashboardPage {
     //Action 1.satır 2.sutun elementi
     @FindBy (xpath = "//tbody/tr[1]/td[2]")
     public WebElement actionSilmeElementi;
-
-
-
 
 
     //****** sadık
@@ -986,7 +974,6 @@ public class ADashboardPage {
 
 
 
-
     @FindBy(xpath = "(//*[@class='flip-box-h col-lg-3 m-4'])[1]")
     public WebElement sanalKart1;
     @FindBy(xpath = "(//*[@class='flip-box-h col-lg-3 m-4'])[2]")
@@ -1080,8 +1067,6 @@ public class ADashboardPage {
 
     @FindBy (xpath = "/html[1]/body[1]/div[4]/div[1]/div[4]")
     public WebElement vcardEditTrashDeleteOKButonElementi;
-
-
 
     @FindBy (xpath = "(//span[@class='picker-edit rounded-circle text-gray-500 fs-small'])[2]")
     public WebElement coverLogoKalemElementi;

@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_01 extends TestBaseRapor {
+public class TC01_US30 extends TestBaseRapor {
 
         /*
         URL= https://qa.smartcardlink.com
@@ -33,9 +33,11 @@ public class TC_01 extends TestBaseRapor {
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("Kullanici https://qa.smartcardlink.com anasayfaya gider");
 
+        ReusableMethods.wait(2);
+
         //Sign In buttonuna tıklayınız
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
-        smartcardlinkPage.signinButtonElementi.click();
+        smartcardlinkPage.signInButtonElementi.click();
         extentTest.info("Sign In buttonuna tıklar");
 
         //Admin email ve Password bilgilerini girip Login butonuna tıklayınız
@@ -73,7 +75,7 @@ public class TC_01 extends TestBaseRapor {
         ReusableMethods.getScreenshot("Ülke sayısı sayfası");
         extentTest.info("Ülke sayısının goruldugu sayfanın fotografini ceker");
 
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
 
         // Browser'ı kapatımız.
 

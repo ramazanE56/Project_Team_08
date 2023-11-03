@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_06 extends TestBaseRapor {
+public class TC06_US26 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
@@ -37,7 +37,7 @@ public class TC_06 extends TestBaseRapor {
 
         //Sign In buttonuna tıklayınız
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
-        smartcardlinkPage.signinButtonElementi.click();
+        smartcardlinkPage.signInButtonElementi.click();
         extentTest.info("Sign In buttonuna tıklar");
 
         //Admin email ve Password bilgilerini girip Login butonuna tıklayınız
@@ -56,6 +56,11 @@ public class TC_06 extends TestBaseRapor {
         aDashboardPage.affiliationTransactionsElementi.click();
         extentTest.info("Dashboard menu listesindeki Uyelik İslemleri (Affiliation Transactions) sekmesini tıklar");
 
+        // Ortaklık Başvurularının Onay Durumları (Approval Status) Sekmesini tıklayınız
+        aDashboardPage.approvalStatusYaziElementi.click();
+
+        ReusableMethods.wait(1);
+
         // Ortaklık Başvurusunun Onay Durumu (Approval Status) Buttonuna tıklayınız
         aDashboardPage.approvalStatusButtonElementi.click();
         extentTest.info("Uyelik İslemleri (Affiliation Transactions) sayfasında başvuruyu onaylamak için tıklar");
@@ -67,7 +72,7 @@ public class TC_06 extends TestBaseRapor {
         ReusableMethods.wait(2);
 
         // Ortaklık Başvurusunun Onaylanabildiğinin test ediniz
-        Assert.assertTrue(aDashboardPage.approveRecectonayRedYaziElementi.isDisplayed());
+        Assert.assertTrue(aDashboardPage.approveRejectOnayRedYaziElementi.isDisplayed());
         extentTest.pass("Ortaklık Başvurusunun onaylanabildiğinin (Approve) görüldüğünü test eder");
 
         ReusableMethods.getScreenshot("Ortaklık Başvurusu Onaylama (Approve) penceresi");

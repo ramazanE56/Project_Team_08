@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_03 extends TestBaseRapor {
+public class TC02_US26 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
@@ -25,17 +25,19 @@ public class TC_03 extends TestBaseRapor {
          */
 
     @Test
-    public void affiliateUsers() throws IOException {
+    public void KayitliKullanicilarTesti() throws IOException {
 
-        extentTest = extentReports.createTest("Ortaklık Tutarlarını (Affiliation Amount) Görme Testi", "Admin, Affiliate Users sayfasında 'Ortaklık Tutarlarını' (Affiliation Amount) görmeli");
+        extentTest = extentReports.createTest("Kaydedilen Kullanıcıları (User) Görme Testi", "Admin, Affiliate Users sayfasında 'Kaydedilen Kullanıcıları' (User) görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("Kullanici https://qa.smartcardlink.com anasayfaya gider");
 
+        ReusableMethods.wait(1);
+
         //Sign In buttonuna tıklayınız
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
-        smartcardlinkPage.signinButtonElementi.click();
+        smartcardlinkPage.signInButtonElementi.click();
         extentTest.info("Sign In buttonuna tıklar");
 
         //Admin email ve Password bilgilerini girip Login butonuna tıklayınız
@@ -54,16 +56,15 @@ public class TC_03 extends TestBaseRapor {
         aDashboardPage.affiliateUsersElementi.click();
         extentTest.info("Dashboard menu listesindeki Ortaklık Kullanıcıları(Affiliate Users) sekmesini tıklar");
 
-        // Ortaklık Tutarlarının (Affiliation Amount) görüldüğünü test ediniz
+        // Kaydedilen Kullanıcıların (User) görüldüğünü test ediniz
         Assert.assertTrue(aDashboardPage.userYaziElementi.isDisplayed());
-        extentTest.pass("Ortaklık Tutarlarının (Affiliation Amount) görüldüğünü test eder");
+        extentTest.pass("Kaydedilen Kullanıcıların (User) görüldüğünü test eder");
 
-        ReusableMethods.getScreenshot("Ortaklık Tutarları (Affiliation Amount) Listesi");
-        extentTest.info("Affiliate Users sayfasında Ortaklık Tutarlarının (Affiliation Amount) goruldugu sayfanın fotografini ceker");
+        ReusableMethods.getScreenshot("Kaydedilen Kullanıcılar (User) Listesi");
+        extentTest.info("Affiliate Users sayfasında Kaydedilen Kullanıcıların (User) goruldugu sayfanın fotografini ceker");
 
         ReusableMethods.wait(3);
 
-        Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
     }
 }

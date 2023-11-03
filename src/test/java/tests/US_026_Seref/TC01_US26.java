@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_01 extends TestBaseRapor {
+public class TC01_US26 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
@@ -25,18 +25,19 @@ public class TC_01 extends TestBaseRapor {
          */
 
     @Test
-    public void affiliatedByUsersGormeTesti() throws IOException {
+    public void OrtakligiYapanlarTesti() throws IOException {
 
-        extentTest = extentReports.createTest("Ortakligi Yapanlari (affiliatedBy) Görme Testi",
-                "Admin panelde ortakligin kim (affiliatedBy) tarafindan yapildigini görmeli");
+        extentTest = extentReports.createTest("Ortakligi Yapanlari (affiliatedBy) Görme Testi", "Admin panelde ortakligin kim (affiliatedBy) tarafindan yapildigini görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("Kullanici https://qa.smartcardlink.com anasayfaya gider");
 
+        ReusableMethods.wait(1);
+
         //Sign In buttonuna tıklayınız
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
-        smartcardlinkPage.signinButtonElementi.click();
+        smartcardlinkPage.signInButtonElementi.click();
         extentTest.info("Sign In buttonuna tıklar");
 
         //Admin email ve Password bilgilerini girip Login butonuna tıklayınız
@@ -52,13 +53,8 @@ public class TC_01 extends TestBaseRapor {
 
         // Admin panelinde Dashboard menu listesindeki "Ortaklık Kullanıcıları" (Affiliate Users) sekmesini tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
-
         aDashboardPage.affiliateUsersElementi.click();
         extentTest.info("Dashboard menu listesindeki Ortaklık Kullanıcıları(Affiliate Users) sekmesini tıklar");
-
-        aDashboardPage.uyelikislemleriYaziElementi.click();
-        extentTest.info("ADashboard menu listesindeki Uyelik islemleri (Affiliation Transactions) sekmesinin tıklar");
-
 
         // Ortaklığın kim (Affiliated By) tarafından yapıldığının görüldüğünü test ediniz
         Assert.assertTrue(aDashboardPage.affiliatedByYaziElementi.isDisplayed());
@@ -69,7 +65,6 @@ public class TC_01 extends TestBaseRapor {
 
         ReusableMethods.wait(3);
 
-        Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
     }
 }

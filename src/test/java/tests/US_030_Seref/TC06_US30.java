@@ -16,7 +16,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_05 extends TestBaseRapor {
+public class TC06_US30 extends TestBaseRapor {
 
         /*
         URL= https://qa.smartcardlink.com
@@ -27,18 +27,20 @@ public class TC_05 extends TestBaseRapor {
         */
 
     @Test
-    public void yeniEyaletEklemeTesti() throws IOException {
+    public void yeniSehirEklemeTesti() throws IOException {
 
-        extentTest = extentReports.createTest("Siteye Yeni Eyalet (New State) eklenebildiğini Gorme Testi",
+        extentTest = extentReports.createTest("Siteye Yeni Şehir (New City) eklenebildiğini Gorme Testi",
                 "Admin panelde Yeni Eyalet eklenebildiğini görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("Kullanici https://qa.smartcardlink.com anasayfaya gider.");
 
+        ReusableMethods.wait(3);
+
         //Sign In buttonuna tıklayınız
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
-        smartcardlinkPage.signinButtonElementi.click();
+        smartcardlinkPage.signInButtonElementi.click();
         extentTest.info("Sign In buttonuna tıklar.");
 
         //Admin email ve Password bilgilerini girip Login butonuna tıklayınız
@@ -59,55 +61,55 @@ public class TC_05 extends TestBaseRapor {
 
         ReusableMethods.wait(5);
 
-        // Ülkeler (Countrie) sayfasında Eyaletler (States) sekmesini tıklayınız.
-        aDashboardPage.statesSekmesiElementi.click();
-        extentTest.info("Ülkeler (Countrie) sayfasında Eyaletler (States) sekmesini tıklar.");
+        // Ülkeler (Countrie) sayfasında Şehirler (Cities) sekmesini tıklayınız.
+        aDashboardPage.citiesSekmesiElementi.click();
+        extentTest.info("Ülkeler (Countrie) sayfasında Şehirler (Cities) sekmesini tıklar.");
 
         ReusableMethods.wait(5);
 
-        // Eyaletler (States) sayfasında Yeni Euaylet (New State) butonunu tıklayınız.
-        aDashboardPage.newStateButtonElementi.click();
-        extentTest.info("Eyaletler (States) sayfasında Yeni Euaylet (New State) butonunu tıklar.");
+        // Şehirler (Cities) sayfasında Yeni Şehir (New City) butonunu tıklayınız.
+        aDashboardPage.newCityButtonElementi.click();
+        extentTest.info("Şehirler (Cities) sayfasında Yeni Şehir (New City) butonunu tıklar.");
 
         ReusableMethods.wait(5);
 
-        // Yeni Eyalet (New State) adı kutusuna yeni bir Eyalet adı ekleyiniz.
+        // Yeni Şehir (New City) adı kutusuna yeni bir Şehir adı ekleyiniz.
         Faker faker = new Faker();
-        String yeniState = faker.name().firstName();
-        aDashboardPage.stateNameBoxElementi.sendKeys(yeniState);
-        extentTest.info(" Yeni Eyalet (New State) adı kutusuna yeni bir Eyalet adını ekler.");
+        String yeniCity = faker.name().firstName();
+        aDashboardPage.stateNameBoxElementi.sendKeys(yeniCity);
+        extentTest.info("Yeni Şehir (New City) adı kutusuna yeni bir Şehir adını ekler.");
 
-        // Ülke seç kısmından Ülke seçiniz.
-        Select select = new Select(aDashboardPage.stateCountrySecmeElementi);
-        select.selectByVisibleText("Belgium");
-        extentTest.info("Ülke seç kısmından Ülke seçer.");
+        // Eyalet seç kısmından Eyalet seçiniz.
+        Select select = new Select(aDashboardPage.cityStateSecmeElementi);
+        select.selectByVisibleText("Amparo");
+        extentTest.info("Eyalet seç kısmından Eyalet seçer.");
 
         // Kayıt butonunu tıklayınız.
-        aDashboardPage.saveCountryButtonElementi.click();
+        aDashboardPage.saveCityButtonElementi.click();
         extentTest.info("Kayıt butonunu tıklar.");
 
         ReusableMethods.wait(2);
 
-        aDashboardPage.statesSekmesiElementi.click();
+        aDashboardPage.citiesSekmesiElementi.click();
 
         ReusableMethods.wait(2);
 
-        String actualIlkState = aDashboardPage.sonEklenenStateElementi.getText();
+        String actualIlkCity = aDashboardPage.sonEklenenCityElementi.getText();
 
-        System.out.println("Eklenen Yeni Eyalet : " + yeniState);
-        System.out.println("Görünen Yeni Eyalet : " + actualIlkState);
+        System.out.println("Eklenen Yeni Şehir : " + yeniCity);
+        System.out.println("Görünen Yeni Şehir : " + actualIlkCity);
 
-        // Siteye yeni Eyalet eklendiğini test ediniz.
-        Assert.assertEquals(yeniState, actualIlkState);
-        extentTest.pass("Siteye yeni Eyalet eklendiğini test eder.");
+        // Siteye yeni Şehir eklendiğini test ediniz.
+        Assert.assertEquals(yeniCity, actualIlkCity);
+        extentTest.pass("Siteye yeni Şehir eklendiğini test eder.");
 
-        ReusableMethods.getScreenshot("Eyaletlerin (States) görüldüğü sayfa");
-        extentTest.info("Eyaletlerin (States) goruldugu sayfanın fotografini ceker");
+        ReusableMethods.getScreenshot("Şehirlerin (Cities) görüldüğü sayfa");
+        extentTest.info("Şehirlerin (Cities) goruldugu sayfanın fotografini ceker");
 
-        ReusableMethods.wait(3);
+        ReusableMethods.wait(2);
 
         // Browser'ı kapatımız.
-        extentTest.info("Browser'ı kapatır.");
+        extentTest.info("Browser'eı kapatır.");
 
 
     }

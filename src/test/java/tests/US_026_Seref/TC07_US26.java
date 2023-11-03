@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_05 extends TestBaseRapor {
+public class TC07_US26 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
@@ -24,17 +24,20 @@ public class TC_05 extends TestBaseRapor {
          Admin password = 123123123         */
 
     @Test
-    public void affiliationTransactions() throws IOException {
+    public void ortaklikReddetmeTesti() throws IOException {
 
-        extentTest = extentReports.createTest("Ortaklık Onay Durumunu (Approval Status) Görme Testi", "Admin, Affiliation Transactions sayfasında 'Onay Durmununu' (Approval Status) görmeli");
+        extentTest = extentReports.createTest("Ortaklık Başvurusunun Reddedibildiğini Doğrulama Testi",
+                "Admin, Ortaklık Başvurusunun Reddedibildiğini görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("Kullanici https://qa.smartcardlink.com anasayfaya gider");
 
+        ReusableMethods.wait(1);
+
         //Sign In buttonuna tıklayınız
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
-        smartcardlinkPage.signinButtonElementi.click();
+        smartcardlinkPage.signInButtonElementi.click();
         extentTest.info("Sign In buttonuna tıklar");
 
         //Admin email ve Password bilgilerini girip Login butonuna tıklayınız
@@ -53,16 +56,30 @@ public class TC_05 extends TestBaseRapor {
         aDashboardPage.affiliationTransactionsElementi.click();
         extentTest.info("Dashboard menu listesindeki Uyelik İslemleri (Affiliation Transactions) sekmesini tıklar");
 
-        // Ortaklık Onay Durumunun (Approval Status) görüldüğünü test ediniz
-        Assert.assertTrue(aDashboardPage.approvalStatusYaziElementi.isDisplayed());
-        extentTest.pass("Ortaklık Onay Durumunun (Approval Status) görüldüğünü test eder");
+        // Ortaklık Başvurularının Onay Durumları (Approval Status) Sekmesini tıklayınız
+        aDashboardPage.approvalStatusYaziElementi.click();
 
-        ReusableMethods.getScreenshot("Ortaklık Onay Durumunun (Approval Status) Listesi");
-        extentTest.info("Affiliation Transactions sayfasında Ortaklık Onay Durumunun (Approval Status) goruldugu sayfanın fotografini ceker");
+        ReusableMethods.wait(1);
+
+        // Ortaklık Başvurusunun Onay Durumu (Approval Status) Buttonuna tıklayınız
+        aDashboardPage.approvalStatusButtonElementi.click();
+        extentTest.info("Uyelik İslemleri (Affiliation Transactions) sayfasında başvuruyu Onaylamak/Reddetmek için tıklar");
+
+        // Ortaklık Başvurusunun Reddetmek için Reject yazısına tıklayınız
+        aDashboardPage.rejectRedYaziElementi.click();
+        extentTest.info("Uyelik İslemleri (Affiliation Transactions) sayfasında başvuruyu reddetmek Reject'i için tıklar");
+
+        ReusableMethods.wait(2);
+
+        // Ortaklık Başvurusunun Onaylanabildiğinin test ediniz
+        Assert.assertTrue(aDashboardPage.approveRejectOnayRedYaziElementi.isDisplayed());
+        extentTest.pass("Ortaklık Başvurusunun reddedilebildiğini (Reject) görüldüğünü test eder");
+
+        ReusableMethods.getScreenshot("Ortaklık Başvurusu Reddetme (Reject) penceresi");
+        extentTest.info("Affiliation Transactions sayfasında Ortaklık Başvurusunun Reddedilebildiğinin goruldugu sayfanın fotografini ceker");
 
         ReusableMethods.wait(3);
 
-        Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
     }
 }

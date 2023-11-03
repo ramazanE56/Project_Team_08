@@ -165,6 +165,10 @@ public class SmartcardlinkPage {
     @FindBy (xpath = "//button[@type='submit']")
     public WebElement SubscribeButonu ;
 
+    //Anasayfa Giriş Yap (Sign In) Button Elementi locate'i
+    @FindBy (xpath = "//*[@href='https://qa.smartcardlink.com/login']")
+    public WebElement signInButtonElementi;
+
 
 
 

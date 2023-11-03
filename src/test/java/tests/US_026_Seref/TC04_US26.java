@@ -1,4 +1,4 @@
-package tests.US_030_Seref;
+package tests.US_026_Seref;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
-public class TC_03 extends TestBaseRapor {
+public class TC04_US26 extends TestBaseRapor {
 
          /*
          URL= https://qa.smartcardlink.com
@@ -25,13 +25,15 @@ public class TC_03 extends TestBaseRapor {
          */
 
     @Test
-    public void sehirSayisiniGormeTesti() throws IOException {
+    public void OrtaklikTarihleriTesti() throws IOException {
 
-        extentTest = extentReports.createTest("Şehir Sayısını Görme Testi", "Admin sitede kullanılan Şehir sayısını görmeli");
+        extentTest = extentReports.createTest("Ortaklık Tarihlerini (Date) Görme Testi", "Admin, Affiliate Users sayfasında 'Ortaklık Tarihlerini' (Date) görmeli");
 
         //Browser'e açıp "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("Kullanici https://qa.smartcardlink.com anasayfaya gider");
+
+        ReusableMethods.wait(1);
 
         //Sign In buttonuna tıklayınız
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
@@ -49,43 +51,20 @@ public class TC_03 extends TestBaseRapor {
         loginPage.loginElementi.click();
         extentTest.info("Admin email ve Password bilgilerini girip Login butonuna tıklar");
 
-        // Admin panelinde Dashboard menu listesindeki "Ülkeler" (Countries) ögesini tıklayınız
+        // Admin panelinde Dashboard menu listesindeki "Ortaklık Kullanıcıları" (Affiliate Users) sekmesini tıklayınız
         ADashboardPage aDashboardPage = new ADashboardPage();
-        aDashboardPage.countriesElementi.click();
-        extentTest.info("Dashboard menu listesindeki Ülkeler(Countries) ögesini tıklar");
+        aDashboardPage.affiliateUsersElementi.click();
+        extentTest.info("Dashboard menu listesindeki Ortaklık Kullanıcıları(Affiliate Users) sekmesini tıklar");
+
+        // Ortaklık Tarihlerinin (Date) görüldüğünü test ediniz
+        Assert.assertTrue(aDashboardPage.dateYaziElementi.isDisplayed());
+        extentTest.pass("Ortaklık Tarihlerinin (Date) görüldüğünü test eder");
+
+        ReusableMethods.getScreenshot("Ortaklık Tarihlerinin (Date) Listesi");
+        extentTest.info("Affiliate Users sayfasında Ortaklık Tarihlerinin (Affiliationate) goruldugu sayfanın fotografini ceker");
 
         ReusableMethods.wait(3);
 
-        // Ülkeler sayfasındaki "Şehirler" (Cities) sekmesini tıklayınız
-        aDashboardPage.citiesSekmesiElementi.click();
-        extentTest.info("Admin, Ülkeler sayfasındaki Şehirler (Cities) sekmesini tıklar");
-
-        // Admin panelinde Şehirler (Cities) sayfasının en altına ininiz
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-
-        ReusableMethods.wait(1);
-
-        aDashboardPage.sehirSayfaSayisi.click();
-
-        ReusableMethods.wait(1);
-
-        String SehirSayisi = aDashboardPage.sehirSayisiYaziElementi.getText();
-        System.out.println("Şehir Sayısı :" + SehirSayisi);
-
-        // Şehir (Cities) sayısının görüldüğünü test ediniz
-        Assert.assertTrue(aDashboardPage.sehirSayisiYaziElementi.isDisplayed());
-        extentTest.pass("Şehirler (Cities) sayısının görüldüğünü test eder");
-
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-
-        ReusableMethods.wait(1);
-
-        ReusableMethods.getScreenshot("Şehir (Cities) sayısının görüldüğü sayfa");
-        extentTest.info("Şehir sayısının goruldugu sayfanın fotografini ceker");
-
-        ReusableMethods.wait(2);
-
-        // Browser'ı kapatımız.
         extentTest.info("sayfayi kapatir");
     }
 }
