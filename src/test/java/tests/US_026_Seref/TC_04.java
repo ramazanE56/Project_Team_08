@@ -24,8 +24,13 @@ public class TC_04 extends TestBaseRapor {
          Admin password = 123123123
          */
 
+<<<<<<< HEAD:src/test/java/tests/US026_Seref/TC_01.java
+    @Test(groups = "regression")
+    public void BagliKullanicilar() throws IOException {
+=======
     @Test
     public void affiliateUsers() throws IOException {
+>>>>>>> main:src/test/java/tests/US_026_Seref/TC_04.java
 
         extentTest = extentReports.createTest("Ortaklık Tarihlerini (Date) Görme Testi", "Admin, Affiliate Users sayfasında 'Ortaklık Tarihlerini' (Date) görmeli");
 

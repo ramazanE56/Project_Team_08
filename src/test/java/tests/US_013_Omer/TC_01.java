@@ -12,7 +12,7 @@ import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class TC_01 extends TestBaseRapor {
-    @Test
+    @Test(groups = "smoke")
     public void test01() {
         extentTest=extentReports.createTest("Profil Bilgileri Sayfasına Erişim","Kullanıcı Kayıtlı Kulanıcı bilgilerini girerek profil bilgileri sayfasına ulaşabilmeli ");
         SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();

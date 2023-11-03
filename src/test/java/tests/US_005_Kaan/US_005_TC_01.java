@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class US_005_TC_01 extends TestBaseRapor {
 
-    @Test
+    @Test(groups = "smoke")
     public void createAnAccountTesti() throws IOException {
         extentTest = extentReports.createTest("Yeni kullanici hesabı olusturma.",
                 "Yeni kullanici hesabı olusturulabilindigini test eder");
