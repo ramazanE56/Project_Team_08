@@ -14,9 +14,10 @@ import utilities.TestBaseRapor;
 
 public class TC_01 extends TestBaseRapor {
     ADashboardPage aDashboardPage;
+    Actions actions;
     @Test
     public void frontCms(){
-        extentTest=extentReports.createTest("Admin Dashboard sayfasına erişim","Kullanıcı Kayıtlı Kulanıcı bilgilerini girerek profil bilgileri sayfasına ulaşabilmeli");
+        extentTest=extentReports.createTest("Front CMS sayfasına erişim","Admin bilgilerini girerek Front CMS sayfasına ulaşabilmeli");
         //Admin olarak "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("https://qa.smartcardlink.com/ adresine gidilir");
@@ -38,7 +39,12 @@ public class TC_01 extends TestBaseRapor {
         ReusableMethods.wait(2);
         //Front CMS butonuna tiklayiniz
         ADashboardPage aDashboardPage = new ADashboardPage();
+        actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.DOWN).perform();
         aDashboardPage.frontCmsElementi.click();
+
+        ReusableMethods.wait(2);
+
         //title in gorunur oldugunu dogrulayın
         aDashboardPage = new ADashboardPage();
         Assert.assertTrue(aDashboardPage.frontCmsTitleElementi.isDisplayed());

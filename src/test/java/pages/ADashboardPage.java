@@ -1,5 +1,6 @@
 package pages;
 
+import com.sun.jna.Structure;
 import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -244,7 +245,7 @@ public class ADashboardPage {
     public  WebElement affiliationTransactionsOrtaklikBilgileri;
 
     //Osman Admin Dasboard sayfasında Front CMS  sekmesinin locateler'i
-    @FindBy(xpath = "//*[@ class ='nav-item active']")
+    @FindBy(xpath = "(//a[@href='https://qa.smartcardlink.com/sadmin/front-cms'])[1]")
     public WebElement frontCmsElementi;
 
     @FindBy(xpath = "(//input[@class='form-control'])[2]")
@@ -256,10 +257,10 @@ public class ADashboardPage {
     @FindBy(xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/features']")
     public WebElement frontCmsFeaturesElementi;
 
-    @FindBy(xpath = "//*[@*='col-12 text-muted pagination-record ms-sm-3']")
+    @FindBy(xpath = "//td[contains(text(),'Easily share your digital business cards (VCards) ')]")
     public WebElement frontCmsFeaturesYaziElementi;
 
-    @FindBy(xpath = "//a[@href='https://qa.smartcardlink.com/sadmin/about-us']")
+    @FindBy(xpath = "(//a[@class='nav-link p-0 '])[20]")
     public WebElement frontCmsAboutUsElementi;
 
     //admin yan menu elementi
@@ -483,6 +484,26 @@ public class ADashboardPage {
 
     @FindBy (xpath = "(//*[@fill='currentColor'])[23]")
     public WebElement vcardsTrashElementi;
+
+
+    // osman About Us locate
+    @FindBy (xpath = "(//div[@class='mb-5'])[1]")
+    public WebElement aboutUsTitle1Elementi;
+
+    @FindBy (xpath = "(//div[@class='mb-5'])[2]")
+    public WebElement aboutUsDescription1Elementi;
+
+    @FindBy (xpath = "(//div[@class='mb-5'])[3]")
+    public WebElement aboutUsTitle2Elementi;
+
+    @FindBy (xpath = "(//div[@class='mb-5'])[4]")
+    public WebElement aboutUsDescription2Elementi;
+
+    @FindBy (xpath = "(//div[@class='mb-5'])[5]")
+    public WebElement aboutUsTitle3Elementi;
+
+    @FindBy (xpath = "(//div[@class='mb-5'])[6]")
+    public WebElement aboutUsDescription3Elementi;
 
 
 }
