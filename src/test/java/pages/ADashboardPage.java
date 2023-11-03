@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import utilities.Driver;
 
-import java.util.List;
 
 public class ADashboardPage {
     public ADashboardPage(){
@@ -226,6 +225,64 @@ public class ADashboardPage {
     @FindBy(xpath = "//*[@name=\"first_name\"]")
     public WebElement firstNameKutusuUsers;
 
+
+    //dashboard sayfasındaki VCards butonu elementi
+    @FindBy(xpath = "//*[@class=\"svg-inline--fa fa-id-card\"]")
+    public WebElement vCardsElementi;
+        ////a[@class="nav-link d-flex align-items-center py-3"]
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[3]")
+    public WebElement enquiriesElementi;
+
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[4]")
+    public WebElement appointmentsElementi;
+
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[5]")
+    public WebElement virtualBackgroundsElementi;
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[6]")
+    public WebElement settingsElementi;
+
+    //BHDR Vcard butonu altındaki elementkerin locateleri
+    @FindBy(xpath = "(//*[@class=\"svg-inline--fa fa-chart-line fs-2\"])[1]")
+    public WebElement statsAltindakiButonElementi;
+
+    @FindBy(xpath = "//input[@class=\"form-control ps-8\"]")
+    public WebElement vCardSearchButonuElementi;
+    @FindBy(xpath = "(//div[@class=\"d-flex align-items-center\"])[2]")
+    public WebElement userNameButonuElementi;
+    @FindBy(xpath = "(//div[@class=\"bg-overlay\"])[1]")
+    public WebElement searchFrontButonu;
+    @FindBy(xpath = "(//*[@class=\"nav-item \"])[14]")
+    public WebElement frontCmsButonuElementi;
+
+    @FindBy(xpath = "//*[@href=\"https://qa.smartcardlink.com/sadmin/frontTestimonials\"]")
+    public WebElement testimonialsButonElementi;
+    @FindBy(xpath = "(//*[@class=\"justify-content-center d-flex\"])[1]")
+    public WebElement actionButonElementi;
+    @FindBy(xpath = "(//a[@class=\"btn px-1 text-info fs-3 view-testimonial-btn \"])[1]")
+    public WebElement viewButonuElementi;
+    @FindBy(xpath = "(//*[@class=\"modal-title\"])[3]")
+    public WebElement testimonialDetailsElementi;
+    @FindBy(xpath = "(//a[@title=\"Delete\"])[1]")
+    public WebElement deleteButonuElementi;
+    @FindBy(xpath = "//button[@class=\"swal-button swal-button--confirm\"]")
+    public WebElement yesDeleteButonuElementi;
+
+    @FindBy(xpath = "//a[@id=\"addTestimonialBtn\"]")
+    public WebElement addTestimonialButonuElementi;
+    @FindBy(xpath = "(//input[@class=\"form-control\"])[2]")
+    public WebElement nameTextKutusuElementi;
+    @FindBy(xpath = "//*[@id=\"description\"]")
+    public WebElement descriptionButonuElementi;
+    @FindBy(xpath = "(//*[@id=\"profileImageIcon\"])[1]")
+    public WebElement imageKalemButonu;
+
+    @FindBy(xpath = "/*[@id=\"testimonialSave\"]")
+    public WebElement testtimonialSaveBUtonuElementi;
+
+    @FindBy(xpath = "//*[@class=\"toast-title\"]")
+    public WebElement successElementi;
+
+
     // Admin Dasboard sayfasında Affiliation Transactions Butonu locate
     @FindBy (xpath = "//span[text()='Affiliation Transactions']")
     public  WebElement affiliationTransactionsButton;
@@ -303,6 +360,10 @@ public class ADashboardPage {
     @FindBy(xpath = "(//a[@class='nav-link p-0 '])[20]")
     public WebElement frontCmsAboutUsElementi;
 
+
+
+
+
     //admin yan menu elementi
     @FindBy(xpath = "//div[@class='aside-menu-container']")
     public WebElement adminMenu;
@@ -358,6 +419,13 @@ public class ADashboardPage {
     //admin Coupon Codes sayfasinda ki Coupon EXPIRE AT column elementi
     @FindBy(xpath = "//tbody/tr[1]/td[4]")
     public WebElement adminFirstCouponExpireAt;
+
+
+
+
+
+
+
 
     // user yan menu Settings linki elementi
     @FindBy(xpath = "(//a[@href='https://qa.smartcardlink.com/admin/user-settings'])[1]")
@@ -909,6 +977,7 @@ public class ADashboardPage {
 
 
 
+
     // KAHRAMAN
     @FindBy(xpath = "//a[@class='btn btn-white fs-18 ms-3 d-lg-block d-none']")
     public WebElement signinButtonElementi;
@@ -1308,6 +1377,7 @@ public class ADashboardPage {
     //Yes Delete Butonuna bastiktan sonraki Deleted Yazisi
     @FindBy (xpath = "//div[@class='swal-title']")
     public WebElement enquiriesDeleted;
+
 
 }
 
