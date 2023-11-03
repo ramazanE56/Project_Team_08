@@ -1,6 +1,7 @@
 package pages;
 
 import com.sun.jna.Structure;
+// import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -28,6 +29,7 @@ public class ADashboardPage {
     //https://qa.smartcardlink.com/profile/edit altınadaki save buttonu
     @FindBy(xpath = "//*[@class=\"btn btn-primary me-2\"]")
     public  WebElement saveButtonProfile;
+
 
     //Ziyaretci Dashboard sayfasında üstteki Dashboard yazısının locate'i
     @FindBy (xpath = "//a[@class='nav-link p-0 active']")
@@ -57,8 +59,10 @@ public class ADashboardPage {
     @FindBy(xpath = "(//td[@class='whitespace-nowrap px-3 py-2 md:px-6 md:py-4 text-sm leading-5 text-gray-900 dark:text-white'])[4]")
     public WebElement dateElementi;
 
+
     @FindBy(xpath = "(//tbody/tr)[1]")
     public WebElement webTableIlkSatirElementi;
+
 
     //Admin Dashboard sayfasi sol taraftaki Cash Payments butonunun locate'i
     @FindBy (xpath = "//span[text()='Cash Payments']")
@@ -180,9 +184,12 @@ public class ADashboardPage {
     @FindBy(xpath = "(//span[@class='aside-menu-title'])[5]")
     public WebElement vcardTemplatesElementi;
 
+
     //Admin Dasboard sayfasında 3 çizginin yanındaki yazının locate'i
     @FindBy(xpath = "//a[@class='nav-link p-0 active']")
     public WebElement sekmeBasligiYaziElementi;
+
+
 
     //Abone olunan kullanıcı planları elementi
     @FindBy(xpath = "//span[text()='Subscribed User Plans']")
@@ -218,6 +225,64 @@ public class ADashboardPage {
     //https://qa.smartcardlink.com/sadmin/users/366/edit first name kutusu
     @FindBy(xpath = "//*[@name=\"first_name\"]")
     public WebElement firstNameKutusuUsers;
+
+
+    //dashboard sayfasındaki VCards butonu elementi
+    @FindBy(xpath = "//*[@class=\"svg-inline--fa fa-id-card\"]")
+    public WebElement vCardsElementi;
+    ////a[@class="nav-link d-flex align-items-center py-3"]
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[3]")
+    public WebElement enquiriesElementi;
+
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[4]")
+    public WebElement appointmentsElementi;
+
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[5]")
+    public WebElement virtualBackgroundsElementi;
+    @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[6]")
+    public WebElement settingsElementi;
+
+    //BHDR Vcard butonu altındaki elementkerin locateleri
+    @FindBy(xpath = "(//*[@class=\"svg-inline--fa fa-chart-line fs-2\"])[1]")
+    public WebElement statsAltindakiButonElementi;
+
+    @FindBy(xpath = "//input[@class=\"form-control ps-8\"]")
+    public WebElement vCardSearchButonuElementi;
+    @FindBy(xpath = "(//div[@class=\"d-flex align-items-center\"])[2]")
+    public WebElement userNameButonuElementi;
+    @FindBy(xpath = "(//div[@class=\"bg-overlay\"])[1]")
+    public WebElement searchFrontButonu;
+    @FindBy(xpath = "(//*[@class=\"nav-item \"])[14]")
+    public WebElement frontCmsButonuElementi;
+
+    @FindBy(xpath = "//*[@href=\"https://qa.smartcardlink.com/sadmin/frontTestimonials\"]")
+    public WebElement testimonialsButonElementi;
+    @FindBy(xpath = "(//*[@class=\"justify-content-center d-flex\"])[1]")
+    public WebElement actionButonElementi;
+    @FindBy(xpath = "(//a[@class=\"btn px-1 text-info fs-3 view-testimonial-btn \"])[1]")
+    public WebElement viewButonuElementi;
+    @FindBy(xpath = "(//*[@class=\"modal-title\"])[3]")
+    public WebElement testimonialDetailsElementi;
+    @FindBy(xpath = "(//a[@title=\"Delete\"])[1]")
+    public WebElement deleteButonuElementi;
+    @FindBy(xpath = "//button[@class=\"swal-button swal-button--confirm\"]")
+    public WebElement yesDeleteButonuElementi;
+
+    @FindBy(xpath = "//a[@id=\"addTestimonialBtn\"]")
+    public WebElement addTestimonialButonuElementi;
+    @FindBy(xpath = "(//input[@class=\"form-control\"])[2]")
+    public WebElement nameTextKutusuElementi;
+    @FindBy(xpath = "//*[@id=\"description\"]")
+    public WebElement descriptionButonuElementi;
+    @FindBy(xpath = "(//*[@id=\"profileImageIcon\"])[1]")
+    public WebElement imageKalemButonu;
+
+    @FindBy(xpath = "/*[@id=\"testimonialSave\"]")
+    public WebElement testtimonialSaveBUtonuElementi;
+
+    @FindBy(xpath = "//*[@class=\"toast-title\"]")
+    public WebElement successElementi;
+
 
     // Admin Dasboard sayfasında Affiliation Transactions Butonu locate
     @FindBy (xpath = "//span[text()='Affiliation Transactions']")
@@ -263,6 +328,7 @@ public class ADashboardPage {
     @FindBy (xpath = "//tbody/tr/td[4]")
     public WebElement affiliationTransactionsDate;
 
+
     //Affiliation Transactions sayfasinda Eye İkon locate
     @FindBy (xpath = "(//span[@id='showAffiliationWithdrawBtn'])[1]")
     public WebElement affiliationTransactionsActionEyeIkon;
@@ -270,6 +336,7 @@ public class ADashboardPage {
     //Affiliation Transactions sayfasinda Ortaklık bilgileri locate
     @FindBy (xpath = "//h5[@id='showAffiliationWithdrawModalBtn']")
     public  WebElement affiliationTransactionsOrtaklikBilgileri;
+
 
     //Affiliation Transactions sayfasinda tum tablo bilgileri locate
     @FindBy (xpath = "//tbody")
@@ -293,6 +360,10 @@ public class ADashboardPage {
 
     @FindBy(xpath = "(//a[@class='nav-link p-0 '])[20]")
     public WebElement frontCmsAboutUsElementi;
+
+
+
+
 
     //admin yan menu elementi
     @FindBy(xpath = "//div[@class='aside-menu-container']")
@@ -349,6 +420,13 @@ public class ADashboardPage {
     //admin Coupon Codes sayfasinda ki Coupon EXPIRE AT column elementi
     @FindBy(xpath = "//tbody/tr[1]/td[4]")
     public WebElement adminFirstCouponExpireAt;
+
+
+
+
+
+
+
 
     // user yan menu Settings linki elementi
     @FindBy(xpath = "(//a[@href='https://qa.smartcardlink.com/admin/user-settings'])[1]")
@@ -413,6 +491,7 @@ public class ADashboardPage {
     //user Credential sayfasi hatali save yapinca gelen error uyarisi
     @FindBy (xpath = "//*[@class='toast toast-error']")
     public WebElement userCredential_saveError;
+
 
     @FindBy (xpath = "//span[text()='VCards']")
     public WebElement dashboardVCardsElementi;
