@@ -16,7 +16,7 @@ import java.util.Date;
 
 public abstract class TestBaseRapor {
     protected static ExtentReports extentReports; //extent report'a ilk atamayi yapar
-    protected static ExtentTest extentTest; // test pass veya failed gibi bilgileri kaydeder. Ayrica ekran resmi icin de kullaniriz
+    public static ExtentTest extentTest; // test pass veya failed gibi bilgileri kaydeder. Ayrica ekran resmi icin de kullaniriz
     protected static ExtentHtmlReporter extentHtmlReporter; // Html raporu duzenler
 
     // Test işlemine başlamadan hemen önce (test methodundan önce değil, tüm test işleminden önce)
@@ -55,7 +55,7 @@ public abstract class TestBaseRapor {
         } else if (result.getStatus() == ITestResult.SKIP) { // eğer test çalıştırılmadan geçilmezse
             extentTest.skip("Test Case is skipped: " + result.getName()); // Ignore olanlar
         }
-        Driver.closeDriver();
+        Driver.getDriver().quit();
 
     }
 

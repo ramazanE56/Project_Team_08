@@ -27,7 +27,7 @@ public class TC_01 extends TestBaseRapor {
 
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);",smartcardlinkPage.signinButtonElementi );
-
+        ReusableMethods.wait(1);
         smartcardlinkPage.signinButtonElementi.click();
         extentTest.info("Sign in butonuna tıklanır");
 
@@ -84,6 +84,7 @@ public class TC_01 extends TestBaseRapor {
 
         //14-Browser kapatılır
         Driver.closeDriver();
+        extentTest.info("Sayfa kapatilir.");
     }
 }
 

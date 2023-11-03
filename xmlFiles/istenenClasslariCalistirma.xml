@@ -16,6 +16,9 @@
         
         <classes>
            <!-- <class name="tests.day15_testNG_framework.C01_Priority"></class> -->
+            <class name="tests.US_32_Emre.TC_01_02_03_04_05"></class>
+            <class name="tests.US_009_Kaan.US_009_TC_01"></class>
+
 
         </classes>
         

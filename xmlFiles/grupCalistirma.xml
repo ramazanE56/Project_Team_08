@@ -2,14 +2,18 @@
 
 <suite name="istenen gruplari calistirma">
 
-    <test name="smoke">
-        
+    <test name="smoke ve e2e testlerinin birlikte çalıştırılması">
+
         <groups>
             <run>
+                <include name="e2e"></include>
                 <include name="smoke"></include>
                 <exclude name="regression"></exclude>
+
+
             </run>
         </groups>
+
         
         <packages>
             <package name="tests.*"></package>
