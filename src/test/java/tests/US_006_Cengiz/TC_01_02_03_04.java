@@ -7,7 +7,10 @@ import pages.LoginPage;
 import pages.SmartcardlinkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
+
+import java.io.IOException;
 
 public class TC_01_02_03_04 extends TestBaseRapor {
 
@@ -16,7 +19,7 @@ public class TC_01_02_03_04 extends TestBaseRapor {
     ADashboardPage aDashboardPage;
 
     @Test
-    public void trueEmailTruePassword() {
+    public void trueEmailTruePassword() throws IOException {
 
         extentTest=extentReports.createTest("Ziyaretçi sayfasına sadece doğru bilgilerle giriş",
                 "Kullanıcı sadece doğru Email ve doğru Password bilgilerini girerek profil bilgileri sayfasına ulaşabilmeli");
@@ -46,14 +49,18 @@ public class TC_01_02_03_04 extends TestBaseRapor {
         //Giriş yapildigini doğrulayiniz.
         aDashboardPage = new ADashboardPage();
         Assert.assertTrue(aDashboardPage.visitorDashboardYaziElementi.isDisplayed());
-        extentTest.info("Giriş yapildigini doğrulanir");
+        extentTest.pass("Giriş yapildigini doğrulanir");
+
+        //Giriş yapılabildiginin fotografi cekilir.
+        ReusableMethods.getScreenshot("Sadece doğru bilgilerle giriş");
+        extentTest.info("Giriş yapılabildiginin fotografi cekilir");
 
         Driver.closeDriver();
         extentTest.info("Sayfa kapatilir.");
     }
 
     @Test
-    public void trueEmailWrongPassword() {
+    public void trueEmailWrongPassword() throws IOException {
         extentTest=extentReports.createTest("Ziyaretçi sayfasına sadece doğru bilgilerle giriş",
                 "Kullanıcı doğru Email ve yanlis Password bilgilerini girerek profil bilgileri sayfasına ulaşamamali");
 
@@ -82,14 +89,18 @@ public class TC_01_02_03_04 extends TestBaseRapor {
         //Giriş yapılamadıgını doğrulayınız.(These credentials do not match our records.)
 
         Assert.assertTrue(loginPage.failedLoginText.isDisplayed());
-        extentTest.info("Giriş yapilamadigi doğrulanir");
+        extentTest.pass("Giriş yapilamadigi doğrulanir");
+
+        //Giriş yapılamadıgının fotografi cekilir.(These credentials do not match our records.)
+        ReusableMethods.getScreenshot("Sadece doğru bilgilerle giriş");
+        extentTest.info("Giriş yapılamadıgının fotografi cekilir");
 
         Driver.closeDriver();
         extentTest.info("Sayfa kapatilir.");
     }
 
     @Test
-    public void wrongEmailTruePassword() {
+    public void wrongEmailTruePassword() throws IOException {
         extentTest=extentReports.createTest("Ziyaretçi sayfasına sadece doğru bilgilerle giriş",
                 "Kullanıcı yanlis Email ve dogru Password bilgilerini girerek profil bilgileri sayfasına ulaşamamali");
 
@@ -118,13 +129,17 @@ public class TC_01_02_03_04 extends TestBaseRapor {
         //Giriş yapılamadıgını doğrulayınız.(These credentials do not match our records.)
 
         Assert.assertTrue(loginPage.failedLoginText.isDisplayed());
-        extentTest.info("Giriş yapilamadigi doğrulanir");
+        extentTest.pass("Giriş yapilamadigi doğrulanir");
+
+        //Giriş yapılamadıgının fotografi cekilir.(These credentials do not match our records.)
+        ReusableMethods.getScreenshot("Sadece doğru bilgilerle giriş");
+        extentTest.info("Giriş yapilamadiginin fotografi cekilir");
 
         Driver.closeDriver();
         extentTest.info("Sayfa kapatilir.");
     }
     @Test
-    public void wrongEmailWrongPassword() {
+    public void wrongEmailWrongPassword() throws IOException {
 
         extentTest=extentReports.createTest("Ziyaretçi sayfasına sadece doğru bilgilerle giriş",
                 "Kullanıcı yanlis Email ve yanlis Password bilgilerini girerek profil bilgileri sayfasına ulaşamamali");
@@ -154,7 +169,11 @@ public class TC_01_02_03_04 extends TestBaseRapor {
         //Giriş yapılamadıgını doğrulayınız.(These credentials do not match our records.)
 
         Assert.assertTrue(loginPage.failedLoginText.isDisplayed());
-        extentTest.info("Giriş yapilamadigi doğrulanir (These credentials do not match our records.)");
+        extentTest.pass("Giriş yapilamadigi doğrulanir (These credentials do not match our records.)");
+
+        //Giriş yapılamadıgının fotografi cekilir.(These credentials do not match our records.)
+        ReusableMethods.getScreenshot("Sadece doğru bilgilerle giriş");
+        extentTest.info("Giriş yapilamadiginin fotografi cekilir");
 
 
         //Sayfa kapatilir

@@ -402,20 +402,72 @@ public class ReusableMethods {
         webElement.click();
         webElement.sendKeys(sendKeys);
     }
-public static void addPassiveAndFakeCouponCode(String couponName) {
+public static void couponCodeCreate(String couponName,int couponDiscount,WebElement nameTextbox) {
+   // System.out.println(nameTextbox.getText());
     ADashboardPage aDashboardPage = new ADashboardPage();
-    ReusableMethods.clickAndSendkeys(aDashboardPage.adminAddCouponCodesCouponNameTextbox, couponName
+    ReusableMethods.clickClearSendkeys(nameTextbox, couponName
             + Keys.TAB + Keys.ARROW_RIGHT
-            + Keys.TAB + 52);
-    ReusableMethods.wait(1);
-    aDashboardPage.adminAddCouponCodesExpireAt.click();
-
-    aDashboardPage.adminAddCouponCodesExpireAtRightArrow.click();
-    ReusableMethods.wait(1);
-
-
-    aDashboardPage.adminAddCouponCodesDay15.click();
+            + Keys.TAB + couponDiscount);
+    if(couponName.contains("EDIT")){
+        ReusableMethods.wait(1);
+        aDashboardPage.adminEditCouponExpireAt.click();
+        ReusableMethods.wait(1);
+        aDashboardPage.adminEditCouponExpireAtRightArrow.click();
+        aDashboardPage.adminEditCouponCodesDay.click();
+    }else {
+        ReusableMethods.wait(1);
+        aDashboardPage.adminAddCouponCodesExpireAt.click();
+        ReusableMethods.wait(1);
+        aDashboardPage.adminAddCouponCodesNextMountSecondDay.click();
+    }
 }
+
+
+public static void buttonOnOff(WebElement button,Boolean make){
+        if(make){
+            if (!button.isSelected()){
+                button.click();
+            }
+        }else {
+            if (button.isSelected()){
+                button.click();
+            }
+        }
+}
+
+public static void couponDelete(String couponName,boolean deletedAlertExit){
+        ADashboardPage aDashboardPage=new ADashboardPage();
+    ReusableMethods.clickClearSendkeys(aDashboardPage.adminCouponSearchTextbox,couponName);
+    ReusableMethods.wait(1);
+    String firstResultName=aDashboardPage.adminFirstCouponName.getText();
+    if (deletedAlertExit) {
+        if (firstResultName.equalsIgnoreCase(couponName)) {
+            aDashboardPage.adminFirstCouponDeleteButton.click();
+            ReusableMethods.wait(1);
+            aDashboardPage.adminCouponDeleteConfirmButton.click();
+            ReusableMethods.wait(1);
+            aDashboardPage.adminCouponDeletedAlertOkButton.click();
+        }
+    }else{
+        if (firstResultName.equalsIgnoreCase(couponName)) {
+            aDashboardPage.adminFirstCouponDeleteButton.click();
+            ReusableMethods.wait(1);
+            aDashboardPage.adminCouponDeleteConfirmButton.click();
+        }
+    }
+
+}
+// US_12  TC_02 deki currency list seçim değiştirme methodu
+public static void changeDropdownOption(WebElement webElement){
+        ADashboardPage aDashboardPage=new ADashboardPage();
+        String before=aDashboardPage.userCredential_currencyList.getText();
+        ReusableMethods.clickAndSendkeys(aDashboardPage.userCredential_currencyList, ""+Keys.ARROW_DOWN+Keys.ENTER);
+    String after=aDashboardPage.userCredential_currencyList.getText();
+    if (after.equals(before)){
+        ReusableMethods.clickAndSendkeys(aDashboardPage.userCredential_currencyList, ""+Keys.ARROW_UP+Keys.ARROW_UP+Keys.ENTER);
+    }
+}
+
 
 
 

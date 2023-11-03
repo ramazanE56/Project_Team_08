@@ -10,17 +10,16 @@ import utilities.TestBaseRapor;
 
 public class TC01_US014 extends TestBaseRapor {
 
-
     @Test
-    public void UserSignIn() {
+    public void kullaniciGirisTesti() {
 
         extentTest = extentReports.createTest
-                ("Kullanıcı Hesap Girişi",
+                ("Kullanıcı Hesabına Giriş",
                         "Sisteme kayıtlı datalarla, başarılı bir sekilde  sisteme giriş yapılabilmelidir.");
 
-        //Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.
+        //Browser açılır ilgili site URL'i girilerek siteye erişilir.
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
-        extentTest.info("Browser açılır ilgili site URL'i girilerek Anasayfaya erişilir.");
+        extentTest.info("Browser açılır ilgili site URL'i girilerek siteye erişilir.");
 
         //Sign In butonuna click yapılır.
         SmartcardlinkPage smartcardlinkPage=new SmartcardlinkPage();
@@ -30,11 +29,11 @@ public class TC01_US014 extends TestBaseRapor {
         //Email kutusuna kayıtlı email bilgisi girilir.
         LoginPage loginPage =new LoginPage();
         loginPage.emailKutusuElementi.sendKeys(ConfigReader.getProperty("user01Email"));
-        extentTest.info("Email textbox'ına kayıtlı email bilgisi girilir.");
+        extentTest.info("Email kutusuna kayıtlı email bilgisi girilir.");
 
         //Password kutusuna geçerli password bilgisi girilir.
         loginPage.passwordKutusuElementi.sendKeys(ConfigReader.getProperty("user01Password"));
-        extentTest.info("Password textbox'ına geçerli password bilgisi girilir.");
+        extentTest.info("Password kutusuna geçerli password bilgisi girilir.");
 
         //Login butonuna click yapılır.
         loginPage.loginElementi.click();
@@ -44,10 +43,8 @@ public class TC01_US014 extends TestBaseRapor {
         Assert.assertTrue(smartcardlinkPage.succesSignInElement.isDisplayed());
         extentTest.pass("Başarılı bir şekilde kullanıcı girişi yapılabildiği test edilir.");
 
-        //Sayfa kapatılır.
-        Driver.closeDriver();
         extentTest.info("Sayfa kapatılır.");
 
-
+        // the end
     }
 }

@@ -37,6 +37,7 @@ public class TC_03 extends TestBaseRapor {
         ReusableMethods.wait(2);
         //Front CMS butonuna tiklayiniz
         ADashboardPage aDashboardPage = new ADashboardPage();
+
         actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.DOWN).perform();
         aDashboardPage.frontCmsElementi.click();
@@ -47,6 +48,12 @@ public class TC_03 extends TestBaseRapor {
         aDashboardPage = new ADashboardPage();
 
         aDashboardPage.frontCmsAboutUsElementi.click();
+
+     //   aDashboardPage.frontCmsElementi.click();
+        //About Us butonuna tiklayiniz
+        aDashboardPage = new ADashboardPage();
+      //  aDashboardPage.frontCmsAboutUsElementi.click();
+
 
         // About Us metinlerinin görüntülenebilgini doğrulayın
         aDashboardPage = new ADashboardPage();
