@@ -37,12 +37,25 @@ public class TC_02 extends TestBaseRapor {
         ReusableMethods.wait(2);
         //Front CMS butonuna tiklayiniz
         ADashboardPage aDashboardPage = new ADashboardPage();
+
+        actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.DOWN).perform();
+        aDashboardPage.frontCmsElementi.click();
+
+        ReusableMethods.wait(2);
+
      //   aDashboardPage.frontCmsElementi.click();
+
         //Features butonuna tiklayiniz
         aDashboardPage = new ADashboardPage();
       //  aDashboardPage.frontCmsFeaturesElementi.click();
         // Features in gorunur oldugunu test edin
+
+       Assert.assertTrue(aDashboardPage.frontCmsFeaturesYaziElementi.isDisplayed());
+
+
       //  Assert.assertTrue(aDashboardPage.frontCmsFeaturesYaziElementi.isDisplayed());
+
         extentTest.pass(" Features'in gorunur oldugu test edilir.");
     }
 }
