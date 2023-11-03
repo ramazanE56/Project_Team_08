@@ -30,12 +30,12 @@ import java.util.Set;
 public class US_009_TC_01 extends TestBaseRapor {
 
     @Test
-    public void US_009_TC_01Testi() throws AWTException, IOException {
+    public void US_009_TC_01_Testi() throws AWTException, IOException {
         ADashboardPage aDashboardPage = new ADashboardPage();
         SmartcardlinkPage smartcardlinkPage = new SmartcardlinkPage();
 
-        extentTest = extentReports.createTest("Kayıtlı Vcard bilgilerinin düzenlenebilmesi.", "Kayıtlı kullanıcı olarak oluşturduğum vcard'ı düzenleyebildiğimi, ilgili tüm bilgileri girebildiğimi" +
-                " ve bu bilgilerin kart sayfasında görüntülenebildiğini, fonksiyonların aktif olduğunu doğrulayabilme testi.");
+        extentTest = extentReports.createTest("Kayıtlı Vcard bilgilerinin düzenlenebilmesi testi..",
+                "Kayıtlı kullanıcı olarak oluşturulan vcard'a ait bilgilerin düzenlenebildiği test edilir.");
         //Admin olarak "https://qa.smartcardlink.com/" adresine gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("sAdminUrl"));
         extentTest.info("https://qa.smartcardlink.com/ adresine gidilir");
@@ -103,7 +103,7 @@ public class US_009_TC_01 extends TestBaseRapor {
 
 
 // Ctrl+V tuş kombinasyonunu kullanarak dosya yolunu yapıştır
-        StringSelection stringSelection = new StringSelection("C:\\Users\\asus\\IdeaProjects\\Project_Team08\\src\\test\\java\\tests\\US_009_Kaan");
+        StringSelection stringSelection = new StringSelection("C:\\Users\\user\\IdeaProjects\\Project_Team_08\\src\\test\\java\\tests\\US_009_Kaan");
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
 
@@ -111,6 +111,7 @@ public class US_009_TC_01 extends TestBaseRapor {
         robot.keyPress(KeyEvent.VK_V);
         robot.keyRelease(KeyEvent.VK_V);
         robot.keyRelease(KeyEvent.VK_CONTROL);
+
 // Ctrl+V tuş kombinasyonunu kullanarak dosya yolunu yapıştır
 
         // yandaki oka tıklama işlemi
@@ -144,8 +145,6 @@ public class US_009_TC_01 extends TestBaseRapor {
         ReusableMethods.wait(1);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama bırak
 
-
-
         //Cover logo yükleme işlemi yapınız
         //cover değiştirme kalem simgesine tıklayınız
         aDashboardPage.coverLogoKalemElementi.click();
@@ -160,7 +159,7 @@ public class US_009_TC_01 extends TestBaseRapor {
 
 
 // Ctrl+V tuş kombinasyonunu kullanarak dosya yolunu yapıştır
-        StringSelection stringSelection2 = new StringSelection("C:\\Users\\asus\\IdeaProjects\\Calısma_Project_Team08 - Kopya\\src\\test\\java\\tests\\kaan2");
+        StringSelection stringSelection2 = new StringSelection("C:\\Users\\user\\IdeaProjects\\Project_Team_08\\src\\test\\java\\tests\\US_009_Kaan");
         Clipboard clipboard2 = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
 
@@ -204,7 +203,9 @@ public class US_009_TC_01 extends TestBaseRapor {
 
         ReusableMethods.wait(1);
         aDashboardPage.vcardSaveBtnElementi.click();                // Yapılan değişikliklerin kaydedilmesi için save butonuna tıklanır.
+        extentTest.info("Yapılan değişikliklerin kaydedilmesi için save butonuna tıklanır.");
         Assert.assertTrue(aDashboardPage.vcardsEditSuccesfullSaveElementi.isDisplayed()); //"Basic Details Update succesfully." onay yazısının çıktığı test edilir.
+        extentTest.pass("Loge değiştirme işlemi başarıyla yerine getirilir.");
         aDashboardPage.vcardsEditBackElementi.click();   //Back butonuna tıklanarak, Vcards bölümüne geçilir.
         Assert.assertTrue(aDashboardPage.editIconElementi.isDisplayed());
         Driver.closeDriver();
