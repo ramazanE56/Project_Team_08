@@ -38,8 +38,10 @@ public class ADashboardPage {
     @FindBy(xpath = "//a[@class='nav-link p-0 active']")
     public WebElement dashboardYaziElementi;
 
+    //Dashboard'daki Languages Butonu loacti
     @FindBy (xpath = "(//*[text()='Languages'])[1]")
     public WebElement dashboardLanguages;
+    //
     @FindBy(xpath = "//div[@class='col-12 text-muted pagination-record ms-sm-3']")
     public WebElement languagesYaziElementi;
 
@@ -614,5 +616,63 @@ public class ADashboardPage {
     @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
     public WebElement adminCouponDeletedAlertOkButton;
 
+    // Sınırsız Kullanıcının Dashbord Affiliations buton loceti
+    @FindBy(xpath = "(//a[@class='nav-link d-flex align-items-center py-3'])[6]")
+    public WebElement affiliationsButonu;
+
+    // Sınırsız kullanıcı Total Affiliation Amount locati
+    @FindBy(xpath = "(//div[@class='d-flex align-items-center justify-content-center'])[1]")
+    public WebElement totalAffiliationAmountElementi;
+
+    // Sınırsız kullanıcı Current Amount locati
+    @FindBy(xpath = "(//div[@class='d-flex align-items-center justify-content-center'])[2]")
+    public WebElement currentAmountElementi;
+
+    // Sınırsız kullanıcı Send invite butonu
+    @FindBy(xpath = "//a[@class='btn btn-primary sendInviteBtn']")
+    public WebElement sendInviteElementi;
+
+    // Sınırsız kullanıcı send mail kurtusu locati
+    @FindBy(xpath = "//input[@aria-describedby='emailHelp']")
+    public WebElement sendMailElementi;
+
+    // Sınırsız kullanıcı email gönderme butonu
+    @FindBy(xpath = "//button[text()='Send Email']")
+    public WebElement sendEmailButonu;
+
+    // Sınızsız kullanıcı withdrawal butonu
+    @FindBy(xpath = "//button[@id='withdrawal-tab']")
+    public WebElement withdrawalBotonu;
+
+    // Sınırsız kullanıcı error yazısı
+    @FindBy(xpath = "//div[@class='max-w-xl mx-auto sm:px-6 lg:px-8']")
+    public WebElement serverErrorYazisi;
+
+    @FindBy(xpath = "//a[@class='btn btn-primary']")
+    public WebElement withdrawalAmountElementi;
+
+    @FindBy(xpath = "//input[@placeholder='Enter Amount']")
+    public WebElement enterAmountElementi;
+
+    @FindBy(xpath = "//input[@id='paypalEmail']")
+    public WebElement paypalEmailElementi;
+
+    @FindBy(xpath = "(//*[@class='btn btn-primary'])[3]")
+    public WebElement saveElementi;
+
+    @FindBy(xpath = "//div[@class='toast-title']")
+    public WebElement succesfulYaziElementi;
+
+    @FindBy(xpath = "//button[@class='btn btn-success dropdown-toggle']")
+    public WebElement approvalStatusElementi;
+
+    @FindBy(xpath = "//a[@id='rejectWithdrawalBtn']")
+    public WebElement rejectButonu;
+
+    @FindBy(xpath = "//*[@name='rejection_note']")
+    public WebElement rejectionNot;
+
+    @FindBy(xpath = "//button[@id='rejectWithdrawalStatus']")
+    public WebElement rejectSaveButonu;
 }
 
