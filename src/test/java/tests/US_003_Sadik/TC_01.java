@@ -15,7 +15,8 @@ import utilities.TestBaseRapor;
 public class TC_01 extends TestBaseRapor {
     @Test
     public void AnasayfaBodyBolumu(){
-        extentTest = extentReports.createTest("Anasayfada body bölümündeki foksiyonları görüntüleme testi"," Kullanıcı anasayfa body bölümündeki fonksiyonları görebilmeli");
+        extentTest = extentReports.createTest("Anasayfada body bölümündeki foksiyonları görüntüleme testi",
+                " Kullanıcı anasayfa body bölümündeki fonksiyonları görebilmeli");
         // 1- Browser açılır
         // 2- adres çubuğuna URL girilir
         // 3- Enter tuşuna tıklanır

@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import utilities.Driver;
 
-import java.util.List;
 
 public class ADashboardPage {
     public ADashboardPage(){
@@ -230,7 +229,11 @@ public class ADashboardPage {
     //dashboard sayfasındaki VCards butonu elementi
     @FindBy(xpath = "//*[@class=\"svg-inline--fa fa-id-card\"]")
     public WebElement vCardsElementi;
+
     ////a[@class="nav-link d-flex align-items-center py-3"]
+
+        ////a[@class="nav-link d-flex align-items-center py-3"]
+
     @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[3]")
     public WebElement enquiriesElementi;
 
@@ -714,7 +717,7 @@ public class ADashboardPage {
     public WebElement saveCityButtonElementi;
 
     // Eyaletler (States) sayfasının altında sayfa numaraları locate'i
-    @FindBy (xpath = "//*[@class='page-item active']")
+    @FindBy (xpath = "(//*[@class='page-link'])[4]")
     public WebElement eyaletSayfaSayisi;
 
     // Eyaletler (States) sayfasının altında sayfa numaraları locate'i
@@ -970,6 +973,7 @@ public class ADashboardPage {
     // admin Coupon Codes sayfasi  coupon delet yapilinca Deleted alert OK buton  elementi
     @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
     public WebElement adminCouponDeletedAlertOkButton;
+
 
 
 
@@ -1372,6 +1376,7 @@ public class ADashboardPage {
     //Yes Delete Butonuna bastiktan sonraki Deleted Yazisi
     @FindBy (xpath = "//div[@class='swal-title']")
     public WebElement enquiriesDeleted;
+
 
 }
 

@@ -65,6 +65,8 @@ public class TC02_US30 extends TestBaseRapor {
         // Admin panelinde Eyaletler (States) sayfasının en altına ininiz
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
+        ReusableMethods.wait(2);
+
         aDashboardPage.eyaletSayfaSayisi.click();
 
         ReusableMethods.wait(2);

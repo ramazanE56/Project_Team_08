@@ -52,6 +52,53 @@ public class SmartcardlinkPage {
     public WebElement signInYaziElementi;
 
 
+
+    // BHDR Ziyaretçi giriş sayfasındaki Home ,Features,About,Pricing,Contact buton elementi locateleri
+    @FindBy(xpath = "//a[@class=\"nav-link active px-3 mt-1\"]")
+    public  WebElement homeButonElementi;
+
+    @FindBy(xpath = "(//a[@class=\"nav-link mt-1\"])[1]")
+    public WebElement featuresButonElementi;
+
+    @FindBy(xpath = "(//a[@class=\"nav-link mt-1\"])[2]")
+    public WebElement aboutButonElementi;
+
+    @FindBy(xpath = "(//a[@class=\"nav-link mt-1\"])[3]")
+    public  WebElement pricingButonElementi;
+
+    @FindBy(xpath = "(//a[@class=\"nav-link mt-1\"])[4]")
+    public WebElement contactButonElementi;
+    //home sayfasındaki SmartCardLinki
+    @FindBy(xpath = "//h1")
+    public WebElement smartCardLinkiElementi;
+
+    @FindBy(xpath = "//div[@class=\"col-lg-6 text-center mt-5 mt-lg-0\"]")
+    public WebElement homeResimElementi;
+
+    @FindBy(xpath = "//div[@class=\"col-lg-6 text-center mt-5 mt-lg-0\"]")
+    public WebElement featuresYaziElementi;
+    @FindBy(xpath = "//*[@class=\"heading text-success text-center margin-b-100px pb-5\"]")
+    public WebElement aboutSmartCardYaziElementi;
+
+    @FindBy(xpath = "(//*[@class=\"text-dark text-center mb-60\"])[2]")
+    public WebElement chooseYaziElementi;
+    @FindBy(xpath = "//*[@class=\"heading text-success text-center margin-b-80px mb-5\"]")
+    public WebElement concantYaziElementi;
+
+    @FindBy(xpath = "//a[@class=\"btn btn-white fs-18 ms-3 d-lg-block d-none\"]")
+    public  WebElement signinButonuElementi1;
+
+
+
+
+
+
+
+
+
+
+
+
     // Choose A Plan elementleri
 
     @FindBy (xpath = "//button[@class='slick-next slick-arrow']")
@@ -59,6 +106,7 @@ public class SmartcardlinkPage {
 
     @FindBy (xpath = "//a[@href='https://qa.smartcardlink.com/admin/choose-payment-type/4']")
     public WebElement unlimitedPlanSwitchButonu;
+
 
 
     //KAAN
