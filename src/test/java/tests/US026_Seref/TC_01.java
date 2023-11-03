@@ -25,7 +25,7 @@ public class TC_01 extends TestBaseRapor {
          Admin password = 123123123
          */
 
-    @Test
+    @Test(groups = "regression")
     public void BagliKullanicilar() throws IOException {
 
         extentTest = extentReports.createTest("Ortakligi Yapanlari Gorme Testi", "Admin panelde ortakligin kim tarafindan yapildigini görmeli");

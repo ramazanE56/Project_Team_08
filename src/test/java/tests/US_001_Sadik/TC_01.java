@@ -7,7 +7,7 @@ import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_01 extends TestBaseRapor {
-    @Test
+    @Test(groups = "smoke")
     public void AnasayfaDogrulama (){
         extentTest =extentReports.createTest("Kullanıcı anasayfaya gitme ve anasayfanın açıldıgını dogrulama","kullanıcı anasayfaya gidebilmeli ve sayfanın açıldıgını dogrulayabilmeli");
         //Ziyaretçi olarak "https://qa.smartcardlink.com/" adresine gidiniz

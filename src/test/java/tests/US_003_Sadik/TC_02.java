@@ -9,7 +9,7 @@ import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_02 extends TestBaseRapor {
-    @Test
+    @Test(groups = "e2e")
     public void AnasayfaBodyfonsiyonlari(){
         extentTest = extentReports.createTest("Body bölümü  fonksiyonlarının aktiflik doğrulama  testi"," Kullanıcı anasayfa body bölümünündeki fonksiyonların aktifliğini doğrular");
 

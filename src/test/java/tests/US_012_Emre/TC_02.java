@@ -17,7 +17,7 @@ public class TC_02 extends TestBaseRapor {
     /*Kayıtlı kullanıcı ‘Credentials’ bölümündeki
 Ayarları  güncelleyebildiği doğrulanmalı.
      */
-    @Test
+    @Test(groups = "e2e")
     public void credentialsUpdateTesti() {
         extentTest=extentReports.createTest("Kayıtlı kullanıcı ‘Credentials’ bölümündeki ayarları  güncelleme","Kayıtlı Kulanıcı bilgilerini girerek Credentials sayfasına ulaşıp kimlik bilgilerini güncelleyebilmeli");
         //1-Browser açılır
