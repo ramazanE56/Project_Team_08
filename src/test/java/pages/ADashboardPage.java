@@ -1,7 +1,7 @@
 package pages;
 
 import com.sun.jna.Structure;
-import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
+// import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -229,7 +229,11 @@ public class ADashboardPage {
     //dashboard sayfasındaki VCards butonu elementi
     @FindBy(xpath = "//*[@class=\"svg-inline--fa fa-id-card\"]")
     public WebElement vCardsElementi;
+
+    ////a[@class="nav-link d-flex align-items-center py-3"]
+
         ////a[@class="nav-link d-flex align-items-center py-3"]
+
     @FindBy(xpath = "(//a[@class=\"nav-link d-flex align-items-center py-3\"])[3]")
     public WebElement enquiriesElementi;
 
@@ -612,7 +616,6 @@ public class ADashboardPage {
     @FindBy (xpath = "//button[@class='btn btn-success dropdown-toggle']")
     public WebElement approvalStatusButtonElementi;
 
-
     // "Affiliation Transactions" sayfasinda başvurucnun onaylama (Approve) yazı locate'i
     @FindBy (xpath = "(//a[@class=\"dropdown-item\"])[1]")
     public WebElement approveOnayYaziElementi;
@@ -620,6 +623,10 @@ public class ADashboardPage {
     // "Affiliation Transactions" sayfasinda başvurucnun reddetme (Approve) yazı locate'i
     @FindBy (xpath = "(//a[@class=\"dropdown-item\"])[2]")
     public WebElement rejectRedYaziElementi;
+
+    // "Affiliation Transactions" sayfasinda başvurucnun onaylama/Reddetme (Approve/Reject) yazı locate'i
+    @FindBy (xpath = "(//*[@class='modal-title'])[3]")
+    public WebElement approveRejectOnayRedYaziElementi;
 
     // "Affiliation Transactions" sayfasinda başvurucnun onaylama/Reddetme (Approve/Reject) yazı locate'i
     @FindBy (xpath = "(//*[@class='modal-title'])[3]")
@@ -710,7 +717,7 @@ public class ADashboardPage {
     public WebElement saveCityButtonElementi;
 
     // Eyaletler (States) sayfasının altında sayfa numaraları locate'i
-    @FindBy (xpath = "//*[@class='page-item active']")
+    @FindBy (xpath = "(//*[@class='page-link'])[4]")
     public WebElement eyaletSayfaSayisi;
 
     // Eyaletler (States) sayfasının altında sayfa numaraları locate'i
@@ -839,8 +846,6 @@ public class ADashboardPage {
     @FindBy (xpath = "(//div[@class='mb-5'])[6]")
     public WebElement aboutUsDescription3Elementi;
 
-
-
     //Admib Dashboard Front CMS Elementi
     @FindBy(xpath = "//span[text()='Front CMS']")
     public WebElement frontCmsElementi2;
@@ -856,9 +861,6 @@ public class ADashboardPage {
     //Action 1.satır 2.sutun elementi
     @FindBy (xpath = "//tbody/tr[1]/td[2]")
     public WebElement actionSilmeElementi;
-
-
-
 
 
     //****** sadık
@@ -1055,7 +1057,6 @@ public class ADashboardPage {
 
 
 
-
     @FindBy(xpath = "(//*[@class='flip-box-h col-lg-3 m-4'])[1]")
     public WebElement sanalKart1;
     @FindBy(xpath = "(//*[@class='flip-box-h col-lg-3 m-4'])[2]")
@@ -1149,8 +1150,6 @@ public class ADashboardPage {
 
     @FindBy (xpath = "/html[1]/body[1]/div[4]/div[1]/div[4]")
     public WebElement vcardEditTrashDeleteOKButonElementi;
-
-
 
     @FindBy (xpath = "(//span[@class='picker-edit rounded-circle text-gray-500 fs-small'])[2]")
     public WebElement coverLogoKalemElementi;
