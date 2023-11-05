@@ -1,3 +1,5 @@
+package tests.US_010_Burhan;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ADashboardPage;
