@@ -1,4 +1,4 @@
-package utilities;
+package tests.US_010_Burhan.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

@@ -1,5 +1,5 @@
 package tests.US_035_bhdr;
-import utilities.ReusableMethods;
+import tests.US_010_Burhan.utilities.ReusableMethods;
 
 import java.awt.*;
 

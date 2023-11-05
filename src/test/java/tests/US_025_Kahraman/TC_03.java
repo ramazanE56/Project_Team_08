@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
-import utilities.TestBaseRapor;
+import tests.US_010_Burhan.utilities.ConfigReader;
+import tests.US_010_Burhan.utilities.Driver;
+import tests.US_010_Burhan.utilities.ReusableMethods;
+import tests.US_010_Burhan.utilities.TestBaseRapor;
 
 public class TC_03 extends TestBaseRapor {
         @Test

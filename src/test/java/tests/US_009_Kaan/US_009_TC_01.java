@@ -3,18 +3,15 @@ package tests.US_009_Kaan;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.ADashboardPage;
 import pages.LoginPage;
 import pages.SmartcardlinkPage;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
-import utilities.TestBaseRapor;
+import tests.US_010_Burhan.utilities.ConfigReader;
+import tests.US_010_Burhan.utilities.Driver;
+import tests.US_010_Burhan.utilities.ReusableMethods;
+import tests.US_010_Burhan.utilities.TestBaseRapor;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -22,10 +19,6 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.time.Duration;
-import java.util.Set;
 
 public class US_009_TC_01 extends TestBaseRapor {
 

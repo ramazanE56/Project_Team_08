@@ -1,21 +1,18 @@
 package tests.US_023_Cengiz;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ADashboardPage;
 import pages.LoginPage;
 import pages.SmartcardlinkPage;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
-import utilities.TestBaseRapor;
+import tests.US_010_Burhan.utilities.ConfigReader;
+import tests.US_010_Burhan.utilities.Driver;
+import tests.US_010_Burhan.utilities.ReusableMethods;
+import tests.US_010_Burhan.utilities.TestBaseRapor;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TC_02 extends TestBaseRapor {
     SmartcardlinkPage smartcardlinkPage;

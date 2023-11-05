@@ -7,9 +7,9 @@ import org.testng.annotations.Test;
 import pages.ADashboardPage;
 import pages.LoginPage;
 import pages.SmartcardlinkPage;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.TestBaseRapor;
+import tests.US_010_Burhan.utilities.ConfigReader;
+import tests.US_010_Burhan.utilities.Driver;
+import tests.US_010_Burhan.utilities.TestBaseRapor;
 
 
 public class TC_01 extends TestBaseRapor {

@@ -9,14 +9,14 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ADashboardPage;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
-import utilities.TestBaseRapor;
+import tests.US_010_Burhan.utilities.ConfigReader;
+import tests.US_010_Burhan.utilities.Driver;
+import tests.US_010_Burhan.utilities.ReusableMethods;
+import tests.US_010_Burhan.utilities.TestBaseRapor;
 
 import java.util.List;
 
-import static utilities.Driver.getDriver;
+import static tests.US_010_Burhan.utilities.Driver.getDriver;
 
 public class TC_02 extends TestBaseRapor {
 

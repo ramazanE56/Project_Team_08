@@ -1,14 +1,13 @@
 package tests.US_004_Kaan;
 
-import org.checkerframework.checker.units.qual.A;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.SmartcardlinkPage;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
-import utilities.TestBaseRapor;
+import tests.US_010_Burhan.utilities.ConfigReader;
+import tests.US_010_Burhan.utilities.Driver;
+import tests.US_010_Burhan.utilities.ReusableMethods;
+import tests.US_010_Burhan.utilities.TestBaseRapor;
 
 import java.io.IOException;
 import java.util.Set;

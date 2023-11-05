@@ -3,10 +3,10 @@ import org.testng.annotations.Test;
 import pages.ADashboardPage;
 import pages.LoginPage;
 import pages.SmartcardlinkPage;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
-import utilities.TestBaseRapor;
+import tests.US_010_Burhan.utilities.ConfigReader;
+import tests.US_010_Burhan.utilities.Driver;
+import tests.US_010_Burhan.utilities.ReusableMethods;
+import tests.US_010_Burhan.utilities.TestBaseRapor;
 import java.io.IOException;
 public class TC_01_02_03_04 extends TestBaseRapor {
     SmartcardlinkPage smartcardlinkPage;

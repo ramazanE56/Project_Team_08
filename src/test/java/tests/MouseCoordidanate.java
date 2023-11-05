@@ -1,6 +1,6 @@
 package tests;
 
-import utilities.ReusableMethods;
+import tests.US_010_Burhan.utilities.ReusableMethods;
 
 import java.awt.*;
 

@@ -1,5 +1,5 @@
 
-package utilities;
+package tests.US_010_Burhan.utilities;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;

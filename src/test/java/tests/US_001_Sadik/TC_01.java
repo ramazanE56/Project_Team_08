@@ -2,9 +2,9 @@ package tests.US_001_Sadik;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.TestBaseRapor;
+import tests.US_010_Burhan.utilities.ConfigReader;
+import tests.US_010_Burhan.utilities.Driver;
+import tests.US_010_Burhan.utilities.TestBaseRapor;
 
 public class TC_01 extends TestBaseRapor {
     @Test(groups = "smoke")

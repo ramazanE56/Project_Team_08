@@ -1,12 +1,10 @@
 package pages;
 
-import com.sun.jna.Structure;
 // import io.netty.handler.codec.spdy.SpdyWindowUpdateFrame;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Test;
-import utilities.Driver;
+        import tests.US_010_Burhan.utilities.Driver;
 
 
 public class ADashboardPage {
@@ -282,7 +280,7 @@ public class ADashboardPage {
     @FindBy(xpath = "(//*[@id=\"profileImageIcon\"])[1]")
     public WebElement imageKalemButonu;
 
-    @FindBy(xpath = "/*[@id=\"testimonialSave\"]")
+    @FindBy(xpath = "//*[@id=\"testimonialSave\"]")
     public WebElement testtimonialSaveBUtonuElementi;
 
     @FindBy(xpath = "//*[@class=\"toast-title\"]")

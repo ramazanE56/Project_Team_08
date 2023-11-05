@@ -1,4 +1,4 @@
-package utilities;
+package tests.US_010_Burhan.utilities;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
