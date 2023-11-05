@@ -84,8 +84,9 @@ public class TC_03 extends TestBaseRapor {
 
 
         //Sayfa kapatılır
-        Driver.closeDriver();
         extentTest.info("Sayfa kapatilir.");
+        Driver.closeDriver();
+
 
     }
 }

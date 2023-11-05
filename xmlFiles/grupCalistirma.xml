@@ -6,11 +6,11 @@
 
         <groups>
             <run>
+
+
                 <include name="e2e"></include>
                 <include name="smoke"></include>
                 <exclude name="regression"></exclude>
-
-
             </run>
         </groups>
 

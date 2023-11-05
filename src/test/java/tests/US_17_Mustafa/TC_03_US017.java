@@ -11,9 +11,11 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
+import java.io.IOException;
+
 public class TC_03_US017 extends TestBaseRapor {
-    @Test
-    public void TC01(){
+    @Test(groups = "smoke")
+    public void TC01() throws IOException {
 
         extentTest = extentReports.createTest("Toplam ve güncel tutarları görüntüleyebilme, " +
                         "davatiye gönderebilme ve para çekme işlemlerini yapabilme",
@@ -69,6 +71,8 @@ public class TC_03_US017 extends TestBaseRapor {
 
 
         softAssert.assertTrue(aDashboardPage.serverErrorYazisi.isDisplayed());
+        ReusableMethods.getScreenshot("mail gönderme işlemi gerçekleştirilemedi ");
+        ReusableMethods.wait(2);
         extentTest.fail("mail gönderme işlemi gerçekleştirilemedi.");
         extentTest.info("Mail gönderme işlemi gerçekleştirilemedi. İlgili server 500 Server Error hatası vermektedir.");
 
@@ -86,8 +90,9 @@ public class TC_03_US017 extends TestBaseRapor {
         ReusableMethods.wait(1);
         aDashboardPage.saveElementi.click();
         extentTest.info("para çekme talebi gerçekleştirildi, transfer için admin onayı bekliyor");
-
+        Driver.closeDriver();
         softAssert.assertAll();
+
 
 
     }

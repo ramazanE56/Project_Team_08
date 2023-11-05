@@ -94,16 +94,16 @@ public class US_009_TC_01 extends TestBaseRapor {
         Point point1 = new Point(660, 45);// C: arama çubuğu koordinatı
         Robot robot = new Robot();
         robot.mouseMove(point1.x, point1.y); // Farenin konumunu ayarla
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama yap
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama bırak
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
         actions.sendKeys(Keys.ENTER).perform();
 
 
 // Ctrl+V tuş kombinasyonunu kullanarak dosya yolunu yapıştır
-        StringSelection stringSelection = new StringSelection("C:\\Users\\user\\IdeaProjects\\Project_Team_08\\src\\test\\java\\tests\\US_009_Kaan");
+        StringSelection stringSelection = new StringSelection("C:\\Users\\asus\\IdeaProjects\\Project_Team_08\\src\\test\\java\\tests\\US_009_Kaan");
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
 
@@ -118,31 +118,31 @@ public class US_009_TC_01 extends TestBaseRapor {
         Point point2 = new Point(759, 51);// ileri oku koordinatı
 
         robot.mouseMove(point2.x, point2.y); // Farenin konumunu ayarla
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(3);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama yap
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(3);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama bırak
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(3);
 
 
         // gelen logoya tıklama işlemi
         Point point3 = new Point(306, 160);// logo konumu koordinatı
 
         robot.mouseMove(point3.x, point3.y); // Farenin konumunu ayarla
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(3);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama yap
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(3);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama bırak
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(3);
 
 
 //aç butanuna tıklama işlemi
         Point point4 = new Point(848, 726);// aç butonu koordinatı
 
         robot.mouseMove(point4.x, point4.y); // Farenin konumunu ayarla
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(3);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama yap
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(3);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama bırak
 
         //Cover logo yükleme işlemi yapınız
@@ -150,16 +150,16 @@ public class US_009_TC_01 extends TestBaseRapor {
         aDashboardPage.coverLogoKalemElementi.click();
         Point point5 = new Point(660, 45);// C: arama çubuğu koordinatı
         robot.mouseMove(point5.x, point5.y); // Farenin konumunu ayarla
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama yap
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama bırak
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
         actions.sendKeys(Keys.ENTER).perform();
 
 
 // Ctrl+V tuş kombinasyonunu kullanarak dosya yolunu yapıştır
-        StringSelection stringSelection2 = new StringSelection("C:\\Users\\user\\IdeaProjects\\Project_Team_08\\src\\test\\java\\tests\\US_009_Kaan");
+        StringSelection stringSelection2 = new StringSelection("C:\\Users\\asus\\IdeaProjects\\Project_Team_08\\src\\test\\java\\tests\\US_009_Kaan");
         Clipboard clipboard2 = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
 
@@ -173,45 +173,46 @@ public class US_009_TC_01 extends TestBaseRapor {
         Point point6 = new Point(759, 51);// ileri oku koordinatı
 
         robot.mouseMove(point6.x, point6.y); // Farenin konumunu ayarla
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama yap
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama bırak
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
 
 
         // gelen logoya tıklama işlemi
         Point point7 = new Point(437, 123);// cover logo konumu koordinatı
 
         robot.mouseMove(point7.x, point7.y); // Farenin konumunu ayarla
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama yap
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama bırak
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
 
 
 //aç butanuna tıklama işlemi
         Point point8 = new Point(848, 726);// aç butonu koordinatı
 
         robot.mouseMove(point8.x, point8.y); // Farenin konumunu ayarla
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama yap
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); // Sol tıklama bırak
 
 
-        ReusableMethods.wait(1);
+        ReusableMethods.wait(2);
         aDashboardPage.vcardSaveBtnElementi.click();                // Yapılan değişikliklerin kaydedilmesi için save butonuna tıklanır.
         extentTest.info("Yapılan değişikliklerin kaydedilmesi için save butonuna tıklanır.");
         Assert.assertTrue(aDashboardPage.vcardsEditSuccesfullSaveElementi.isDisplayed()); //"Basic Details Update succesfully." onay yazısının çıktığı test edilir.
         extentTest.pass("Loge değiştirme işlemi başarıyla yerine getirilir.");
         aDashboardPage.vcardsEditBackElementi.click();   //Back butonuna tıklanarak, Vcards bölümüne geçilir.
         Assert.assertTrue(aDashboardPage.editIconElementi.isDisplayed());
+        extentTest.info("Sayfa kapatilir.");
         Driver.closeDriver();
 
 
-       extentTest.info("Sayfa kapatilir.");
+
 
     }
 

@@ -83,8 +83,9 @@ public class TC_02 extends TestBaseRapor {
         extentTest.info("Ortaklik tutarlarinin fotoğrafi cekilir");
 
         //Sayfa kapatılır
-        Driver.closeDriver();
         extentTest.info("Sayfa kapatilir.");
+        Driver.closeDriver();
+
 
     }
     }
