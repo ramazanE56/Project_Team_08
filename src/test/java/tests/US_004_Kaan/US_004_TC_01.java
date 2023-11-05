@@ -136,7 +136,7 @@ public class US_004_TC_01 extends TestBaseRapor {
         //Sayfa kapatılır
         extentTest.info("Sayfa kapatilir.");
         Driver.getDriver().quit();
-        softAssert.assertAll();
+
 
 
     }

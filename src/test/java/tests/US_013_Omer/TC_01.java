@@ -50,6 +50,9 @@ public class TC_01 extends TestBaseRapor {
         WebElement profileDetailsYazi= aDashboardPage.profileDetailsLinki;
         Assert.assertTrue(profileDetailsYazi.isDisplayed());
         extentTest.pass("profile bilgileri sayfasına erişim sağlandığı test edilir.");
+        //10-Browser kapatılır
+        Driver.closeDriver();
+        extentTest.info("Sayfa kapatilir.");
 
 
     }

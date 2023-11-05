@@ -57,6 +57,7 @@ public class TC01_US034 extends TestBaseRapor {
         Assert.assertFalse(actualSubscribersGorunurlukSonucElementiYazisi.equals(unexpectedYazi));
 
         extentTest.info("Sayfa kapatılır.");
+        Driver.closeDriver();
 
         // the end
 
