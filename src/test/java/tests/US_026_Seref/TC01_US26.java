@@ -66,6 +66,7 @@ public class TC01_US26 extends TestBaseRapor {
         ReusableMethods.wait(3);
 
         extentTest.info("sayfayi kapatir");
+        // deneme
     }
 }
 
